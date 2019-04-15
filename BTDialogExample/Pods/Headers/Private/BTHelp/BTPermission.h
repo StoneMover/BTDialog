@@ -1,0 +1,1 @@
+../../../BTHelp/Classes/BTPermission.h
