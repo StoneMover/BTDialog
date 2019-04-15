@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIView+BTViewTool.h"
+#import <BTHelp/UIView+BTViewTool.h>
 
 
 typedef NS_ENUM(NSInteger,BTDialogAnimStyle) {

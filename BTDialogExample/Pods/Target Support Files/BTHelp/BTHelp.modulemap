@@ -1,0 +1,6 @@
+framework module BTHelp {
+  umbrella header "BTHelp-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -68,8 +68,8 @@ int const BT_SHOW_VIEW_CELL_H=40;
 }
 
 
-- (void)setData:(NSArray<__kindof BTDialogModel *> *)data{
-    _data=data;
+- (void)setDataArray:(NSArray<__kindof BTDialogModel *> *)data{
+    _dataArray=data;
     [self layoutRootView];
     [self.tableView reloadData];
     
@@ -88,12 +88,12 @@ int const BT_SHOW_VIEW_CELL_H=40;
     self.headView.height=headH;
     self.tableView.top=self.headView.bottom;
     
-    if (self.data.count*BT_SHOW_VIEW_CELL_H>BT_SHOW_VIEW_MAX_H-headH) {
+    if (self.dataArray.count*BT_SHOW_VIEW_CELL_H>BT_SHOW_VIEW_MAX_H-headH) {
         self.tableView.height=BT_SHOW_VIEW_MAX_H-headH;
         self.rootView.height=BT_SHOW_VIEW_MAX_H;
         self.tableView.scrollEnabled=YES;
     }else{
-        self.tableView.height=self.data.count*BT_SHOW_VIEW_CELL_H;
+        self.tableView.height=self.dataArray.count*BT_SHOW_VIEW_CELL_H;
         self.rootView.height=headH+self.tableView.height;
         
         if (self.rootView.height<100) {
@@ -115,13 +115,13 @@ int const BT_SHOW_VIEW_CELL_H=40;
 
 #pragma mark tableView data delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.data count];
+    return [self.dataArray count];
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BTDialogTableViewCell * cell=[tableView dequeueReusableCellWithIdentifier:@"BTDialogTableViewCellId"];
     cell.separatorInset=UIEdgeInsetsZero;
-    BTDialogModel * model = self.data[indexPath.row];
+    BTDialogModel * model = self.dataArray[indexPath.row];
     cell.labelContent.text=model.title;
     cell.imgViewSelect.hidden=!model.isSelect;
     return cell;
@@ -131,10 +131,10 @@ int const BT_SHOW_VIEW_CELL_H=40;
 #pragma mark tableView delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    for (BTDialogModel * m in self.data) {
+    for (BTDialogModel * m in self.dataArray) {
         m.isSelect=NO;
     }
-    BTDialogModel * model = self.data[indexPath.row];
+    BTDialogModel * model = self.dataArray[indexPath.row];
     model.isSelect=YES;
     [self.tableView reloadData];
     if (self.blockTable) {
@@ -166,7 +166,7 @@ int const BT_SHOW_VIEW_CELL_H=40;
         }
         [dataArray addObject:item];
     }
-    self.data=dataArray;
+    self.dataArray=dataArray;
     return dataArray;
 }
 

@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = "BTLoading"
+  s.name             = "BTDialog"
   s.version          = "0.0.1"
   s.summary          = "An easy Dialog View"
   s.homepage         = "https://github.com/StoneMover/BTDialog"
@@ -10,4 +10,5 @@ Pod::Spec.new do |s|
   s.source_files     = 'BTDialog/**/*.{h,m}'
   s.resource = 'Assets/BTDialogBundle.bundle'
   s.requires_arc     = true
+  s.dependency 'BTHelp'
 end

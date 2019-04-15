@@ -45,7 +45,7 @@
     
     if (!self.dialogTableView) {
         self.dialogTableView=[[BTDialogTableView alloc] initDialogTableView:BTDialogLocationBottom];
-        self.dialogTableView.data=[self.dialogTableView createDataWithStr:@[@"Jack",@"Lily",@"Sam",@"James"]];
+        self.dialogTableView.dataArray=[self.dialogTableView createDataWithStr:@[@"Jack",@"Lily",@"Sam",@"James"]];
         self.dialogTableView.headView.labelTitle.text=@"选择你的朋友";
         self.dialogTableView.headView.lineView.color=[UIColor redColor];
         self.dialogTableView.blockTable = ^BOOL(NSInteger index) {

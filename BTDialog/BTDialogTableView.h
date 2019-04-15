@@ -9,8 +9,7 @@
 #import "BTDialogView.h"
 #import "BTLineView.h"
 
-@class BTDialogTableView;
-@class BTDialogModel;
+
 @class BTDialogTableHeadView;
 
 //返回bool值来表明是否关闭view
@@ -22,7 +21,7 @@ typedef BOOL (^BTDialogTableViewBlock)(NSInteger index);
 @property(strong, nonatomic) BTDialogTableHeadView * headView;
 
 //数据源
-@property (strong, nonatomic) NSArray<__kindof BTDialogModel*> * data;
+@property (strong, nonatomic) NSArray * dataArray;
 
 
 @property (nonatomic, copy) BTDialogTableViewBlock blockTable;
@@ -31,7 +30,7 @@ typedef BOOL (^BTDialogTableViewBlock)(NSInteger index);
 @property (nonatomic, assign) BOOL isNeedHead;
 
 
-@property (nonatomic, assign) BOOL isNeedFoot;
+//@property (nonatomic, assign) BOOL isNeedFoot;
 
 
 - (instancetype)initDialogTableView:(BTDialogLocation)location;

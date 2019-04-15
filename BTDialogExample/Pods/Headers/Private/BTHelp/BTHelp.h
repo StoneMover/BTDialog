@@ -1,1 +1,0 @@
-../../../BTHelp/Classes/BTHelp.h
