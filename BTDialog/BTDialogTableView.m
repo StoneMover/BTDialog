@@ -8,7 +8,7 @@
 
 #import "BTDialogTableView.h"
 #import "BTDialogTableViewCell.h"
-#import "BTMacro.h"
+#import <BTHelp/BTUtils.h>
 
 int const BT_SHOW_VIEW_MAX_H=300;
 
@@ -83,7 +83,7 @@ int const BT_SHOW_VIEW_CELL_H=40;
         headH=BT_SHOW_VIEW_HEAD_H;
     }
     if (self.locationTable==BTDialogLocationTop) {
-        self.headView.top=BT_STATUS_BAR_HEIGHT;
+        self.headView.top=BTUtils.STATUS_BAR_HEIGHT;
     }
     self.headView.height=headH;
     self.tableView.top=self.headView.bottom;
@@ -102,9 +102,9 @@ int const BT_SHOW_VIEW_CELL_H=40;
         self.tableView.scrollEnabled=NO;
     }
     if (self.locationTable==BTDialogLocationBottom) {
-        self.rootView.height+=BT_HOME_INDICATOR_HEIGHT;
+        self.rootView.height+=BTUtils.HOME_INDICATOR_HEIGHT;
     }else if (self.locationTable==BTDialogLocationTop){
-        self.rootView.height+=BT_STATUS_BAR_HEIGHT;
+        self.rootView.height+=BTUtils.STATUS_BAR_HEIGHT;
     }
 }
 

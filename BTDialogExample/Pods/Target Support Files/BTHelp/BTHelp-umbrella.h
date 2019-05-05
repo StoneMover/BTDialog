@@ -21,7 +21,6 @@
 #import "BTKeyboardHelp.h"
 #import "BTLineView.h"
 #import "BTLocation.h"
-#import "BTMacro.h"
 #import "BTPermission.h"
 #import "BTTimerHelp.h"
 #import "BTUtils.h"

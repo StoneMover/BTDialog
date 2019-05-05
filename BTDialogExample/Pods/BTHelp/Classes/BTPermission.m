@@ -11,6 +11,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <Photos/Photos.h>
 #import <CoreLocation/CLLocationManager.h>
+#import "BTUtils.h"
 
 
 static BTPermission * permission;
@@ -60,9 +61,7 @@ static BTPermission * permission;
                                 btns:@[@"取消",@"确定"]
                                block:^(NSInteger index) {
                                    if (index==1) {
-                                       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{UIApplicationOpenURLOptionsSourceApplicationKey : @YES} completionHandler:^(BOOL success) {
-                                           
-                                       }];
+                                       [BTUtils openSetVc];
                                    }
                                }];
                 }else{
@@ -82,9 +81,7 @@ static BTPermission * permission;
                       btns:@[@"取消",@"确定"]
                      block:^(NSInteger index) {
                          if (index==1) {
-                             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{UIApplicationOpenURLOptionsSourceApplicationKey : @YES} completionHandler:^(BOOL success) {
-                                 
-                             }];
+                             [BTUtils openSetVc];
                          }
                      }];
     }
@@ -120,9 +117,7 @@ static BTPermission * permission;
                               btns:@[@"取消",@"确定"]
                              block:^(NSInteger index) {
                                  if (index==1) {
-                                     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{UIApplicationOpenURLOptionsSourceApplicationKey : @YES} completionHandler:^(BOOL success) {
-                                         
-                                     }];
+                                     [BTUtils openSetVc];
                                  }
                              }];
             }else{
@@ -140,9 +135,7 @@ static BTPermission * permission;
                       btns:@[@"取消",@"确定"]
                      block:^(NSInteger index) {
                          if (index==1) {
-                             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{UIApplicationOpenURLOptionsSourceApplicationKey : @YES} completionHandler:^(BOOL success) {
-                                 
-                             }];
+                             [BTUtils openSetVc];
                          }
                      }];
     }
@@ -174,9 +167,7 @@ static BTPermission * permission;
                                 btns:@[@"取消",@"确定"]
                                block:^(NSInteger index) {
                                    if (index==1) {
-                                       [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{UIApplicationOpenURLOptionsSourceApplicationKey : @YES} completionHandler:^(BOOL success) {
-                                           
-                                       }];
+                                       [BTUtils openSetVc];
                                    }
                                }];
                 }
@@ -192,9 +183,7 @@ static BTPermission * permission;
                       btns:@[@"取消",@"确定"]
                      block:^(NSInteger index) {
                          if (index==1) {
-                             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{UIApplicationOpenURLOptionsSourceApplicationKey : @YES} completionHandler:^(BOOL success) {
-                                 
-                             }];
+                             [BTUtils openSetVc];
                          }
                      }];
     }

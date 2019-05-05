@@ -3,7 +3,7 @@
 //  VoiceBag
 //
 //  Created by HC－101 on 2018/6/20.
-//  Copyright © 2018年 王迅. All rights reserved.
+//  Copyright © 2018年 stonemover. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

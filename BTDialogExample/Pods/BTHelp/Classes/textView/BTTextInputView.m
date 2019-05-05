@@ -8,7 +8,7 @@
 
 #import "BTTextInputView.h"
 #import "UIView+BTViewTool.h"
-#import "BTMacro.h"
+#import "BTUtils.h"
 
 @interface BTTextInputView()
 
@@ -37,7 +37,7 @@
     
     
     UIView * viewLine=[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, .5)];
-    viewLine.backgroundColor=BT_RGB(235, 235, 235);
+    viewLine.backgroundColor=[BTUtils RGB:235 G:235 B:235];
     [self.rootView addSubview:viewLine];
     
     self.btnCommit=[[UIButton alloc] initWithSize:CGSizeMake(75, 55)];
@@ -51,11 +51,11 @@
     self.textView=[[BTTextView alloc] initWithSize:CGSizeMake(100, self.basicHeight-20)];
     [self.textView setTextContainerInset:UIEdgeInsetsMake(8, 5, 8, 5)];
     self.textView.font=[UIFont systemFontOfSize:16];
-    self.textView.textColor=BT_RGB(74, 76, 95);
+    self.textView.textColor=[BTUtils RGB:74 G:76 B:95];
     self.textView.corner=5;
-    self.textView.borderColor=BT_RGB(234, 234, 234);
+    self.textView.borderColor=[BTUtils RGB:234 G:234 B:234];
     self.textView.borderWidth=.5;
-    self.textView.placeHolderColor=BT_RGB(198, 198, 198);
+    self.textView.placeHolderColor=[BTUtils RGB:198 G:198 B:198];
     self.textView.placeHolder=@"请输入评论";
     self.textView.maxStrNum=140;
     self.textView.blockMax = ^{
@@ -77,7 +77,7 @@
         if (weakSelf.textView.text.length==0) {
             [weakSelf.btnCommit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         }else{
-            [weakSelf.btnCommit setTitleColor:BT_MAIN_COLOR forState:UIControlStateNormal];
+            [weakSelf.btnCommit setTitleColor:weakSelf.commitColor?weakSelf.commitColor:UIColor.redColor forState:UIControlStateNormal];
         }
     };
     [self.rootView addSubview:self.textView];

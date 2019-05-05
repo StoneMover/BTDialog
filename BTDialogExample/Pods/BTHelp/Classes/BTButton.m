@@ -3,12 +3,12 @@
 //  VoiceBag
 //
 //  Created by HC－101 on 2018/6/20.
-//  Copyright © 2018年 王迅. All rights reserved.
+//  Copyright © 2018年 stonemover. All rights reserved.
 //
 
 #import "BTButton.h"
 #import "UIView+BTViewTool.h"
-#import "BTMacro.h"
+#import "BTUtils.h"
 
 @implementation BTButton
 
@@ -30,7 +30,7 @@
     self.labelBage.layer.cornerRadius=6;
     self.labelBage.clipsToBounds=YES;
     self.labelBage.textColor=[UIColor whiteColor];
-    self.labelBage.backgroundColor=BT_RGB(247, 89, 89);
+    self.labelBage.backgroundColor=[BTUtils RGB:247 G:89 B:89];
     [self addSubview:self.labelBage];
 }
 

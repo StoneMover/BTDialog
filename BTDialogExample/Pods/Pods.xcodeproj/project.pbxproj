@@ -7,50 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03D0C76A11A30B2F28C587619F2DB3CB /* BTModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CB25B5BBC6DBBFA8E4CBAAE955FDED4 /* BTModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07358165EC6EC75B6F88C3622A56B6DC /* BTLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = A6485DD2723CEA50AEBB1B69D34DE44A /* BTLocation.m */; };
-		10E2004338545162E237EBDED11F4BD3 /* BTHelp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2480CCA20B6041FB9B9603BE4DAC8D20 /* BTHelp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		035E6FCDFC8C67703574BFFFD0660863 /* BTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D2170DAB8395C208C3A30730405C1B09 /* BTButton.m */; };
+		0B394D270E1D8428685C9CE3BAEBDD00 /* BTModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A5D62A91F3C3564B42FA3EE653C482E /* BTModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E02928098573E1B3239BCED04E15E60 /* BTUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B915AB57B1F0FA52A47388C59C5503E /* BTUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11DFE724872C2CAE5FFA76E1F751982C /* Pods-BTDialogExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D05E26A43673B51DB67D0051EC4EDCDF /* Pods-BTDialogExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		13E4956517283EF477191DEB6855EC8D /* UIImage+BTImage.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA12C8F8DAE572C7529E2DB828AF4DC /* UIImage+BTImage.m */; };
-		16C533DBD5E0FB55074A01D05D0F5ED9 /* BTHelp.h in Headers */ = {isa = PBXBuildFile; fileRef = C76862A8EFB15AF4A182146F06630F48 /* BTHelp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		17DB7871E013E6DCAE04E2BDE331AF54 /* BTLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 21E0BD0686DCBA87AC106D0F72F0992D /* BTLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		20BA5D343ABF3A91AF2C3732731D4C18 /* BTModelAnalisys.h in Headers */ = {isa = PBXBuildFile; fileRef = 552D01BE30791593660D3C7077FC198D /* BTModelAnalisys.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		21B5297E0E565EFABF069347BE7985F0 /* BTTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FB65C7C04A51834DABFD5BB950DCE08 /* BTTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		225A4391E83ECDD988B25F53F84F7483 /* BTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22197E3FB64C84B2922AA633F53CB7D3 /* BTTextView.m */; };
-		2C2849ABCEE3056D8C6EA4B45DD0AD5A /* UIImage+BTImage.h in Headers */ = {isa = PBXBuildFile; fileRef = E92ABF31B0D81C7D69DA92E5F83F33FD /* UIImage+BTImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		33264DBEE7D859ABBF15A2A68EE6F176 /* BTLineView.h in Headers */ = {isa = PBXBuildFile; fileRef = EA4058CE0443BA28EA64F942431FF8B8 /* BTLineView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		36D188FF185275D55BC85C1506792F6D /* BTUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DF3A5D5083BC7710A7ECD6C04E9726 /* BTUtils.m */; };
+		1AF1D4B7266B1695CF9957782F080EDC /* BTTextInputView.h in Headers */ = {isa = PBXBuildFile; fileRef = B781E6E027B6DCA3ECFDD0B8B918FF24 /* BTTextInputView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2A7125A94D4080B191802106BEC0C396 /* BTIconHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B84A15730F22FCB14BA4108255F39F /* BTIconHelp.m */; };
+		34BD54ACD1C6BAB1B9C6F87ABBB81432 /* BTModelAnalisys.h in Headers */ = {isa = PBXBuildFile; fileRef = B5192206BBD24DEEB023DD0D9297E976 /* BTModelAnalisys.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D029DE2B1243FBBCB2310E2769C0F3E /* BTTimerHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 491890A412F546C5394D13795ED9295D /* BTTimerHelp.m */; };
+		3E3D510B8E704374120C2D0954800A68 /* UIImage+BTImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4208EC13E39E7B5E8E3528D486486D0B /* UIImage+BTImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FCB1727410589E0E66769D3201C8850 /* Pods-BTDialogExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFDB94EB11B099E465F3F0E5982EF86 /* Pods-BTDialogExample-dummy.m */; };
-		41A25342B61DC9B4A00F4368CC2CD63A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		43FE0531C1D1A3DCF99F303278FB6D59 /* BTPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E1A821E7D118A582185E6AC5F1BB1D0 /* BTPermission.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4CA0B858458F0FB0F0A2B7BF2B9D769E /* BTUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BAA69B4EE1559B5B3C0E0FB03F66CBAF /* BTUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		52A243E4101033D518F8D668368DBAE5 /* BTTimerHelp.h in Headers */ = {isa = PBXBuildFile; fileRef = A7B78D8CF0B6768EDDB269F4FE57EA9A /* BTTimerHelp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5D218F786FDD894C8B676663BDC17594 /* BTMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = 375B21725F3A9DF5E48B6D170D35107C /* BTMacro.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5E732B417D1132217594063FB93BAA30 /* BTModelAnalisys.m in Sources */ = {isa = PBXBuildFile; fileRef = 209F196370DF8830CD29196B987B70B1 /* BTModelAnalisys.m */; };
-		61C8FAF4E0F13A02FAD5154B231FE98D /* BTTextInputView.h in Headers */ = {isa = PBXBuildFile; fileRef = 78F832F4DDC8C697293F3022F03DAFC6 /* BTTextInputView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		63946E17C06C890D12B28D74D7723330 /* BTKeyboardHelp.h in Headers */ = {isa = PBXBuildFile; fileRef = 846D569A02B12767E05B0C64EEFF72A2 /* BTKeyboardHelp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		641FC1E2325FABA58E3D16D346A876DB /* BTUserModel.h in Headers */ = {isa = PBXBuildFile; fileRef = C4871FD8D016C27CBE860CD81F9018A6 /* BTUserModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C226C4090960F0680FE289AEE022B18 /* BTModelProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D54E519F06905028ED4BDF6D379ABA /* BTModelProperty.m */; };
-		6DB982EFBA59F51DD1EEB63581D30748 /* BTLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63ADE902C422C2E8F9D1F5488A14EDC4 /* BTLineView.m */; };
-		72BF5F04EDFE6C4E4BC0B809382EF093 /* BTIconHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 81627F67710EFB4809C052D3371C58AC /* BTIconHelp.m */; };
-		77F020897A2AA84C3D92E3BA163263A9 /* BTModelProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = BE971D956100F2D4D6E5DF2AA13F7E8F /* BTModelProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EF5251DC7B651EBFBD925FD88C83620 /* BTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A7FB36A7A28CCDD38DAA36A815507 /* BTModel.m */; };
-		8267269F1A492D457D2795A4185C04BE /* BTHelp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B1FABA015243914280060A8174BC518F /* BTHelp-dummy.m */; };
-		83B95C66F426E79A081450E3676010FE /* BTUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 598CACE4E39632029570B1AC67C25186 /* BTUserModel.m */; };
-		9015183CD4163E74DABC19035081D5CB /* BTUserMananger.h in Headers */ = {isa = PBXBuildFile; fileRef = 71552CF70A9276EB6FE530B4DAD12370 /* BTUserMananger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		96930ACBCECEC5068337B89C73255C31 /* BTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A0F9422ECF95A6903BE09F3F008EF8 /* BTButton.m */; };
+		420C298C898BDA8B28859AECFD38FE21 /* BTHelp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC1E5FA7472AD33639C10FA3A8ADB50B /* BTHelp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45A06B56E09A3E699B503177BDB59670 /* BTUserModel.h in Headers */ = {isa = PBXBuildFile; fileRef = D8A13E9697DAA8DCE082826DE35950D4 /* BTUserModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4A740DFA381AC9BEF27612BE06D42F11 /* BTUserMananger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D1395FC0DA91A8FFE59BEBE632291 /* BTUserMananger.m */; };
+		4B47CBE938E69F97C13580EDA0E9F760 /* BTModelProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC4F4DAE2A679EA252E1BEB49360414 /* BTModelProperty.m */; };
+		593B76BA5824E10F6097313BD7A53407 /* BTKeyboardHelp.h in Headers */ = {isa = PBXBuildFile; fileRef = B3803E1FF48706B01A08263192A1A1CD /* BTKeyboardHelp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5BD0C794748B545147EE2116D0C7B66D /* BTButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A7DC8A7E315CA1AC2DB149EDBFC580E /* BTButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E88C6BC429926CFCAA287D38EE859FB /* BTUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F05BAD385DF64E76308B52EAC5EFC74 /* BTUserModel.m */; };
+		62B1E19603D124323B03BE603B2D34E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		63FD71F4892FEAACC1CE494DD544AEDC /* BTLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = F922FE91FEFB925603039E490D88145E /* BTLocation.m */; };
+		7429FE3A3C30B67AA0C89C2857D26063 /* BTModelProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F9A0C76B3D7BB2C82A282AE1614A651 /* BTModelProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		82892007D68649B0988E960957C629E9 /* UIView+BTConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 3723F29243058C3CBC83045C1AA9AAA2 /* UIView+BTConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		939B752E562CDF0678418D40DEE8FB5B /* UIImage+BTImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0B70D40B5DF48BD591C4CEE7CA95F /* UIImage+BTImage.m */; };
+		93AE2BFEFB61AA94BE795D524588FED0 /* BTTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = D98AB042745A22AAA30156939CA008EA /* BTTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		97EAC5C23F8D0BF86DB0FD37999D06F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		A3879A804DB921885959FA7EEBA060D4 /* UIView+BTViewTool.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB53B6B3C478ECF6432077B4A9E41F2 /* UIView+BTViewTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ABEE8DC0E1521F75EA45F4CB4EB7E059 /* BTButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 569A880F44B1DC9D032FF340EB9429B1 /* BTButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B422CB4957156980239799DCD39E7E53 /* BTPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = E3706E917504B0E0AAA2B3EB4C682858 /* BTPermission.m */; };
-		C8157D013B51E2768A21E07987FCE53A /* UIView+BTViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3773A3D3806D1590C2D41DB7E5381145 /* UIView+BTViewTool.m */; };
-		CC62EB960038D2AEDB25FB8FC19103BD /* BTIconHelp.h in Headers */ = {isa = PBXBuildFile; fileRef = E91B8D8258823EF7461699918CB62499 /* BTIconHelp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D33C5B4F030B4B14BE07C267824D5197 /* BTTextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 154CF17CC2646F7F1D3A85A2E8438856 /* BTTextInputView.m */; };
-		F175A907B6E38C5907F006F5D5E5F051 /* UIView+BTConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = BA949A5299467DC4A80295352494E320 /* UIView+BTConstraint.m */; };
-		F5A8FCF71F9E62D997186A5EDE6B8B98 /* UIView+BTConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EFDD197B9D61D6E7689749001A26D8C /* UIView+BTConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F75CA7BE55DA3C2472DD62861E44B06A /* BTTimerHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 501781A3F8E5FC826722D4C27B5D4D4F /* BTTimerHelp.m */; };
-		F7A4D0D12E966990BBA2AE612EF760C4 /* BTUserMananger.m in Sources */ = {isa = PBXBuildFile; fileRef = E95BE43FA3EBA2376C4273BD853E6DAA /* BTUserMananger.m */; };
-		FD2946E7B94CBB6519BA14B36D79DB77 /* BTKeyboardHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = A47924032F77381825ECB6189762F2AA /* BTKeyboardHelp.m */; };
+		9C0CBF11170BF475A0755D8D62B4BDB7 /* BTPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C40EB6DD1A40F1F7589C4F46C85C45 /* BTPermission.m */; };
+		9D42833F2353EB40AC9A7C5C5253AEB7 /* BTModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 185162F16613077927E1EE6DBD989E91 /* BTModel.m */; };
+		A63ECA0AC3F5B824905215CECE495C40 /* BTTimerHelp.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A0C82BCD076A854C4B76FFB6D070919 /* BTTimerHelp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9B487BD78FCA9172FE7973456F16FA7 /* UIView+BTConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EBE999496FD549B3E01503996720A5 /* UIView+BTConstraint.m */; };
+		B0AD79924EAA6C468B20BDCF8C708F84 /* BTUserMananger.h in Headers */ = {isa = PBXBuildFile; fileRef = 59188909B1F4C165A2D7BFD6B49AEBEA /* BTUserMananger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B10143290849E43AC16B2BD473AC48E8 /* BTIconHelp.h in Headers */ = {isa = PBXBuildFile; fileRef = DD33BCCD9AE3E3B8CE550FE8783907FF /* BTIconHelp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1EEF947149AD1C15C11688D6904FFB4 /* BTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C53301DAE8DE9C30931B8CE51CD0 /* BTTextView.m */; };
+		B272AE422A1CC05D022BF0AA4188F532 /* BTLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CF33FC8F77A6ACDDC240DEB114A05C5 /* BTLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B2747C7A0124495B513AE5DCF34E1586 /* BTKeyboardHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = BA71A5C9CAFD7F5A89CB4897C193FB44 /* BTKeyboardHelp.m */; };
+		B277FE000B1F531CFD74E139E9F01BC6 /* UIView+BTViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D13FCAF6FC23AE7A8B55E95FB28A0C75 /* UIView+BTViewTool.m */; };
+		B5AD95545C854E51BCC8629FC0BD8A66 /* UIView+BTViewTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EE59E12FB8DB526F177E57C4AB3D50C /* UIView+BTViewTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6BED5102FA5D6C87BB95B75B9919217 /* BTUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A628DC7D0828F7EB3A4CB385EE60933 /* BTUtils.m */; };
+		C0696D74F09F7116858D1DD8A4DE5437 /* BTTextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 212D2EB5C022F4EEB56F5492EEE141B0 /* BTTextInputView.m */; };
+		D38646C47AF9A0AF70328A732A060CDC /* BTHelp.h in Headers */ = {isa = PBXBuildFile; fileRef = 11144EBC6DE2ADA3AB9DAB617A847A71 /* BTHelp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D429CA77F9DAB01009F64B081E41A77C /* BTHelp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 781367074629036F34316BCADDAAF82E /* BTHelp-dummy.m */; };
+		DDB146389466AD9B6FB3CA8A3A896832 /* BTPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DE9BAA3EA86FC286D1DA470A09D9070 /* BTPermission.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3C5E95826E041BC0F363D5265A99CF5 /* BTModelAnalisys.m in Sources */ = {isa = PBXBuildFile; fileRef = 7595F8DCB012296E08F1A5768AB56E9B /* BTModelAnalisys.m */; };
+		EA41D1D904325438EE1270AA40659C30 /* BTLineView.h in Headers */ = {isa = PBXBuildFile; fileRef = 81623661D81C1ED3FCB3BAA2FD92DA85 /* BTLineView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9CFF52AF33D8A0FDC9762D4C385A46C /* BTLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 33BDD6228FE143D664EAD2DD96F0DC6B /* BTLineView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,80 +57,71 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BCF3FD0DA5A0173FC518A48928E1F951;
+			remoteGlobalIDString = F808644F6EF1EF8F68AE86264D5B06A5;
 			remoteInfo = BTHelp;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05964EC640CC66F2C1ECEB867DDFAA20 /* BTHelp-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BTHelp-prefix.pch"; sourceTree = "<group>"; };
-		11DF3A5D5083BC7710A7ECD6C04E9726 /* BTUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTUtils.m; path = Classes/BTUtils.m; sourceTree = "<group>"; };
-		154CF17CC2646F7F1D3A85A2E8438856 /* BTTextInputView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTTextInputView.m; path = Classes/textView/BTTextInputView.m; sourceTree = "<group>"; };
-		16D54E519F06905028ED4BDF6D379ABA /* BTModelProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTModelProperty.m; path = Classes/BaseJsonModel/BTModelProperty.m; sourceTree = "<group>"; };
-		1CB25B5BBC6DBBFA8E4CBAAE955FDED4 /* BTModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTModel.h; path = Classes/BaseJsonModel/BTModel.h; sourceTree = "<group>"; };
-		209F196370DF8830CD29196B987B70B1 /* BTModelAnalisys.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTModelAnalisys.m; path = Classes/BaseJsonModel/BTModelAnalisys.m; sourceTree = "<group>"; };
-		21E0BD0686DCBA87AC106D0F72F0992D /* BTLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTLocation.h; path = Classes/BTLocation.h; sourceTree = "<group>"; };
-		22197E3FB64C84B2922AA633F53CB7D3 /* BTTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTTextView.m; path = Classes/textView/BTTextView.m; sourceTree = "<group>"; };
-		2480CCA20B6041FB9B9603BE4DAC8D20 /* BTHelp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BTHelp-umbrella.h"; sourceTree = "<group>"; };
+		00B0B70D40B5DF48BD591C4CEE7CA95F /* UIImage+BTImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+BTImage.m"; path = "Classes/category/UIImage+BTImage.m"; sourceTree = "<group>"; };
+		035937A9C9AC16009D7B7A05C3373B10 /* BTHelp-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BTHelp-prefix.pch"; sourceTree = "<group>"; };
+		0A628DC7D0828F7EB3A4CB385EE60933 /* BTUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTUtils.m; path = Classes/BTUtils.m; sourceTree = "<group>"; };
+		0A7DC8A7E315CA1AC2DB149EDBFC580E /* BTButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTButton.h; path = Classes/BTButton.h; sourceTree = "<group>"; };
+		0F05BAD385DF64E76308B52EAC5EFC74 /* BTUserModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTUserModel.m; path = Classes/account/BTUserModel.m; sourceTree = "<group>"; };
+		11144EBC6DE2ADA3AB9DAB617A847A71 /* BTHelp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTHelp.h; path = Classes/BTHelp.h; sourceTree = "<group>"; };
+		185162F16613077927E1EE6DBD989E91 /* BTModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTModel.m; path = Classes/BaseJsonModel/BTModel.m; sourceTree = "<group>"; };
+		212D2EB5C022F4EEB56F5492EEE141B0 /* BTTextInputView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTTextInputView.m; path = Classes/textView/BTTextInputView.m; sourceTree = "<group>"; };
 		25A8B6897D597F149B88DBF579DBC394 /* Pods_BTDialogExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BTDialogExample.framework; path = "Pods-BTDialogExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E1A821E7D118A582185E6AC5F1BB1D0 /* BTPermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTPermission.h; path = Classes/BTPermission.h; sourceTree = "<group>"; };
-		375B21725F3A9DF5E48B6D170D35107C /* BTMacro.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTMacro.h; path = Classes/BTMacro.h; sourceTree = "<group>"; };
-		3773A3D3806D1590C2D41DB7E5381145 /* UIView+BTViewTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+BTViewTool.m"; path = "Classes/category/UIView+BTViewTool.m"; sourceTree = "<group>"; };
-		38A0F9422ECF95A6903BE09F3F008EF8 /* BTButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTButton.m; path = Classes/BTButton.m; sourceTree = "<group>"; };
-		44FE93BB8545C2BE88EE5D0470DD3964 /* BTHelp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BTHelp-Info.plist"; sourceTree = "<group>"; };
-		501781A3F8E5FC826722D4C27B5D4D4F /* BTTimerHelp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTTimerHelp.m; path = Classes/BTTimerHelp.m; sourceTree = "<group>"; };
-		552D01BE30791593660D3C7077FC198D /* BTModelAnalisys.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTModelAnalisys.h; path = Classes/BaseJsonModel/BTModelAnalisys.h; sourceTree = "<group>"; };
-		569A880F44B1DC9D032FF340EB9429B1 /* BTButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTButton.h; path = Classes/BTButton.h; sourceTree = "<group>"; };
-		598CACE4E39632029570B1AC67C25186 /* BTUserModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTUserModel.m; path = Classes/account/BTUserModel.m; sourceTree = "<group>"; };
+		2B915AB57B1F0FA52A47388C59C5503E /* BTUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTUtils.h; path = Classes/BTUtils.h; sourceTree = "<group>"; };
+		33BDD6228FE143D664EAD2DD96F0DC6B /* BTLineView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTLineView.m; path = Classes/BTLineView.m; sourceTree = "<group>"; };
+		3723F29243058C3CBC83045C1AA9AAA2 /* UIView+BTConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+BTConstraint.h"; path = "Classes/category/UIView+BTConstraint.h"; sourceTree = "<group>"; };
+		3A0C82BCD076A854C4B76FFB6D070919 /* BTTimerHelp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTTimerHelp.h; path = Classes/BTTimerHelp.h; sourceTree = "<group>"; };
+		3FFC0B79F8E52CA6B06077CF5CA5AFFE /* BTHelp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BTHelp.modulemap; sourceTree = "<group>"; };
+		4208EC13E39E7B5E8E3528D486486D0B /* UIImage+BTImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+BTImage.h"; path = "Classes/category/UIImage+BTImage.h"; sourceTree = "<group>"; };
+		46EBE999496FD549B3E01503996720A5 /* UIView+BTConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+BTConstraint.m"; path = "Classes/category/UIView+BTConstraint.m"; sourceTree = "<group>"; };
+		491890A412F546C5394D13795ED9295D /* BTTimerHelp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTTimerHelp.m; path = Classes/BTTimerHelp.m; sourceTree = "<group>"; };
+		4A5D62A91F3C3564B42FA3EE653C482E /* BTModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTModel.h; path = Classes/BaseJsonModel/BTModel.h; sourceTree = "<group>"; };
+		4F9D1395FC0DA91A8FFE59BEBE632291 /* BTUserMananger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTUserMananger.m; path = Classes/account/BTUserMananger.m; sourceTree = "<group>"; };
+		59188909B1F4C165A2D7BFD6B49AEBEA /* BTUserMananger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTUserMananger.h; path = Classes/account/BTUserMananger.h; sourceTree = "<group>"; };
 		5A7410586E6C5171B939BF76A93669A7 /* Pods-BTDialogExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BTDialogExample.release.xcconfig"; sourceTree = "<group>"; };
+		62C40EB6DD1A40F1F7589C4F46C85C45 /* BTPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTPermission.m; path = Classes/BTPermission.m; sourceTree = "<group>"; };
 		6374A076FE8D27B9ABF9144C9A2BA5F9 /* Pods-BTDialogExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BTDialogExample-frameworks.sh"; sourceTree = "<group>"; };
-		63ADE902C422C2E8F9D1F5488A14EDC4 /* BTLineView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTLineView.m; path = Classes/BTLineView.m; sourceTree = "<group>"; };
-		6B9A7FB36A7A28CCDD38DAA36A815507 /* BTModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTModel.m; path = Classes/BaseJsonModel/BTModel.m; sourceTree = "<group>"; };
-		71552CF70A9276EB6FE530B4DAD12370 /* BTUserMananger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTUserMananger.h; path = Classes/account/BTUserMananger.h; sourceTree = "<group>"; };
-		78F832F4DDC8C697293F3022F03DAFC6 /* BTTextInputView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTTextInputView.h; path = Classes/textView/BTTextInputView.h; sourceTree = "<group>"; };
-		7FB65C7C04A51834DABFD5BB950DCE08 /* BTTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTTextView.h; path = Classes/textView/BTTextView.h; sourceTree = "<group>"; };
+		7595F8DCB012296E08F1A5768AB56E9B /* BTModelAnalisys.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTModelAnalisys.m; path = Classes/BaseJsonModel/BTModelAnalisys.m; sourceTree = "<group>"; };
+		781367074629036F34316BCADDAAF82E /* BTHelp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BTHelp-dummy.m"; sourceTree = "<group>"; };
+		7EE59E12FB8DB526F177E57C4AB3D50C /* UIView+BTViewTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+BTViewTool.h"; path = "Classes/category/UIView+BTViewTool.h"; sourceTree = "<group>"; };
+		7F81C53301DAE8DE9C30931B8CE51CD0 /* BTTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTTextView.m; path = Classes/textView/BTTextView.m; sourceTree = "<group>"; };
 		7FFDB94EB11B099E465F3F0E5982EF86 /* Pods-BTDialogExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BTDialogExample-dummy.m"; sourceTree = "<group>"; };
-		81627F67710EFB4809C052D3371C58AC /* BTIconHelp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTIconHelp.m; path = Classes/BTIconHelp.m; sourceTree = "<group>"; };
-		846D569A02B12767E05B0C64EEFF72A2 /* BTKeyboardHelp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTKeyboardHelp.h; path = Classes/BTKeyboardHelp.h; sourceTree = "<group>"; };
-		89CA8D269425C7C876DAA9C1C0CF7F20 /* BTHelp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BTHelp.modulemap; sourceTree = "<group>"; };
-		8EFDD197B9D61D6E7689749001A26D8C /* UIView+BTConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+BTConstraint.h"; path = "Classes/category/UIView+BTConstraint.h"; sourceTree = "<group>"; };
+		8003F78AD3DEA7713CC6275A19F0B975 /* BTHelp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BTHelp-Info.plist"; sourceTree = "<group>"; };
+		81623661D81C1ED3FCB3BAA2FD92DA85 /* BTLineView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTLineView.h; path = Classes/BTLineView.h; sourceTree = "<group>"; };
+		8CF33FC8F77A6ACDDC240DEB114A05C5 /* BTLocation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTLocation.h; path = Classes/BTLocation.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A47924032F77381825ECB6189762F2AA /* BTKeyboardHelp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTKeyboardHelp.m; path = Classes/BTKeyboardHelp.m; sourceTree = "<group>"; };
-		A6485DD2723CEA50AEBB1B69D34DE44A /* BTLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTLocation.m; path = Classes/BTLocation.m; sourceTree = "<group>"; };
-		A656464C41B65321E3DAE7E8365D4B6E /* BTHelp.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BTHelp.xcconfig; sourceTree = "<group>"; };
-		A7B78D8CF0B6768EDDB269F4FE57EA9A /* BTTimerHelp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTTimerHelp.h; path = Classes/BTTimerHelp.h; sourceTree = "<group>"; };
-		ADA12C8F8DAE572C7529E2DB828AF4DC /* UIImage+BTImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+BTImage.m"; path = "Classes/category/UIImage+BTImage.m"; sourceTree = "<group>"; };
+		9DE9BAA3EA86FC286D1DA470A09D9070 /* BTPermission.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTPermission.h; path = Classes/BTPermission.h; sourceTree = "<group>"; };
+		9F9A0C76B3D7BB2C82A282AE1614A651 /* BTModelProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTModelProperty.h; path = Classes/BaseJsonModel/BTModelProperty.h; sourceTree = "<group>"; };
+		AA9F6F069BDE7E4136DE5D6DB45D6E58 /* BTHelp.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BTHelp.xcconfig; sourceTree = "<group>"; };
 		AF4E35D17592B9CA941CFA2E4A3AC872 /* BTHelp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BTHelp.framework; path = BTHelp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1FABA015243914280060A8174BC518F /* BTHelp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BTHelp-dummy.m"; sourceTree = "<group>"; };
 		B35C2ADC2C4460F51540C60F1CBB69E6 /* Pods-BTDialogExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BTDialogExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		B3803E1FF48706B01A08263192A1A1CD /* BTKeyboardHelp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTKeyboardHelp.h; path = Classes/BTKeyboardHelp.h; sourceTree = "<group>"; };
+		B5192206BBD24DEEB023DD0D9297E976 /* BTModelAnalisys.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTModelAnalisys.h; path = Classes/BaseJsonModel/BTModelAnalisys.h; sourceTree = "<group>"; };
+		B781E6E027B6DCA3ECFDD0B8B918FF24 /* BTTextInputView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTTextInputView.h; path = Classes/textView/BTTextInputView.h; sourceTree = "<group>"; };
 		BA0F6F97AD4FD129DE0121A5ED82D171 /* Pods-BTDialogExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BTDialogExample-Info.plist"; sourceTree = "<group>"; };
-		BA949A5299467DC4A80295352494E320 /* UIView+BTConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+BTConstraint.m"; path = "Classes/category/UIView+BTConstraint.m"; sourceTree = "<group>"; };
-		BAA69B4EE1559B5B3C0E0FB03F66CBAF /* BTUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTUtils.h; path = Classes/BTUtils.h; sourceTree = "<group>"; };
-		BE971D956100F2D4D6E5DF2AA13F7E8F /* BTModelProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTModelProperty.h; path = Classes/BaseJsonModel/BTModelProperty.h; sourceTree = "<group>"; };
-		C4871FD8D016C27CBE860CD81F9018A6 /* BTUserModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTUserModel.h; path = Classes/account/BTUserModel.h; sourceTree = "<group>"; };
+		BA71A5C9CAFD7F5A89CB4897C193FB44 /* BTKeyboardHelp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTKeyboardHelp.m; path = Classes/BTKeyboardHelp.m; sourceTree = "<group>"; };
 		C690D14E898C75D36CD0D03817AFBA26 /* Pods-BTDialogExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BTDialogExample.debug.xcconfig"; sourceTree = "<group>"; };
-		C76862A8EFB15AF4A182146F06630F48 /* BTHelp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTHelp.h; path = Classes/BTHelp.h; sourceTree = "<group>"; };
-		CAB53B6B3C478ECF6432077B4A9E41F2 /* UIView+BTViewTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+BTViewTool.h"; path = "Classes/category/UIView+BTViewTool.h"; sourceTree = "<group>"; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CEC4F4DAE2A679EA252E1BEB49360414 /* BTModelProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTModelProperty.m; path = Classes/BaseJsonModel/BTModelProperty.m; sourceTree = "<group>"; };
 		D05E26A43673B51DB67D0051EC4EDCDF /* Pods-BTDialogExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BTDialogExample-umbrella.h"; sourceTree = "<group>"; };
+		D13FCAF6FC23AE7A8B55E95FB28A0C75 /* UIView+BTViewTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+BTViewTool.m"; path = "Classes/category/UIView+BTViewTool.m"; sourceTree = "<group>"; };
+		D2170DAB8395C208C3A30730405C1B09 /* BTButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTButton.m; path = Classes/BTButton.m; sourceTree = "<group>"; };
 		D442481C90ECBE2E918E7AFC03C33CCB /* Pods-BTDialogExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BTDialogExample-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E3706E917504B0E0AAA2B3EB4C682858 /* BTPermission.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTPermission.m; path = Classes/BTPermission.m; sourceTree = "<group>"; };
+		D7B84A15730F22FCB14BA4108255F39F /* BTIconHelp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTIconHelp.m; path = Classes/BTIconHelp.m; sourceTree = "<group>"; };
+		D8A13E9697DAA8DCE082826DE35950D4 /* BTUserModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTUserModel.h; path = Classes/account/BTUserModel.h; sourceTree = "<group>"; };
+		D98AB042745A22AAA30156939CA008EA /* BTTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTTextView.h; path = Classes/textView/BTTextView.h; sourceTree = "<group>"; };
+		DD33BCCD9AE3E3B8CE550FE8783907FF /* BTIconHelp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTIconHelp.h; path = Classes/BTIconHelp.h; sourceTree = "<group>"; };
 		E62AF18124868B417B2C5783826BB156 /* Pods-BTDialogExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BTDialogExample.modulemap"; sourceTree = "<group>"; };
-		E91B8D8258823EF7461699918CB62499 /* BTIconHelp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTIconHelp.h; path = Classes/BTIconHelp.h; sourceTree = "<group>"; };
-		E92ABF31B0D81C7D69DA92E5F83F33FD /* UIImage+BTImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+BTImage.h"; path = "Classes/category/UIImage+BTImage.h"; sourceTree = "<group>"; };
-		E95BE43FA3EBA2376C4273BD853E6DAA /* BTUserMananger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTUserMananger.m; path = Classes/account/BTUserMananger.m; sourceTree = "<group>"; };
-		EA4058CE0443BA28EA64F942431FF8B8 /* BTLineView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BTLineView.h; path = Classes/BTLineView.h; sourceTree = "<group>"; };
+		F922FE91FEFB925603039E490D88145E /* BTLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BTLocation.m; path = Classes/BTLocation.m; sourceTree = "<group>"; };
+		FC1E5FA7472AD33639C10FA3A8ADB50B /* BTHelp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BTHelp-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5C79F44BAE4DAB7879840D14BAC250F6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				41A25342B61DC9B4A00F4368CC2CD63A /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		643CB388256F41CCB3F01AF0F996FBCC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -140,54 +130,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7AB343B7485151B4D44D0754ECD574F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62B1E19603D124323B03BE603B2D34E8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		53B07CD8A3B8375C7872E17BAD0CE5A4 /* BTHelp */ = {
+		1EE21CFB722CF5F8C315ECDCABB855F9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				569A880F44B1DC9D032FF340EB9429B1 /* BTButton.h */,
-				38A0F9422ECF95A6903BE09F3F008EF8 /* BTButton.m */,
-				C76862A8EFB15AF4A182146F06630F48 /* BTHelp.h */,
-				E91B8D8258823EF7461699918CB62499 /* BTIconHelp.h */,
-				81627F67710EFB4809C052D3371C58AC /* BTIconHelp.m */,
-				846D569A02B12767E05B0C64EEFF72A2 /* BTKeyboardHelp.h */,
-				A47924032F77381825ECB6189762F2AA /* BTKeyboardHelp.m */,
-				EA4058CE0443BA28EA64F942431FF8B8 /* BTLineView.h */,
-				63ADE902C422C2E8F9D1F5488A14EDC4 /* BTLineView.m */,
-				21E0BD0686DCBA87AC106D0F72F0992D /* BTLocation.h */,
-				A6485DD2723CEA50AEBB1B69D34DE44A /* BTLocation.m */,
-				375B21725F3A9DF5E48B6D170D35107C /* BTMacro.h */,
-				1CB25B5BBC6DBBFA8E4CBAAE955FDED4 /* BTModel.h */,
-				6B9A7FB36A7A28CCDD38DAA36A815507 /* BTModel.m */,
-				552D01BE30791593660D3C7077FC198D /* BTModelAnalisys.h */,
-				209F196370DF8830CD29196B987B70B1 /* BTModelAnalisys.m */,
-				BE971D956100F2D4D6E5DF2AA13F7E8F /* BTModelProperty.h */,
-				16D54E519F06905028ED4BDF6D379ABA /* BTModelProperty.m */,
-				2E1A821E7D118A582185E6AC5F1BB1D0 /* BTPermission.h */,
-				E3706E917504B0E0AAA2B3EB4C682858 /* BTPermission.m */,
-				78F832F4DDC8C697293F3022F03DAFC6 /* BTTextInputView.h */,
-				154CF17CC2646F7F1D3A85A2E8438856 /* BTTextInputView.m */,
-				7FB65C7C04A51834DABFD5BB950DCE08 /* BTTextView.h */,
-				22197E3FB64C84B2922AA633F53CB7D3 /* BTTextView.m */,
-				A7B78D8CF0B6768EDDB269F4FE57EA9A /* BTTimerHelp.h */,
-				501781A3F8E5FC826722D4C27B5D4D4F /* BTTimerHelp.m */,
-				71552CF70A9276EB6FE530B4DAD12370 /* BTUserMananger.h */,
-				E95BE43FA3EBA2376C4273BD853E6DAA /* BTUserMananger.m */,
-				C4871FD8D016C27CBE860CD81F9018A6 /* BTUserModel.h */,
-				598CACE4E39632029570B1AC67C25186 /* BTUserModel.m */,
-				BAA69B4EE1559B5B3C0E0FB03F66CBAF /* BTUtils.h */,
-				11DF3A5D5083BC7710A7ECD6C04E9726 /* BTUtils.m */,
-				E92ABF31B0D81C7D69DA92E5F83F33FD /* UIImage+BTImage.h */,
-				ADA12C8F8DAE572C7529E2DB828AF4DC /* UIImage+BTImage.m */,
-				8EFDD197B9D61D6E7689749001A26D8C /* UIView+BTConstraint.h */,
-				BA949A5299467DC4A80295352494E320 /* UIView+BTConstraint.m */,
-				CAB53B6B3C478ECF6432077B4A9E41F2 /* UIView+BTViewTool.h */,
-				3773A3D3806D1590C2D41DB7E5381145 /* UIView+BTViewTool.m */,
-				C64A36B5E6879FB3214A0C3115C06A80 /* Support Files */,
+				8AEC0B2ABEFCADB8166906704425C1D0 /* BTHelp */,
 			);
-			name = BTHelp;
-			path = BTHelp;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		772EC05C85658A3154096F512282CC7A /* Products */ = {
@@ -207,6 +166,52 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		8AEC0B2ABEFCADB8166906704425C1D0 /* BTHelp */ = {
+			isa = PBXGroup;
+			children = (
+				0A7DC8A7E315CA1AC2DB149EDBFC580E /* BTButton.h */,
+				D2170DAB8395C208C3A30730405C1B09 /* BTButton.m */,
+				11144EBC6DE2ADA3AB9DAB617A847A71 /* BTHelp.h */,
+				DD33BCCD9AE3E3B8CE550FE8783907FF /* BTIconHelp.h */,
+				D7B84A15730F22FCB14BA4108255F39F /* BTIconHelp.m */,
+				B3803E1FF48706B01A08263192A1A1CD /* BTKeyboardHelp.h */,
+				BA71A5C9CAFD7F5A89CB4897C193FB44 /* BTKeyboardHelp.m */,
+				81623661D81C1ED3FCB3BAA2FD92DA85 /* BTLineView.h */,
+				33BDD6228FE143D664EAD2DD96F0DC6B /* BTLineView.m */,
+				8CF33FC8F77A6ACDDC240DEB114A05C5 /* BTLocation.h */,
+				F922FE91FEFB925603039E490D88145E /* BTLocation.m */,
+				4A5D62A91F3C3564B42FA3EE653C482E /* BTModel.h */,
+				185162F16613077927E1EE6DBD989E91 /* BTModel.m */,
+				B5192206BBD24DEEB023DD0D9297E976 /* BTModelAnalisys.h */,
+				7595F8DCB012296E08F1A5768AB56E9B /* BTModelAnalisys.m */,
+				9F9A0C76B3D7BB2C82A282AE1614A651 /* BTModelProperty.h */,
+				CEC4F4DAE2A679EA252E1BEB49360414 /* BTModelProperty.m */,
+				9DE9BAA3EA86FC286D1DA470A09D9070 /* BTPermission.h */,
+				62C40EB6DD1A40F1F7589C4F46C85C45 /* BTPermission.m */,
+				B781E6E027B6DCA3ECFDD0B8B918FF24 /* BTTextInputView.h */,
+				212D2EB5C022F4EEB56F5492EEE141B0 /* BTTextInputView.m */,
+				D98AB042745A22AAA30156939CA008EA /* BTTextView.h */,
+				7F81C53301DAE8DE9C30931B8CE51CD0 /* BTTextView.m */,
+				3A0C82BCD076A854C4B76FFB6D070919 /* BTTimerHelp.h */,
+				491890A412F546C5394D13795ED9295D /* BTTimerHelp.m */,
+				59188909B1F4C165A2D7BFD6B49AEBEA /* BTUserMananger.h */,
+				4F9D1395FC0DA91A8FFE59BEBE632291 /* BTUserMananger.m */,
+				D8A13E9697DAA8DCE082826DE35950D4 /* BTUserModel.h */,
+				0F05BAD385DF64E76308B52EAC5EFC74 /* BTUserModel.m */,
+				2B915AB57B1F0FA52A47388C59C5503E /* BTUtils.h */,
+				0A628DC7D0828F7EB3A4CB385EE60933 /* BTUtils.m */,
+				4208EC13E39E7B5E8E3528D486486D0B /* UIImage+BTImage.h */,
+				00B0B70D40B5DF48BD591C4CEE7CA95F /* UIImage+BTImage.m */,
+				3723F29243058C3CBC83045C1AA9AAA2 /* UIView+BTConstraint.h */,
+				46EBE999496FD549B3E01503996720A5 /* UIView+BTConstraint.m */,
+				7EE59E12FB8DB526F177E57C4AB3D50C /* UIView+BTViewTool.h */,
+				D13FCAF6FC23AE7A8B55E95FB28A0C75 /* UIView+BTViewTool.m */,
+				F3CFBA3CE46596D33B62D9F3B60CA171 /* Support Files */,
+			);
+			name = BTHelp;
+			path = BTHelp;
+			sourceTree = "<group>";
+		};
 		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,26 +220,12 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		C64A36B5E6879FB3214A0C3115C06A80 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				89CA8D269425C7C876DAA9C1C0CF7F20 /* BTHelp.modulemap */,
-				A656464C41B65321E3DAE7E8365D4B6E /* BTHelp.xcconfig */,
-				B1FABA015243914280060A8174BC518F /* BTHelp-dummy.m */,
-				44FE93BB8545C2BE88EE5D0470DD3964 /* BTHelp-Info.plist */,
-				05964EC640CC66F2C1ECEB867DDFAA20 /* BTHelp-prefix.pch */,
-				2480CCA20B6041FB9B9603BE4DAC8D20 /* BTHelp-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/BTHelp";
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				D6CFAE05CA531D403BAD7F6505BD00C3 /* Pods */,
+				1EE21CFB722CF5F8C315ECDCABB855F9 /* Pods */,
 				772EC05C85658A3154096F512282CC7A /* Products */,
 				8114B6E255A4FACA0D3DBAFB762F9B5D /* Targets Support Files */,
 			);
@@ -246,14 +237,6 @@
 				9B055D0CFEA43187E72B03DED11F5662 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D6CFAE05CA531D403BAD7F6505BD00C3 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				53B07CD8A3B8375C7872E17BAD0CE5A4 /* BTHelp */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		EF49A4E9E62246BD3E9E72C1C92A480E /* Pods-BTDialogExample */ = {
@@ -273,42 +256,55 @@
 			path = "Target Support Files/Pods-BTDialogExample";
 			sourceTree = "<group>";
 		};
+		F3CFBA3CE46596D33B62D9F3B60CA171 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3FFC0B79F8E52CA6B06077CF5CA5AFFE /* BTHelp.modulemap */,
+				AA9F6F069BDE7E4136DE5D6DB45D6E58 /* BTHelp.xcconfig */,
+				781367074629036F34316BCADDAAF82E /* BTHelp-dummy.m */,
+				8003F78AD3DEA7713CC6275A19F0B975 /* BTHelp-Info.plist */,
+				035937A9C9AC16009D7B7A05C3373B10 /* BTHelp-prefix.pch */,
+				FC1E5FA7472AD33639C10FA3A8ADB50B /* BTHelp-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BTHelp";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		80DBD3970D2649361BE7D831C3DB0FC1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BD0C794748B545147EE2116D0C7B66D /* BTButton.h in Headers */,
+				420C298C898BDA8B28859AECFD38FE21 /* BTHelp-umbrella.h in Headers */,
+				D38646C47AF9A0AF70328A732A060CDC /* BTHelp.h in Headers */,
+				B10143290849E43AC16B2BD473AC48E8 /* BTIconHelp.h in Headers */,
+				593B76BA5824E10F6097313BD7A53407 /* BTKeyboardHelp.h in Headers */,
+				EA41D1D904325438EE1270AA40659C30 /* BTLineView.h in Headers */,
+				B272AE422A1CC05D022BF0AA4188F532 /* BTLocation.h in Headers */,
+				0B394D270E1D8428685C9CE3BAEBDD00 /* BTModel.h in Headers */,
+				34BD54ACD1C6BAB1B9C6F87ABBB81432 /* BTModelAnalisys.h in Headers */,
+				7429FE3A3C30B67AA0C89C2857D26063 /* BTModelProperty.h in Headers */,
+				DDB146389466AD9B6FB3CA8A3A896832 /* BTPermission.h in Headers */,
+				1AF1D4B7266B1695CF9957782F080EDC /* BTTextInputView.h in Headers */,
+				93AE2BFEFB61AA94BE795D524588FED0 /* BTTextView.h in Headers */,
+				A63ECA0AC3F5B824905215CECE495C40 /* BTTimerHelp.h in Headers */,
+				B0AD79924EAA6C468B20BDCF8C708F84 /* BTUserMananger.h in Headers */,
+				45A06B56E09A3E699B503177BDB59670 /* BTUserModel.h in Headers */,
+				0E02928098573E1B3239BCED04E15E60 /* BTUtils.h in Headers */,
+				3E3D510B8E704374120C2D0954800A68 /* UIImage+BTImage.h in Headers */,
+				82892007D68649B0988E960957C629E9 /* UIView+BTConstraint.h in Headers */,
+				B5AD95545C854E51BCC8629FC0BD8A66 /* UIView+BTViewTool.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		995E5B00CDFA567F69DCA2B68686ECDD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				11DFE724872C2CAE5FFA76E1F751982C /* Pods-BTDialogExample-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FB109A448A76B699E850557A749D29F1 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ABEE8DC0E1521F75EA45F4CB4EB7E059 /* BTButton.h in Headers */,
-				10E2004338545162E237EBDED11F4BD3 /* BTHelp-umbrella.h in Headers */,
-				16C533DBD5E0FB55074A01D05D0F5ED9 /* BTHelp.h in Headers */,
-				CC62EB960038D2AEDB25FB8FC19103BD /* BTIconHelp.h in Headers */,
-				63946E17C06C890D12B28D74D7723330 /* BTKeyboardHelp.h in Headers */,
-				33264DBEE7D859ABBF15A2A68EE6F176 /* BTLineView.h in Headers */,
-				17DB7871E013E6DCAE04E2BDE331AF54 /* BTLocation.h in Headers */,
-				5D218F786FDD894C8B676663BDC17594 /* BTMacro.h in Headers */,
-				03D0C76A11A30B2F28C587619F2DB3CB /* BTModel.h in Headers */,
-				20BA5D343ABF3A91AF2C3732731D4C18 /* BTModelAnalisys.h in Headers */,
-				77F020897A2AA84C3D92E3BA163263A9 /* BTModelProperty.h in Headers */,
-				43FE0531C1D1A3DCF99F303278FB6D59 /* BTPermission.h in Headers */,
-				61C8FAF4E0F13A02FAD5154B231FE98D /* BTTextInputView.h in Headers */,
-				21B5297E0E565EFABF069347BE7985F0 /* BTTextView.h in Headers */,
-				52A243E4101033D518F8D668368DBAE5 /* BTTimerHelp.h in Headers */,
-				9015183CD4163E74DABC19035081D5CB /* BTUserMananger.h in Headers */,
-				641FC1E2325FABA58E3D16D346A876DB /* BTUserModel.h in Headers */,
-				4CA0B858458F0FB0F0A2B7BF2B9D769E /* BTUtils.h in Headers */,
-				2C2849ABCEE3056D8C6EA4B45DD0AD5A /* UIImage+BTImage.h in Headers */,
-				F5A8FCF71F9E62D997186A5EDE6B8B98 /* UIView+BTConstraint.h in Headers */,
-				A3879A804DB921885959FA7EEBA060D4 /* UIView+BTViewTool.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,14 +330,14 @@
 			productReference = 25A8B6897D597F149B88DBF579DBC394 /* Pods_BTDialogExample.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BCF3FD0DA5A0173FC518A48928E1F951 /* BTHelp */ = {
+		F808644F6EF1EF8F68AE86264D5B06A5 /* BTHelp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A22C06FE0967BFCEB6F66286B5BB0F2 /* Build configuration list for PBXNativeTarget "BTHelp" */;
+			buildConfigurationList = 7E8D1C1BD4A317D522ADEBAD3AEC4185 /* Build configuration list for PBXNativeTarget "BTHelp" */;
 			buildPhases = (
-				FB109A448A76B699E850557A749D29F1 /* Headers */,
-				BE96E70788C63AD8AA6C7B92B1A5B99D /* Sources */,
-				5C79F44BAE4DAB7879840D14BAC250F6 /* Frameworks */,
-				E5B9BAFFC88F89963FF3A4055B18EDA2 /* Resources */,
+				80DBD3970D2649361BE7D831C3DB0FC1 /* Headers */,
+				0BE38DB438CDAD9F204454D11E218EB2 /* Sources */,
+				7AB343B7485151B4D44D0754ECD574F0 /* Frameworks */,
+				FA0604E5F8A41E7D5AF8E3AF46C721CE /* Resources */,
 			);
 			buildRules = (
 			);
@@ -373,7 +369,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BCF3FD0DA5A0173FC518A48928E1F951 /* BTHelp */,
+				F808644F6EF1EF8F68AE86264D5B06A5 /* BTHelp */,
 				62F3C9BB088228544D2F25CCFD1C8588 /* Pods-BTDialogExample */,
 			);
 		};
@@ -387,7 +383,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E5B9BAFFC88F89963FF3A4055B18EDA2 /* Resources */ = {
+		FA0604E5F8A41E7D5AF8E3AF46C721CE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -397,37 +393,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0BE38DB438CDAD9F204454D11E218EB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				035E6FCDFC8C67703574BFFFD0660863 /* BTButton.m in Sources */,
+				D429CA77F9DAB01009F64B081E41A77C /* BTHelp-dummy.m in Sources */,
+				2A7125A94D4080B191802106BEC0C396 /* BTIconHelp.m in Sources */,
+				B2747C7A0124495B513AE5DCF34E1586 /* BTKeyboardHelp.m in Sources */,
+				F9CFF52AF33D8A0FDC9762D4C385A46C /* BTLineView.m in Sources */,
+				63FD71F4892FEAACC1CE494DD544AEDC /* BTLocation.m in Sources */,
+				9D42833F2353EB40AC9A7C5C5253AEB7 /* BTModel.m in Sources */,
+				E3C5E95826E041BC0F363D5265A99CF5 /* BTModelAnalisys.m in Sources */,
+				4B47CBE938E69F97C13580EDA0E9F760 /* BTModelProperty.m in Sources */,
+				9C0CBF11170BF475A0755D8D62B4BDB7 /* BTPermission.m in Sources */,
+				C0696D74F09F7116858D1DD8A4DE5437 /* BTTextInputView.m in Sources */,
+				B1EEF947149AD1C15C11688D6904FFB4 /* BTTextView.m in Sources */,
+				3D029DE2B1243FBBCB2310E2769C0F3E /* BTTimerHelp.m in Sources */,
+				4A740DFA381AC9BEF27612BE06D42F11 /* BTUserMananger.m in Sources */,
+				5E88C6BC429926CFCAA287D38EE859FB /* BTUserModel.m in Sources */,
+				B6BED5102FA5D6C87BB95B75B9919217 /* BTUtils.m in Sources */,
+				939B752E562CDF0678418D40DEE8FB5B /* UIImage+BTImage.m in Sources */,
+				A9B487BD78FCA9172FE7973456F16FA7 /* UIView+BTConstraint.m in Sources */,
+				B277FE000B1F531CFD74E139E9F01BC6 /* UIView+BTViewTool.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1F256291AE8602E2B2E93EC46F9524CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3FCB1727410589E0E66769D3201C8850 /* Pods-BTDialogExample-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE96E70788C63AD8AA6C7B92B1A5B99D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				96930ACBCECEC5068337B89C73255C31 /* BTButton.m in Sources */,
-				8267269F1A492D457D2795A4185C04BE /* BTHelp-dummy.m in Sources */,
-				72BF5F04EDFE6C4E4BC0B809382EF093 /* BTIconHelp.m in Sources */,
-				FD2946E7B94CBB6519BA14B36D79DB77 /* BTKeyboardHelp.m in Sources */,
-				6DB982EFBA59F51DD1EEB63581D30748 /* BTLineView.m in Sources */,
-				07358165EC6EC75B6F88C3622A56B6DC /* BTLocation.m in Sources */,
-				7EF5251DC7B651EBFBD925FD88C83620 /* BTModel.m in Sources */,
-				5E732B417D1132217594063FB93BAA30 /* BTModelAnalisys.m in Sources */,
-				6C226C4090960F0680FE289AEE022B18 /* BTModelProperty.m in Sources */,
-				B422CB4957156980239799DCD39E7E53 /* BTPermission.m in Sources */,
-				D33C5B4F030B4B14BE07C267824D5197 /* BTTextInputView.m in Sources */,
-				225A4391E83ECDD988B25F53F84F7483 /* BTTextView.m in Sources */,
-				F75CA7BE55DA3C2472DD62861E44B06A /* BTTimerHelp.m in Sources */,
-				F7A4D0D12E966990BBA2AE612EF760C4 /* BTUserMananger.m in Sources */,
-				83B95C66F426E79A081450E3676010FE /* BTUserModel.m in Sources */,
-				36D188FF185275D55BC85C1506792F6D /* BTUtils.m in Sources */,
-				13E4956517283EF477191DEB6855EC8D /* UIImage+BTImage.m in Sources */,
-				F175A907B6E38C5907F006F5D5E5F051 /* UIView+BTConstraint.m in Sources */,
-				C8157D013B51E2768A21E07987FCE53A /* UIView+BTViewTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,15 +433,15 @@
 		03EBAD4B894280AB97992DA967411301 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BTHelp;
-			target = BCF3FD0DA5A0173FC518A48928E1F951 /* BTHelp */;
+			target = F808644F6EF1EF8F68AE86264D5B06A5 /* BTHelp */;
 			targetProxy = 9B319B8A690A5ACE4FE55788109D8425 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		303BFEC6F371E7A4744F8F43D5CD37FC /* Debug */ = {
+		135323E85C94CB5D8B144F4358F29C1F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A656464C41B65321E3DAE7E8365D4B6E /* BTHelp.xcconfig */;
+			baseConfigurationReference = AA9F6F069BDE7E4136DE5D6DB45D6E58 /* BTHelp.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -537,6 +533,41 @@
 			};
 			name = Release;
 		};
+		A64278BCC98C8492DCB45F0C5537A457 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA9F6F069BDE7E4136DE5D6DB45D6E58 /* BTHelp.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BTHelp/BTHelp-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BTHelp/BTHelp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/BTHelp/BTHelp.modulemap";
+				PRODUCT_MODULE_NAME = BTHelp;
+				PRODUCT_NAME = BTHelp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		BF6CD8CCF6998FDF2A0E9889B7444C86 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5A7410586E6C5171B939BF76A93669A7 /* Pods-BTDialogExample.release.xcconfig */;
@@ -569,41 +600,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		BFEDF586BC247CCD350EB393EC26A034 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A656464C41B65321E3DAE7E8365D4B6E /* BTHelp.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BTHelp/BTHelp-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BTHelp/BTHelp-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/BTHelp/BTHelp.modulemap";
-				PRODUCT_MODULE_NAME = BTHelp;
-				PRODUCT_NAME = BTHelp;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -725,11 +721,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A22C06FE0967BFCEB6F66286B5BB0F2 /* Build configuration list for PBXNativeTarget "BTHelp" */ = {
+		7E8D1C1BD4A317D522ADEBAD3AEC4185 /* Build configuration list for PBXNativeTarget "BTHelp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				303BFEC6F371E7A4744F8F43D5CD37FC /* Debug */,
-				BFEDF586BC247CCD350EB393EC26A034 /* Release */,
+				135323E85C94CB5D8B144F4358F29C1F /* Debug */,
+				A64278BCC98C8492DCB45F0C5537A457 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -12,6 +12,149 @@
 
 @implementation BTUtils
 
++ (CGFloat)NAV_HEIGHT{
+    return BTUtils.NAVCONTENT_HEIGHT+BTUtils.STATUS_BAR_HEIGHT;
+}
+
++ (CGFloat)NAVCONTENT_HEIGHT{
+    return 44;
+}
+
++ (CGFloat)STATUS_BAR_HEIGHT{
+    return [[UIApplication sharedApplication] statusBarFrame].size.height;
+}
+
++ (CGFloat)HOME_INDICATOR_HEIGHT{
+    if (BTUtils.UI_IS_IPHONEX) {
+        return 34;
+    }else{
+        return 0;
+    }
+}
+
++ (CGFloat)HOME_INDICATOR_HEIGHT_SMALL{
+    if (BTUtils.UI_IS_IPHONEX) {
+        return 14;
+    }else{
+        return 0;
+    }
+}
+
++ (CGFloat)TAB_HEIGHT{
+    if (BTUtils.UI_IS_IPHONEX) {
+        return 49+34;
+    }else{
+        return 49;
+    }
+}
+
++ (BOOL)UI_IS_IPHONEX{
+    if (BTUtils.SCREEN_W == 375.f && BTUtils.SCREEN_H == 812.f) {
+        return YES;
+    }
+    
+    if (BTUtils.SCREEN_W == 414.f && BTUtils.SCREEN_H == 896.f) {
+        return YES;
+    }
+    
+    return NO;
+}
+
++ (UIApplication*)APP{
+    return [UIApplication sharedApplication];
+}
+
++ (UIWindow*)APP_WINDOW{
+    return [UIApplication sharedApplication].delegate.window;
+}
+
++ (UIViewController*)ROOT_VC{
+    return [UIApplication sharedApplication].delegate.window.rootViewController;
+}
+
++ (NSObject<UIApplicationDelegate>*)APP_DELEGATE{
+    return [UIApplication sharedApplication].delegate;
+}
+
++ (NSNotificationCenter*)NOTIFI_CENTER{
+    return [NSNotificationCenter defaultCenter];
+}
+
++ (CGFloat)SYS_VERION{
+    return [[UIDevice currentDevice].systemVersion doubleValue];
+}
+
++ (CGFloat)SCREEN_W{
+    return [[UIScreen mainScreen] bounds].size.width;
+}
+
++ (CGFloat)SCREEN_H{
+    return [[UIScreen mainScreen] bounds].size.height;
+}
+
++ (CGRect)SCREEN_BOUNDS{
+    return [UIScreen mainScreen].bounds;
+}
+
++ (CGFloat)SCALE_6_W:(CGFloat)width{
+    return (width)*(BTUtils.SCREEN_W/375.0f);
+}
+
++ (CGFloat)SCALE_6_H:(CGFloat)height{
+    return (height)*(BTUtils.SCREEN_H/375.0f);
+}
+
++ (UIFont*)SYS_FONT_SIZE:(CGFloat)size weight:(UIFontWeight)weight{
+    return [UIFont systemFontOfSize:size weight:weight];
+}
+
++ (UIFont*)SYS_FONT_SIZE:(CGFloat)size{
+    return [BTUtils SYS_FONT_SIZE:size weight:UIFontWeightThin];
+}
+
+
++ (UIColor*)RGB:(CGFloat)R G:(CGFloat)G B:(CGFloat)B{
+    return [UIColor colorWithRed:(R)/255.0 green:(G)/255.0 blue:(B)/255.0 alpha:1];
+}
+
++ (UIColor*)RGBA:(CGFloat)R G:(CGFloat)G B:(CGFloat)B A:(CGFloat)A{
+    return [UIColor colorWithRed:(R)/255.0 green:(G)/255.0 blue:(B)/255.0 alpha:A];
+}
+
++ (UIColor*)RANDOM_COLOR{
+    return [BTUtils RGB:arc4random_uniform(256) G:arc4random_uniform(256) B:arc4random_uniform(256)];
+}
+
++ (NSString*)SAFE_STR:(NSString*)str{
+    if ([BTUtils isEmpty:str]) {
+        return @"";
+    }
+    
+    return str;
+}
+
++ (UIImage*)PLACE_HOLDER_IMAGE{
+    return [UIImage imageNamed:@"bt_default_placeholder"];
+}
+
++ (NSURL*)URL:(NSString*)url{
+    if (![BTUtils isEmpty:url]) {
+        return [NSURL URLWithString:url];
+    }
+    return [NSURL URLWithString:@"http://www.baidu.com"];
+}
+
+
++ (void)openSetVc{
+    if (@available(iOS 10.0, *)) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{UIApplicationOpenURLOptionsSourceApplicationKey : @YES} completionHandler:^(BOOL success) {
+            
+        }];
+    } else {
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] ];
+    }
+    
+}
 
 
 +(BOOL)isEmpty:(NSString*)str{
@@ -171,9 +314,6 @@
     }
 }
 
-+(NSString *)getVersion{
-    return [[[NSBundle mainBundle]infoDictionary]objectForKey:@"CFBundleShortVersionString"];
-}
 
 
 +(NSDate*)getCurrentDateWithSystemTimeZone{

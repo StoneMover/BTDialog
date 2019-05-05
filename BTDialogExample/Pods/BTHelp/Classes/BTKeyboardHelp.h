@@ -12,9 +12,9 @@
 @protocol BTBtnAutoLayoutDelegate<NSObject>
 
 @optional
--(void)BTKeyBoardWillShow:(CGFloat)keyboardH;
--(void)BTBKeyBoardWillHide;
--(void)BTKeyBoardMove:(CGFloat)moveY;
+-(void)keyBoardWillShow:(CGFloat)keyboardH;
+-(void)keyBoardWillHide;
+-(void)keyBoardMove:(CGFloat)moveY;
 
 @end
 

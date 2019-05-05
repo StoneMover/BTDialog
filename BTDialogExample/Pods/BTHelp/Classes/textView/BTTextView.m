@@ -110,16 +110,6 @@
         self.labelPlaceHolder.hidden=NO;
     }
     
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    
-    paragraphStyle.lineSpacing = self.lineSpeac;// 字体的行间距
-    
-    
-    if (self.font&&self.textColor) {
-        NSDictionary *attributes = @{NSFontAttributeName:self.font,NSParagraphStyleAttributeName:paragraphStyle,NSForegroundColorAttributeName:self.textColor};
-        self.attributedText = [[NSAttributedString alloc] initWithString:self.text attributes:attributes];
-    }
-    
     
     if (self.text&&self.maxStrNum!=0&&self.text.length>self.maxStrNum) {
         self.text=[self.text substringToIndex:self.maxStrNum];

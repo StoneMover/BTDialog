@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) BTTextInputBlock block;
 
+@property (nonatomic, strong) UIColor * commitColor;
+
 - (void)show:(UIView*)view;
 
 @end

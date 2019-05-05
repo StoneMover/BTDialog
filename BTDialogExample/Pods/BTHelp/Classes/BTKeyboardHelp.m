@@ -58,8 +58,8 @@
 - (void)keyboardWillHide:(NSNotification *)not{
     _isKeyBoardOpen=NO;
     self.window.frame = CGRectMake(self.window.frame.origin.x,self.windowOriY, self.window.frame.size.width, self.window.frame.size.height);
-    if(self.delegate&&[self.delegate respondsToSelector:@selector(BTBKeyBoardWillHide)]){
-        [self.delegate BTBKeyBoardWillHide];
+    if(self.delegate&&[self.delegate respondsToSelector:@selector(keyBoardWillHide)]){
+        [self.delegate keyBoardWillHide];
     }
     self.resutlY=0;
 }
@@ -87,12 +87,12 @@
         _isKeyBoardOpen=YES;
     }
     
-    if (self.delegate&&[self.delegate respondsToSelector:@selector(BTKeyBoardWillShow:)]) {
-        [self.delegate BTKeyBoardWillShow:keyboardHeight];
+    if (self.delegate&&[self.delegate respondsToSelector:@selector(keyBoardWillShow:)]) {
+        [self.delegate keyBoardWillShow:keyboardHeight];
     }
     self.resutlY=result;
-    if (self.delegate&&[self.delegate respondsToSelector:@selector(BTKeyBoardMove:)]) {
-        [self.delegate BTKeyBoardMove:result];
+    if (self.delegate&&[self.delegate respondsToSelector:@selector(keyBoardMove:)]) {
+        [self.delegate keyBoardMove:result];
     }
     
 }

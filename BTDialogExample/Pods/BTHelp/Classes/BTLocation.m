@@ -9,6 +9,7 @@
 #import "BTLocation.h"
 #import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
+#import "BTUtils.h"
 
 @interface BTLocation()<CLLocationManagerDelegate>
 
@@ -94,9 +95,7 @@
     }];
     
     UIAlertAction * actionOk =[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{UIApplicationOpenURLOptionsSourceApplicationKey : @YES} completionHandler:^(BOOL success) {
-            
-        }];
+        [BTUtils openSetVc];
     }];
     
     [alertController addAction:actionCancel];

@@ -9,35 +9,85 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+
 @interface BTUtils : NSObject
 
-#pragma mark 常用方法汇总
+#pragma mark 常用方法
 
-+(BOOL)isEmpty:(NSString*)str;
++ (CGFloat)NAV_HEIGHT;
+
++ (CGFloat)NAVCONTENT_HEIGHT;
+
++ (CGFloat)STATUS_BAR_HEIGHT;
+
++ (CGFloat)HOME_INDICATOR_HEIGHT;
+
++ (CGFloat)HOME_INDICATOR_HEIGHT_SMALL;
+
++ (CGFloat)TAB_HEIGHT;
+
++ (BOOL)UI_IS_IPHONEX;
+
++ (UIApplication*)APP;
+
++ (UIWindow*)APP_WINDOW;
+
++ (UIViewController*)ROOT_VC;
+
++ (NSObject<UIApplicationDelegate>*)APP_DELEGATE;
+
++ (NSNotificationCenter*)NOTIFI_CENTER;
+
++ (CGFloat)SYS_VERION;
+
++ (CGFloat)SCREEN_W;
+
++ (CGFloat)SCREEN_H;
+
++ (CGRect)SCREEN_BOUNDS;
+
++ (CGFloat)SCALE_6_W:(CGFloat)value;
+
++ (CGFloat)SCALE_6_H:(CGFloat)value;
+
++ (UIFont*)SYS_FONT_SIZE:(CGFloat)size weight:(UIFontWeight)weight;
+
++ (UIFont*)SYS_FONT_SIZE:(CGFloat)size;
+
++ (UIColor*)RGB:(CGFloat)R G:(CGFloat)G B:(CGFloat)B;
+
++ (UIColor*)RGBA:(CGFloat)R G:(CGFloat)G B:(CGFloat)B A:(CGFloat)A;
+
++ (UIColor*)RANDOM_COLOR;
+
++ (NSString*)SAFE_STR:(NSString*)str;
+
++ (UIImage*)PLACE_HOLDER_IMAGE;
+
++ (NSURL*)URL:(NSString*)url;
+
++ (void)openSetVc;
+
++ (BOOL)isEmpty:(NSString*)str;
 
 //将UIimage重绘成圆形,如果不是等宽,等高则绘制中心图片
-+(UIImage*)circleImage:(UIImage*)image;
++ (UIImage*)circleImage:(UIImage*)image;
 
 //设置ios 推送bage 数字
-+(void)setAppIconNotifiNum:(NSString*)num;
++ (void)setAppIconNotifiNum:(NSString*)num;
 
 
 //计算文字的高度,
-+(CGFloat)calculateStrHeight:(NSString*)str width:(CGFloat)width font:(UIFont*)font;
-+(CGFloat)calculateLabelHeight:(UILabel*)label;
++ (CGFloat)calculateStrHeight:(NSString*)str width:(CGFloat)width font:(UIFont*)font;
 
-+(CGFloat)calculateStrWidth:(NSString*)str height:(CGFloat)height font:(UIFont*)font;
-+(CGFloat)calculateLabelWidth:(UILabel*)label;
++ (CGFloat)calculateLabelHeight:(UILabel*)label;
+
++ (CGFloat)calculateStrWidth:(NSString*)str height:(CGFloat)height font:(UIFont*)font;
+
++ (CGFloat)calculateLabelWidth:(UILabel*)label;
 
 //将阿拉伯数字转换为中文数字
-+(NSString *)translationArabicNum:(NSInteger)arabicNum;
-
-//获取系统版本号
-+(NSString *)getVersion;
-
-
-
++ (NSString *)translationArabicNum:(NSInteger)arabicNum;
 
 #pragma mark NSDate常用函数
 //获取当前的日期,根据系统的时区
@@ -143,15 +193,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark 加密&解密
 +(NSString*)base64Decode:(NSString*)str;
+
 +(NSString*)base64Encode:(NSString*)str;
+
 +(NSString*)MD5:(NSString*)str;
 
 #pragma mark storyboard
 
 +(UIViewController*)createVc:(NSString*)storyBoardName;
+
 +(UIViewController*)createVc:(NSString*)storyBoardId storyBoardName:(NSString*)name;
+
 
 
 @end
 
-NS_ASSUME_NONNULL_END
+
