@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "BTDialog"
-  s.version          = "0.0.2"
+  s.version          = "0.0.3"
   s.summary          = "An easy Dialog View"
   s.homepage         = "https://github.com/StoneMover/BTDialog"
   s.license          = 'MIT'

@@ -8,7 +8,7 @@
 
 #import "BTDialogTableView.h"
 #import "BTDialogTableViewCell.h"
-#import <BTHelp/BTUtils.h>
+
 
 int const BT_SHOW_VIEW_MAX_H=300;
 

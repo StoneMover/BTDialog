@@ -31,29 +31,30 @@
 }
 
 - (IBAction)click:(id)sender {
-//    if (self.viewCustomer) {
-//        [self.dialogView show:self.view withAnimStyle:BTDialogAnimStyleAndroid];
-//        return;
-//    }
-//    self.viewCustomer=[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width-100, 300)];
-//    self.viewCustomer.backgroundColor=[UIColor redColor];
-//
-//    self.dialogView=[[BTDialogView alloc] init:self.viewCustomer withLocation:BTDialogLocationCenter];
-//    self.dialogView.clickEmptyAreaDismiss=YES;
-//    [self.dialogView show:self.view withAnimStyle:BTDialogAnimStyleAndroid];
-    
-    
-    if (!self.dialogTableView) {
-        self.dialogTableView=[[BTDialogTableView alloc] initDialogTableView:BTDialogLocationBottom];
-        self.dialogTableView.dataArray=[self.dialogTableView createDataWithStr:@[@"Jack",@"Lily",@"Sam",@"James"]];
-        self.dialogTableView.headView.labelTitle.text=@"选择你的朋友";
-        self.dialogTableView.headView.lineView.color=[UIColor redColor];
-        self.dialogTableView.blockTable = ^BOOL(NSInteger index) {
-            return YES;
-        };
-        self.dialogTableView.isNeedHead=YES;
+    if (self.viewCustomer) {
+        [self.dialogView show:self.view withAnimStyle:BTDialogAnimStyleAndroid];
+        return;
     }
-    [self.dialogTableView show:self.view];
+    self.viewCustomer=[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width-100, 300)];
+    self.viewCustomer.backgroundColor=[UIColor redColor];
+
+    self.dialogView=[[BTDialogView alloc] init:self.viewCustomer withLocation:BTDialogLocationBottom];
+    [self.dialogView autoFullScreenSize];
+    self.dialogView.clickEmptyAreaDismiss=YES;
+    [self.dialogView show:self.view withAnimStyle:BTDialogAnimStyleAndroid];
+    
+    
+//    if (!self.dialogTableView) {
+//        self.dialogTableView=[[BTDialogTableView alloc] initDialogTableView:BTDialogLocationBottom];
+//        self.dialogTableView.dataArray=[self.dialogTableView createDataWithStr:@[@"Jack",@"Lily",@"Sam",@"James"]];
+//        self.dialogTableView.headView.labelTitle.text=@"选择你的朋友";
+//        self.dialogTableView.headView.lineView.color=[UIColor redColor];
+//        self.dialogTableView.blockTable = ^BOOL(NSInteger index) {
+//            return YES;
+//        };
+//        self.dialogTableView.isNeedHead=YES;
+//    }
+//    [self.dialogTableView show:self.view];
 }
 
 @end

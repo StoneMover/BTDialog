@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <BTHelp/UIView+BTViewTool.h>
-
+#import <BTHelp/BTUtils.h>
 
 typedef NS_ENUM(NSInteger,BTDialogAnimStyle) {
     BTDialogAnimStyleStyleDefault=0,//类似系统对话框动画
@@ -53,6 +53,8 @@ typedef void (^BTDialogDissmisFinishBlock)(void);
 //消失
 - (void)dismiss;
 
+//当为全面屏的时候位置在底部，则自动为view的高度增加
+- (void)autoFullScreenSize;
 
 
 @end

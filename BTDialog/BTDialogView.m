@@ -230,4 +230,10 @@
     self.showView.layer.cornerRadius=cornerNum;
 }
 
+- (void)autoFullScreenSize{
+    if (self.location==BTDialogLocationBottom) {
+        self.showView.height+=BTUtils.HOME_INDICATOR_HEIGHT;
+    }
+}
+
 @end
