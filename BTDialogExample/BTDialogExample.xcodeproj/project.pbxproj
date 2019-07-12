@@ -16,6 +16,7 @@
 		9B6DE79422532E4D005F6EEF /* BTDialogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6DE78D22532E4D005F6EEF /* BTDialogTableViewCell.m */; };
 		9B6DE79622532E4D005F6EEF /* BTDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6DE78F22532E4D005F6EEF /* BTDialogView.m */; };
 		9B6DE79B22532F5B005F6EEF /* BTDialogTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B6DE79A22532F5B005F6EEF /* BTDialogTableView.m */; };
+		9B72396722D8224D00042FC0 /* UIView+BTEasyDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B72396622D8224D00042FC0 /* UIView+BTEasyDialog.m */; };
 		9BAAAC1F226231F200ED207D /* TestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BAAAC1D226231F200ED207D /* TestTableViewCell.m */; };
 		9BAAAC20226231F200ED207D /* TestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BAAAC1E226231F200ED207D /* TestTableViewCell.xib */; };
 		9BAAAC2F2264659C00ED207D /* BTDialogBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9BAAAC2E2264659B00ED207D /* BTDialogBundle.bundle */; };
@@ -40,6 +41,8 @@
 		9B6DE79222532E4D005F6EEF /* BTDialogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDialogTableViewCell.h; sourceTree = "<group>"; };
 		9B6DE79922532F5B005F6EEF /* BTDialogTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTDialogTableView.h; sourceTree = "<group>"; };
 		9B6DE79A22532F5B005F6EEF /* BTDialogTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTDialogTableView.m; sourceTree = "<group>"; };
+		9B72396522D8224D00042FC0 /* UIView+BTEasyDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BTEasyDialog.h"; sourceTree = "<group>"; };
+		9B72396622D8224D00042FC0 /* UIView+BTEasyDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BTEasyDialog.m"; sourceTree = "<group>"; };
 		9BAAAC1C226231F200ED207D /* TestTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableViewCell.h; sourceTree = "<group>"; };
 		9BAAAC1D226231F200ED207D /* TestTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableViewCell.m; sourceTree = "<group>"; };
 		9BAAAC1E226231F200ED207D /* TestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTableViewCell.xib; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 		9B6DE78922532E4D005F6EEF /* BTDialog */ = {
 			isa = PBXGroup;
 			children = (
+				9B72396522D8224D00042FC0 /* UIView+BTEasyDialog.h */,
+				9B72396622D8224D00042FC0 /* UIView+BTEasyDialog.m */,
 				9B6DE78B22532E4D005F6EEF /* BTDialogView.h */,
 				9B6DE78F22532E4D005F6EEF /* BTDialogView.m */,
 				9B6DE79922532F5B005F6EEF /* BTDialogTableView.h */,
@@ -302,6 +307,7 @@
 				9BAAAC1F226231F200ED207D /* TestTableViewCell.m in Sources */,
 				9B6DE79422532E4D005F6EEF /* BTDialogTableViewCell.m in Sources */,
 				9B6DE79622532E4D005F6EEF /* BTDialogView.m in Sources */,
+				9B72396722D8224D00042FC0 /* UIView+BTEasyDialog.m in Sources */,
 				9B6DE77122532CE9005F6EEF /* main.m in Sources */,
 				9B6DE79B22532F5B005F6EEF /* BTDialogTableView.m in Sources */,
 				9B6DE76322532CE7005F6EEF /* AppDelegate.m in Sources */,

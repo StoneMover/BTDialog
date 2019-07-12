@@ -92,20 +92,21 @@
         case BTDialogLocationTop:
         {
             self.showView.frame=CGRectMake(0, -self.showView.height, self.showView.width, self.showView.height);
-            [UIView animateWithDuration:0.3 animations:^{
-                [self.bgBlackColor setAlpha:0.65];
+            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                self.bgBlackColor.alpha=.5;
                 [self.showView setAlpha:1];
                 self.showView.frame=CGRectMake(0, 0, self.showView.width, self.showView.height);
             } completion:^(BOOL finished) {
                 
             }];
+            
         }
             break;
         case BTDialogLocationBottom:
         {
             self.showView.frame=CGRectMake(0, self.height, self.showView.width, self.showView.height);
-            [UIView animateWithDuration:0.3 animations:^{
-                [self.bgBlackColor setAlpha:0.65];
+            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                self.bgBlackColor.alpha=.5;
                 [self.showView setAlpha:1];
                 self.showView.frame=CGRectMake(self.showView.left, self.height-self.showView.height, self.showView.width, self.showView.height);
             } completion:^(BOOL finished) {
@@ -122,8 +123,8 @@
         case BTDialogAnimStyleAndroid:{
             self.showView.alpha=0;
             self.showView.transform = CGAffineTransformMakeScale(.25f, .25f);
-            [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-                self.bgBlackColor.alpha=.65;
+            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                self.bgBlackColor.alpha=.5;
                 self.showView.alpha=1;
                 self.showView.transform=CGAffineTransformMakeScale(1.0f, 1.0f);
             } completion:^(BOOL finished) {
@@ -136,10 +137,13 @@
         case BTDialogAnimStyleStyleDefault:{
             self.showView.alpha=0;
             self.showView.transform = CGAffineTransformMakeScale(1.2, 1.2);
-            [UIView animateWithDuration:0.2 animations:^{
+            
+            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                 self.showView.transform = CGAffineTransformMakeScale(1.0, 1.0);
                 self.showView.alpha = 1;
-                self.bgBlackColor.alpha = 0.4;
+                self.bgBlackColor.alpha = .5;
+            } completion:^(BOOL finished) {
+                
             }];
         }
             
@@ -156,7 +160,7 @@
             break;
         case BTDialogLocationTop:
         {
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 self.bgBlackColor.alpha = 0;
                 self.showView.frame=CGRectMake(self.showView.left,-self.showView.height, self.showView.width, self.showView.height);
             } completion:^(BOOL finished) {
@@ -166,7 +170,7 @@
             break;
         case BTDialogLocationBottom:
         {
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 self.bgBlackColor.alpha = 0;
                 self.showView.frame=CGRectMake(self.showView.left, self.height, self.showView.width, self.showView.height);
             } completion:^(BOOL finished) {
@@ -186,7 +190,7 @@
     switch (self.animStyle) {
         case BTDialogAnimStyleStyleDefault:
         {
-            [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 self.showView.alpha = 0;
                 self.bgBlackColor.alpha = 0;
             }completion:^(BOOL finished){
@@ -195,7 +199,7 @@
         }
             break;
         case BTDialogAnimStyleAndroid:{
-            [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
                 self.bgBlackColor.alpha = 0;
                 self.showView.alpha=0;
                 self.showView.transform=CGAffineTransformMakeScale(.25f, .25f);
@@ -228,12 +232,6 @@
 -(void)setCornerNum:(CGFloat)cornerNum{
     _cornerNum=cornerNum;
     self.showView.layer.cornerRadius=cornerNum;
-}
-
-- (void)autoFullScreenSize{
-    if (self.location==BTDialogLocationBottom) {
-        self.showView.height+=BTUtils.HOME_INDICATOR_HEIGHT;
-    }
 }
 
 @end
