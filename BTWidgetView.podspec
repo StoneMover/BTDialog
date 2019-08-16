@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "BTWidgetView"
-  s.version          = "0.0.4"
+  s.version          = "0.0.5"
   s.summary          = "An easy widgetView"
   s.homepage         = "https://github.com/StoneMover/BTWidgetView"
   s.license          = 'MIT'
@@ -10,4 +10,5 @@ Pod::Spec.new do |s|
   s.source_files     = 'BTWidgetView/**/*.{h,m}'
   s.resource = 'Assets/BTDialogBundle.bundle'
   s.requires_arc     = true
+  s.dependency 'BTHelp'
 end
