@@ -65,4 +65,11 @@ typedef BOOL (^BTDialogTableViewBlock)(NSInteger index);
 
 @end
 
+@interface BTDialogTableViewCell : UITableViewCell
+
+@property (strong, nonatomic)  UILabel * labelContent;
+
+@property (strong, nonatomic)  UIImageView * imgViewSelect;
+
+@end
 

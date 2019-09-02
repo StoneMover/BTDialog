@@ -3,10 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */; };
+		6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17B2313E811009DBBDF /* BTPageHeadView.m */; };
+		6034D17F2313E811009DBBDF /* BTPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17C2313E811009DBBDF /* BTPageView.m */; };
+		6034D1842313E96F009DBBDF /* BTPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D1832313E96F009DBBDF /* BTPageViewController.m */; };
+		6037C16D23168C880017D898 /* PageViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6037C16C23168C880017D898 /* PageViewTestViewController.m */; };
+		6037C17023168CAE0017D898 /* PageVcTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6037C16F23168CAE0017D898 /* PageVcTestViewController.m */; };
+		6037C17423168E430017D898 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6037C17223168E430017D898 /* HomeTableViewCell.m */; };
+		6037C17523168E430017D898 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6037C17323168E430017D898 /* HomeTableViewCell.xib */; };
+		60643D722318F5B5007C1E01 /* PageChildVcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60643D712318F5B5007C1E01 /* PageChildVcViewController.m */; };
 		60D28A69230692260043442B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A68230692260043442B /* AppDelegate.m */; };
 		60D28A6C230692260043442B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A6B230692260043442B /* ViewController.m */; };
 		60D28A6F230692260043442B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60D28A6D230692260043442B /* Main.storyboard */; };
@@ -14,7 +23,6 @@
 		60D28A74230692270043442B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60D28A72230692270043442B /* LaunchScreen.storyboard */; };
 		60D28A77230692270043442B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A76230692270043442B /* main.m */; };
 		60D28A962306923A0043442B /* BTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A7E2306923A0043442B /* BTTextView.m */; };
-		60D28A972306923A0043442B /* BTDialogTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A812306923A0043442B /* BTDialogTableViewCell.m */; };
 		60D28A982306923A0043442B /* BTLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A822306923A0043442B /* BTLineView.m */; };
 		60D28A992306923A0043442B /* UIView+BTViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A852306923A0043442B /* UIView+BTViewTool.m */; };
 		60D28A9A2306923A0043442B /* BTDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A882306923A0043442B /* BTDialogView.m */; };
@@ -31,6 +39,23 @@
 /* Begin PBXFileReference section */
 		30FB91F8B97D3E03F3F43591 /* Pods-BTWidgetViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.release.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		5E98408A0C95CC96F9CDA16D /* Pods-BTWidgetViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.debug.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.debug.xcconfig"; sourceTree = "<group>"; };
+		6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPageHeadLabelView.m; sourceTree = "<group>"; };
+		6034D1782313E811009DBBDF /* BTPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTPageView.h; sourceTree = "<group>"; };
+		6034D1792313E811009DBBDF /* BTPageHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTPageHeadView.h; sourceTree = "<group>"; };
+		6034D17A2313E811009DBBDF /* BTPageHeadLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTPageHeadLabelView.h; sourceTree = "<group>"; };
+		6034D17B2313E811009DBBDF /* BTPageHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPageHeadView.m; sourceTree = "<group>"; };
+		6034D17C2313E811009DBBDF /* BTPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPageView.m; sourceTree = "<group>"; };
+		6034D1822313E96F009DBBDF /* BTPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTPageViewController.h; sourceTree = "<group>"; };
+		6034D1832313E96F009DBBDF /* BTPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTPageViewController.m; sourceTree = "<group>"; };
+		6037C16B23168C880017D898 /* PageViewTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewTestViewController.h; sourceTree = "<group>"; };
+		6037C16C23168C880017D898 /* PageViewTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewTestViewController.m; sourceTree = "<group>"; };
+		6037C16E23168CAE0017D898 /* PageVcTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageVcTestViewController.h; sourceTree = "<group>"; };
+		6037C16F23168CAE0017D898 /* PageVcTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageVcTestViewController.m; sourceTree = "<group>"; };
+		6037C17123168E430017D898 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		6037C17223168E430017D898 /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		6037C17323168E430017D898 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		60643D702318F5B5007C1E01 /* PageChildVcViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageChildVcViewController.h; sourceTree = "<group>"; };
+		60643D712318F5B5007C1E01 /* PageChildVcViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageChildVcViewController.m; sourceTree = "<group>"; };
 		60D28A64230692260043442B /* BTWidgetViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTWidgetViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D28A67230692260043442B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		60D28A68230692260043442B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -44,7 +69,6 @@
 		60D28A7E2306923A0043442B /* BTTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTextView.m; sourceTree = "<group>"; };
 		60D28A7F2306923A0043442B /* BTTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTextField.h; sourceTree = "<group>"; };
 		60D28A802306923A0043442B /* UIView+BTConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BTConstraint.h"; sourceTree = "<group>"; };
-		60D28A812306923A0043442B /* BTDialogTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDialogTableViewCell.m; sourceTree = "<group>"; };
 		60D28A822306923A0043442B /* BTLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTLineView.m; sourceTree = "<group>"; };
 		60D28A832306923A0043442B /* BTDialogTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDialogTableView.h; sourceTree = "<group>"; };
 		60D28A842306923A0043442B /* BTTextInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTextInputView.h; sourceTree = "<group>"; };
@@ -54,7 +78,6 @@
 		60D28A882306923A0043442B /* BTDialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDialogView.m; sourceTree = "<group>"; };
 		60D28A892306923A0043442B /* UIImage+BTImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BTImage.h"; sourceTree = "<group>"; };
 		60D28A8A2306923A0043442B /* BTTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTextView.h; sourceTree = "<group>"; };
-		60D28A8B2306923A0043442B /* BTDialogTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDialogTableViewCell.h; sourceTree = "<group>"; };
 		60D28A8C2306923A0043442B /* UIView+BTConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BTConstraint.m"; sourceTree = "<group>"; };
 		60D28A8D2306923A0043442B /* BTTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTextField.m; sourceTree = "<group>"; };
 		60D28A8E2306923A0043442B /* BTLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLineView.h; sourceTree = "<group>"; };
@@ -80,6 +103,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6034D1762313E800009DBBDF /* pageView */ = {
+			isa = PBXGroup;
+			children = (
+				6034D17A2313E811009DBBDF /* BTPageHeadLabelView.h */,
+				6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */,
+				6034D1792313E811009DBBDF /* BTPageHeadView.h */,
+				6034D17B2313E811009DBBDF /* BTPageHeadView.m */,
+				6034D1782313E811009DBBDF /* BTPageView.h */,
+				6034D17C2313E811009DBBDF /* BTPageView.m */,
+				6034D1822313E96F009DBBDF /* BTPageViewController.h */,
+				6034D1832313E96F009DBBDF /* BTPageViewController.m */,
+			);
+			path = pageView;
+			sourceTree = "<group>";
+		};
+		6034D1802313E81A009DBBDF /* category */ = {
+			isa = PBXGroup;
+			children = (
+				60D28A942306923A0043442B /* UIView+BTViewTool.h */,
+				60D28A852306923A0043442B /* UIView+BTViewTool.m */,
+				60D28A802306923A0043442B /* UIView+BTConstraint.h */,
+				60D28A8C2306923A0043442B /* UIView+BTConstraint.m */,
+				60D28A892306923A0043442B /* UIImage+BTImage.h */,
+				60D28A8F2306923A0043442B /* UIImage+BTImage.m */,
+				60D28A862306923A0043442B /* UIView+BTEasyDialog.h */,
+				60D28A922306923A0043442B /* UIView+BTEasyDialog.m */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
+		6034D1812313E86C009DBBDF /* dialog */ = {
+			isa = PBXGroup;
+			children = (
+				60D28A902306923A0043442B /* BTDialogView.h */,
+				60D28A882306923A0043442B /* BTDialogView.m */,
+				60D28A832306923A0043442B /* BTDialogTableView.h */,
+				60D28A952306923A0043442B /* BTDialogTableView.m */,
+			);
+			path = dialog;
+			sourceTree = "<group>";
+		};
+		6037C16A23168C570017D898 /* pageViewTest */ = {
+			isa = PBXGroup;
+			children = (
+				6037C16B23168C880017D898 /* PageViewTestViewController.h */,
+				6037C16C23168C880017D898 /* PageViewTestViewController.m */,
+				6037C16E23168CAE0017D898 /* PageVcTestViewController.h */,
+				6037C16F23168CAE0017D898 /* PageVcTestViewController.m */,
+				60643D702318F5B5007C1E01 /* PageChildVcViewController.h */,
+				60643D712318F5B5007C1E01 /* PageChildVcViewController.m */,
+			);
+			path = pageViewTest;
+			sourceTree = "<group>";
+		};
 		60D28A5B230692260043442B = {
 			isa = PBXGroup;
 			children = (
@@ -101,11 +178,15 @@
 		60D28A66230692260043442B /* BTWidgetViewExample */ = {
 			isa = PBXGroup;
 			children = (
+				6037C16A23168C570017D898 /* pageViewTest */,
 				60D28A7D2306923A0043442B /* BTWidgetView */,
 				60D28A67230692260043442B /* AppDelegate.h */,
 				60D28A68230692260043442B /* AppDelegate.m */,
 				60D28A6A230692260043442B /* ViewController.h */,
 				60D28A6B230692260043442B /* ViewController.m */,
+				6037C17123168E430017D898 /* HomeTableViewCell.h */,
+				6037C17223168E430017D898 /* HomeTableViewCell.m */,
+				6037C17323168E430017D898 /* HomeTableViewCell.xib */,
 				60D28A6D230692260043442B /* Main.storyboard */,
 				60D28A70230692270043442B /* Assets.xcassets */,
 				60D28A72230692270043442B /* LaunchScreen.storyboard */,
@@ -118,14 +199,9 @@
 		60D28A7D2306923A0043442B /* BTWidgetView */ = {
 			isa = PBXGroup;
 			children = (
-				60D28A942306923A0043442B /* UIView+BTViewTool.h */,
-				60D28A852306923A0043442B /* UIView+BTViewTool.m */,
-				60D28A802306923A0043442B /* UIView+BTConstraint.h */,
-				60D28A8C2306923A0043442B /* UIView+BTConstraint.m */,
-				60D28A892306923A0043442B /* UIImage+BTImage.h */,
-				60D28A8F2306923A0043442B /* UIImage+BTImage.m */,
-				60D28A862306923A0043442B /* UIView+BTEasyDialog.h */,
-				60D28A922306923A0043442B /* UIView+BTEasyDialog.m */,
+				6034D1812313E86C009DBBDF /* dialog */,
+				6034D1802313E81A009DBBDF /* category */,
+				6034D1762313E800009DBBDF /* pageView */,
 				60D28A872306923A0043442B /* BTButton.h */,
 				60D28A912306923A0043442B /* BTButton.m */,
 				60D28A7F2306923A0043442B /* BTTextField.h */,
@@ -136,12 +212,6 @@
 				60D28A932306923A0043442B /* BTTextInputView.m */,
 				60D28A8E2306923A0043442B /* BTLineView.h */,
 				60D28A822306923A0043442B /* BTLineView.m */,
-				60D28A902306923A0043442B /* BTDialogView.h */,
-				60D28A882306923A0043442B /* BTDialogView.m */,
-				60D28A8B2306923A0043442B /* BTDialogTableViewCell.h */,
-				60D28A812306923A0043442B /* BTDialogTableViewCell.m */,
-				60D28A832306923A0043442B /* BTDialogTableView.h */,
-				60D28A952306923A0043442B /* BTDialogTableView.m */,
 			);
 			name = BTWidgetView;
 			path = ../../BTWidgetView;
@@ -153,7 +223,6 @@
 				5E98408A0C95CC96F9CDA16D /* Pods-BTWidgetViewExample.debug.xcconfig */,
 				30FB91F8B97D3E03F3F43591 /* Pods-BTWidgetViewExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -226,6 +295,7 @@
 			files = (
 				60D28A74230692270043442B /* LaunchScreen.storyboard in Resources */,
 				60D28A71230692270043442B /* Assets.xcassets in Resources */,
+				6037C17523168E430017D898 /* HomeTableViewCell.xib in Resources */,
 				60D28A6F230692260043442B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,20 +349,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6037C16D23168C880017D898 /* PageViewTestViewController.m in Sources */,
+				6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */,
 				60D28AA12306923A0043442B /* BTDialogTableView.m in Sources */,
 				60D28A9F2306923A0043442B /* UIView+BTEasyDialog.m in Sources */,
 				60D28A992306923A0043442B /* UIView+BTViewTool.m in Sources */,
 				60D28A982306923A0043442B /* BTLineView.m in Sources */,
 				60D28A9A2306923A0043442B /* BTDialogView.m in Sources */,
 				60D28A6C230692260043442B /* ViewController.m in Sources */,
+				6034D17F2313E811009DBBDF /* BTPageView.m in Sources */,
 				60D28A9B2306923A0043442B /* UIView+BTConstraint.m in Sources */,
+				6034D1842313E96F009DBBDF /* BTPageViewController.m in Sources */,
+				6037C17423168E430017D898 /* HomeTableViewCell.m in Sources */,
 				60D28A9C2306923A0043442B /* BTTextField.m in Sources */,
 				60D28A962306923A0043442B /* BTTextView.m in Sources */,
+				6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */,
+				60643D722318F5B5007C1E01 /* PageChildVcViewController.m in Sources */,
 				60D28A9E2306923A0043442B /* BTButton.m in Sources */,
 				60D28A77230692270043442B /* main.m in Sources */,
 				60D28AA02306923A0043442B /* BTTextInputView.m in Sources */,
 				60D28A69230692260043442B /* AppDelegate.m in Sources */,
-				60D28A972306923A0043442B /* BTDialogTableViewCell.m in Sources */,
+				6037C17023168CAE0017D898 /* PageVcTestViewController.m in Sources */,
 				60D28A9D2306923A0043442B /* UIImage+BTImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

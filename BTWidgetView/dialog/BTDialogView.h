@@ -4,7 +4,7 @@
 //
 //  Created by whbt_mac on 16/1/5.
 //  Copyright © 2016年 StoneMover. All rights reserved.
-//  蓝屏警告⚠️：需要弹出的view如果是冲xib加载的，需要去掉autorezing，不然大小有问题
+//  蓝屏警告⚠️：需要弹出的view如果是从xib加载的，需要去掉autorezing，不然大小会出现有问题
 
 #import <UIKit/UIKit.h>
 #import "UIView+BTViewTool.h"
@@ -52,9 +52,6 @@ typedef void (^BTDialogDissmisFinishBlock)(void);
 
 //消失
 - (void)dismiss;
-
-//当为全面屏的时候位置在底部，则自动为view的高度增加
-- (void)autoFullScreenSize;
 
 
 @end
