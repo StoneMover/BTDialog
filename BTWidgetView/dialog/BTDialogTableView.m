@@ -131,12 +131,15 @@ int const BT_SHOW_VIEW_CELL_H=40;
 #pragma mark tableView delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    for (BTDialogModel * m in self.dataArray) {
-        m.isSelect=NO;
+    if (self.isNeedSelect) {
+        for (BTDialogModel * m in self.dataArray) {
+            m.isSelect=NO;
+        }
+        BTDialogModel * model = self.dataArray[indexPath.row];
+        model.isSelect=YES;
+        [self.tableView reloadData];
     }
-    BTDialogModel * model = self.dataArray[indexPath.row];
-    model.isSelect=YES;
-    [self.tableView reloadData];
+    
     if (self.blockTable) {
         if (self.blockTable(indexPath.row)) {
             [self dismiss];
@@ -192,7 +195,7 @@ int const BT_SHOW_VIEW_CELL_H=40;
     self.labelTitle=[[UILabel alloc] init];
     self.labelTitle.font=[UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
     self.labelTitle.textColor=[UIColor blackColor];
-    self.labelTitle.frame=CGRectMake(15, 0, self.width-50-15, self.height);
+    self.labelTitle.frame=CGRectMake(20, 0, self.width-50-15, self.height);
     [self addSubview:self.labelTitle];
 }
 

@@ -23,14 +23,17 @@ typedef BOOL (^BTDialogTableViewBlock)(NSInteger index);
 //数据源
 @property (strong, nonatomic) NSArray * dataArray;
 
-
+//点击回调
 @property (nonatomic, copy) BTDialogTableViewBlock blockTable;
 
-
+//是否需要头部view
 @property (nonatomic, assign) BOOL isNeedHead;
 
 
 //@property (nonatomic, assign) BOOL isNeedFoot;
+
+//是否需要选中状态
+@property (nonatomic, assign) BOOL isNeedSelect;
 
 
 - (instancetype)initDialogTableView:(BTDialogLocation)location;
