@@ -78,7 +78,7 @@ int const BT_SHOW_VIEW_CELL_H=40;
 - (void)layoutRootView{
     
     CGFloat headH=0;
-    CGFloat footH=0;
+//    CGFloat footH=0;
     if (self.isNeedHead) {
         headH=BT_SHOW_VIEW_HEAD_H;
     }

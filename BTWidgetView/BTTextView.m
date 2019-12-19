@@ -60,7 +60,7 @@
 - (void)addObserver{
     UIView * view =nil;
     for (UIView * v in self.subviews) {
-        if ([v isKindOfClass:[UIView class]]) {
+        if ([v isKindOfClass:NSClassFromString(@"_UITextContainerView")]) {
             view=v;
             break;
         }
