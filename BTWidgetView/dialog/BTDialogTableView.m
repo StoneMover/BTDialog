@@ -10,13 +10,14 @@
 #import <BTHelp/BTUtils.h>
 #import "UIView+BTConstraint.h"
 
-int const BT_SHOW_VIEW_MAX_H=300;
 
+
+//当显示中间的时候距离屏幕两边的距离
 int const BT_SHOW_VIEW_PADDING=50;
 
+//headView 的高度
 int const BT_SHOW_VIEW_HEAD_H=45;
 
-int const BT_SHOW_VIEW_CELL_H=40;
 
 
 @interface BTDialogTableView ()<UITableViewDataSource,UITableViewDelegate>
@@ -40,7 +41,10 @@ int const BT_SHOW_VIEW_CELL_H=40;
 }
 
 - (void)initShowView{
-    self.miniRootHeight = 200;
+    self.maxRootHeight = 300;
+    self.miniRootHeight = 300;
+    self.cellHeight = 40;
+    self.isNeedHead = YES;
     CGFloat rootViewW=self.locationTable==BTDialogLocationCenter?[UIScreen mainScreen].bounds.size.width-BT_SHOW_VIEW_PADDING*2:[UIScreen mainScreen].bounds.size.width;
     self.rootView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, rootViewW, 0)];
     self.rootView.backgroundColor=[UIColor whiteColor];
@@ -55,8 +59,8 @@ int const BT_SHOW_VIEW_CELL_H=40;
     [self.tableView registerClass:[BTDialogTableViewCell class] forCellReuseIdentifier:@"BTDialogTableViewCellId"];
     self.tableView.dataSource=self;
     self.tableView.delegate=self;
-    self.tableView.estimatedRowHeight = BT_SHOW_VIEW_PADDING;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = self.cellHeight;
+    [self.tableView setTableFooterView:[[UIView alloc]initWithFrame:CGRectZero]];
     
     [self.rootView addSubview:self.headView];
     [self.rootView addSubview:self.tableView];
@@ -78,7 +82,6 @@ int const BT_SHOW_VIEW_CELL_H=40;
 - (void)layoutRootView{
     
     CGFloat headH=0;
-    CGFloat footH=0;
     if (self.isNeedHead) {
         headH=BT_SHOW_VIEW_HEAD_H;
     }
@@ -87,20 +90,25 @@ int const BT_SHOW_VIEW_CELL_H=40;
     }
     self.headView.height=headH;
     self.tableView.top=self.headView.bottom;
-    
-    if (self.dataArray.count*BT_SHOW_VIEW_CELL_H>BT_SHOW_VIEW_MAX_H-headH) {
-        self.tableView.height=BT_SHOW_VIEW_MAX_H-headH;
-        self.rootView.height=BT_SHOW_VIEW_MAX_H;
-        self.tableView.scrollEnabled=YES;
+    if (self.cellHeight==-1) {
+        self.tableView.height = self.maxRootHeight;
+        self.rootView.height = self.maxRootHeight;
     }else{
-        self.tableView.height=self.dataArray.count*BT_SHOW_VIEW_CELL_H;
-        self.rootView.height=headH+self.tableView.height;
-        
-        if (self.rootView.height<self.miniRootHeight) {
-            self.rootView.height=self.miniRootHeight;
+        if (self.dataArray.count*self.cellHeight>self.maxRootHeight-headH) {
+            self.tableView.height=self.maxRootHeight-headH;
+            self.rootView.height=self.maxRootHeight;
+        }else{
+            self.tableView.height=self.dataArray.count*self.cellHeight;
+            self.rootView.height=headH+self.tableView.height;
+            if (self.rootView.height<self.miniRootHeight) {
+                self.rootView.height=self.miniRootHeight;
+                self.tableView.height = self.miniRootHeight;
+            }
+            
         }
-        self.tableView.scrollEnabled=NO;
     }
+    
+    
     if (self.locationTable==BTDialogLocationBottom) {
         self.rootView.height+=BTUtils.HOME_INDICATOR_HEIGHT;
     }else if (self.locationTable==BTDialogLocationTop){
@@ -127,19 +135,19 @@ int const BT_SHOW_VIEW_CELL_H=40;
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return self.cellHeight;
+}
 
 #pragma mark tableView delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (self.isNeedSelect) {
-        for (BTDialogModel * m in self.dataArray) {
-            m.isSelect=NO;
-        }
-        BTDialogModel * model = self.dataArray[indexPath.row];
-        model.isSelect=YES;
-        [self.tableView reloadData];
+    for (BTDialogModel * m in self.dataArray) {
+        m.isSelect=NO;
     }
-    
+    BTDialogModel * model = self.dataArray[indexPath.row];
+    model.isSelect=YES;
+    [self.tableView reloadData];
     if (self.blockTable) {
         if (self.blockTable(indexPath.row)) {
             [self dismiss];
@@ -148,9 +156,7 @@ int const BT_SHOW_VIEW_CELL_H=40;
     
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return BT_SHOW_VIEW_CELL_H;
-}
+
 
 
 - (NSMutableArray*)createDataWithStr:(NSArray*)strArray{
@@ -195,7 +201,7 @@ int const BT_SHOW_VIEW_CELL_H=40;
     self.labelTitle=[[UILabel alloc] init];
     self.labelTitle.font=[UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
     self.labelTitle.textColor=[UIColor blackColor];
-    self.labelTitle.frame=CGRectMake(20, 0, self.width-50-15, self.height);
+    self.labelTitle.frame=CGRectMake(20, 0, self.width-50-20, self.height);
     [self addSubview:self.labelTitle];
 }
 
@@ -208,8 +214,9 @@ int const BT_SHOW_VIEW_CELL_H=40;
 
 
 - (void)initLineView{
-    self.lineView=[[BTLineView alloc] initWithFrame:CGRectMake(0, self.height-.5, self.width, 1)];
-    self.lineView.color=[UIColor lightGrayColor];
+    self.lineView=[[BTLineView alloc] initWithFrame:CGRectMake(0, self.height-1, self.width, 1)];
+    self.lineView.lineWidth = .5;
+    self.lineView.color=[UIColor colorWithRed:0.235294 green:0.235294 blue:0.262745 alpha:0.29];
     [self addSubview:self.lineView];
 }
 
@@ -253,11 +260,13 @@ int const BT_SHOW_VIEW_CELL_H=40;
     self.labelContent.font=[UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
     self.labelContent.textColor=[UIColor blackColor];
     self.labelContent.numberOfLines=0;
+    [self.labelContent addConstraintHeight:NSLayoutRelationGreaterThanOrEqual constant:24];
     [self addSubview:self.labelContent];
     [self addConstraintLeft:self.labelContent toItemView:self constant:20];
-    [self addConstraintTop:self.labelContent toItemView:self];
-    [self addConstraintBottom:self.labelContent toItemView:self];
+    [self addConstraintTop:self.labelContent toItemView:self constant:8];
+    [self addConstraintBottom:self.labelContent toItemView:self constant:-8];
     [self addConstraintRight:self.labelContent toItemView:self.imgViewSelect constant:-10];
+    
 }
 
 - (void)initImgSel{

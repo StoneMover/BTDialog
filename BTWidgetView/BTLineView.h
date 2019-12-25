@@ -25,9 +25,9 @@ typedef NS_ENUM(NSInteger,BTLineViewAlignment) {
 
 @interface BTLineView : UIView
 
-@property(nonatomic,assign) IBInspectable CGFloat lineWidth;//线的粗细,默认0.2,没有特殊要求不需要设置
+@property(nonatomic,assign) IBInspectable CGFloat lineWidth;//线的粗细,默认0.5,没有特殊要求不需要设置
 
-@property(nonatomic,strong) IBInspectable UIColor * color;//线的颜色
+@property(nonatomic,strong) IBInspectable UIColor * color;//线的颜色,默认[UIColor colorWithRed:0.235294 green:0.235294 blue:0.262745 alpha:0.29];
 
 @property(nonatomic,assign) IBInspectable NSInteger oriention;//方向,默认水平
 
