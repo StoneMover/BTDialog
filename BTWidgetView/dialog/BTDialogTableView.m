@@ -40,7 +40,7 @@ int const BT_SHOW_VIEW_CELL_H=40;
 }
 
 - (void)initShowView{
-    
+    self.miniRootHeight = 200;
     CGFloat rootViewW=self.locationTable==BTDialogLocationCenter?[UIScreen mainScreen].bounds.size.width-BT_SHOW_VIEW_PADDING*2:[UIScreen mainScreen].bounds.size.width;
     self.rootView =[[UIView alloc] initWithFrame:CGRectMake(0, 0, rootViewW, 0)];
     self.rootView.backgroundColor=[UIColor whiteColor];
@@ -96,8 +96,8 @@ int const BT_SHOW_VIEW_CELL_H=40;
         self.tableView.height=self.dataArray.count*BT_SHOW_VIEW_CELL_H;
         self.rootView.height=headH+self.tableView.height;
         
-        if (self.rootView.height<100) {
-            self.rootView.height=100;
+        if (self.rootView.height<self.miniRootHeight) {
+            self.rootView.height=self.miniRootHeight;
         }
         self.tableView.scrollEnabled=NO;
     }
