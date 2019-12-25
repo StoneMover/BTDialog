@@ -29,6 +29,8 @@ typedef BOOL (^BTDialogTableViewBlock)(NSInteger index);
 //是否需要头部view
 @property (nonatomic, assign) BOOL isNeedHead;
 
+//rootView 最小的高度,默认200
+@property (nonatomic, assign) CGFloat miniRootHeight;
 
 //@property (nonatomic, assign) BOOL isNeedFoot;
 
