@@ -227,4 +227,16 @@
     }
 }
 
+- (UIImage*)selfImg{
+    CGFloat scale =[UIScreen mainScreen].scale;
+    UIImage *imageRet = [[UIImage alloc]init];
+    //UIGraphicsBeginImageContextWithOptions(区域大小, 是否是非透明的, 屏幕密度);
+    UIGraphicsBeginImageContextWithOptions(self.frame.size, YES, scale);
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    imageRet = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    
+    return imageRet;
+}
 @end

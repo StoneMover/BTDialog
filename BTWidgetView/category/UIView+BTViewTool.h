@@ -71,6 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setShade:(CGFloat)opacity color:(UIColor*)color radius:(CGFloat)radius offset:(CGSize)size;
 + (instancetype)loadInstanceFromNib;
 - (void)addSubViewArray:(NSArray<UIView*>*)subviews;
+- (UIImage*)selfImg;
 @end
 
 NS_ASSUME_NONNULL_END
