@@ -33,6 +33,8 @@ typedef void(^BTTextViewTextChangeBlock)(void);
 
 @property (nonatomic, copy) BTTextViewTextChangeBlock blockContentChange;
 
+@property (nonatomic, assign) BOOL isSelfSetEdgeInsets;
+
 @end
 
 

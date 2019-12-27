@@ -10,6 +10,7 @@
 #import "PageViewTestViewController.h"
 #import "PageVcTestViewController.h"
 #import "HomeTableViewCell.h"
+#import "DialogTestViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -25,7 +26,7 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent=NO;
     self.title=@"BTWidget";
-    self.titles=@[@"BTPageViewTest",@"BTPageVcTest"];
+    self.titles=@[@"BTPageViewTest",@"BTPageVcTest",@"BTDialogView&BTAlertView"];
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCellId"];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
@@ -59,6 +60,12 @@
         {
             PageVcTestViewController * vc=[PageVcTestViewController new];
             vc.title=self.titles[indexPath.row];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 2:
+        {
+            DialogTestViewController * vc=[DialogTestViewController new];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;

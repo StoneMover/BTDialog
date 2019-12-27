@@ -7,7 +7,7 @@
 //
 
 #import "BTDialogView.h"
-
+#import <BTHelp/BTKeyboardHelp.h>
 
 @interface BTDialogView()
 
@@ -21,7 +21,7 @@
 
 @property (nonatomic, assign) BTDialogLocation location;//位置对象
 
-
+@property (nonatomic, strong) BTKeyboardHelp * keyboardHelp;
 
 @end
 
@@ -226,12 +226,31 @@
 }
 
 -(void)btnClick{
-    if (self.clickEmptyAreaDismiss)[self dismiss];
+    if (self.clickEmptyAreaDismiss){
+        if (self.isNeedMoveFollowKeyboard&&self.keyboardHelp.isKeyBoardOpen) {
+            [self endEditing:YES];
+            return;
+        }
+        [self dismiss];
+    }
 }
 
 -(void)setCornerNum:(CGFloat)cornerNum{
     _cornerNum=cornerNum;
     self.showView.layer.cornerRadius=cornerNum;
+}
+
+- (void)setIsNeedMoveFollowKeyboard:(BOOL)isNeedMoveFollowKeyboard{
+    _isNeedMoveFollowKeyboard = isNeedMoveFollowKeyboard;
+    if (isNeedMoveFollowKeyboard) {
+        self.keyboardHelp = [[BTKeyboardHelp alloc] initWithShowView:self.showView moveView:self.showView margin:18];
+    }else{
+        self.keyboardHelp = nil;
+    }
+}
+
+- (void)initKeyboardHelp{
+    
 }
 
 @end

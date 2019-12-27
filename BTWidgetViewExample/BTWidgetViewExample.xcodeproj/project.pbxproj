@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D41968D23B639BF00F5079F /* BTAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D41968B23B639BF00F5079F /* BTAlertView.m */; };
+		0D41969223B63CBD00F5079F /* DialogTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D41969023B63CBD00F5079F /* DialogTestViewController.m */; };
+		0D41969323B63CBD00F5079F /* DialogTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D41969123B63CBD00F5079F /* DialogTestViewController.xib */; };
+		0D41969623B6413100F5079F /* BTAlertLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D41969523B6413100F5079F /* BTAlertLabelView.m */; };
+		0D41969D23B6483800F5079F /* BTAlertTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D41969C23B6483800F5079F /* BTAlertTextFieldView.m */; };
 		6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */; };
 		6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17B2313E811009DBBDF /* BTPageHeadView.m */; };
 		6034D17F2313E811009DBBDF /* BTPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17C2313E811009DBBDF /* BTPageView.m */; };
@@ -37,6 +42,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D41968B23B639BF00F5079F /* BTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAlertView.m; sourceTree = "<group>"; };
+		0D41968C23B639BF00F5079F /* BTAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTAlertView.h; sourceTree = "<group>"; };
+		0D41968F23B63CBD00F5079F /* DialogTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DialogTestViewController.h; sourceTree = "<group>"; };
+		0D41969023B63CBD00F5079F /* DialogTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DialogTestViewController.m; sourceTree = "<group>"; };
+		0D41969123B63CBD00F5079F /* DialogTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DialogTestViewController.xib; sourceTree = "<group>"; };
+		0D41969423B6413100F5079F /* BTAlertLabelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTAlertLabelView.h; sourceTree = "<group>"; };
+		0D41969523B6413100F5079F /* BTAlertLabelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTAlertLabelView.m; sourceTree = "<group>"; };
+		0D41969B23B6483800F5079F /* BTAlertTextFieldView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTAlertTextFieldView.h; sourceTree = "<group>"; };
+		0D41969C23B6483800F5079F /* BTAlertTextFieldView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTAlertTextFieldView.m; sourceTree = "<group>"; };
 		30FB91F8B97D3E03F3F43591 /* Pods-BTWidgetViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.release.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		5E98408A0C95CC96F9CDA16D /* Pods-BTWidgetViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.debug.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPageHeadLabelView.m; sourceTree = "<group>"; };
@@ -103,6 +117,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D41968E23B63C6D00F5079F /* dialogTest */ = {
+			isa = PBXGroup;
+			children = (
+				0D41968F23B63CBD00F5079F /* DialogTestViewController.h */,
+				0D41969023B63CBD00F5079F /* DialogTestViewController.m */,
+				0D41969123B63CBD00F5079F /* DialogTestViewController.xib */,
+			);
+			path = dialogTest;
+			sourceTree = "<group>";
+		};
+		0D41969723B6413D00F5079F /* alert */ = {
+			isa = PBXGroup;
+			children = (
+				0D41968C23B639BF00F5079F /* BTAlertView.h */,
+				0D41968B23B639BF00F5079F /* BTAlertView.m */,
+				0D41969423B6413100F5079F /* BTAlertLabelView.h */,
+				0D41969523B6413100F5079F /* BTAlertLabelView.m */,
+				0D41969B23B6483800F5079F /* BTAlertTextFieldView.h */,
+				0D41969C23B6483800F5079F /* BTAlertTextFieldView.m */,
+			);
+			path = alert;
+			sourceTree = "<group>";
+		};
 		6034D1762313E800009DBBDF /* pageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +215,7 @@
 		60D28A66230692260043442B /* BTWidgetViewExample */ = {
 			isa = PBXGroup;
 			children = (
+				0D41968E23B63C6D00F5079F /* dialogTest */,
 				6037C16A23168C570017D898 /* pageViewTest */,
 				60D28A7D2306923A0043442B /* BTWidgetView */,
 				60D28A67230692260043442B /* AppDelegate.h */,
@@ -199,6 +237,7 @@
 		60D28A7D2306923A0043442B /* BTWidgetView */ = {
 			isa = PBXGroup;
 			children = (
+				0D41969723B6413D00F5079F /* alert */,
 				6034D1812313E86C009DBBDF /* dialog */,
 				6034D1802313E81A009DBBDF /* category */,
 				6034D1762313E800009DBBDF /* pageView */,
@@ -295,6 +334,7 @@
 			files = (
 				60D28A74230692270043442B /* LaunchScreen.storyboard in Resources */,
 				60D28A71230692270043442B /* Assets.xcassets in Resources */,
+				0D41969323B63CBD00F5079F /* DialogTestViewController.xib in Resources */,
 				6037C17523168E430017D898 /* HomeTableViewCell.xib in Resources */,
 				60D28A6F230692260043442B /* Main.storyboard in Resources */,
 			);
@@ -360,9 +400,13 @@
 				6034D17F2313E811009DBBDF /* BTPageView.m in Sources */,
 				60D28A9B2306923A0043442B /* UIView+BTConstraint.m in Sources */,
 				6034D1842313E96F009DBBDF /* BTPageViewController.m in Sources */,
+				0D41968D23B639BF00F5079F /* BTAlertView.m in Sources */,
+				0D41969223B63CBD00F5079F /* DialogTestViewController.m in Sources */,
 				6037C17423168E430017D898 /* HomeTableViewCell.m in Sources */,
 				60D28A9C2306923A0043442B /* BTTextField.m in Sources */,
 				60D28A962306923A0043442B /* BTTextView.m in Sources */,
+				0D41969623B6413100F5079F /* BTAlertLabelView.m in Sources */,
+				0D41969D23B6483800F5079F /* BTAlertTextFieldView.m in Sources */,
 				6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */,
 				60643D722318F5B5007C1E01 /* PageChildVcViewController.m in Sources */,
 				60D28A9E2306923A0043442B /* BTButton.m in Sources */,

@@ -40,6 +40,9 @@ typedef void (^BTDialogDissmisFinishBlock)(void);
 //dialog消失完成后的block回调
 @property (nonatomic, copy) BTDialogDissmisFinishBlock blockDismiss;
 
+//是否需要跟随键盘移动
+@property (nonatomic, assign) BOOL isNeedMoveFollowKeyboard;
+
 //初始化
 -(instancetype)init:(UIView*)showView withLocation:(BTDialogLocation)location;
 
