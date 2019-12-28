@@ -215,8 +215,6 @@ int const BT_SHOW_VIEW_HEAD_H=45;
 
 - (void)initLineView{
     self.lineView=[[BTLineView alloc] initWithFrame:CGRectMake(0, self.height-1, self.width, 1)];
-    self.lineView.lineWidth = .5;
-    self.lineView.color=[UIColor colorWithRed:0.235294 green:0.235294 blue:0.262745 alpha:0.29];
     [self addSubview:self.lineView];
 }
 

@@ -43,6 +43,8 @@
     self.labelPlaceHolder.font=self.font;
     if (self.placeHolderColor) {
         self.labelPlaceHolder.textColor=self.placeHolderColor;
+    }else{
+        self.labelPlaceHolder.textColor = [UIColor colorWithRed:0.24 green:0.24 blue:0.26 alpha:.3];
     }
     if (self.placeHolder) {
         self.labelPlaceHolder.text=self.placeHolder;
@@ -147,11 +149,27 @@
     }
 }
 
+- (void)addDoneView{
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 35)];
+    toolbar.tintColor = [UIColor systemBlueColor];
+    toolbar.backgroundColor = [UIColor systemGrayColor];
+    UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *bar = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(doneClick)];
+    toolbar.items = @[space, bar];
+    self.inputAccessoryView = toolbar;
+}
+
+- (void)doneClick{
+    [self endEditing:YES];
+}
+
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter]removeObserver:self];
     if (self.contentView) {
         [self.contentView removeObserver:self forKeyPath:@"frame"];
     }
 }
+
+
 
 @end

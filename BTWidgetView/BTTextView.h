@@ -35,6 +35,8 @@ typedef void(^BTTextViewTextChangeBlock)(void);
 
 @property (nonatomic, assign) BOOL isSelfSetEdgeInsets;
 
+- (void)addDoneView;
+
 @end
 
 

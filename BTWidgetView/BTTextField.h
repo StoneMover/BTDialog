@@ -24,6 +24,8 @@ typedef void(^BTTextFieldChangeBlock)(void);
 
 @property (nonatomic, copy) BTTextFieldChangeBlock changeBlock;
 
+- (void)addDoneView;
+
 @end
 
 

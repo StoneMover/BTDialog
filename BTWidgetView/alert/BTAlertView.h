@@ -31,6 +31,8 @@
 @property (nonatomic, copy) BOOL(^okBlock)(void);
 
 
+@property (nonatomic, assign) BOOL isJustOkBtn;
+
 @end
 
 

@@ -77,11 +77,20 @@
 - (void)layoutSubviews{
     self.effectView.frame = self.bounds;
     self.labelTitle.frame = CGRectMake(10, 18, self.width-20, 24);
-    self.btnCancel.frame = CGRectMake(0, self.height-46, self.width/2.0, 46);
-    self.btnOk.frame = CGRectMake(self.btnCancel.right, self.btnCancel.top, self.btnCancel.width, self.btnCancel.height);
-    self.viewLineHoz.frame = CGRectMake(0, self.btnOk.top, self.width, .5);
-    self.viewLineVertical.frame = CGRectMake(self.btnCancel.right, self.btnCancel.top, .5, self.btnCancel.height);
     self.contentView.frame = CGRectMake(0, self.labelTitle.bottom, self.width, self.contentView.height);
+    if (self.isJustOkBtn) {
+        self.btnCancel.hidden = YES;
+        self.viewLineVertical.hidden = YES;
+        self.btnOk.frame = CGRectMake(0, self.height-46, self.width, 46);
+        self.viewLineHoz.frame = CGRectMake(0, self.btnOk.top, self.width, .5);
+    }else{
+        self.btnCancel.hidden = NO;
+        self.viewLineVertical.hidden = NO;
+        self.btnCancel.frame = CGRectMake(0, self.height-46, self.width/2.0, 46);
+        self.btnOk.frame = CGRectMake(self.btnCancel.right, self.btnCancel.top, self.btnCancel.width, self.btnCancel.height);
+        self.viewLineHoz.frame = CGRectMake(0, self.btnOk.top, self.width, .5);
+        self.viewLineVertical.frame = CGRectMake(self.btnCancel.right, self.btnCancel.top, .5, self.btnCancel.height);
+    }
 }
 
 - (void)cancelClick{
@@ -104,6 +113,11 @@
     if (self.okBlock()) {
         [self.dialogView dismiss];
     }
+}
+
+- (void)setIsJustOkBtn:(BOOL)isJustOkBtn{
+    _isJustOkBtn = isJustOkBtn;
+    [self layoutSubviews];
 }
 
 

@@ -18,6 +18,7 @@
     textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     textField.text = content;
     textField.placeholder = placeholder;
+    textField.clipsToBounds = NO;
     
     UIView * viewParent = [[UIView alloc] initWithSize:CGSizeMake(BTUtils.SCREEN_W-106-20, 42)];
     viewParent.borderColor = [BTUtils RGBA:77 G:77 B:77 A:.78];
@@ -34,7 +35,9 @@
     
     self.textField = textField;
     self.labelTitle.text = @"请输入内容";
-    [self.textField becomeFirstResponder];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.textField becomeFirstResponder];
+    });
     return self;
 }
 
