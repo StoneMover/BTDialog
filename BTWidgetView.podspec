@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "BTWidgetView"
-  s.version          = "0.0.6"
+  s.version          = "0.0.7"
   s.summary          = "An easy widgetView"
   s.homepage         = "https://github.com/StoneMover/BTWidgetView"
   s.license          = 'MIT'
