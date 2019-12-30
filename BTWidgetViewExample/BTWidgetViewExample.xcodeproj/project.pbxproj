@@ -14,6 +14,8 @@
 		0D41969D23B6483800F5079F /* BTAlertTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D41969C23B6483800F5079F /* BTAlertTextFieldView.m */; };
 		0DCC398A23B7142E00197B15 /* BTDialogBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DCC398923B7142D00197B15 /* BTDialogBundle.bundle */; };
 		0DCC398D23B71A6C00197B15 /* BTAlertTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCC398C23B71A6C00197B15 /* BTAlertTextView.m */; };
+		18629BAA23BA054300CE552C /* WKWebView+FullImg.m in Sources */ = {isa = PBXBuildFile; fileRef = 18629BA923BA054300CE552C /* WKWebView+FullImg.m */; };
+		18629BAD23BA05AF00CE552C /* BTContentAutoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18629BAC23BA05AF00CE552C /* BTContentAutoView.m */; };
 		6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */; };
 		6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17B2313E811009DBBDF /* BTPageHeadView.m */; };
 		6034D17F2313E811009DBBDF /* BTPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17C2313E811009DBBDF /* BTPageView.m */; };
@@ -56,6 +58,10 @@
 		0DCC398923B7142D00197B15 /* BTDialogBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = BTDialogBundle.bundle; path = ../../Assets/BTDialogBundle.bundle; sourceTree = "<group>"; };
 		0DCC398B23B71A6C00197B15 /* BTAlertTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTAlertTextView.h; sourceTree = "<group>"; };
 		0DCC398C23B71A6C00197B15 /* BTAlertTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTAlertTextView.m; sourceTree = "<group>"; };
+		18629BA823BA054300CE552C /* WKWebView+FullImg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView+FullImg.h"; sourceTree = "<group>"; };
+		18629BA923BA054300CE552C /* WKWebView+FullImg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+FullImg.m"; sourceTree = "<group>"; };
+		18629BAB23BA05AF00CE552C /* BTContentAutoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTContentAutoView.h; sourceTree = "<group>"; };
+		18629BAC23BA05AF00CE552C /* BTContentAutoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTContentAutoView.m; sourceTree = "<group>"; };
 		30FB91F8B97D3E03F3F43591 /* Pods-BTWidgetViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.release.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		5E98408A0C95CC96F9CDA16D /* Pods-BTWidgetViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.debug.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPageHeadLabelView.m; sourceTree = "<group>"; };
@@ -165,6 +171,8 @@
 		6034D1802313E81A009DBBDF /* category */ = {
 			isa = PBXGroup;
 			children = (
+				18629BA823BA054300CE552C /* WKWebView+FullImg.h */,
+				18629BA923BA054300CE552C /* WKWebView+FullImg.m */,
 				60D28A942306923A0043442B /* UIView+BTViewTool.h */,
 				60D28A852306923A0043442B /* UIView+BTViewTool.m */,
 				60D28A802306923A0043442B /* UIView+BTConstraint.h */,
@@ -259,6 +267,8 @@
 				60D28A932306923A0043442B /* BTTextInputView.m */,
 				60D28A8E2306923A0043442B /* BTLineView.h */,
 				60D28A822306923A0043442B /* BTLineView.m */,
+				18629BAB23BA05AF00CE552C /* BTContentAutoView.h */,
+				18629BAC23BA05AF00CE552C /* BTContentAutoView.m */,
 			);
 			name = BTWidgetView;
 			path = ../../BTWidgetView;
@@ -410,6 +420,7 @@
 				60D28A9B2306923A0043442B /* UIView+BTConstraint.m in Sources */,
 				6034D1842313E96F009DBBDF /* BTPageViewController.m in Sources */,
 				0D41968D23B639BF00F5079F /* BTAlertView.m in Sources */,
+				18629BAA23BA054300CE552C /* WKWebView+FullImg.m in Sources */,
 				0D41969223B63CBD00F5079F /* DialogTestViewController.m in Sources */,
 				6037C17423168E430017D898 /* HomeTableViewCell.m in Sources */,
 				60D28A9C2306923A0043442B /* BTTextField.m in Sources */,
@@ -419,6 +430,7 @@
 				6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */,
 				60643D722318F5B5007C1E01 /* PageChildVcViewController.m in Sources */,
 				60D28A9E2306923A0043442B /* BTButton.m in Sources */,
+				18629BAD23BA05AF00CE552C /* BTContentAutoView.m in Sources */,
 				60D28A77230692270043442B /* main.m in Sources */,
 				60D28AA02306923A0043442B /* BTTextInputView.m in Sources */,
 				60D28A69230692260043442B /* AppDelegate.m in Sources */,

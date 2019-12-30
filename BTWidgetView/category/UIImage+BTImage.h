@@ -18,10 +18,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIImage *)imageWithColor:(UIColor *)color equalSize:(CGFloat)size;
 
+//加载图片不受系统颜色的影响显示
 + (UIImage*)imageOriWithName:(NSString*)imgName;
 
+//压缩大小到指定的大小
 - (NSData *)compressQualityWithMaxLength:(NSInteger)maxLength;
 
+//将图片缩放到指定的大小，多出的部分将以中心为基准进行裁剪
 - (UIImage *)scaleToSize:(CGSize)size;
 
 @end
