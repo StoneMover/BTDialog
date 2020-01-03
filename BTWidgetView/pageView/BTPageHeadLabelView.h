@@ -12,9 +12,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame titles:(NSArray *)titles style:(BTPageHeadViewStyle)style;
 
-//字体样式
-@property (nonatomic, strong) UIFont * font;
-
 //选中字体大小
 @property (nonatomic, assign) CGFloat selectFontSize;
 
@@ -27,7 +24,7 @@
 //未选中文字颜色
 @property (nonatomic, strong) UIColor * normalColor;
 
-
+- (void)select:(NSInteger)index;
 
 
 @end

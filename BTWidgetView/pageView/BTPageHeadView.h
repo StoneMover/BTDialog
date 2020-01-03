@@ -68,6 +68,7 @@ typedef NS_ENUM(NSInteger,BTPageHeadViewStyle) {
 - (void)scrollViewIndicator:(CGFloat)percent;
 
 
+
 @end
 
 
