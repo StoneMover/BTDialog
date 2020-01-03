@@ -24,8 +24,6 @@
 //未选中文字颜色
 @property (nonatomic, strong) UIColor * normalColor;
 
-- (void)select:(NSInteger)index;
-
 
 @end
 

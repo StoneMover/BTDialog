@@ -8,6 +8,7 @@
 
 #import "BTPageHeadLabelView.h"
 #import "BTPageView.h"
+#import "UIView+BTViewTool.h"
 
 @interface BTPageHeadLabelView()<BTPageHeadViewDataSource>
 
@@ -33,11 +34,11 @@
 - (void)initDefaultData{
     
     if (!self.selectColor) {
-        self.selectColor=UIColor.redColor;
+        self.selectColor=UIColor.systemBlueColor;
     }
     
     if (!self.normalColor) {
-        self.normalColor=UIColor.blackColor;
+        self.normalColor=UIColor.systemGrayColor;
     }
     
     if (self.selectFontSize==0) {
@@ -45,7 +46,7 @@
     }
     
     if (self.normalFontSize==0) {
-        self.normalFontSize=16;
+        self.normalFontSize=14;
     }
 }
 
@@ -54,12 +55,11 @@
 }
 
 - (UIView*)pageHeadView:(BTPageHeadView*)headView contentViewForIndex:(NSInteger)index{
-    UILabel * label=[[UILabel alloc]init];
+    UILabel * label=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.width / self.titles.count, self.height)];
     label.font=[UIFont systemFontOfSize:self.normalFontSize weight:UIFontWeightMedium];
     label.textColor=self.normalColor;
     label.text=self.titles[index];
     label.textAlignment=NSTextAlignmentCenter;
-    [label sizeToFit];
     [self.labels addObject:label];
     return label;
 }
@@ -79,90 +79,100 @@
     
     CGFloat one = 1.0;
     CGFloat percentOne = one / (self.titles.count - 1);
-    NSNumber * indexNow = [self.superview valueForKey:@"nowIndex"];
-    UILabel * labelNow = self.labels[indexNow.integerValue];
+    NSInteger indexNow = percent / percentOne;
+    UILabel * labelNow = self.labels[indexNow];
     UILabel * labelWillSelect = nil;
-    CGFloat resultPercent = indexNow.integerValue * percentOne - percent;
-//    NSLog(@"百分比:%f,当前下标:%ld",percent,(long)indexNow.integerValue);
+    CGFloat resultPercent = indexNow * percentOne - percent;
     if (resultPercent == 0) {
-        [self select:indexNow.integerValue];
+        labelNow.textColor = [self nowLabelColorLeft:fabs(resultPercent)];
+        [self nowLabelScale:fabs(resultPercent) label:labelNow];
         return;
     }
     
-    
-    
-    if (resultPercent > 0) {
-        //说明是在向左边滑动
-        labelWillSelect = self.labels[indexNow.integerValue-1];
-        labelWillSelect.textColor = [self willSelectLabelColorRight:resultPercent];
-        labelNow.textColor = [self nowLabelColorLeft:resultPercent];
-    }else{
-        labelWillSelect = self.labels[indexNow.integerValue+1];
-        labelWillSelect.textColor = [self nowLabelColorRight:-resultPercent];
-        labelNow.textColor = [self nowLabelColorLeft:-resultPercent];
-    }
-    
-    
-    
-    
-    
-}
 
-- (void)select:(NSInteger)index{
-    for (int i=0; i<self.labels.count; i++) {
-        if (i == index) {
-            self.labels[i].textColor = self.selectColor;
-//            self.labels[i].font = [UIFont systemFontOfSize:self.selectFontSize weight:UIFontWeightMedium];
-        }else{
-            self.labels[i].textColor = self.normalColor;
-//            self.labels[i].font = [UIFont systemFontOfSize:self.normalFontSize weight:UIFontWeightMedium];
-        }
-        [self.labels[i] sizeToFit];
-    }
+    labelWillSelect = self.labels[indexNow+1];
+    
+    labelNow.textColor = [self nowLabelColorLeft:fabs(resultPercent)];
+    labelWillSelect.textColor = [self willSelectLabelColorRight:fabs(resultPercent)];
+    
+    
+    [self nowLabelScale:fabs(resultPercent) label:labelNow];
+    [self willSelectLabelScale:fabs(resultPercent) label:labelWillSelect];
+    
 }
 
 - (UIColor*)nowLabelColorLeft:(CGFloat)percent{
-    const CGFloat * componentsSelect = CGColorGetComponents(self.selectColor.CGColor);
-    const CGFloat * componentsNormal = CGColorGetComponents(self.normalColor.CGColor);
     CGFloat one = 1.0;
     CGFloat percentOne = one / (self.titles.count - 1);
-    CGFloat r = componentsSelect[0] - componentsNormal[0];
-    CGFloat g = componentsSelect[1] - componentsNormal[1];
-    CGFloat b = componentsSelect[2] - componentsNormal[2];
-    return [UIColor colorWithRed:componentsNormal[0] + r * (1-(percent / percentOne)) green:componentsNormal[1] + g * (1-(percent / percentOne)) blue:b + componentsNormal[2] +(1-(percent / percentOne)) alpha:1];
+    
+    CGFloat r_start = 0.0;
+    CGFloat g_start = 0.0;
+    CGFloat b_start = 0.0;
+    
+    CGFloat r_end = 0.0;
+    CGFloat g_end = 0.0;
+    CGFloat b_end = 0.0;
+    
+    [self.selectColor getRed:&r_start green:&g_start blue:&b_start alpha:nil];
+    [self.normalColor getRed:&r_end green:&g_end blue:&b_end alpha:nil];
+    
+    CGFloat r = r_start - r_end;
+    CGFloat g = g_start - g_end;
+    CGFloat b = b_start - b_end;
+    
+    
+    
+    CGFloat percentResult = percent / percentOne;
+    return [UIColor colorWithRed:r_start - r * percentResult
+                           green:g_start - g * percentResult
+                            blue:b_start - b * percentResult
+                           alpha:1];
 }
 
-- (UIColor*)nowLabelColorRight:(CGFloat)percent{
-    const CGFloat * componentsSelect = CGColorGetComponents(self.selectColor.CGColor);
-    const CGFloat * componentsNormal = CGColorGetComponents(self.normalColor.CGColor);
-    CGFloat one = 1.0;
-    CGFloat percentOne = one / (self.titles.count - 1);
-    CGFloat r = componentsSelect[0] - componentsNormal[0];
-    CGFloat g = componentsSelect[1] - componentsNormal[1];
-    CGFloat b = componentsSelect[2] - componentsNormal[2];
-    return [UIColor colorWithRed:componentsNormal[0] + r * (percent / percentOne) green:componentsNormal[1] + g * (percent / percentOne) blue:b + componentsNormal[2] +(percent / percentOne) alpha:1];
-}
+
 
 - (UIColor*)willSelectLabelColorRight:(CGFloat)percent{
-    const CGFloat * componentsSelect = CGColorGetComponents(self.selectColor.CGColor);
-    const CGFloat * componentsNormal = CGColorGetComponents(self.normalColor.CGColor);
     CGFloat one = 1.0;
     CGFloat percentOne = one / (self.titles.count - 1);
-    CGFloat r = componentsSelect[0] - componentsNormal[0];
-    CGFloat g = componentsSelect[1] - componentsNormal[1];
-    CGFloat b = componentsSelect[2] - componentsNormal[2];
-    return [UIColor colorWithRed:componentsNormal[0] + r * (percent / percentOne) green:componentsNormal[1] + g * (percent / percentOne) blue:b + componentsNormal[2] +(percent / percentOne) alpha:1];
+    
+    CGFloat r_start = 0.0;
+    CGFloat g_start = 0.0;
+    CGFloat b_start = 0.0;
+    
+    CGFloat r_end = 0.0;
+    CGFloat g_end = 0.0;
+    CGFloat b_end = 0.0;
+    
+    [self.normalColor getRed:&r_start green:&g_start blue:&b_start alpha:nil];
+    [self.selectColor getRed:&r_end green:&g_end blue:&b_end alpha:nil];
+    
+    CGFloat r = r_start - r_end;
+    CGFloat g = g_start - g_end;
+    CGFloat b = b_start - b_end;
+    
+    
+    
+    CGFloat percentResult = percent / percentOne;
+    return [UIColor colorWithRed:r_start - r * percentResult
+                           green:g_start - g * percentResult
+                            blue:b_start - b * percentResult
+                           alpha:1];
 }
 
-//- (UIColor*)willSelectLabelColorLeft:(CGFloat)percent{
-//    const CGFloat * componentsSelect = CGColorGetComponents(self.selectColor.CGColor);
-//    const CGFloat * componentsNormal = CGColorGetComponents(self.normalColor.CGColor);
-//    CGFloat one = 1.0;
-//    CGFloat percentOne = one / (self.titles.count - 1);
-//    CGFloat r = componentsNormal[0] - componentsSelect[0];
-//    CGFloat g = componentsNormal[1] - componentsSelect[1];
-//    CGFloat b = componentsNormal[2] - componentsSelect[2];
-//    return [UIColor colorWithRed:r - r * (percent / percentOne) green:g - g * (percent / percentOne) blue:b - b * (percent / percentOne) alpha:1];
-//}
+- (void)willSelectLabelScale:(CGFloat)percent label:(UILabel*)label{
+    CGFloat one = 1.0;
+    CGFloat percentOne = one / (self.titles.count - 1);
+    CGFloat percentResult = percent / percentOne;
+    CGFloat size = fabs((self.selectFontSize/self.normalFontSize-1) * percentResult);
+    label.transform = CGAffineTransformMakeScale(1+size, 1+size);
+}
+
+- (void)nowLabelScale:(CGFloat)percent label:(UILabel*)label{
+    CGFloat one = 1.0;
+    CGFloat percentOne = one / (self.titles.count - 1);
+    CGFloat percentResult =  1-percent / percentOne;
+    CGFloat size = fabs((self.selectFontSize/self.normalFontSize-1) * percentResult);
+    label.transform = CGAffineTransformMakeScale(1+size, 1+size);
+}
 
 @end
