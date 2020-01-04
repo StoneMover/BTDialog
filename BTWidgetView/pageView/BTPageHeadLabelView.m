@@ -72,6 +72,16 @@
     [self.labels removeAllObjects];
     [self initDefaultData];
     [super reloadData];
+    for (UILabel * label in self.labels) {
+        if (label == self.labels[0]) {
+            label.textColor = self.selectColor;
+            CGFloat size = fabs((self.selectFontSize/self.normalFontSize-1))+1;
+            label.transform = CGAffineTransformMakeScale(size,size);
+        }else{
+            label.textColor = self.normalColor;
+            label.transform = CGAffineTransformMakeScale(1, 1);
+        }
+    }
 }
 
 - (void)scrollViewIndicator:(CGFloat)percent{
@@ -84,8 +94,16 @@
     UILabel * labelWillSelect = nil;
     CGFloat resultPercent = indexNow * percentOne - percent;
     if (resultPercent == 0) {
-        labelNow.textColor = [self nowLabelColorLeft:fabs(resultPercent)];
-        [self nowLabelScale:fabs(resultPercent) label:labelNow];
+        for (UILabel * label in self.labels) {
+            if (label == labelNow) {
+                labelNow.textColor = [self nowLabelColorLeft:fabs(resultPercent)];
+                [self nowLabelScale:fabs(resultPercent) label:labelNow];
+            }else{
+                label.textColor = self.normalColor;
+                label.transform = CGAffineTransformMakeScale(1, 1);
+            }
+        }
+        
         return;
     }
     
