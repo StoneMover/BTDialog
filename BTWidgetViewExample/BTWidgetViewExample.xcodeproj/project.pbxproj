@@ -14,6 +14,7 @@
 		0D41969D23B6483800F5079F /* BTAlertTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D41969C23B6483800F5079F /* BTAlertTextFieldView.m */; };
 		0DCC398A23B7142E00197B15 /* BTDialogBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DCC398923B7142D00197B15 /* BTDialogBundle.bundle */; };
 		0DCC398D23B71A6C00197B15 /* BTAlertTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCC398C23B71A6C00197B15 /* BTAlertTextView.m */; };
+		0DE9CFD823C1F658004607AD /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE9CFD723C1F658004607AD /* DataModel.m */; };
 		18629BAA23BA054300CE552C /* WKWebView+FullImg.m in Sources */ = {isa = PBXBuildFile; fileRef = 18629BA923BA054300CE552C /* WKWebView+FullImg.m */; };
 		18629BAD23BA05AF00CE552C /* BTContentAutoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18629BAC23BA05AF00CE552C /* BTContentAutoView.m */; };
 		6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */; };
@@ -58,6 +59,8 @@
 		0DCC398923B7142D00197B15 /* BTDialogBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = BTDialogBundle.bundle; path = ../../Assets/BTDialogBundle.bundle; sourceTree = "<group>"; };
 		0DCC398B23B71A6C00197B15 /* BTAlertTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTAlertTextView.h; sourceTree = "<group>"; };
 		0DCC398C23B71A6C00197B15 /* BTAlertTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTAlertTextView.m; sourceTree = "<group>"; };
+		0DE9CFD623C1F658004607AD /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		0DE9CFD723C1F658004607AD /* DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		18629BA823BA054300CE552C /* WKWebView+FullImg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView+FullImg.h"; sourceTree = "<group>"; };
 		18629BA923BA054300CE552C /* WKWebView+FullImg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+FullImg.m"; sourceTree = "<group>"; };
 		18629BAB23BA05AF00CE552C /* BTContentAutoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTContentAutoView.h; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 		60D28A5B230692260043442B = {
 			isa = PBXGroup;
 			children = (
+				0DE9CFD623C1F658004607AD /* DataModel.h */,
+				0DE9CFD723C1F658004607AD /* DataModel.m */,
 				60D28A66230692260043442B /* BTWidgetViewExample */,
 				60D28A65230692260043442B /* Products */,
 				B5C180072B33B072F546E259 /* Pods */,
@@ -419,6 +424,7 @@
 				6034D17F2313E811009DBBDF /* BTPageView.m in Sources */,
 				60D28A9B2306923A0043442B /* UIView+BTConstraint.m in Sources */,
 				6034D1842313E96F009DBBDF /* BTPageViewController.m in Sources */,
+				0DE9CFD823C1F658004607AD /* DataModel.m in Sources */,
 				0D41968D23B639BF00F5079F /* BTAlertView.m in Sources */,
 				18629BAA23BA054300CE552C /* WKWebView+FullImg.m in Sources */,
 				0D41969223B63CBD00F5079F /* DialogTestViewController.m in Sources */,
