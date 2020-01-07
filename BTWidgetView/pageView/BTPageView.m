@@ -73,7 +73,7 @@
 
 #pragma mark UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if (self.headView) {
+    if (self.headView && scrollView.contentSize.width-scrollView.width!=0) {
         [self.headView scrollViewIndicator:(scrollView.contentOffset.x)/(scrollView.contentSize.width-scrollView.width)];
     }
     

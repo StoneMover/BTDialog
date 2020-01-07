@@ -31,7 +31,7 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCellId"];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
-    [self test:@"when i get old" str:@"i when i gset old"];
+    [self test:@"when i get old " str:@"you when will i get old and"];
 }
 
 - (void)test:(NSString*)strOri str:(NSString*)changeStr{
@@ -101,15 +101,15 @@
         if (array.firstObject == m && m.start!= 0) {
             model.start = 0;
             model.lenth = m.start;
-            
-            NSInteger index = [array indexOfObject:m];
-            DataModel * nextModel = [array objectAtIndex:index+1];
-            DataModel * anotherModel = [DataModel new];
-            anotherModel.start = m.end;
-            anotherModel.lenth = nextModel.start - m.end;
-            
             [dataResult addObject:model];
-            [dataResult addObject:anotherModel];
+            if (array.lastObject != m) {
+                NSInteger index = [array indexOfObject:m];
+                DataModel * nextModel = [array objectAtIndex:index+1];
+                DataModel * anotherModel = [DataModel new];
+                anotherModel.start = m.end;
+                anotherModel.lenth = nextModel.start - m.end;
+                [dataResult addObject:anotherModel];
+            }
         }else if(array.lastObject == m){
             if (m.end != changeStr.length) {
                 model.start = m.end;
@@ -121,7 +121,10 @@
             NSInteger index = [array indexOfObject:m];
             DataModel * nextModel = [array objectAtIndex:index+1];
             model.lenth = nextModel.start - m.end;
-            [dataResult addObject:model];
+            if (model.lenth>0) {
+                [dataResult addObject:model];
+            }
+            
         }
         
     }

@@ -42,11 +42,11 @@
     }
     
     if (self.selectFontSize==0) {
-        self.selectFontSize=18;
+        self.selectFontSize=16;
     }
     
     if (self.normalFontSize==0) {
-        self.normalFontSize=14;
+        self.normalFontSize=16;
     }
 }
 
@@ -75,8 +75,12 @@
     for (UILabel * label in self.labels) {
         if (label == self.labels[0]) {
             label.textColor = self.selectColor;
-            CGFloat size = fabs((self.selectFontSize/self.normalFontSize-1))+1;
-            label.transform = CGAffineTransformMakeScale(size,size);
+            if (self.selectFontSize != self.normalFontSize) {
+                CGFloat size = fabs((self.selectFontSize/self.normalFontSize-1))+1;
+                label.transform = CGAffineTransformMakeScale(size,size);
+            }else{
+                label.transform = CGAffineTransformMakeScale(1,1);
+            }
         }else{
             label.textColor = self.normalColor;
             label.transform = CGAffineTransformMakeScale(1, 1);
