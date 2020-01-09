@@ -63,15 +63,31 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 #pragma mark 其它
+//获取当前的VC
 - (UIViewController*)viewController;
+
+//移除子view
 - (void)removeChild:(UIView*)childView;
+
+//移除所有子view
 - (void)removeAllChildView;
+
+//设置默认的阴影效果
 - (void)setDefaultShade;
+
+//设置阴影效果
 - (void)setShade:(CGFloat)opacity radius:(CGFloat)radius;
 - (void)setShade:(CGFloat)opacity color:(UIColor*)color radius:(CGFloat)radius offset:(CGSize)size;
+
+//从xib中加载对象
 + (instancetype)loadInstanceFromNib;
+
+//添加view
 - (void)addSubViewArray:(NSArray<UIView*>*)subviews;
+
+//生成当前view的图片
 - (UIImage*)selfImg;
+
 @end
 
 NS_ASSUME_NONNULL_END
