@@ -54,7 +54,7 @@ typedef NS_ENUM(NSInteger,BTPageHeadViewStyle) {
 //下标指示器距离底部的间距
 @property (nonatomic, assign) CGFloat viewIndicatorBottomPadding;
 
-//每个item之间的间距
+//每个item之间的间距,BTPageHeadViewStyleDefault有效
 @property (nonatomic, assign) CGFloat itemMarin;
 
 //点击切换是否需要滑动动画
@@ -64,10 +64,10 @@ typedef NS_ENUM(NSInteger,BTPageHeadViewStyle) {
 
 - (void)initViewIndicator:(CGSize)size corner:(CGFloat)corner bgColor:(UIColor*)color;
 
-//滑动下标的百分比
+//滑动下标的百分比,如果没有特殊需要外部不需要调用
 - (void)scrollViewIndicator:(CGFloat)percent;
-
-
+//选中了某一项,如果没有特殊需要外部不需要调用
+- (void)selectIndex:(NSInteger)index;
 
 @end
 

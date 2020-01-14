@@ -123,7 +123,12 @@
         }
         [self.childViews addObject:rootView];
         [self.scrollView addSubview:rootView];
-        startX+=rootView.width;
+        if(self.style == BTPageHeadViewStyleDefault && i < total - 1){
+            startX+=rootView.width + self.itemMarin;
+        }else{
+            startX+=rootView.width;
+        }
+        
     }
     
     [self.scrollView setContentSize:CGSizeMake(startX, self.scrollView.height)];
@@ -152,6 +157,22 @@
     self.viewIndicator.centerX=resultCenterX;
 }
 
+
+- (void)selectIndex:(NSInteger)index{
+    if (self.style == BTPageHeadViewStyleDefault) {
+        CGFloat result = self.childViews[index].centerX - self.width /2.0;
+        if (result > 0){
+            if (self.width + result <= self.scrollView.contentSize.width) {
+                [self.scrollView setContentOffset:CGPointMake(result, 0) animated:YES];
+            }else{
+                [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentSize.width + self.rightPadding - self.width, 0) animated:YES];
+            }
+            
+        }else{
+            [self.scrollView setContentOffset:CGPointMake(-self.leftPadding, 0) animated:YES];
+        }
+    }
+}
 
 
 @end

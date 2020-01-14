@@ -127,6 +127,9 @@
         [self.delegate pageView:self didShow:self.nowIndex];
     }
     
+    if (self.headView) {
+        [self.headView selectIndex:self.nowIndex];
+    }
 }
 
 #pragma mark 相关方法
@@ -197,6 +200,9 @@
     self.lastContentOffsetX=self.width*self.initSelectIndex;
     self.nowIndex=self.initSelectIndex;
     [self selectIndex:self.initSelectIndex animated:NO];
+    if (self.initSelectIndex != 0 && self.headView) {
+        [self.headView selectIndex:self.nowIndex];
+    }
     if (self.delegate&&[self.delegate respondsToSelector:@selector(pageView:didShow:)]) {
         [self.delegate pageView:self didShow:self.nowIndex];
     }

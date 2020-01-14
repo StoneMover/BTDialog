@@ -31,7 +31,10 @@
     self.pageView.delegate=self;
     self.pageView.initSelectIndex=3;
     self.pageView.isNeedLoadNextAndLast=NO;
-    self.headView=[[BTPageHeadLabelView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40) titles:@[@"第0项",@"第1项",@"第2项",@"第3项"] style:BTPageHeadViewStyleAverage];
+    self.headView=[[BTPageHeadLabelView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40) titles:@[@"第0项",@"第1项",@"第2项",@"第3项",@"第3项",@"第3项",@"第3项",@"第3项",@"第3项"] style:BTPageHeadViewStyleDefault];
+    self.headView.itemMarin = 20;
+    self.headView.rightPadding = 20;
+    self.headView.leftPadding = 20;
     [self.headView initViewIndicator:CGSizeMake(15, 2) corner:0 bgColor:UIColor.redColor];
     
     
@@ -39,7 +42,7 @@
 }
 
 - (NSInteger)pageNumOfView:(BTPageView*)pageView{
-    return 4;
+    return 9;
 }
 
 - (UIView*)pageView:(BTPageView*)pageView contentViewForIndex:(NSInteger)index{

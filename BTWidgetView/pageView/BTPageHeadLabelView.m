@@ -55,11 +55,20 @@
 }
 
 - (UIView*)pageHeadView:(BTPageHeadView*)headView contentViewForIndex:(NSInteger)index{
-    UILabel * label=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, self.width / self.titles.count, self.height)];
+    UILabel * label = [[UILabel alloc] init];
     label.font=[UIFont systemFontOfSize:self.normalFontSize weight:UIFontWeightMedium];
     label.textColor=self.normalColor;
     label.text=self.titles[index];
     label.textAlignment=NSTextAlignmentCenter;
+    label.numberOfLines = 1;
+    if (self.labelStyle == BTPageHeadViewStyleDefault) {
+        [label sizeToFit];
+        label.height = self.height;
+    }else{
+        label.frame = CGRectMake(0, 0, self.width / self.titles.count, self.height);
+    }
+    
+    
     [self.labels addObject:label];
     return label;
 }
