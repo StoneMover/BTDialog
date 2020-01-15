@@ -35,6 +35,8 @@
 
 @protocol BTPageViewDelegate <NSObject>
 
+@optional
+
 - (void)pageView:(BTPageView*)pageView didShow:(NSInteger)index;
 
 - (void)pageView:(BTPageView*)pageView didDismiss:(NSInteger)index;
