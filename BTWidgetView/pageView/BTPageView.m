@@ -64,6 +64,7 @@
 }
 
 - (void)layoutSubviews{
+    //这里是不是要循环下子view让其重新layout一遍？
     if (self.headView) {
         self.scrollView.frame=CGRectMake(0, self.headView.bottom, self.width, self.height-self.headView.height);
     }else{
@@ -158,6 +159,9 @@
     [self clearData];
     
     NSInteger total=[self.dataSource pageNumOfView:self];
+    if (total == 0) {
+        return;
+    }
     self.childView=[[NSMutableArray alloc] init];
     for (int i=0; i<total; i++) {
         BTPageViewModel * model =[[BTPageViewModel alloc] init:nil index:i];
