@@ -215,7 +215,7 @@
 
 //是否已经加装过view
 - (BOOL)isHasLoadView:(NSInteger)index{
-    if (index>self.childView.count-1) {
+    if (index>self.childView.count-1 || index < 0) {
         return NO;
     }
     BTPageViewModel * model =self.childView[index];
