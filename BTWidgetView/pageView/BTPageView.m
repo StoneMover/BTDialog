@@ -78,18 +78,19 @@
         [self.headView scrollViewIndicator:(scrollView.contentOffset.x)/(scrollView.contentSize.width-scrollView.width)];
     }
     
+    //这里在横竖屏切换的时候可能会出现数组越界的情况
     if (self.scrollView.contentOffset.x-self.lastContentOffsetX>0) {
         //向右左滑动，加载下一个
         if (self.scrollView.scrollEnabled) {
             //不是点击滑动的情况
-            [self autoLoadSubView:self.nowIndex+1];
+            [self autoLoadSubView:self.nowIndex+1<self.childView.count?self.nowIndex+1:self.nowIndex];
         }
         
     }else if (self.scrollView.contentOffset.x-self.lastContentOffsetX<0){
         //向右边滑动，加载上一个
         if (self.scrollView.scrollEnabled) {
             //不是点击滑动的情况
-            [self autoLoadSubView:self.nowIndex-1];
+            [self autoLoadSubView:self.nowIndex-1>0?self.nowIndex-1:0];
         }
         
     }
@@ -214,6 +215,9 @@
 
 //是否已经加装过view
 - (BOOL)isHasLoadView:(NSInteger)index{
+    if (index>self.childView.count-1) {
+        return NO;
+    }
     BTPageViewModel * model =self.childView[index];
     if (model.childView) {
         return YES;
