@@ -239,11 +239,8 @@
 //自动加载当前的view，如果没有加载过就加载，加载过直接跳出
 - (void)autoLoadSubView:(NSInteger)index{
     //加载当前下标的view
-    if ([self isIndexOut:index]) {
-        return;
-    }
     
-    if (![self isHasLoadView:index]) {
+    if (![self isHasLoadView:index]&&![self isIndexOut:index]) {
         UIView * view=[self getChildView:index];
         view.frame=CGRectMake(index*self.scrollView.width, 0, self.scrollView.width, self.scrollView.height);
         self.childView[index].childView=view;
@@ -254,14 +251,14 @@
         return;
     }
     
-    if (index!=0 && ![self isHasLoadView:index-1]) {
+    if (index!=0 && ![self isHasLoadView:index-1] && ![self isIndexOut:index -1]) {
         UIView * view=[self getChildView:index-1];
         view.frame=CGRectMake((index-1)*self.scrollView.width, 0, self.scrollView.width, self.scrollView.height);
         self.childView[index-1].childView=view;
         [self.scrollView addSubview:view];
     }
     
-    if (index!=self.childView.count-1&&![self isHasLoadView:index+1]) {
+    if (index!=self.childView.count-1&&![self isHasLoadView:index+1]&& ![self isIndexOut:index +1]) {
         UIView * view=[self getChildView:index+1];
         view.frame=CGRectMake((index+1)*self.scrollView.width, 0, self.scrollView.width, self.scrollView.height);
         self.childView[index+1].childView=view;
@@ -305,6 +302,7 @@
 
 - (BOOL)isIndexOut:(NSInteger)index{
     if (index < 0 && index > self.childView.count - 1) {
+        NSLog(@"数组越界：%ld",index);
         return YES;
     }
     
