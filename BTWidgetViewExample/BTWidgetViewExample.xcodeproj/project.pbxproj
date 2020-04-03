@@ -19,6 +19,7 @@
 		18629BAA23BA054300CE552C /* WKWebView+FullImg.m in Sources */ = {isa = PBXBuildFile; fileRef = 18629BA923BA054300CE552C /* WKWebView+FullImg.m */; };
 		18629BAD23BA05AF00CE552C /* BTContentAutoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18629BAC23BA05AF00CE552C /* BTContentAutoView.m */; };
 		1867739623C6FAE40068E3DC /* BTGridImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867739523C6FAE40068E3DC /* BTGridImgView.m */; };
+		186F1D442437194A002BB121 /* SearchHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186F1D432437194A002BB121 /* SearchHeadView.m */; };
 		6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */; };
 		6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17B2313E811009DBBDF /* BTPageHeadView.m */; };
 		6034D17F2313E811009DBBDF /* BTPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17C2313E811009DBBDF /* BTPageView.m */; };
@@ -71,6 +72,8 @@
 		18629BAC23BA05AF00CE552C /* BTContentAutoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTContentAutoView.m; sourceTree = "<group>"; };
 		1867739423C6FAE40068E3DC /* BTGridImgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTGridImgView.h; sourceTree = "<group>"; };
 		1867739523C6FAE40068E3DC /* BTGridImgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTGridImgView.m; sourceTree = "<group>"; };
+		186F1D422437194A002BB121 /* SearchHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchHeadView.h; sourceTree = "<group>"; };
+		186F1D432437194A002BB121 /* SearchHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchHeadView.m; sourceTree = "<group>"; };
 		30FB91F8B97D3E03F3F43591 /* Pods-BTWidgetViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.release.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		5E98408A0C95CC96F9CDA16D /* Pods-BTWidgetViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.debug.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPageHeadLabelView.m; sourceTree = "<group>"; };
@@ -160,6 +163,15 @@
 				0DCC398C23B71A6C00197B15 /* BTAlertTextView.m */,
 			);
 			path = alert;
+			sourceTree = "<group>";
+		};
+		186F1D4124371934002BB121 /* search */ = {
+			isa = PBXGroup;
+			children = (
+				186F1D422437194A002BB121 /* SearchHeadView.h */,
+				186F1D432437194A002BB121 /* SearchHeadView.m */,
+			);
+			path = search;
 			sourceTree = "<group>";
 		};
 		6034D1762313E800009DBBDF /* pageView */ = {
@@ -264,6 +276,7 @@
 		60D28A7D2306923A0043442B /* BTWidgetView */ = {
 			isa = PBXGroup;
 			children = (
+				186F1D4124371934002BB121 /* search */,
 				0D41969723B6413D00F5079F /* alert */,
 				6034D1812313E86C009DBBDF /* dialog */,
 				6034D1802313E81A009DBBDF /* category */,
@@ -447,6 +460,7 @@
 				0D41969D23B6483800F5079F /* BTAlertTextFieldView.m in Sources */,
 				6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */,
 				60643D722318F5B5007C1E01 /* PageChildVcViewController.m in Sources */,
+				186F1D442437194A002BB121 /* SearchHeadView.m in Sources */,
 				60D28A9E2306923A0043442B /* BTButton.m in Sources */,
 				18629BAD23BA05AF00CE552C /* BTContentAutoView.m in Sources */,
 				60D28A77230692270043442B /* main.m in Sources */,
