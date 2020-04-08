@@ -10,8 +10,11 @@
 
 typedef NS_ENUM(NSInteger,BTButtonStyle) {
     BTButtonStyleVertical=0,//垂直，图片在上，文字在下
-    BTButtonStyleHoz//水平，图片在右，文字在左
+    BTButtonStyleHoz,//水平，图片在右，文字在左
+    BTButtonStyleDefault//默认
 };
+
+typedef void(^BTBtnLongPressBlock)(void);
 
 @interface BTButton : UIButton
 
@@ -33,5 +36,7 @@ typedef NS_ENUM(NSInteger,BTButtonStyle) {
 
 @property (nonatomic, assign) CGFloat labelBageHeight;
 
+
+- (void)addLongPressWithTime:(CGFloat)second block:(BTBtnLongPressBlock)block;
 
 @end

@@ -10,6 +10,13 @@
 #import "UIView+BTViewTool.h"
 #import <BTHelp/BTUtils.h>
 
+@interface BTButton()
+
+@property (nonatomic, copy) BTBtnLongPressBlock longPressBlock;
+
+@end
+
+
 @implementation BTButton
 
 -(void)awakeFromNib{
@@ -106,5 +113,17 @@
     [self layoutSubviews];
 }
 
+- (void)addLongPressWithTime:(CGFloat)second block:(BTBtnLongPressBlock)block{
+    self.longPressBlock = block;
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressAction)];
+    longPress.minimumPressDuration = second; //定义按的时间
+    [self addGestureRecognizer:longPress];
+}
+
+- (void)longPressAction{
+    if (self.longPressBlock) {
+        self.longPressBlock();
+    }
+}
 
 @end
