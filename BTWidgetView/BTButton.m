@@ -115,14 +115,16 @@
 
 - (void)addLongPressWithTime:(CGFloat)second block:(BTBtnLongPressBlock)block{
     self.longPressBlock = block;
-    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressAction)];
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressAction:)];
     longPress.minimumPressDuration = second; //定义按的时间
     [self addGestureRecognizer:longPress];
 }
 
-- (void)longPressAction{
-    if (self.longPressBlock) {
-        self.longPressBlock();
+- (void)longPressAction:(UILongPressGestureRecognizer *)gestureRecognizer{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        if (self.longPressBlock) {
+            self.longPressBlock();
+        }
     }
 }
 
