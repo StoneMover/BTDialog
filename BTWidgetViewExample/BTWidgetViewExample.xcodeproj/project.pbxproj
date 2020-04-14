@@ -14,6 +14,7 @@
 		0D41969D23B6483800F5079F /* BTAlertTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D41969C23B6483800F5079F /* BTAlertTextFieldView.m */; };
 		0DCC398A23B7142E00197B15 /* BTDialogBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0DCC398923B7142D00197B15 /* BTDialogBundle.bundle */; };
 		0DCC398D23B71A6C00197B15 /* BTAlertTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCC398C23B71A6C00197B15 /* BTAlertTextView.m */; };
+		0DD56D082445F65C00708775 /* SearchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD56D062445F65C00708775 /* SearchTestViewController.m */; };
 		0DE9CFD823C1F658004607AD /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE9CFD723C1F658004607AD /* DataModel.m */; };
 		1860860823D160F100E2749E /* BTStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1860860723D160F100E2749E /* BTStarView.m */; };
 		18629BAA23BA054300CE552C /* WKWebView+FullImg.m in Sources */ = {isa = PBXBuildFile; fileRef = 18629BA923BA054300CE552C /* WKWebView+FullImg.m */; };
@@ -63,6 +64,8 @@
 		0DCC398923B7142D00197B15 /* BTDialogBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = BTDialogBundle.bundle; path = ../../Assets/BTDialogBundle.bundle; sourceTree = "<group>"; };
 		0DCC398B23B71A6C00197B15 /* BTAlertTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTAlertTextView.h; sourceTree = "<group>"; };
 		0DCC398C23B71A6C00197B15 /* BTAlertTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTAlertTextView.m; sourceTree = "<group>"; };
+		0DD56D052445F65C00708775 /* SearchTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchTestViewController.h; sourceTree = "<group>"; };
+		0DD56D062445F65C00708775 /* SearchTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTestViewController.m; sourceTree = "<group>"; };
 		0DE9CFD623C1F658004607AD /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		0DE9CFD723C1F658004607AD /* DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		1860860623D160F100E2749E /* BTStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTStarView.h; sourceTree = "<group>"; };
@@ -168,6 +171,15 @@
 			path = alert;
 			sourceTree = "<group>";
 		};
+		0DD56D042445F62B00708775 /* searchTest */ = {
+			isa = PBXGroup;
+			children = (
+				0DD56D052445F65C00708775 /* SearchTestViewController.h */,
+				0DD56D062445F65C00708775 /* SearchTestViewController.m */,
+			);
+			path = searchTest;
+			sourceTree = "<group>";
+		};
 		186F1D4124371934002BB121 /* search */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +270,7 @@
 		60D28A66230692260043442B /* BTWidgetViewExample */ = {
 			isa = PBXGroup;
 			children = (
+				0DD56D042445F62B00708775 /* searchTest */,
 				0DCC398923B7142D00197B15 /* BTDialogBundle.bundle */,
 				0D41968E23B63C6D00F5079F /* dialogTest */,
 				6037C16A23168C570017D898 /* pageViewTest */,
@@ -463,6 +476,7 @@
 				60D28A9C2306923A0043442B /* BTTextField.m in Sources */,
 				60D28A962306923A0043442B /* BTTextView.m in Sources */,
 				0D41969623B6413100F5079F /* BTAlertLabelView.m in Sources */,
+				0DD56D082445F65C00708775 /* SearchTestViewController.m in Sources */,
 				0D41969D23B6483800F5079F /* BTAlertTextFieldView.m in Sources */,
 				6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */,
 				60643D722318F5B5007C1E01 /* PageChildVcViewController.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "BTTextField.h"
+#import <BTHelp/BTUtils.h>
 
 @implementation BTTextField
 
@@ -96,7 +97,7 @@
 }
 
 - (void)addDoneView{
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, 35)];
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, BTUtils.UI_IS_IPHONEX?45:35)];
     toolbar.tintColor = [UIColor systemBlueColor];
     toolbar.backgroundColor = [UIColor systemGrayColor];
     UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];

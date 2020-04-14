@@ -12,6 +12,7 @@
 #import "HomeTableViewCell.h"
 #import "DialogTestViewController.h"
 #import "DataModel.h"
+#import "SearchTestViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -27,7 +28,7 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent=NO;
     self.title=@"BTWidget";
-    self.titles=@[@"BTPageViewTest",@"BTPageVcTest",@"BTDialogView&BTAlertView"];
+    self.titles=@[@"BTPageViewTest",@"BTPageVcTest",@"BTDialogView&BTAlertView",@"BTSearchTest"];
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCellId"];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
@@ -172,6 +173,13 @@
         case 2:
         {
             DialogTestViewController * vc=[DialogTestViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 3:
+        {
+            SearchTestViewController * vc=[SearchTestViewController new];
+            vc.title = self.titles[indexPath.row];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;

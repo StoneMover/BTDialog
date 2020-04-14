@@ -8,10 +8,18 @@
 
 #import "BTSearchView.h"
 
+@interface BTSearchView()
+
+@property (nonatomic, strong) UILabel * labelHistory;
+
+@end
+
+
 @implementation BTSearchView
 
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
+    self.backgroundColor = UIColor.whiteColor;
     __weak BTSearchView * weakSelf=self;
     self.viewHead = [[BTSearchHeadView alloc] initSearchHead];
     self.viewHead.cancelClickBlock = ^{
@@ -27,7 +35,8 @@
 }
 
 - (void)show:(UIView*)view{
-    
+    self.frame = view.bounds;
+    [view addSubview:self];
 }
 
 @end
