@@ -7,10 +7,11 @@
 //
 
 #import "BTSearchView.h"
+#import "UIView+BTViewTool.h"
 
 @interface BTSearchView()
 
-@property (nonatomic, strong) UILabel * labelHistory;
+@property (nonatomic, strong) UIButton * btnCancel;
 
 @end
 
@@ -19,24 +20,37 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
-    self.backgroundColor = UIColor.whiteColor;
+    self.backgroundColor=[UIColor colorWithWhite:0 alpha:.5];
     __weak BTSearchView * weakSelf=self;
     self.viewHead = [[BTSearchHeadView alloc] initSearchHead];
     self.viewHead.cancelClickBlock = ^{
-        
+        [weakSelf dismiss];
     };
-    [self addSubview:self.viewHead];
+    self.viewHead.searchClick = ^(NSString * _Nonnull searchStr) {
+        if (weakSelf.searchResult) {
+            weakSelf.searchResult(searchStr);
+        }
+    };
     
+    self.btnCancel = [[UIButton alloc] init];
+    [self.btnCancel addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubViewArray:@[self.viewHead,self.btnCancel]];
     return self;
 }
 
 - (void)layoutSubviews{
-    
+    self.btnCancel.frame = CGRectMake(0, self.viewHead.bottom, self.width, self.height - self.viewHead.height);
 }
 
 - (void)show:(UIView*)view{
     self.frame = view.bounds;
     [view addSubview:self];
+    [self.viewHead.textFieldSearch becomeFirstResponder];
+}
+
+- (void)dismiss{
+    self.viewHead.textFieldSearch.text = @"";
+    [self removeFromSuperview];
 }
 
 @end

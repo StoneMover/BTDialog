@@ -22,6 +22,9 @@
 		1867739623C6FAE40068E3DC /* BTGridImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867739523C6FAE40068E3DC /* BTGridImgView.m */; };
 		1867A8F62445C06D00DC819F /* BTSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867A8F52445C06D00DC819F /* BTSearchView.m */; };
 		1867A8F92445C0CE00DC819F /* BTSearchHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867A8F82445C0CD00DC819F /* BTSearchHeadView.m */; };
+		18859B1B2446A10A00B8B1D9 /* Pods_BTWidgetViewExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C15052C4A266285DD500636 /* Pods_BTWidgetViewExample.framework */; };
+		18859B1C2446A10A00B8B1D9 /* Pods_BTWidgetViewExample.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C15052C4A266285DD500636 /* Pods_BTWidgetViewExample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18859B202446B1F600B8B1D9 /* BTWidgetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18859B1F2446B1F600B8B1D9 /* BTWidgetView.m */; };
 		6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */; };
 		6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17B2313E811009DBBDF /* BTPageHeadView.m */; };
 		6034D17F2313E811009DBBDF /* BTPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17C2313E811009DBBDF /* BTPageView.m */; };
@@ -48,8 +51,21 @@
 		60D28A9F2306923A0043442B /* UIView+BTEasyDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A922306923A0043442B /* UIView+BTEasyDialog.m */; };
 		60D28AA02306923A0043442B /* BTTextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A932306923A0043442B /* BTTextInputView.m */; };
 		60D28AA12306923A0043442B /* BTDialogTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A952306923A0043442B /* BTDialogTableView.m */; };
-		FBAB7F38B3796D441209AB5C /* Pods_BTWidgetViewExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C15052C4A266285DD500636 /* Pods_BTWidgetViewExample.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		18859B1D2446A10A00B8B1D9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				18859B1C2446A10A00B8B1D9 /* Pods_BTWidgetViewExample.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0D41968B23B639BF00F5079F /* BTAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTAlertView.m; sourceTree = "<group>"; };
@@ -80,6 +96,9 @@
 		1867A8F52445C06D00DC819F /* BTSearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTSearchView.m; sourceTree = "<group>"; };
 		1867A8F72445C0CD00DC819F /* BTSearchHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTSearchHeadView.h; sourceTree = "<group>"; };
 		1867A8F82445C0CD00DC819F /* BTSearchHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTSearchHeadView.m; sourceTree = "<group>"; };
+		18859B172446A0FE00B8B1D9 /* BTHelp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BTHelp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18859B1E2446B1F600B8B1D9 /* BTWidgetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTWidgetView.h; sourceTree = "<group>"; };
+		18859B1F2446B1F600B8B1D9 /* BTWidgetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTWidgetView.m; sourceTree = "<group>"; };
 		30FB91F8B97D3E03F3F43591 /* Pods-BTWidgetViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.release.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		5E98408A0C95CC96F9CDA16D /* Pods-BTWidgetViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.debug.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPageHeadLabelView.m; sourceTree = "<group>"; };
@@ -139,7 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBAB7F38B3796D441209AB5C /* Pods_BTWidgetViewExample.framework in Frameworks */,
+				18859B1B2446A10A00B8B1D9 /* Pods_BTWidgetViewExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +334,8 @@
 				1867739523C6FAE40068E3DC /* BTGridImgView.m */,
 				1860860623D160F100E2749E /* BTStarView.h */,
 				1860860723D160F100E2749E /* BTStarView.m */,
+				18859B1E2446B1F600B8B1D9 /* BTWidgetView.h */,
+				18859B1F2446B1F600B8B1D9 /* BTWidgetView.m */,
 			);
 			name = BTWidgetView;
 			path = ../../BTWidgetView;
@@ -332,6 +353,7 @@
 		E52461B76B9615B4149494C1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18859B172446A0FE00B8B1D9 /* BTHelp.framework */,
 				7C15052C4A266285DD500636 /* Pods_BTWidgetViewExample.framework */,
 			);
 			name = Frameworks;
@@ -349,6 +371,7 @@
 				60D28A61230692260043442B /* Frameworks */,
 				60D28A62230692260043442B /* Resources */,
 				EB309CA5BEDF76DF0DC71759 /* [CP] Embed Pods Frameworks */,
+				18859B1D2446A10A00B8B1D9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -476,6 +499,7 @@
 				60D28A9C2306923A0043442B /* BTTextField.m in Sources */,
 				60D28A962306923A0043442B /* BTTextView.m in Sources */,
 				0D41969623B6413100F5079F /* BTAlertLabelView.m in Sources */,
+				18859B202446B1F600B8B1D9 /* BTWidgetView.m in Sources */,
 				0DD56D082445F65C00708775 /* SearchTestViewController.m in Sources */,
 				0D41969D23B6483800F5079F /* BTAlertTextFieldView.m in Sources */,
 				6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */,
@@ -632,13 +656,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CSPDPNP92Z;
+				DEVELOPMENT_TEAM = 43846DSFBT;
 				INFOPLIST_FILE = BTWidgetViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.stone.BTWidgetViewExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wocai.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -650,13 +674,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CSPDPNP92Z;
+				DEVELOPMENT_TEAM = 43846DSFBT;
 				INFOPLIST_FILE = BTWidgetViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.stone.BTWidgetViewExample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wocai.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

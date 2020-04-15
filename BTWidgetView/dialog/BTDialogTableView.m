@@ -9,7 +9,7 @@
 #import "BTDialogTableView.h"
 #import <BTHelp/BTUtils.h>
 #import "UIView+BTConstraint.h"
-
+#import "BTWidgetView.h"
 
 
 //当显示中间的时候距离屏幕两边的距离
@@ -208,7 +208,7 @@ int const BT_SHOW_VIEW_HEAD_H=45;
 
 - (void)initBtnCancel{
     self.btnCancel=[[UIButton alloc] initWithFrame:CGRectMake(self.width-50, 0, 50, self.height)];
-    [self.btnCancel setImage:[self imageBundleName:@"bt_dialog_close"] forState:UIControlStateNormal];
+    [self.btnCancel setImage:[BTWidgetView imageBundleName:@"bt_dialog_close"] forState:UIControlStateNormal];
     [self addSubview:self.btnCancel];
 }
 
@@ -218,11 +218,7 @@ int const BT_SHOW_VIEW_HEAD_H=45;
     [self addSubview:self.lineView];
 }
 
-- (UIImage*)imageBundleName:(NSString*)name{
-    NSBundle * bundle = [NSBundle bundleForClass:[self class]];
-    UIImage * img = [UIImage imageNamed:[NSString stringWithFormat:@"BTDialogBundle.bundle/%@",name] inBundle:bundle compatibleWithTraitCollection:nil];
-    return img;
-}
+
 
 @end
 

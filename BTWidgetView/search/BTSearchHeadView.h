@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) void(^cancelClickBlock)(void);
 
+@property (nonatomic, copy) void(^searchClick) (NSString * _Nullable  searchStr);
+
 @end
 
 NS_ASSUME_NONNULL_END

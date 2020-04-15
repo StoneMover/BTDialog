@@ -15,7 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) BTSearchHeadView * viewHead;
 
+@property (nonatomic, copy) void(^searchResult) (NSString * _Nullable  searchStr);;
+
 - (void)show:(UIView*)view;
+
+- (void)dismiss;
 
 @end
 
