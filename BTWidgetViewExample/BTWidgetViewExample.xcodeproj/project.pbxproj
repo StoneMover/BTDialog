@@ -17,6 +17,7 @@
 		0DD56D082445F65C00708775 /* SearchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD56D062445F65C00708775 /* SearchTestViewController.m */; };
 		0DE9CFD823C1F658004607AD /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE9CFD723C1F658004607AD /* DataModel.m */; };
 		185CF1E52446F0AC00866B1A /* BTVerticalAnimView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185CF1E42446F0AC00866B1A /* BTVerticalAnimView.m */; };
+		185CF1EB2446F1EE00866B1A /* BTScrollLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185CF1EA2446F1EE00866B1A /* BTScrollLabelView.m */; };
 		1860860823D160F100E2749E /* BTStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1860860723D160F100E2749E /* BTStarView.m */; };
 		18629BAA23BA054300CE552C /* WKWebView+FullImg.m in Sources */ = {isa = PBXBuildFile; fileRef = 18629BA923BA054300CE552C /* WKWebView+FullImg.m */; };
 		18629BAD23BA05AF00CE552C /* BTContentAutoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18629BAC23BA05AF00CE552C /* BTContentAutoView.m */; };
@@ -87,6 +88,8 @@
 		0DE9CFD723C1F658004607AD /* DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		185CF1E32446F0AC00866B1A /* BTVerticalAnimView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTVerticalAnimView.h; sourceTree = "<group>"; };
 		185CF1E42446F0AC00866B1A /* BTVerticalAnimView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTVerticalAnimView.m; sourceTree = "<group>"; };
+		185CF1E92446F1EE00866B1A /* BTScrollLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTScrollLabelView.h; sourceTree = "<group>"; };
+		185CF1EA2446F1EE00866B1A /* BTScrollLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTScrollLabelView.m; sourceTree = "<group>"; };
 		1860860623D160F100E2749E /* BTStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTStarView.h; sourceTree = "<group>"; };
 		1860860723D160F100E2749E /* BTStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTStarView.m; sourceTree = "<group>"; };
 		18629BA823BA054300CE552C /* WKWebView+FullImg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView+FullImg.h"; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 				1860860723D160F100E2749E /* BTStarView.m */,
 				185CF1E32446F0AC00866B1A /* BTVerticalAnimView.h */,
 				185CF1E42446F0AC00866B1A /* BTVerticalAnimView.m */,
+				185CF1E92446F1EE00866B1A /* BTScrollLabelView.h */,
+				185CF1EA2446F1EE00866B1A /* BTScrollLabelView.m */,
 				18859B1E2446B1F600B8B1D9 /* BTWidgetView.h */,
 				18859B1F2446B1F600B8B1D9 /* BTWidgetView.m */,
 			);
@@ -488,6 +493,7 @@
 				6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */,
 				60D28AA12306923A0043442B /* BTDialogTableView.m in Sources */,
 				60D28A9F2306923A0043442B /* UIView+BTEasyDialog.m in Sources */,
+				185CF1EB2446F1EE00866B1A /* BTScrollLabelView.m in Sources */,
 				60D28A992306923A0043442B /* UIView+BTViewTool.m in Sources */,
 				60D28A982306923A0043442B /* BTLineView.m in Sources */,
 				1860860823D160F100E2749E /* BTStarView.m in Sources */,

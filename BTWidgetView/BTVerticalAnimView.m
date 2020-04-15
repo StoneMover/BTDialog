@@ -8,6 +8,7 @@
 
 #import "BTVerticalAnimView.h"
 #import "BTTimerHelp.h"
+#import "UIView+BTViewTool.h"
 
 @interface BTVerticalAnimView()<BTTimerHelpDelegate>
 
