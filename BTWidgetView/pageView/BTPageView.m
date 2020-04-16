@@ -50,6 +50,7 @@
     [self initScrollView];
     self.isNeedLoadNextAndLast=YES;
     self.nowIndex=-1;
+    self.isCanScroll = YES;
 }
 
 - (void)initScrollView{
@@ -76,6 +77,10 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (self.headView && scrollView.contentSize.width-scrollView.width!=0) {
         [self.headView scrollViewIndicator:(scrollView.contentOffset.x)/(scrollView.contentSize.width-scrollView.width)];
+    }
+    
+    if (self.headView) {
+        [self.headView scrollViewItemPercent:(scrollView.contentOffset.x - self.nowIndex * self.width)/self.width];
     }
     
     //这里在横竖屏切换的时候可能会出现数组越界的情况
@@ -109,7 +114,8 @@
 // called when setContentOffset/scrollRectVisible:animated: finishes. not called if not animating
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
     [self didSelectIndex];
-    self.scrollView.scrollEnabled=YES;
+    self.scrollView.scrollEnabled = self.isCanScroll;
+    
 //    NSLog(@"scrollViewDidEndScrollingAnimation");
 }
 
@@ -297,6 +303,7 @@
 }
 
 - (void)setIsCanScroll:(BOOL)isCanScroll{
+    _isCanScroll = isCanScroll;
     self.scrollView.scrollEnabled=isCanScroll;
 }
 
