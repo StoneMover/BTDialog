@@ -18,6 +18,8 @@
 
 @property (nonatomic, assign) NSInteger initIndex;
 
+@property (nonatomic, strong) UIViewController * vcNowShow;
+
 @end
 
 @implementation BTPageViewController
@@ -32,6 +34,27 @@
     [super viewDidLoad];
     [self initPageView];
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.vcNowShow viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.vcNowShow viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.vcNowShow viewWillDisappear:YES];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [self.vcNowShow viewDidDisappear:YES];
+}
+
 
 - (void)initPageView{
     self.pageView=[[BTPageView alloc] initWithFrame:self.view.bounds];
@@ -74,6 +97,7 @@
     
     if (self.dataSource&&[self.dataSource respondsToSelector:@selector(pageVc:vcForIndex:)]) {
         model.vc = [self.dataSource pageVc:self vcForIndex:index];
+        [model.vc setValue:self forKey:@"parentViewController"];
         return model.vc.view;
     }
     
@@ -112,6 +136,7 @@
         [self.delegate pageVc:self didShow:index];
     }
     BTPageViewModel * model =self.childVc[index];
+    self.vcNowShow = model.vc;
     [model.vc viewDidAppear:YES];
 }
 
