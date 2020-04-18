@@ -7,7 +7,6 @@
 //
 
 #import "WKWebView+FullImg.h"
-#import "AppDelegate.h"
 
 @implementation WKWebView (FullImg)
 
