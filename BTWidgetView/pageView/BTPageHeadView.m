@@ -173,13 +173,23 @@
     CGFloat startX = 0;
     CGFloat endX = 0;
     if (percent > 0) {
-        //往下一个滑动
-        startX = self.childViews[nowIndex].centerX;
-        endX = self.childViews[nowIndex + 1].centerX;
+        //往下一个滑动，加一层判断防止在全面屏，设置全屏的时候出现越界
+        if (nowIndex<self.childViews.count && nowIndex >= 0) {
+            startX = self.childViews[nowIndex].centerX;
+        }
+        if (nowIndex + 1 < self.childViews.count && nowIndex +1 >= 0) {
+            endX = self.childViews[nowIndex + 1].centerX;
+        }
+        
     }else if(percent < 0){
-        //往上一个滑动
-        startX = self.childViews[nowIndex].centerX;
-        endX = self.childViews[nowIndex - 1].centerX;
+        //往上一个滑动,加一层判断防止在全面屏，设置全屏的时候出现越界
+        if (nowIndex<self.childViews.count && nowIndex >= 0) {
+            startX = self.childViews[nowIndex].centerX;
+        }
+        if (nowIndex - 1 < self.childViews.count && nowIndex -1 >=0) {
+            endX = self.childViews[nowIndex - 1].centerX;
+        }
+        
     }else{
         startX = 0;
         endX = 0;
