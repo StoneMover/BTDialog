@@ -55,6 +55,9 @@
 
 - (void)initScrollView{
     self.scrollView=[[UIScrollView alloc] init];
+    if (@available(iOS 11.0, *)) {
+        self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
     self.scrollView.bounces=NO;
     self.scrollView.showsHorizontalScrollIndicator=NO;
     self.scrollView.showsVerticalScrollIndicator=NO;
