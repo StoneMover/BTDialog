@@ -54,6 +54,9 @@ typedef NS_ENUM(NSInteger,BTPageHeadViewStyle) {
 //下标指示器距离底部的间距
 @property (nonatomic, assign) CGFloat viewIndicatorBottomPadding;
 
+//下标指示器是否需要弹簧效果
+@property (nonatomic, assign) BOOL isViewIndicatorBounce;
+
 //每个item之间的间距,BTPageHeadViewStyleDefault有效
 @property (nonatomic, assign) CGFloat itemMarin;
 
