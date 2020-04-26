@@ -237,7 +237,7 @@
 }
 
 - (void)selectIndex:(NSInteger)index{
-    if (self.style == BTPageHeadViewStyleDefault) {
+    if (self.style == BTPageHeadViewStyleDefault && self.scrollView.contentSize.width > self.width) {
         CGFloat result = self.childViews[index].centerX - self.width /2.0;
         if (result > 0){
             if (self.width + result <= self.scrollView.contentSize.width) {
