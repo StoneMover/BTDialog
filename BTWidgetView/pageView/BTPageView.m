@@ -82,8 +82,16 @@
         [self.headView scrollViewIndicator:(scrollView.contentOffset.x)/(scrollView.contentSize.width-scrollView.width)];
     }
     
+    if (self.headViewOut && scrollView.contentSize.width-scrollView.width!=0) {
+        [self.headViewOut scrollViewIndicator:(scrollView.contentOffset.x)/(scrollView.contentSize.width-scrollView.width)];
+    }
+    
     if (self.headView) {
         [self.headView scrollViewItemPercent:(scrollView.contentOffset.x - self.nowIndex * self.width)/self.width];
+    }
+    
+    if (self.headViewOut) {
+        [self.headViewOut scrollViewItemPercent:(scrollView.contentOffset.x - self.nowIndex * self.width)/self.width];
     }
     
     //这里在横竖屏切换的时候可能会出现数组越界的情况
@@ -141,6 +149,10 @@
     if (self.headView) {
         [self.headView selectIndex:self.nowIndex];
     }
+    
+    if (self.headViewOut) {
+        [self.headViewOut selectIndex:self.nowIndex];
+    }
 }
 
 #pragma mark 相关方法
@@ -180,8 +192,10 @@
     
     _headView =[self.dataSource pageViewHeadView:self];
     [self.headView setValue:self forKey:@"pageView"];
+    [self.headView reloadData];
+    [self.headViewOut setValue:self forKey:@"pageView"];
+    [self.headViewOut reloadData];
     if (self.headView) {
-        [self.headView reloadData];
         [self addSubview:self.headView];
         if (self.dataSource&&[self.dataSource respondsToSelector:@selector(pageViewHeadOrigin:)]) {
             CGPoint point =[self.dataSource pageViewHeadOrigin:self];
@@ -217,6 +231,11 @@
     if (self.initSelectIndex != 0 && self.headView) {
         [self.headView selectIndex:self.nowIndex];
     }
+    
+    if (self.initSelectIndex != 0 && self.headViewOut) {
+        [self.headViewOut selectIndex:self.nowIndex];
+    }
+    
     if (self.delegate&&[self.delegate respondsToSelector:@selector(pageView:didShow:)]) {
         [self.delegate pageView:self didShow:self.nowIndex];
     }

@@ -65,6 +65,9 @@
 //是否可以滑动切换
 @property (nonatomic, assign) BOOL isCanScroll;
 
+//外部自由摆放位置的head
+@property (nonatomic, strong) BTPageHeadView * headViewOut;
+
 
 - (void)reloadData;
 
