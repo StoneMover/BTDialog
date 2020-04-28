@@ -24,6 +24,7 @@
 		1867739623C6FAE40068E3DC /* BTGridImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867739523C6FAE40068E3DC /* BTGridImgView.m */; };
 		1867A8F62445C06D00DC819F /* BTSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867A8F52445C06D00DC819F /* BTSearchView.m */; };
 		1867A8F92445C0CE00DC819F /* BTSearchHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867A8F82445C0CD00DC819F /* BTSearchHeadView.m */; };
+		1883F742245804F6004D1F8E /* BTProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1883F741245804F6004D1F8E /* BTProgressView.m */; };
 		18859B1B2446A10A00B8B1D9 /* Pods_BTWidgetViewExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C15052C4A266285DD500636 /* Pods_BTWidgetViewExample.framework */; };
 		18859B1C2446A10A00B8B1D9 /* Pods_BTWidgetViewExample.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C15052C4A266285DD500636 /* Pods_BTWidgetViewExample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18859B202446B1F600B8B1D9 /* BTWidgetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18859B1F2446B1F600B8B1D9 /* BTWidgetView.m */; };
@@ -102,6 +103,8 @@
 		1867A8F52445C06D00DC819F /* BTSearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTSearchView.m; sourceTree = "<group>"; };
 		1867A8F72445C0CD00DC819F /* BTSearchHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTSearchHeadView.h; sourceTree = "<group>"; };
 		1867A8F82445C0CD00DC819F /* BTSearchHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTSearchHeadView.m; sourceTree = "<group>"; };
+		1883F740245804F6004D1F8E /* BTProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTProgressView.h; sourceTree = "<group>"; };
+		1883F741245804F6004D1F8E /* BTProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTProgressView.m; sourceTree = "<group>"; };
 		18859B172446A0FE00B8B1D9 /* BTHelp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BTHelp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18859B1E2446B1F600B8B1D9 /* BTWidgetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTWidgetView.h; sourceTree = "<group>"; };
 		18859B1F2446B1F600B8B1D9 /* BTWidgetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTWidgetView.m; sourceTree = "<group>"; };
@@ -346,6 +349,8 @@
 				185CF1EA2446F1EE00866B1A /* BTScrollLabelView.m */,
 				18859B1E2446B1F600B8B1D9 /* BTWidgetView.h */,
 				18859B1F2446B1F600B8B1D9 /* BTWidgetView.m */,
+				1883F740245804F6004D1F8E /* BTProgressView.h */,
+				1883F741245804F6004D1F8E /* BTProgressView.m */,
 			);
 			name = BTWidgetView;
 			path = ../../BTWidgetView;
@@ -489,6 +494,7 @@
 			files = (
 				1867A8F92445C0CE00DC819F /* BTSearchHeadView.m in Sources */,
 				6037C16D23168C880017D898 /* PageViewTestViewController.m in Sources */,
+				1883F742245804F6004D1F8E /* BTProgressView.m in Sources */,
 				1867739623C6FAE40068E3DC /* BTGridImgView.m in Sources */,
 				6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */,
 				60D28AA12306923A0043442B /* BTDialogTableView.m in Sources */,
