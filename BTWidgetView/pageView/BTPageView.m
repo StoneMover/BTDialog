@@ -71,9 +71,12 @@
     //这里是不是要循环下子view让其重新layout一遍？
     if (self.headView) {
         self.scrollView.frame=CGRectMake(0, self.headView.bottom, self.width, self.height-self.headView.height);
+        [self.scrollView setContentSize:CGSizeMake(self.scrollView.contentSize.width, self.height-self.headView.height)];
     }else{
         self.scrollView.frame=self.bounds;
+        self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.scrollView.height);
     }
+    
 }
 
 #pragma mark UIScrollViewDelegate
