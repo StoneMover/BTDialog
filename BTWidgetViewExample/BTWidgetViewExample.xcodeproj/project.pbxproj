@@ -28,6 +28,8 @@
 		18859B1B2446A10A00B8B1D9 /* Pods_BTWidgetViewExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C15052C4A266285DD500636 /* Pods_BTWidgetViewExample.framework */; };
 		18859B1C2446A10A00B8B1D9 /* Pods_BTWidgetViewExample.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C15052C4A266285DD500636 /* Pods_BTWidgetViewExample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		18859B202446B1F600B8B1D9 /* BTWidgetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18859B1F2446B1F600B8B1D9 /* BTWidgetView.m */; };
+		1898CCD524656EB800F50264 /* BTSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898CCD424656EB800F50264 /* BTSlideView.m */; };
+		1898CCD9246572C400F50264 /* SlideTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898CCD8246572C400F50264 /* SlideTestViewController.m */; };
 		6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */; };
 		6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17B2313E811009DBBDF /* BTPageHeadView.m */; };
 		6034D17F2313E811009DBBDF /* BTPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17C2313E811009DBBDF /* BTPageView.m */; };
@@ -108,6 +110,10 @@
 		18859B172446A0FE00B8B1D9 /* BTHelp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BTHelp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18859B1E2446B1F600B8B1D9 /* BTWidgetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTWidgetView.h; sourceTree = "<group>"; };
 		18859B1F2446B1F600B8B1D9 /* BTWidgetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTWidgetView.m; sourceTree = "<group>"; };
+		1898CCD324656EB800F50264 /* BTSlideView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTSlideView.h; sourceTree = "<group>"; };
+		1898CCD424656EB800F50264 /* BTSlideView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTSlideView.m; sourceTree = "<group>"; };
+		1898CCD7246572C400F50264 /* SlideTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlideTestViewController.h; sourceTree = "<group>"; };
+		1898CCD8246572C400F50264 /* SlideTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlideTestViewController.m; sourceTree = "<group>"; };
 		30FB91F8B97D3E03F3F43591 /* Pods-BTWidgetViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.release.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		5E98408A0C95CC96F9CDA16D /* Pods-BTWidgetViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.debug.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPageHeadLabelView.m; sourceTree = "<group>"; };
@@ -219,6 +225,15 @@
 			path = search;
 			sourceTree = "<group>";
 		};
+		1898CCD6246572B800F50264 /* SlideTest */ = {
+			isa = PBXGroup;
+			children = (
+				1898CCD7246572C400F50264 /* SlideTestViewController.h */,
+				1898CCD8246572C400F50264 /* SlideTestViewController.m */,
+			);
+			path = SlideTest;
+			sourceTree = "<group>";
+		};
 		6034D1762313E800009DBBDF /* pageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +313,7 @@
 		60D28A66230692260043442B /* BTWidgetViewExample */ = {
 			isa = PBXGroup;
 			children = (
+				1898CCD6246572B800F50264 /* SlideTest */,
 				0DD56D042445F62B00708775 /* searchTest */,
 				0DCC398923B7142D00197B15 /* BTDialogBundle.bundle */,
 				0D41968E23B63C6D00F5079F /* dialogTest */,
@@ -351,6 +367,8 @@
 				18859B1F2446B1F600B8B1D9 /* BTWidgetView.m */,
 				1883F740245804F6004D1F8E /* BTProgressView.h */,
 				1883F741245804F6004D1F8E /* BTProgressView.m */,
+				1898CCD324656EB800F50264 /* BTSlideView.h */,
+				1898CCD424656EB800F50264 /* BTSlideView.m */,
 			);
 			name = BTWidgetView;
 			path = ../../BTWidgetView;
@@ -502,6 +520,7 @@
 				185CF1EB2446F1EE00866B1A /* BTScrollLabelView.m in Sources */,
 				60D28A992306923A0043442B /* UIView+BTViewTool.m in Sources */,
 				60D28A982306923A0043442B /* BTLineView.m in Sources */,
+				1898CCD9246572C400F50264 /* SlideTestViewController.m in Sources */,
 				1860860823D160F100E2749E /* BTStarView.m in Sources */,
 				60D28A9A2306923A0043442B /* BTDialogView.m in Sources */,
 				60D28A6C230692260043442B /* ViewController.m in Sources */,
@@ -518,6 +537,7 @@
 				0D41969623B6413100F5079F /* BTAlertLabelView.m in Sources */,
 				18859B202446B1F600B8B1D9 /* BTWidgetView.m in Sources */,
 				0DD56D082445F65C00708775 /* SearchTestViewController.m in Sources */,
+				1898CCD524656EB800F50264 /* BTSlideView.m in Sources */,
 				0D41969D23B6483800F5079F /* BTAlertTextFieldView.m in Sources */,
 				6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */,
 				60643D722318F5B5007C1E01 /* PageChildVcViewController.m in Sources */,

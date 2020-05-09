@@ -35,8 +35,8 @@
     [label sizeToFit];
     [viewShow addSubview:label];
 //    [viewShow showTop];
-    [viewShow showCenter];
-//    [viewShow showBottom];
+//    [viewShow showCenter];
+    [viewShow showBottom];
 }
 
 

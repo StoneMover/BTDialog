@@ -49,6 +49,10 @@
         self.contentHSpace=15;
     }
     
+    if (self.paddingLeftRight == 0) {
+        self.paddingLeftRight = 20;
+    }
+    
 }
 
 - (void)layoutSubviews{
@@ -58,7 +62,7 @@
     for (UIButton * btn in self.dataBtns) {
         NSString * btnStr=btn.titleLabel.text;
         CGFloat btnW=[BTUtils calculateStrWidth:btnStr height:self.contentH font:btn.titleLabel.font];
-        btnW+=20*2;//左右间隙
+        btnW+=self.paddingLeftRight*2;//左右间隙
         
         CGFloat endX=0;
         if (self.startX==0) {
@@ -135,6 +139,76 @@
     if (self.blockClick) {
         self.blockClick(btn.tag);
     }
+}
+
+//选中某一个按钮
+- (void)selectIndex:(NSInteger)index{
+    UIButton * btn = self.dataBtns[index];
+    if (self.textColorSel) {
+        [btn setTitleColor:self.textColorSel forState:UIControlStateNormal];
+    }
+    
+    if (self.textBgColorSel) {
+        btn.backgroundColor = self.textBgColorSel;
+    }
+    
+}
+
+//取消所有的选中状态
+- (void)deselectAll{
+    for (UIButton * btn in self.dataBtns) {
+        [btn setTitleColor:self.textColor forState:UIControlStateNormal];
+        btn.backgroundColor = self.textBgColor;
+    }
+}
+
++ (CGFloat)calculateHeightWithStrs:(NSArray<NSString*>*)strs
+                             width:(CGFloat)width
+                          contentH:(CGFloat)contentH
+                     contentHSpace:(CGFloat)contentHSpace
+                     contentVSpace:(CGFloat)contentVSpace
+                          textFont:(UIFont*)textFont
+                  paddingLeftRight:(CGFloat)paddingLeftRight
+{
+    CGFloat height = 0;
+    CGFloat startX=0;
+    CGFloat startY=0;
+    for (NSString * btnStr in strs) {
+        
+        CGFloat btnW=[BTUtils calculateStrWidth:btnStr height:contentH font:textFont];
+        btnW+=paddingLeftRight * 2;//左右间隙
+        
+        CGFloat endX=0;
+        if (startX==0) {
+            //第一行的第一个
+            endX=btnW+startX;
+        }else{
+            endX=btnW+contentHSpace+startX+4;
+        }
+        
+        if (endX>=width &&startX==0) {
+            //说明需要自己单独一行
+           startY+=contentVSpace+contentH;
+        }else{
+            if (endX>=width) {
+                //当前行的宽度不够，到下一行
+                startX=0;
+                startY+=contentVSpace+contentH;
+                if (btnW>=width) {
+                    //需要自己一行
+                    startX=0;
+                    startY+=contentVSpace+contentH;
+                }else{
+                    startX=btnW;
+                }
+            }else{
+                //保持当前行
+                startX=endX;
+            }
+        }
+    }
+    
+    return height;
 }
 
 @end

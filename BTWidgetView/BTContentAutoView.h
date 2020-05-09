@@ -24,7 +24,10 @@ typedef void(^BTContentClickBlock)(NSInteger index);
 @property (nonatomic, assign) CGFloat contentVSpace;
 
 //文字颜色
-@property (nonatomic, assign) UIColor * textColor;
+@property (nonatomic, strong) UIColor * textColor;
+
+//文字颜色，选中状态
+@property (nonatomic, strong) UIColor * textColorSel;
 
 //文字字体
 @property (nonatomic, strong) UIFont * textFont;
@@ -32,11 +35,34 @@ typedef void(^BTContentClickBlock)(NSInteger index);
 //文字背景颜色
 @property (nonatomic, strong) UIColor * textBgColor;
 
-- (void)clearData;
-- (void)setData:(NSArray*)strs;
+//文字背景颜色，选中状态
+@property (nonatomic, strong) UIColor * textBgColorSel;
+
+//文字左右内边距
+@property (nonatomic, assign) CGFloat paddingLeftRight;
 
 @property (nonatomic, copy) BTContentAutoBlock block;
 
 @property (nonatomic, copy) BTContentClickBlock blockClick;
+
+//清除数据
+- (void)clearData;
+
+//设置数据
+- (void)setData:(NSArray*)strs;
+
+//选中某一个按钮
+- (void)selectIndex:(NSInteger)index;
+
+//取消所有的选中状态
+- (void)deselectAll;
+
++ (CGFloat)calculateHeightWithStrs:(NSArray<NSString*>*)strs
+                             width:(CGFloat)width
+                          contentH:(CGFloat)contentH
+                     contentHSpace:(CGFloat)contentHSpace
+                     contentVSpace:(CGFloat)contentVSpace
+                          textFont:(UIFont*)textFont
+                  paddingLeftRight:(CGFloat)paddingLeftRight;
 
 @end
