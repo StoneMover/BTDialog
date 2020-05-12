@@ -133,6 +133,10 @@
     if (self.delegate&&[self.delegate respondsToSelector:@selector(pageHeadViewItemClick:)]) {
         [self.delegate pageHeadViewItemClick:btn.tag];
     }
+    NSNumber * number = [self.pageView valueForKey:@"nowIndex"];
+    if (number.integerValue == btn.tag) {
+        return;
+    }
     [self.pageView selectIndex:btn.tag animated:self.isNeedClickAnim];
     
 }
