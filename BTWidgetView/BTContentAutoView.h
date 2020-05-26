@@ -53,6 +53,7 @@ typedef void(^BTContentClickBlock)(NSInteger index);
 
 //选中某一个按钮
 - (void)selectIndex:(NSInteger)index;
+- (void)deSelectIndex:(NSInteger)index;
 
 //取消所有的选中状态
 - (void)deselectAll;

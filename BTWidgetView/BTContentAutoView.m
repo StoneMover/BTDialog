@@ -154,6 +154,17 @@
     
 }
 
+- (void)deSelectIndex:(NSInteger)index{
+    UIButton * btn = self.dataBtns[index];
+    if (self.textColor) {
+        [btn setTitleColor:self.textColor forState:UIControlStateNormal];
+    }
+    
+    if (self.textBgColor) {
+        btn.backgroundColor = self.textBgColor;
+    }
+}
+
 //取消所有的选中状态
 - (void)deselectAll{
     for (UIButton * btn in self.dataBtns) {
@@ -207,7 +218,7 @@
             }
         }
     }
-    
+    height = startY + contentH;
     return height;
 }
 
