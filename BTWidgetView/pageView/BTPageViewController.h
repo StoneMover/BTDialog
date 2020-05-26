@@ -55,5 +55,11 @@
 
 - (void)selectIndex:(NSInteger)index animated:(BOOL)animated;
 
+- (NSArray<UIViewController*>*)getAllVc;
+
+- (nullable UIViewController*)vcWithIndex:(NSInteger)index;
+
+- (nullable UIViewController*)vcSelect;
+
 @end
 

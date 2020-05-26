@@ -154,4 +154,23 @@
     self.pageView.isCanScroll=isCanScroll;
 }
 
+- (NSArray<UIViewController*>*)getAllVc{
+    NSMutableArray * array = [NSMutableArray new];
+    for (BTPageViewModel * model in self.childVc) {
+        if (model.vc) {
+            [array addObject:model.vc];
+        }
+    }
+    return array;
+}
+
+- (nullable UIViewController*)vcWithIndex:(NSInteger)index{
+    BTPageViewModel * model = self.childVc[index];
+    return model.vc;
+}
+
+- (UIViewController*)vcSelect{
+    return self.vcNowShow;
+}
+
 @end
