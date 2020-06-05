@@ -8,7 +8,7 @@
 
 #import "BTUtils.h"
 #import<CommonCrypto/CommonDigest.h>
-
+#import <AudioToolbox/AudioToolbox.h>
 
 @implementation BTUtils
 
@@ -62,6 +62,30 @@
     }
     
     if (BTUtils.SCREEN_W == 414.f && BTUtils.SCREEN_H == 896.f) {
+        return YES;
+    }
+    
+    return NO;
+}
+
++ (BOOL)UI_IS_IPHONE_6{
+    if (BTUtils.SCREEN_W == 375.f && BTUtils.SCREEN_H == 667.f) {
+        return YES;
+    }
+    
+    return NO;
+}
+
++ (BOOL)UI_IS_IPHONE_6_P{
+    if (BTUtils.SCREEN_W == 414.f && BTUtils.SCREEN_H == 736.f) {
+        return YES;
+    }
+    
+    return NO;
+}
+
++ (BOOL)UI_IS_IPHONE_SE{
+    if (BTUtils.SCREEN_W == 320.f && BTUtils.SCREEN_H == 568.f) {
         return YES;
     }
     
@@ -364,95 +388,6 @@
 }
 
 
-
-+ (NSDate*)getCurrentDateWithSystemTimeZone{
-    NSDate * currentDate=[NSDate date];
-    NSTimeZone *zone = [NSTimeZone systemTimeZone];
-    NSInteger interval = [zone secondsFromGMTForDate: currentDate];
-    NSDate *localeDate = [currentDate dateByAddingTimeInterval: interval];
-    return localeDate;
-}
-
-+ (NSDate*)getDateFromStr:(NSString*)dateStr formatter:(NSString*)formatterStr{
-    
-    NSDate * result;
-    
-    NSDateFormatter * formatter=[[NSDateFormatter alloc]init];
-    formatter.dateFormat=formatterStr;
-    result=[formatter dateFromString:dateStr];
-    
-    NSTimeZone *zone = [NSTimeZone systemTimeZone];
-    NSInteger interval = [zone secondsFromGMTForDate: [NSDate date]];
-    
-    result=[result dateByAddingTimeInterval:interval];
-    
-    return result;
-}
-
-+ (BOOL)isFutureTime:(NSDate*)date{
-    
-    NSDate * localeDate=[self getCurrentDateWithSystemTimeZone];
-    
-    NSDate * resultDate=[localeDate laterDate:date];
-    
-    if ([resultDate isEqualToDate:localeDate]) {
-        return NO;
-    }
-    
-    return YES;
-}
-
-+ (NSString*)getTimeFromNowStr:(NSString*)dateString{
-    NSDateFormatter *date=[[NSDateFormatter alloc] init];
-    [date setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSDate *d=[date dateFromString:dateString];
-    NSTimeInterval late=[d timeIntervalSince1970]*1;
-    NSDate* dat = [NSDate date];
-    NSTimeInterval now=[dat timeIntervalSince1970]*1;
-    NSTimeInterval cha=now-late;
-    int second=cha;
-    int minute=second/60;
-    int hour=minute/60;
-    int day=hour/24;
-    if (day!=0) {
-        if (day>30) {
-            return [NSString stringWithFormat:@"%d月前",day/30];
-        }
-        
-        if (day>365) {
-            return [NSString stringWithFormat:@"%d年前",day/365];
-        }
-        
-        return [NSString stringWithFormat:@"%d天前",day];
-    }
-    if (hour!=0) {
-        return [NSString stringWithFormat:@"%d小时前",hour];
-    }
-    if (minute!=0) {
-        return [NSString stringWithFormat:@"%d分钟前",minute];
-    }
-    return @"刚刚";
-}
-
-
-+ (NSString*)getCurrentTime:(NSString*)formatter{
-    NSDate *senddate=[NSDate date];
-    //    NSTimeZone *zone = [NSTimeZone systemTimeZone];
-    //    NSInteger interval = [zone secondsFromGMTForDate: senddate];
-    //    NSDate *localDate = [senddate dateByAddingTimeInterval: interval];
-    
-    NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
-    
-    [dateformatter setDateFormat:formatter];
-    //    [dateformatter setTimeZone:zone];
-    NSString *locationString=[dateformatter stringFromDate:senddate];
-    return locationString;
-}
-
-+ (NSString*)getCurrentTime{
-    return [self getCurrentTime:@"YYYY-MM-dd HH:mm:ss"];
-}
-
 + (NSString*)convertSecToTime:(int)second{
     int h=0;
     int m=0;
@@ -643,7 +578,7 @@
         NSString * parentPath=[path stringByDeletingLastPathComponent];
         if ([self isFileExit:parentPath]) {
             NSError * error;
-            [fileManager createDirectoryAtPath:path withIntermediateDirectories:path attributes:nil error:&error];
+            [fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error];
         }else{
             [self createPath:parentPath];
             [self createPath:path];
@@ -768,7 +703,7 @@
 + (NSString*)MD5:(NSString*)str{
     const char *cStr = [str UTF8String];
     unsigned char digest[CC_MD5_DIGEST_LENGTH];
-    CC_MD5( cStr, strlen(cStr), digest ); // This is the md5 call
+    CC_MD5(cStr, (CC_LONG)strlen(cStr), digest);
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
     for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++){
         [output appendFormat:@"%02x", digest[i]];
@@ -838,6 +773,23 @@
         return NO;
     }
     return YES;
+}
+
++ (void)shake{
+    AudioServicesPlaySystemSound(1520);
+}
+
++ (NSString*)phoneEncrypt:(NSString*)phone{
+    if ([BTUtils isEmpty:phone]) {
+        return @"";
+    }
+    
+    if (phone.length != 11) {
+        return @"";
+    }
+    
+    NSString * str = [phone stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
+    return str;
 }
 
 @end

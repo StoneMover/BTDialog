@@ -145,9 +145,6 @@
             }
             
         }
-        
-        
-        
     }
     _isKeyBoardOpen=YES;
     if (self.delegate&&[self.delegate respondsToSelector:@selector(keyboardWillShow:)]) {

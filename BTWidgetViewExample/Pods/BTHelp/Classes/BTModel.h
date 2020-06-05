@@ -38,3 +38,36 @@
 @property (nonatomic, strong) NSSet * ignoreUnAnalisysField;
 
 @end
+
+
+typedef NS_ENUM(NSInteger,BaseModelType) {
+    BaseModelTypeString=0,
+    BaseModelTypeInt,
+    BaseModelTypeFloat,
+    BaseModelTypeDouble,
+    BaseModelTypeBool,
+    BaseModelTypeArray,
+    BaseModelTypeMutableArray,
+    BaseModelTypeBase
+};
+
+@interface BTModelProperty : NSObject
+
+@property(nonatomic,strong) NSString * propertyName;
+
+@property (nonatomic, strong) NSString * aliasName;
+
+@property (nonatomic, assign) BaseModelType type;
+
+-(void)autoType:(NSString*)typeStr;
+
+@end
+
+
+@interface BTModelAnalisys : NSObject
+
+-(void)analysisDict:(NSDictionary*)dict withModel:(BTModel*)model;
+
+-(NSDictionary*)autoDataToDictionary:(BTModel*)model;
+
+@end

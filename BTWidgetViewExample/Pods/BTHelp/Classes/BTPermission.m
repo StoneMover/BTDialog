@@ -114,21 +114,24 @@ static BTPermission * permission;
     
     if (authStatus==PHAuthorizationStatusNotDetermined) {
         [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-            if (status == PHAuthorizationStatusDenied || status == PHAuthorizationStatusRestricted) {
-                // 没有权限
-                [self showSysAlert:@"温馨提示"
-                          messages:meg
-                              btns:@[@"取消",@"确定"]
-                             block:^(NSInteger index) {
-                                 if (index==1) {
-                                     [BTUtils openSetVc];
-                                 }
-                             }];
-            }else{
-                if (block) {
-                    block();
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (status == PHAuthorizationStatusDenied || status == PHAuthorizationStatusRestricted) {
+                    // 没有权限
+                    [self showSysAlert:@"温馨提示"
+                              messages:meg
+                                  btns:@[@"取消",@"确定"]
+                                 block:^(NSInteger index) {
+                                     if (index==1) {
+                                         [BTUtils openSetVc];
+                                     }
+                                 }];
+                }else{
+                    if (block) {
+                        block();
+                    }
                 }
-            }
+            });
+            
         }];
         return;
     }
@@ -181,6 +184,10 @@ static BTPermission * permission;
                                          [BTUtils openSetVc];
                                      }
                                  }];
+                }else{
+                    if (block) {
+                        block();
+                    }
                 }
             });
         }];
@@ -190,7 +197,7 @@ static BTPermission * permission;
     
     if (!self.isMic) {
         [self showSysAlert:@"温馨提示"
-                  messages:@"当前没有麦克风权限,会影响视频会诊,是否前往设置?"
+                  messages:meg
                       btns:@[@"取消",@"确定"]
                      block:^(NSInteger index) {
                          if (index==1) {
