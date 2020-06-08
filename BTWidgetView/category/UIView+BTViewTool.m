@@ -89,8 +89,16 @@
     return self.center.x;
 }
 
+- (void)setSize:(CGSize)size{
+    self.frame = CGRectMake(self.origin.x, self.origin.y, size.width, self.height);
+}
+
 - (CGSize)size{
     return self.frame.size;
+}
+
+- (void)setOrigin:(CGPoint)point{
+    self.frame = CGRectMake(point.x, point.y, self.size.width, self.size.width);
 }
 
 - (CGPoint)origin{

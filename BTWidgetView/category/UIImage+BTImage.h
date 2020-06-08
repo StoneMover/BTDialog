@@ -14,9 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIImage*)imageWithColor:(UIColor *)color;
 
-+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
++ (UIImage*)imageWithColor:(UIColor *)color size:(CGSize)size;
 
-+ (UIImage *)imageWithColor:(UIColor *)color equalSize:(CGFloat)size;
++ (UIImage*)imageWithColor:(UIColor *)color equalSize:(CGFloat)size;
 
 //加载图片不受系统颜色的影响显示
 + (UIImage*)imageOriWithName:(NSString*)imgName;

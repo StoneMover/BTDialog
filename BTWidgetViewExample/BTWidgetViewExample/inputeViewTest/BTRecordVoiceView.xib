@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BTRecordVoiceView">
+            <rect key="frame" x="0.0" y="0.0" width="303" height="202"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="按住开始录音" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acr-hl-FSd">
+                    <rect key="frame" x="45" y="166" width="213" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="213" id="1QY-8M-WGl"/>
+                        <constraint firstAttribute="height" constant="21" id="hHo-qb-5iW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="record_voice.png" translatesAutoresizingMaskIntoConstraints="NO" id="aKi-zT-53B">
+                    <rect key="frame" x="95.5" y="40" width="112" height="113"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="112" id="0Sv-J2-QUZ"/>
+                        <constraint firstAttribute="height" constant="113" id="SLa-f1-3FB"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejw-6a-TZ2">
+                    <rect key="frame" x="45" y="11" width="213" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="CMr-Hd-ikv"/>
+                        <constraint firstAttribute="width" constant="213" id="wbb-6i-LJs"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view tag="11" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mmo-UP-7iq">
+                    <rect key="frame" x="198" y="80" width="40" height="65"/>
+                    <subviews>
+                        <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3kP-pA-NGI">
+                            <rect key="frame" x="0.0" y="56" width="8" height="9"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sy-UR-C4S">
+                            <rect key="frame" x="0.0" y="42" width="16" height="9"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5nB-jv-Diw">
+                            <rect key="frame" x="0.0" y="28" width="24" height="9"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view tag="4" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="71I-T2-fUz">
+                            <rect key="frame" x="0.0" y="14" width="32" height="9"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view tag="5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8I6-yY-cIX">
+                            <rect key="frame" x="0.0" y="0.0" width="40" height="9"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="3zR-tT-pjc"/>
+                        <constraint firstAttribute="height" constant="65" id="IEI-yT-6PD"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Mmo-UP-7iq" firstAttribute="top" secondItem="ejw-6a-TZ2" secondAttribute="bottom" constant="48" id="3au-mn-Nyy"/>
+                <constraint firstItem="Acr-hl-FSd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6hH-LN-PA0"/>
+                <constraint firstAttribute="bottom" secondItem="Acr-hl-FSd" secondAttribute="bottom" constant="15" id="7RT-to-BMT"/>
+                <constraint firstItem="ejw-6a-TZ2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="Bav-YP-8Ca"/>
+                <constraint firstItem="aKi-zT-53B" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IDJ-bY-C9v"/>
+                <constraint firstItem="ejw-6a-TZ2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RQ4-nH-MVW"/>
+                <constraint firstItem="Mmo-UP-7iq" firstAttribute="leading" secondItem="aKi-zT-53B" secondAttribute="trailing" constant="-9.5" id="cXx-Zs-GG6"/>
+                <constraint firstItem="aKi-zT-53B" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="qvd-mf-Z1N"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="label" destination="Acr-hl-FSd" id="iLc-vo-NJx"/>
+                <outlet property="labelTime" destination="ejw-6a-TZ2" id="Ihs-bf-4Am"/>
+                <outletCollection property="soundViewArray" destination="3kP-pA-NGI" id="HTq-HT-82s"/>
+                <outletCollection property="soundViewArray" destination="7sy-UR-C4S" id="fsC-Wc-NYt"/>
+                <outletCollection property="soundViewArray" destination="5nB-jv-Diw" id="YRb-aH-da0"/>
+                <outletCollection property="soundViewArray" destination="71I-T2-fUz" id="zrX-Ff-s6a"/>
+                <outletCollection property="soundViewArray" destination="8I6-yY-cIX" id="ojD-8k-MdA"/>
+            </connections>
+            <point key="canvasLocation" x="100" y="-405"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="record_voice.png" width="200" height="200"/>
+    </resources>
+</document>

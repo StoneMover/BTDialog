@@ -43,7 +43,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setCenterX:(CGFloat)centerX;
 - (CGFloat)centerX;
 
+- (void)setSize:(CGSize)size;
 - (CGSize)size;
+
+- (void)setOrigin:(CGPoint)point;
 - (CGPoint)origin;
 
 #pragma mark 圆角相关处理
