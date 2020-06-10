@@ -20,12 +20,7 @@ typedef NS_ENUM(NSInteger,BTTextInputToolType) {
 
 @interface BTTextInputView : UIView
 
-@property (nonatomic, copy) BTTextInputBlock block;
-
 @property (nonatomic, strong) BTTextInputToolView * toolView;
-
-//能够发送文字状态下的发送文字颜色
-@property (nonatomic, strong) UIColor * commitColor;
 
 - (void)show:(UIView*)view;
 
@@ -34,13 +29,22 @@ typedef NS_ENUM(NSInteger,BTTextInputToolType) {
 
 @protocol BTTextInputToolViewDelegate <NSObject>
 
-@required
+@optional
 
+//录音开始
 - (void)BTTextInputToolViewStart:(BTTextInputToolView*)view;
 
+//录音的状态改变，取消录音，松开发送状态改变
 - (void)BTTextInputToolViewStatus:(BTTextInputToolView*)view isCancel:(BOOL)isCancel;
 
+//录音结束
 - (void)BTTextInputToolViewEnd:(BTTextInputToolView*)view;
+
+//变成录音界面
+- (void)BTTextInputToolViewChangeToVoice:(BTTextInputToolView*)view;
+
+//变成输入框界面
+- (void)BTTextInputToolViewChangeToText:(BTTextInputToolView*)view;
 
 @end
 
@@ -70,6 +74,11 @@ typedef NS_ENUM(NSInteger,BTTextInputToolType) {
 @property (nonatomic, strong) UIImage * keyboardImg;
 
 @property (nonatomic, weak) id<BTTextInputToolViewDelegate> delegate;
+
+@property (nonatomic, copy) BTTextInputBlock block;
+
+//能够发送文字状态下的发送文字颜色
+@property (nonatomic, strong) UIColor * commitColor;
 
 @end
 

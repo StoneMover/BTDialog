@@ -48,13 +48,7 @@
         [weakSelf.toolView layoutSubviews];
         weakSelf.toolView.bottom=[UIScreen mainScreen].bounds.size.height-weakSelf.keyboardH;
     };
-    self.toolView.textView.blockContentChange = ^{
-        if (weakSelf.toolView.textView.text.length==0||![weakSelf.toolView.textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length) {
-            [weakSelf.toolView.btnCommit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-        }else{
-            [weakSelf.toolView.btnCommit setTitleColor:weakSelf.commitColor?weakSelf.commitColor:UIColor.redColor forState:UIControlStateNormal];
-        }
-    };
+    
 }
 
 
@@ -118,22 +112,6 @@
     }];
 }
 
-- (void)saveClick{
-    if (self.toolView.textView.text.length==0) {
-        return;
-    }
-    
-    
-    //全部为空格
-    if(![self.toolView.textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length) {
-        return;
-    }
-    
-    
-    if (self.block) {
-        self.block();
-    }
-}
 
 
 @end
@@ -146,12 +124,15 @@
 
 @property (nonatomic, assign) BTTextInputToolType type;
 
-//0:键盘，1:语音
+//0:文字，1:语音
 @property (nonatomic, assign) NSInteger status;
 
 @property (nonatomic, assign) CGFloat startY;
 
 @property (nonatomic, assign) BOOL isCancel;
+
+//上次的内容高度
+@property (nonatomic, assign) CGFloat lastHeight;
 
 @end
 
@@ -164,8 +145,11 @@
     self.type = type;
     self.basicHeight = frame.size.height;
     [self initSelf];
+    self.lastHeight = self.basicHeight;
     return self;
 }
+
+
 
 
 - (void)initSelf{
@@ -198,6 +182,14 @@
     self.textView.maxStrNum=140;
     self.textView.blockMax = ^{
         
+    };
+    __weak BTTextInputToolView * weakSelf=self;
+    self.textView.blockContentChange = ^{
+        if (weakSelf.textView.text.length==0||![weakSelf.textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length) {
+            [weakSelf.btnCommit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        }else{
+            [weakSelf.btnCommit setTitleColor:weakSelf.commitColor?weakSelf.commitColor:UIColor.redColor forState:UIControlStateNormal];
+        }
     };
     
     self.btnPressVoice = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -236,7 +228,7 @@
     if (self.status == 0) {
         return;
     }
-    [self.btnPressVoice setTitle:@"松开发送" forState:UIControlStateNormal];
+    [self.btnPressVoice setTitle:@"上滑取消" forState:UIControlStateNormal];
     self.isCancel = NO;
     self.startY=0;
     UITouch * touch = [touches anyObject];
@@ -264,7 +256,7 @@
         if (self.isCancel) {
             [self.btnPressVoice setTitle:@"松开取消" forState:UIControlStateNormal];
         }else{
-            [self.btnPressVoice setTitle:@"松开发送" forState:UIControlStateNormal];
+            [self.btnPressVoice setTitle:@"上滑取消" forState:UIControlStateNormal];
         }
         if (self.delegate && [self.delegate respondsToSelector:@selector(BTTextInputToolViewStatus:isCancel:)]) {
             [self.delegate BTTextInputToolViewStatus:self isCancel:isCancel];
@@ -291,16 +283,43 @@
         [self.btnVoice setImage:self.voiceImg forState:UIControlStateNormal];
         self.btnPressVoice.hidden = YES;
         self.textView.hidden = NO;
+        self.height = self.lastHeight;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(BTTextInputToolViewChangeToText:)]) {
+            [self.delegate BTTextInputToolViewChangeToText:self];
+        }
     }else{
+        self.lastHeight = self.height;
+        self.height = self.basicHeight;
         [self.btnVoice setImage:self.keyboardImg forState:UIControlStateNormal];
         self.btnPressVoice.hidden = NO;
         self.textView.hidden = YES;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(BTTextInputToolViewChangeToVoice:)]) {
+            [self.delegate BTTextInputToolViewChangeToVoice:self];
+        }
     }
 }
 
 - (void)speakClick{
     
 }
+
+- (void)saveClick{
+    if (self.textView.text.length==0) {
+        return;
+    }
+    
+    
+    //全部为空格
+    if(![self.textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length) {
+        return;
+    }
+    
+    
+    if (self.block) {
+        self.block();
+    }
+}
+
 
 - (void)setDefaultStatus{
     self.status = 1;

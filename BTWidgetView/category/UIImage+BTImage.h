@@ -27,6 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 //将图片缩放到指定的大小，多出的部分将以中心为基准进行裁剪
 - (UIImage *)scaleToSize:(CGSize)size;
 
+//绘制圆角
+- (UIImage*)imageWithCornerRadius:(CGFloat)radius;
+
 @end
 
 NS_ASSUME_NONNULL_END
