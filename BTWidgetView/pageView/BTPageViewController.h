@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIViewController*)pageVc:(BTPageViewController*)pageVc vcForIndex:(NSInteger)index;
 
 //为空则不显示headView
-- (BTPageHeadView*)pageVcHeadView:(BTPageViewController*)pageVc;
+- (nullable BTPageHeadView*)pageVcHeadView:(BTPageViewController*)pageVc;
 
 - (CGPoint)pageVcHeadOrigin:(BTPageViewController*)pageVc;
 

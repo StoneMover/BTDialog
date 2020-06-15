@@ -12,7 +12,6 @@
 #import "UIView+BTViewTool.h"
 #import "BTRecordVoiceView.h"
 #import "UIView+BTEasyDialog.h"
-#import <BTHelp/BTPermission.h>
 
 @interface InputTestViewController ()<BTTextInputToolViewDelegate>
 
