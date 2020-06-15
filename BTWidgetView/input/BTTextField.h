@@ -8,22 +8,29 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^BTTextFieldChangeBlock)(void);
-
 //IB_DESIGNABLE
 
 @interface BTTextField : UITextField
 
+//光标最大高度设置
 @property (nonatomic, assign) IBInspectable NSInteger maxCursorH;
 
+//最大文字长度设置
 @property (nonatomic, assign) IBInspectable NSInteger maxContent;
 
+//字符间距设置
 @property (nonatomic, assign) IBInspectable NSInteger kern;
 
+//placeHolder字体大小设置
 @property (nonatomic, assign) IBInspectable NSInteger placeHolderFontSize;
 
-@property (nonatomic, copy) BTTextFieldChangeBlock changeBlock;
+//文字内容该表回调
+@property (nonatomic, copy) void(^changeBlock)(void);
 
+//文字内容到达最大长度回调
+@property (nonatomic, copy) void(^maxContentBlock)(void);
+
+//为键盘添加完成按钮
 - (void)addDoneView;
 
 @end

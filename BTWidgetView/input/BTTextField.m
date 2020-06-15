@@ -80,6 +80,9 @@
                 NSRange rangeRange = [toBeString rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, rangeIndex.location)];
                 self.text = [toBeString substringWithRange:rangeRange];
             }
+            if (self.maxContentBlock) {
+                self.maxContentBlock();
+            }
         }
         
     }

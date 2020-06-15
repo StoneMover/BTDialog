@@ -30,11 +30,12 @@
 		18859B202446B1F600B8B1D9 /* BTWidgetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18859B1F2446B1F600B8B1D9 /* BTWidgetView.m */; };
 		1898CCD524656EB800F50264 /* BTSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898CCD424656EB800F50264 /* BTSlideView.m */; };
 		1898CCD9246572C400F50264 /* SlideTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1898CCD8246572C400F50264 /* SlideTestViewController.m */; };
-		18A1E9FF248E17D70067D00C /* InputTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A1E9FE248E17D70067D00C /* InputTestViewController.m */; };
 		18A1EA07248E46800067D00C /* BTRecordVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A1EA04248E46800067D00C /* BTRecordVoiceView.xib */; };
 		18A1EA08248E46800067D00C /* BTRecordVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A1EA05248E46800067D00C /* BTRecordVoiceView.m */; };
 		18A1EA09248E46800067D00C /* record_voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A1EA06248E46800067D00C /* record_voice.png */; };
 		18A1EA0C248E46B00067D00C /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A1EA0A248E46AF0067D00C /* libmp3lame.a */; };
+		18E5647D249762430050C13E /* InputTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5647B249762430050C13E /* InputTestViewController.m */; };
+		18E5647E249762430050C13E /* InputTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E5647C249762430050C13E /* InputTestViewController.xib */; };
 		6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */; };
 		6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17B2313E811009DBBDF /* BTPageHeadView.m */; };
 		6034D17F2313E811009DBBDF /* BTPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17C2313E811009DBBDF /* BTPageView.m */; };
@@ -119,14 +120,15 @@
 		1898CCD424656EB800F50264 /* BTSlideView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTSlideView.m; sourceTree = "<group>"; };
 		1898CCD7246572C400F50264 /* SlideTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlideTestViewController.h; sourceTree = "<group>"; };
 		1898CCD8246572C400F50264 /* SlideTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlideTestViewController.m; sourceTree = "<group>"; };
-		18A1E9FD248E17D70067D00C /* InputTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputTestViewController.h; sourceTree = "<group>"; };
-		18A1E9FE248E17D70067D00C /* InputTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputTestViewController.m; sourceTree = "<group>"; };
 		18A1EA03248E46800067D00C /* BTRecordVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTRecordVoiceView.h; sourceTree = "<group>"; };
 		18A1EA04248E46800067D00C /* BTRecordVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTRecordVoiceView.xib; sourceTree = "<group>"; };
 		18A1EA05248E46800067D00C /* BTRecordVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTRecordVoiceView.m; sourceTree = "<group>"; };
 		18A1EA06248E46800067D00C /* record_voice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_voice.png; sourceTree = "<group>"; };
 		18A1EA0A248E46AF0067D00C /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		18A1EA0B248E46AF0067D00C /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		18E5647A249762430050C13E /* InputTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputTestViewController.h; sourceTree = "<group>"; };
+		18E5647B249762430050C13E /* InputTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputTestViewController.m; sourceTree = "<group>"; };
+		18E5647C249762430050C13E /* InputTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputTestViewController.xib; sourceTree = "<group>"; };
 		30FB91F8B97D3E03F3F43591 /* Pods-BTWidgetViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.release.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		5E98408A0C95CC96F9CDA16D /* Pods-BTWidgetViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.debug.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPageHeadLabelView.m; sourceTree = "<group>"; };
@@ -251,11 +253,12 @@
 		18A1E9FC248E17B30067D00C /* inputeViewTest */ = {
 			isa = PBXGroup;
 			children = (
-				18A1E9FD248E17D70067D00C /* InputTestViewController.h */,
-				18A1E9FE248E17D70067D00C /* InputTestViewController.m */,
 				18A1EA03248E46800067D00C /* BTRecordVoiceView.h */,
 				18A1EA05248E46800067D00C /* BTRecordVoiceView.m */,
 				18A1EA04248E46800067D00C /* BTRecordVoiceView.xib */,
+				18E5647A249762430050C13E /* InputTestViewController.h */,
+				18E5647B249762430050C13E /* InputTestViewController.m */,
+				18E5647C249762430050C13E /* InputTestViewController.xib */,
 				18A1EA06248E46800067D00C /* record_voice.png */,
 				18A1EA0B248E46AF0067D00C /* lame.h */,
 				18A1EA0A248E46AF0067D00C /* libmp3lame.a */,
@@ -494,6 +497,7 @@
 				60D28A74230692270043442B /* LaunchScreen.storyboard in Resources */,
 				0DCC398A23B7142E00197B15 /* BTDialogBundle.bundle in Resources */,
 				60D28A71230692270043442B /* Assets.xcassets in Resources */,
+				18E5647E249762430050C13E /* InputTestViewController.xib in Resources */,
 				0D41969323B63CBD00F5079F /* DialogTestViewController.xib in Resources */,
 				6037C17523168E430017D898 /* HomeTableViewCell.xib in Resources */,
 				60D28A6F230692260043442B /* Main.storyboard in Resources */,
@@ -557,6 +561,7 @@
 				6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */,
 				60D28AA12306923A0043442B /* BTDialogTableView.m in Sources */,
 				60D28A9F2306923A0043442B /* UIView+BTEasyDialog.m in Sources */,
+				18E5647D249762430050C13E /* InputTestViewController.m in Sources */,
 				185CF1EB2446F1EE00866B1A /* BTScrollLabelView.m in Sources */,
 				60D28A992306923A0043442B /* UIView+BTViewTool.m in Sources */,
 				60D28A982306923A0043442B /* BTLineView.m in Sources */,
@@ -582,7 +587,6 @@
 				0D41969D23B6483800F5079F /* BTAlertTextFieldView.m in Sources */,
 				6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */,
 				60643D722318F5B5007C1E01 /* PageChildVcViewController.m in Sources */,
-				18A1E9FF248E17D70067D00C /* InputTestViewController.m in Sources */,
 				60D28A9E2306923A0043442B /* BTButton.m in Sources */,
 				18629BAD23BA05AF00CE552C /* BTContentAutoView.m in Sources */,
 				60D28A77230692270043442B /* main.m in Sources */,

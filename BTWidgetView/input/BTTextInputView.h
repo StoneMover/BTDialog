@@ -11,8 +11,6 @@
 
 @class BTTextInputToolView;
 
-typedef void(^BTTextInputBlock)(void);
-
 typedef NS_ENUM(NSInteger,BTTextInputToolType) {
     BTTextInputViewTypeNoVoice = 0,//没有语音功能，有输入框和发送按钮，用于普通的评论
     BTTextInputViewTypeAll//有语音输入的按钮、有发送按钮、有输入框,用于聊天对话中
@@ -75,7 +73,7 @@ typedef NS_ENUM(NSInteger,BTTextInputToolType) {
 
 @property (nonatomic, weak) id<BTTextInputToolViewDelegate> delegate;
 
-@property (nonatomic, copy) BTTextInputBlock block;
+@property (nonatomic, copy) void(^block)(void);
 
 //能够发送文字状态下的发送文字颜色
 @property (nonatomic, strong) UIColor * commitColor;

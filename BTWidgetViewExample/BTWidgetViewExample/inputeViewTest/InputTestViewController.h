@@ -2,7 +2,7 @@
 //  InputTestViewController.h
 //  BTWidgetViewExample
 //
-//  Created by apple on 2020/6/8.
+//  Created by apple on 2020/6/15.
 //  Copyright © 2020 stone. All rights reserved.
 //
 
