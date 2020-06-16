@@ -1,0 +1,55 @@
+//
+//  UILabel+BTLabel.h
+//  BTWidgetViewExample
+//
+//  Created by apple on 2020/6/16.
+//  Copyright © 2020 stone. All rights reserved.
+//  复杂的富文本使用YYLabel或者NudeIn实现
+
+#import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface UILabel (BTLabel)
+
+- (NSMutableAttributedString*)bt_AttributedString;
+
+//设置文字字体
+- (void)bt_AttributedFont:(UIFont*)font str:(NSString*)str;
+
+- (void)bt_AttributedFont:(UIFont*)font range:(NSRange)range;
+
+//设置文字颜色
+- (void)bt_AttributedColor:(UIColor*)color str:(NSString*)str;
+
+- (void)bt_AttributedColor:(UIColor*)color range:(NSRange)range;
+
+//设置文字背景颜色
+- (void)bt_AttributedBgColor:(UIColor*)color range:(NSRange)range;
+
+- (void)bt_AttributedBgColor:(UIColor*)color str:(NSString*)str;
+
+//设置字体文字间距
+- (void)bt_AttributedKern:(NSNumber*)kern range:(NSRange)range;
+
+- (void)bt_AttributedKern:(NSNumber*)kern str:(NSString*)str;
+
+
+//设置删除线
+- (void)bt_AttributedDelLine:(UIColor*)color range:(NSRange)range;
+
+- (void)bt_AttributedDelLine:(UIColor*)color str:(NSString*)str;
+
+//设置下划线
+- (void)bt_AttributedUnderLine:(UIColor*)color range:(NSRange)range;
+
+- (void)bt_AttributedUnderLine:(UIColor*)color str:(NSString*)str;
+
+//设置超链接
+- (void)bt_AttributedLink:(NSURL*)url range:(NSRange)range;
+
+- (void)bt_AttributedLink:(NSURL*)url str:(NSString*)str;
+
+@end
+
+NS_ASSUME_NONNULL_END

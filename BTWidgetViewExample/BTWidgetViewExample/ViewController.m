@@ -15,6 +15,7 @@
 #import "SearchTestViewController.h"
 #import "SlideTestViewController.h"
 #import "InputTestViewController.h"
+#import "LabelTestViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -30,7 +31,7 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent=NO;
     self.title=@"BTWidget";
-    self.titles=@[@"BTPageViewTest",@"BTPageVcTest",@"BTDialogView&BTAlertView",@"BTSearchTest",@"SlideTestViewController",@"BTInputView"];
+    self.titles=@[@"BTPageViewTest",@"BTPageVcTest",@"BTDialogView&BTAlertView",@"BTSearchTest",@"SlideTestViewController",@"BTInputView",@"BTLabel+UIlabel"];
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCellId"];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
@@ -194,6 +195,12 @@
         case 5:
         {
             InputTestViewController * vc=[InputTestViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 6:
+        {
+            LabelTestViewController * vc=[LabelTestViewController new];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;

@@ -36,6 +36,8 @@
 		18A1EA0C248E46B00067D00C /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A1EA0A248E46AF0067D00C /* libmp3lame.a */; };
 		18E5647D249762430050C13E /* InputTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5647B249762430050C13E /* InputTestViewController.m */; };
 		18E5647E249762430050C13E /* InputTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E5647C249762430050C13E /* InputTestViewController.xib */; };
+		18E77F6724985E7C00BF9F5A /* UILabel+BTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E77F6624985E7C00BF9F5A /* UILabel+BTLabel.m */; };
+		18E77F6B2498633000BF9F5A /* LabelTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E77F6A2498633000BF9F5A /* LabelTestViewController.m */; };
 		6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */; };
 		6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17B2313E811009DBBDF /* BTPageHeadView.m */; };
 		6034D17F2313E811009DBBDF /* BTPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17C2313E811009DBBDF /* BTPageView.m */; };
@@ -129,6 +131,10 @@
 		18E5647A249762430050C13E /* InputTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputTestViewController.h; sourceTree = "<group>"; };
 		18E5647B249762430050C13E /* InputTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputTestViewController.m; sourceTree = "<group>"; };
 		18E5647C249762430050C13E /* InputTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputTestViewController.xib; sourceTree = "<group>"; };
+		18E77F6524985E7C00BF9F5A /* UILabel+BTLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+BTLabel.h"; sourceTree = "<group>"; };
+		18E77F6624985E7C00BF9F5A /* UILabel+BTLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BTLabel.m"; sourceTree = "<group>"; };
+		18E77F692498633000BF9F5A /* LabelTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelTestViewController.h; sourceTree = "<group>"; };
+		18E77F6A2498633000BF9F5A /* LabelTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelTestViewController.m; sourceTree = "<group>"; };
 		30FB91F8B97D3E03F3F43591 /* Pods-BTWidgetViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.release.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		5E98408A0C95CC96F9CDA16D /* Pods-BTWidgetViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.debug.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPageHeadLabelView.m; sourceTree = "<group>"; };
@@ -279,6 +285,15 @@
 			path = input;
 			sourceTree = "<group>";
 		};
+		18E77F682498631900BF9F5A /* labelTest */ = {
+			isa = PBXGroup;
+			children = (
+				18E77F692498633000BF9F5A /* LabelTestViewController.h */,
+				18E77F6A2498633000BF9F5A /* LabelTestViewController.m */,
+			);
+			path = labelTest;
+			sourceTree = "<group>";
+		};
 		6034D1762313E800009DBBDF /* pageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +312,8 @@
 		6034D1802313E81A009DBBDF /* category */ = {
 			isa = PBXGroup;
 			children = (
+				18E77F6524985E7C00BF9F5A /* UILabel+BTLabel.h */,
+				18E77F6624985E7C00BF9F5A /* UILabel+BTLabel.m */,
 				18629BA823BA054300CE552C /* WKWebView+FullImg.h */,
 				18629BA923BA054300CE552C /* WKWebView+FullImg.m */,
 				60D28A942306923A0043442B /* UIView+BTViewTool.h */,
@@ -358,6 +375,7 @@
 		60D28A66230692260043442B /* BTWidgetViewExample */ = {
 			isa = PBXGroup;
 			children = (
+				18E77F682498631900BF9F5A /* labelTest */,
 				18A1E9FC248E17B30067D00C /* inputeViewTest */,
 				1898CCD6246572B800F50264 /* SlideTest */,
 				0DD56D042445F62B00708775 /* searchTest */,
@@ -561,6 +579,7 @@
 				6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */,
 				60D28AA12306923A0043442B /* BTDialogTableView.m in Sources */,
 				60D28A9F2306923A0043442B /* UIView+BTEasyDialog.m in Sources */,
+				18E77F6724985E7C00BF9F5A /* UILabel+BTLabel.m in Sources */,
 				18E5647D249762430050C13E /* InputTestViewController.m in Sources */,
 				185CF1EB2446F1EE00866B1A /* BTScrollLabelView.m in Sources */,
 				60D28A992306923A0043442B /* UIView+BTViewTool.m in Sources */,
@@ -583,6 +602,7 @@
 				0D41969623B6413100F5079F /* BTAlertLabelView.m in Sources */,
 				18859B202446B1F600B8B1D9 /* BTWidgetView.m in Sources */,
 				0DD56D082445F65C00708775 /* SearchTestViewController.m in Sources */,
+				18E77F6B2498633000BF9F5A /* LabelTestViewController.m in Sources */,
 				1898CCD524656EB800F50264 /* BTSlideView.m in Sources */,
 				0D41969D23B6483800F5079F /* BTAlertTextFieldView.m in Sources */,
 				6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */,

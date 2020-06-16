@@ -96,6 +96,8 @@
 
 + (CGFloat)calculateLabelHeight:(UILabel*)label;
 
++ (CGFloat)calculateStrHeight:(NSString*)str width:(CGFloat)width font:(UIFont*)font lineSpeace:(CGFloat)lineSpeace;
+
 + (CGFloat)calculateStrWidth:(NSString*)str height:(CGFloat)height font:(UIFont*)font;
 
 + (CGFloat)calculateLabelWidth:(UILabel*)label;
