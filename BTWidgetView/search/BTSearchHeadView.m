@@ -63,9 +63,17 @@
     self.btnCancel.right = self.width;
     self.btnCancel.bottom = self.viewLine.top;
     
-    self.viewBgColor.left = 8;
-    self.viewBgColor.frame = CGRectMake(8, self.height - 32 - 6, self.btnCancel.left - 8, 32);
+    
+    
+    
     self.viewBgColor.corner = 16;
+    if (self.btnCancel.isHidden) {
+        self.viewBgColor.frame = CGRectMake(8, self.height - 32 - 6, self.width - 16, 32);
+    }else{
+        self.viewBgColor.frame = CGRectMake(8, self.height - 32 - 6, self.btnCancel.left - 8, 32);
+    }
+    
+    
     
     self.imgSearchIcon.left = self.viewBgColor.left + 8;
     self.imgSearchIcon.centerY = self.viewBgColor.centerY;

@@ -157,6 +157,8 @@
 
 ![Jietu20200617-110830.gif](https://upload-images.jianshu.io/upload_images/1243802-a98084bd0d8af906.gif)
 
+[看不了GIF点这里](https://upload-images.jianshu.io/upload_images/1243802-a98084bd0d8af906.gif)
+
 初始化使用
 
 ```

@@ -31,6 +31,7 @@
             weakSelf.searchResult(searchStr);
         }
     };
+//    self.viewHead.btnCancel.hidden = YES;
     
     self.btnCancel = [[UIButton alloc] init];
     [self.btnCancel addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
