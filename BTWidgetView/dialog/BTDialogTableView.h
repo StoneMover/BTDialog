@@ -12,9 +12,6 @@
 
 @class BTDialogTableHeadView;
 
-//返回bool值来表明是否关闭view
-typedef BOOL (^BTDialogTableViewBlock)(NSInteger index);
-
 @interface BTDialogTableView : BTDialogView
 
 //头部view
@@ -23,8 +20,8 @@ typedef BOOL (^BTDialogTableViewBlock)(NSInteger index);
 //数据源
 @property (strong, nonatomic) NSArray * dataArray;
 
-
-@property (nonatomic, copy) BTDialogTableViewBlock blockTable;
+//返回bool值来表明是否关闭view
+@property (nonatomic, copy) BOOL(^blockTable)(NSInteger index);
 
 //是否需要头部,默认为true
 @property (nonatomic, assign) BOOL isNeedHead;
