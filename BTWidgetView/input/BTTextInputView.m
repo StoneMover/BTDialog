@@ -134,6 +134,15 @@
 //上次的内容高度
 @property (nonatomic, assign) CGFloat lastHeight;
 
+//发送按钮
+@property (nonatomic, strong) UIButton * btnCommit;
+
+//切换语音、键盘按钮
+@property (nonatomic, strong) UIButton * btnVoice;
+
+//按住说话按钮
+@property (nonatomic, strong) UIButton * btnPressVoice;
+
 @end
 
 
@@ -170,7 +179,7 @@
     [self addSubview:self.btnCommit];
     
     
-    self.textView=[[BTTextView alloc] initWithSize:CGSizeMake(100, self.basicHeight-20)];
+    _textView=[[BTTextView alloc] initWithSize:CGSizeMake(100, self.basicHeight-20)];
     [self.textView setTextContainerInset:UIEdgeInsetsMake(8, 5, 8, 5)];
     self.textView.font=[UIFont systemFontOfSize:16];
     self.textView.textColor=[BTUtils RGB:74 G:76 B:95];

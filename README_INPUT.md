@@ -29,7 +29,7 @@
 
 ```
 
-在```xib```中使用，创建一个```TextField```，设置```TextField```的```Class```为```BTTextField```，设置相应参数。
+在```xib```中使用，创建一个```UITextField```，设置```UITextField```的```Class```为```BTTextField```，设置相应参数。
 
 ![图片.png](https://upload-images.jianshu.io/upload_images/1243802-7de576a5998aa635.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -83,11 +83,88 @@
 //内容发生改变回调
 @property (nonatomic, copy) void(^blockContentChange)(void);
 
-//是否自己设施textView的textContainerInset
+//是否自己设置textView的textContainerInset，用来解决textView边距问题
 @property (nonatomic, assign) BOOL isSelfSetEdgeInsets;
 
 //添加完成按钮
 - (void)addDoneView;
 
+```
+
+在```xib```中使用，创建一个```UITextView```，设置```UITextView ```的```Class```为```BTTextView```，设置相应参数。
+
+![图片.png](https://upload-images.jianshu.io/upload_images/1243802-b077ebd9fdb97a0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+代码初始化使用
+
+```
+- (void)initTextView{
+    BTTextView * textView = [[BTTextView alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    textView.placeHolder = @"placeHolder";
+    textView.placeHolderColor = UIColor.redColor;
+    textView.maxStrNum = 100;
+    textView.lineSpeac = 2;
+    textView.blockMax = ^{
+        
+    };
+    textView.blockHeightChange = ^(CGFloat height) {
+        
+    };
+    textView.blockContentChange = ^{
+        
+    };
+    textView.textContainerInset=UIEdgeInsetsMake(0, -1.5, 0, 0);
+    textView.isSelfSetEdgeInsets = YES;
+    [textView addDoneView];
+}
+
+```
+
+## BTTextInputToolView
+
+一个发送框的样式封装，需要自己完成键盘弹出后的位移以及文字动态高度的变化处理，可以参考```BTTextInputView```
+
+![图片.png](https://upload-images.jianshu.io/upload_images/1243802-c21965f224d408a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+初始化方法
+
+```
+- (instancetype)initWithFrame:(CGRect)frame type:(BTTextInputToolType)type;
+```
+
+相关属性
+
+```
+//输入框
+@property (nonatomic, strong, readonly) BTTextView * textView;
+
+//语音图标
+@property (nonatomic, strong) UIImage * voiceImg;
+
+//键盘图标
+@property (nonatomic, strong) UIImage * keyboardImg;
+
+//相关事件的状态回调
+@property (nonatomic, weak) id<BTTextInputToolViewDelegate> delegate;
+
+//点击发送按钮回调
+@property (nonatomic, copy) void(^block)(void);
+
+//能够发送文字状态下的发送文字颜色
+@property (nonatomic, strong) UIColor * commitColor;
+
+```
+
+## BTTextInputView
+
+可以快速的弹出一个简单的评论框，自动处理文字的高度变化以及键盘的位移处理。
+
+![Jietu20200617-110830.gif](https://upload-images.jianshu.io/upload_images/1243802-a98084bd0d8af906.gif?imageMogr2/auto-orient/strip)
+
+初始化使用
+
+```
+self.inputView = [[BTTextInputView alloc]initWithFrame:UIScreen.mainScreen.bounds];
+[self.inputView show:((AppDelegate*)UIApplication.sharedApplication.delegate).window];
 ```
 

@@ -15,6 +15,7 @@
 #import <BTHelp/BTUtils.h>
 #import "UIView+BTViewTool.h"
 #import "BTTextField.h"
+#import "BTTextView.h"
 
 @interface InputTestViewController ()<BTTextInputToolViewDelegate>
 
@@ -57,7 +58,6 @@
 
 - (void)showInput{
     self.inputView = [[BTTextInputView alloc]initWithFrame:UIScreen.mainScreen.bounds];
-    [self.view addSubview:self.inputView];
     [self.inputView show:((AppDelegate*)UIApplication.sharedApplication.delegate).window];
 }
 
@@ -77,6 +77,26 @@
     self.textField.changeBlock = ^{
         
     };
+}
+
+- (void)initTextView{
+    BTTextView * textView = [[BTTextView alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    textView.placeHolder = @"placeHolder";
+    textView.placeHolderColor = UIColor.redColor;
+    textView.maxStrNum = 100;
+    textView.lineSpeac = 2;
+    textView.blockMax = ^{
+        
+    };
+    textView.blockHeightChange = ^(CGFloat height) {
+        
+    };
+    textView.blockContentChange = ^{
+        
+    };
+    textView.textContainerInset=UIEdgeInsetsMake(0, -1.5, 0, 0);
+    textView.isSelfSetEdgeInsets = YES;
+    [textView addDoneView];
 }
 
 //MARK: BTTextInputToolViewDelegate

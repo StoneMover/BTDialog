@@ -100,4 +100,19 @@
 }
 
 
+/**
+ 设置两端对齐
+ 需要验证是否需要NSUnderlineStyleAttributeName:NSUnderlineStyleNone
+ NSDictionary *dic = @{NSParagraphStyleAttributeName: para,NSUnderlineStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleNone]};
+ */
+- (void)bt_AttributedAlignStartEnd{
+    NSMutableAttributedString *attri = [self bt_AttributedString];
+    NSMutableParagraphStyle *para = [[NSMutableParagraphStyle alloc]init];
+    //设置文字两端对齐
+    para.alignment = NSTextAlignmentJustified;
+    NSDictionary *dic = @{NSParagraphStyleAttributeName: para};
+    [attri setAttributes:dic range:NSMakeRange(0, attri.length)];
+    self.attributedText = attri;
+}
+
 @end

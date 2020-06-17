@@ -53,17 +53,8 @@ typedef NS_ENUM(NSInteger,BTTextInputToolType) {
 
 - (void)setDefaultStatus;
 
-//发送按钮
-@property (nonatomic, strong) UIButton * btnCommit;
-
-//切换语音、键盘按钮
-@property (nonatomic, strong) UIButton * btnVoice;
-
-//按住说话按钮
-@property (nonatomic, strong) UIButton * btnPressVoice;
-
 //输入框
-@property (nonatomic, strong) BTTextView * textView;
+@property (nonatomic, strong, readonly) BTTextView * textView;
 
 //语音图标
 @property (nonatomic, strong) UIImage * voiceImg;
@@ -71,8 +62,10 @@ typedef NS_ENUM(NSInteger,BTTextInputToolType) {
 //键盘图标
 @property (nonatomic, strong) UIImage * keyboardImg;
 
+//相关事件的状态回调
 @property (nonatomic, weak) id<BTTextInputToolViewDelegate> delegate;
 
+//点击发送按钮回调
 @property (nonatomic, copy) void(^block)(void);
 
 //能够发送文字状态下的发送文字颜色

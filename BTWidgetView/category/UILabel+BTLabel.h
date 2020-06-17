@@ -50,6 +50,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)bt_AttributedLink:(NSURL*)url str:(NSString*)str;
 
+//设置两端对齐,可能与下划线有冲突
+- (void)bt_AttributedAlignStartEnd;
+
 @end
 
 NS_ASSUME_NONNULL_END

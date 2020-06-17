@@ -34,7 +34,7 @@
 //内容发生改变回调
 @property (nonatomic, copy) void(^blockContentChange)(void);
 
-//是否自己设施textView的textContainerInset
+//是否自己设置textView的textContainerInset，用来解决textView边距问题
 @property (nonatomic, assign) BOOL isSelfSetEdgeInsets;
 
 //添加完成按钮
