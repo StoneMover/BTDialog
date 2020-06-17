@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) UIView * contentView;
 
+@property (nonatomic, strong) UILabel * labelPlaceHolder;
+
 @end
 
 

@@ -19,11 +19,8 @@
 //最多字符串长度
 @property (nonatomic, assign) IBInspectable NSInteger maxStrNum;
 
-//这个在xib中使用的时候不能设置textView的初始内容，得在代码里面设置，不然没有效果
+//行间距，这个在xib中使用的时候不能设置textView的初始内容，得在代码里面设置，不然没有效果
 @property (nonatomic, assign) IBInspectable NSInteger lineSpeac;
-
-//行间距
-@property (nonatomic, strong) UILabel * labelPlaceHolder;
 
 //触发最大文字长度回调
 @property (nonatomic, copy) void(^blockMax)(void);

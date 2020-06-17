@@ -24,7 +24,7 @@
 //placeHolder字体大小设置
 @property (nonatomic, assign) IBInspectable NSInteger placeHolderFontSize;
 
-//文字内容该表回调
+//文字内容改变回调
 @property (nonatomic, copy) void(^changeBlock)(void);
 
 //文字内容到达最大长度回调

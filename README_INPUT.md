@@ -18,7 +18,7 @@
 //placeHolder字体大小设置
 @property (nonatomic, assign) IBInspectable NSInteger placeHolderFontSize;
 
-//文字内容该表回调
+//文字内容改变回调
 @property (nonatomic, copy) void(^changeBlock)(void);
 
 //文字内容到达最大长度回调
@@ -68,11 +68,8 @@
 //最多字符串长度
 @property (nonatomic, assign) IBInspectable NSInteger maxStrNum;
 
-//这个在xib中使用的时候不能设置textView的初始内容，得在代码里面设置，不然没有效果
+//行间距，这个在xib中使用的时候不能设置textView的初始内容，得在代码里面设置，不然没有效果
 @property (nonatomic, assign) IBInspectable NSInteger lineSpeac;
-
-//行间距
-@property (nonatomic, strong) UILabel * labelPlaceHolder;
 
 //触发最大文字长度回调
 @property (nonatomic, copy) void(^blockMax)(void);
@@ -88,7 +85,6 @@
 
 //添加完成按钮
 - (void)addDoneView;
-
 ```
 
 在```xib```中使用，创建一个```UITextView```，设置```UITextView ```的```Class```为```BTTextView```，设置相应参数。
@@ -122,7 +118,7 @@
 
 ## BTTextInputToolView
 
-一个发送框的样式封装，需要自己完成键盘弹出后的位移以及文字动态高度的变化处理，可以参考```BTTextInputView```
+一个发送框的样式封装，需要自己完成键盘弹出后的位移以及文字动态高度的变化处理，可以参考```BTTextInputView```如何处理高度变化和键盘的弹出效果
 
 ![图片.png](https://upload-images.jianshu.io/upload_images/1243802-c21965f224d408a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -159,7 +155,7 @@
 
 可以快速的弹出一个简单的评论框，自动处理文字的高度变化以及键盘的位移处理。
 
-![Jietu20200617-110830.gif](https://upload-images.jianshu.io/upload_images/1243802-a98084bd0d8af906.gif?imageMogr2/auto-orient/strip)
+![Jietu20200617-110830.gif](https://upload-images.jianshu.io/upload_images/1243802-a98084bd0d8af906.gif)
 
 初始化使用
 
