@@ -314,6 +314,10 @@
     }
     [self autoLoadSubView:index];
     [self.scrollView setContentOffset:CGPointMake(self.scrollView.width*index, 0) animated:animated];
+    //没有动画滑动不会触发scrollView的滑动代理，无法更新index
+    if (!animated) {
+        self.nowIndex = index;
+    }
 }
 
 
