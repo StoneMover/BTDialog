@@ -65,7 +65,7 @@ label.text = @"我是一个自定义的View";
 快速的创建一个列表样式的弹框，提供单选或者多选的功能，基于```BTDialogView```
 
 
-![](https://upload-images.jianshu.io/upload_images/1243802-31d5cac77d20293e.png)
+![图片](https://upload-images.jianshu.io/upload_images/1243802-31d5cac77d20293e.png)
 
 
 
