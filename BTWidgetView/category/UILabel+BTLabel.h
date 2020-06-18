@@ -53,6 +53,9 @@ NS_ASSUME_NONNULL_BEGIN
 //设置两端对齐,可能与下划线有冲突
 - (void)bt_AttributedAlignStartEnd;
 
+//设置所有文字的行间距
+- (void)bt_setText:(NSString*)text lineSpacing:(CGFloat)lineSpacing;
+
 @end
 
 NS_ASSUME_NONNULL_END
