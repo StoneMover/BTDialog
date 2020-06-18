@@ -1,6 +1,8 @@
 # BTDialogView
 
-[GIF](https://upload-images.jianshu.io/upload_images/1243802-ac4bd16b4644bd99.gif?imageMogr2/auto-orient/strip)
+![](https://upload-images.jianshu.io/upload_images/1243802-ac4bd16b4644bd99.gif)
+
+[GIF](https://upload-images.jianshu.io/upload_images/1243802-ac4bd16b4644bd99.gif)
 
 显示你的自定义```view```，根据```BTDialogLocation```的类型来确定```view```显示的位置
 
@@ -63,7 +65,9 @@ label.text = @"我是一个自定义的View";
 快速的创建一个列表样式的弹框，提供单选或者多选的功能，基于```BTDialogView```
 
 
-[图片](https://upload-images.jianshu.io/upload_images/1243802-31d5cac77d20293e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/1243802-31d5cac77d20293e.png)
+
+
 
 
 ```
