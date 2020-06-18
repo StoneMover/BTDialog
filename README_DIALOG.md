@@ -1,6 +1,5 @@
 # BTDialogView
 
-![](https://upload-images.jianshu.io/upload_images/1243802-ac4bd16b4644bd99.gif)
 
 [GIF](https://upload-images.jianshu.io/upload_images/1243802-ac4bd16b4644bd99.gif)
 
@@ -64,10 +63,7 @@ label.text = @"我是一个自定义的View";
 
 快速的创建一个列表样式的弹框，提供单选或者多选的功能，基于```BTDialogView```
 
-
-![图片](https://upload-images.jianshu.io/upload_images/1243802-31d5cac77d20293e.png)
-
-
+[图片](https://upload-images.jianshu.io/upload_images/1243802-31d5cac77d20293e.png)
 
 
 ```
@@ -113,7 +109,7 @@ tableView.blockTable = ^BOOL(NSInteger index) {
 
 将你的```view```像```UIAlertView```的方式弹出
 
-[图片](https://upload-images.jianshu.io/upload_images/1243802-6d955dbbbbc02970.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+[图片](https://upload-images.jianshu.io/upload_images/1243802-6d955dbbbbc02970.png)
 
 ```
 UIView * viewShow = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
@@ -160,7 +156,7 @@ BTAlertView * alertView = [[BTAlertView alloc] initWithcontentView:viewShow];
 
 创建一个文本类型的弹框
 
-[图片](https://upload-images.jianshu.io/upload_images/1243802-42ca9d4a20664ca4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+[图片](https://upload-images.jianshu.io/upload_images/1243802-42ca9d4a20664ca4.png)
 
 ```
 BTAlertLabelView * labelView = [[BTAlertLabelView alloc] initWithTitle:@"关张马黄赵传第六" msg:@"因战乱逃亡到涿郡。刘备在家乡招集兵马，关羽和张飞担任他的护卫。刘备任平原国国相后，任关羽、张飞为别部司马，分管所辖军队。刘备与关、张二人连睡觉都同一张床 ，亲如同胞兄弟。关、张二人在大庭广众之中，整日侍立在刘备身旁，跟随刘备对敌作战，从不惧避艰险。刘备袭击徐州杀死刺史车胄后，即让关羽镇守下邳城，代行太守职务，自己则率军回驻小沛。"];
@@ -170,7 +166,7 @@ labelView.isJustOkBtn = YES;
 
 创建一个单行编辑的弹框
 
-[图片](https://upload-images.jianshu.io/upload_images/1243802-91326af89f21b725.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+[图片](https://upload-images.jianshu.io/upload_images/1243802-91326af89f21b725.png)
 
 ```
 BTAlertTextFieldView * fieldView = [[BTAlertTextFieldView alloc] initWithContent:@"刘备任平原国国相后，任关羽" placeholder:@"来看三国呗"];
@@ -185,7 +181,7 @@ fieldView.okBlock = ^BOOL{
 
 创建一个多行编辑的弹框
 
-[图片](https://upload-images.jianshu.io/upload_images/1243802-adeb5f24289aa63b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+[图片](https://upload-images.jianshu.io/upload_images/1243802-adeb5f24289aa63b.png)
 
 ```
 BTAlertTextView * textView = [[BTAlertTextView alloc] initWithContent:@"又被任为谯县县令，未到任。刘备统治豫州时，荐袁涣为茂才。后袁涣迁移到江 淮之间避祸，被袁术所任命。袁术每次有所咨询，袁涣常有严正的议论。袁术不能违抗，然而也不敢不有礼貌地尊敬他。不久，吕布在阜陵攻击袁术，袁涣前去随从袁术，于是也被吕布拘留。吕布当初与刘备结亲和好，后来有了嫌隙。现在，吕布想要让袁涣写信辱骂刘备，袁涣不答应，再三强迫他，仍不同意。吕布大怒，用兵器威胁袁涣说：“你做就能活，不做就得死。”袁涣脸不变色，笑着回答说：“袁涣听说只有德行才能使人蒙受耻辱，没听说用辱骂的。假使他本来就是个君子，那他将不以将军的话为耻辱，假使他本来就是个小人，那他将像将军一样写信，回骂将军，那样耻辱将在这一方而不在他那一方。况且袁涣我异日侍奉刘将军，就像现在侍奉将军您一样，如果我一旦离开这里，回过头来骂您，可以吗？”吕布感到羞惭，不再逼他。" placeholder:@"请输入你对刘备的评价"];
