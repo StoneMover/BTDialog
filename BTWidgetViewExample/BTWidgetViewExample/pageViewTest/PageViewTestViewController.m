@@ -29,9 +29,9 @@
     [self.view addSubview:self.pageView];
     self.pageView.dataSource=self;
     self.pageView.delegate=self;
-//    self.pageView.initSelectIndex=3;
+    self.pageView.initSelectIndex=3;
     self.pageView.isNeedLoadNextAndLast=NO;
-//    self.pageView.isCanScroll = YES;
+    self.pageView.isCanScroll = YES;
     self.headView=[[BTPageHeadLabelView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40) titles:@[@"第0项",@"第1项第1项第1项第1项",@"第2项第1项第1项",@"第3项",@"第3项",@"第3项",@"第3项",@"第3项",@"第3项"] style:BTPageHeadViewStyleDefault];
     self.headView.itemMarin = 20;
     self.headView.rightPadding = 20;

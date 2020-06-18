@@ -10,7 +10,7 @@
 
 @implementation WKWebView (FullImg)
 
-- (void)imageRepresentation:(void(^)(UIImage * img))block{
+- (void)bt_imageRepresentation:(void(^)(UIImage * img))block{
     CGFloat scale = [UIScreen mainScreen].scale;
     
     CGSize boundsSize = self.bounds.size;

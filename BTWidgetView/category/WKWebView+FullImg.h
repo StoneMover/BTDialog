@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WKWebView (FullImg)
 
-- (void)imageRepresentation:(void(^)(UIImage * img))block;
+- (void)bt_imageRepresentation:(void(^)(UIImage * img))block;
 
 @end
 
