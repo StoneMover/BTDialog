@@ -26,7 +26,7 @@
     self.headView=[[BTPageHeadLabelView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 40) titles:@[@"第0项",@"第1项",@"第2项",@"第3项"] style:BTPageHeadViewStyleAverage];
     [self.headView initViewIndicator:CGSizeMake(15, 2) corner:0 bgColor:UIColor.redColor];
     self.headView.isNeedClickAnim=NO;
-    self.isCanScroll=NO;
+    self.isCanScroll=YES;
     [self reloadData];
 }
 

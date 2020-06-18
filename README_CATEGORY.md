@@ -126,7 +126,7 @@
 - (void)setShade:(CGFloat)opacity color:(UIColor*)color radius:(CGFloat)radius offset:(CGSize)size;
 ```
 
-从xib中加载对象
+从```xib```中加载对象
 
 ```
 + (instancetype)loadInstanceFromNib;
@@ -138,7 +138,7 @@
 - (void)addSubViewArray:(NSArray<UIView*>*)subviews;
 ```
 
-生成当前view的图片
+生成当前```view```的图片
 
 ```
 - (UIImage*)selfImg;
