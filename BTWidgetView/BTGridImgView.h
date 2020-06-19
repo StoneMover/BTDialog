@@ -30,16 +30,20 @@
 //有多少列
 @property (nonatomic, assign) NSInteger line;
 
+//上下左右的间距
+@property (nonatomic, assign) CGFloat space;
+
 //允许显示的最大图片数量
 @property (nonatomic, assign) NSInteger maxNumber;
+
+//加号图片
+@property (nonatomic, strong) UIImage * addImg;
 
 //容器的高度，实时计算
 @property (nonatomic, assign,readonly) CGFloat contentHeight;
 
 @property (nonatomic, weak) id<BTGridImgViewDelegate> delegate;
 
-//上下左右的间距
-@property (nonatomic, assign) CGFloat space;
 
 - (void)reloadData;
 

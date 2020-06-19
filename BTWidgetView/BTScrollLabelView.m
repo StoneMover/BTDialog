@@ -19,11 +19,8 @@
 //下一个文字
 @property (nonatomic, strong) UILabel * labelNext;
 
-//是否已经停止
-@property (nonatomic, assign) BOOL isStop;
-
-//是否已经开始过了
-@property (nonatomic, assign) BOOL isHasStarted;
+//0:未曾调用过开始方法，1:正在进行动画，2：动画结束
+@property (nonatomic, assign) NSInteger animStatus;
 
 @end
 
@@ -37,9 +34,9 @@
 
 
 -(void)initSMScrollLabel{
-    self.isStop = YES;
     self.animTime = 10;
     self.margin = 30;
+    self.nextAnimTime = 3;
     self.label = [[UILabel alloc]init];
     self.labelNext = [[UILabel alloc]init];
     [self addSubview:self.labelNext];
@@ -47,30 +44,26 @@
     self.clipsToBounds=YES;
     
     
-    // app从后台进入前台都会调用这个方法
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationBecomeActive) name:UIApplicationWillEnterForegroundNotification object:nil];
-    // 添加检测app进入后台的观察者
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationEnterBackground) name: UIApplicationDidEnterBackgroundNotification object:nil];
 }
 
 - (void)applicationBecomeActive{
-    if (self.isHasStarted&&self.isStop) {
-        [self start];
-    }
+    if (self.animStatus == 0) return;
+    [self start];
 }
 
 -  (void)applicationEnterBackground{
-    if (self.isHasStarted&&!self.isStop) {
-        [self stop];
-    }
+    if (self.animStatus == 0) return;
+    [self stop];
 }
 
 -(void)layoutSubviews{
-    self.label.left=0;
-    self.label.centerY=self.height/2;
-    self.labelNext.centerY=self.label.centerY;
-    self.labelNext.left=self.label.right+30;
-    if (self.label.right>self.width) {
+    self.label.left = 0;
+    self.label.centerY = self.height / 2;
+    self.labelNext.centerY = self.label.centerY;
+    self.labelNext.left = self.label.right + self.margin;
+    if (self.label.right > self.width) {
         self.labelNext.hidden=NO;
     }else{
         self.labelNext.hidden=YES;
@@ -78,75 +71,50 @@
 }
 
 -(void)stop{
-    if (self.isStop) {
+    if (self.animStatus == 2 || self.animStatus == 0 || self.labelNext.hidden) {
         return;
     }
-    self.isStop=YES;
+    
+    self.animStatus = 2;
     [self.label.layer removeAllAnimations];
     [self.labelNext.layer removeAllAnimations];
     [self layoutSubviews];
 }
 
 -(void)start{
-    if (!self.isStop) {
-        return;
-    }
-    self.isHasStarted=YES;
-    self.isStop=NO;
-    if (!self.labelNext.hidden) {
-        if (self.type==BTScrollLabelTypeRound) {
-            [self startRound];
-        }else if (self.type==BTScrollLabelTypeBy) {
-            [self startBy:0];
-        }
-    }else{
-        self.isStop=YES;
+    if (self.animStatus == 1) return;
+    if (self.labelNext.hidden) return;
+    
+    self.animStatus = 1;
+    if (self.type==BTScrollLabelTypeRound) {
+        [self startRound];
+    }else if (self.type==BTScrollLabelTypeBy) {
+        [self startBy];
     }
 }
 
 -(void)startRound{
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
-    animation.duration = self.animTime;
-    animation.repeatCount = MAXFLOAT;
-    animation.autoreverses = YES;
-    animation.timingFunction =[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    animation.fromValue = [NSValue valueWithCGPoint:self.label.center]; // 起始帧
-    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(self.label.center.x, self.label.center.y)];
-    animation.delegate=self;
-    [self.label.layer addAnimation:animation forKey:@"move-layer"];
+    [UIView animateWithDuration:self.animTime delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionCurveLinear animations:^{
+        self.label.right = self.width;
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
--(void)startBy:(CGFloat)time{
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
-    animation.duration = self.animTime;
-    animation.repeatCount = 1;
-    animation.autoreverses = NO;
-    animation.timingFunction =[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    animation.fromValue = [NSValue valueWithCGPoint:self.label.center]; // 起始帧
-    animation.toValue = [NSValue valueWithCGPoint:CGPointMake(-self.label.frame.size.width/2-self.margin, self.label.center.y)];
-    animation.removedOnCompletion=NO;
-    animation.beginTime=CACurrentMediaTime()+time;
-    [self.label.layer addAnimation:animation forKey:@"move-layer"];
-    
-    
-    CABasicAnimation *animationNext = [CABasicAnimation animationWithKeyPath:@"position"];
-    animationNext.duration = self.animTime;
-    animationNext.repeatCount = 1;
-    animationNext.autoreverses = NO;
-    animationNext.timingFunction =[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    animationNext.fromValue = [NSValue valueWithCGPoint:self.labelNext.center]; // 起始帧
-    animationNext.toValue = [NSValue valueWithCGPoint:CGPointMake(self.labelNext.frame.size.width/2, self.labelNext.center.y)];
-    animationNext.removedOnCompletion=NO;
-    animationNext.delegate=self;
-    animationNext.beginTime=CACurrentMediaTime()+time;
-    [self.labelNext.layer addAnimation:animationNext forKey:@"move-layer-next"];
+-(void)startBy{
+    [UIView animateWithDuration:self.animTime delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+        self.label.right = - self.margin ;
+        self.labelNext.left = 0;
+    } completion:^(BOOL finished) {
+        [self layoutSubviews];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (self.animStatus == 1) {
+                [self startBy];
+            }
+        });
+    }];
 }
 
--(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
-    if (!self.isStop) {
-        [self startBy:2];
-    }
-}
 
 
 

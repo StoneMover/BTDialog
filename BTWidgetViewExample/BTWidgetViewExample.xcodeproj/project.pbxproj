@@ -38,6 +38,9 @@
 		18E5647E249762430050C13E /* InputTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E5647C249762430050C13E /* InputTestViewController.xib */; };
 		18E77F6724985E7C00BF9F5A /* UILabel+BTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E77F6624985E7C00BF9F5A /* UILabel+BTLabel.m */; };
 		18E77F6B2498633000BF9F5A /* LabelTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E77F6A2498633000BF9F5A /* LabelTestViewController.m */; };
+		18FD4E4B249C5B1E006F3D1E /* TestContentAutoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FD4E4A249C5B1E006F3D1E /* TestContentAutoViewController.m */; };
+		18FD4E4F249C9F96006F3D1E /* TestGridImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FD4E4E249C9F96006F3D1E /* TestGridImageViewController.m */; };
+		18FD4E53249CAB35006F3D1E /* TestVerticalAnimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FD4E52249CAB35006F3D1E /* TestVerticalAnimViewController.m */; };
 		6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */; };
 		6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17B2313E811009DBBDF /* BTPageHeadView.m */; };
 		6034D17F2313E811009DBBDF /* BTPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D17C2313E811009DBBDF /* BTPageView.m */; };
@@ -135,6 +138,12 @@
 		18E77F6624985E7C00BF9F5A /* UILabel+BTLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BTLabel.m"; sourceTree = "<group>"; };
 		18E77F692498633000BF9F5A /* LabelTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelTestViewController.h; sourceTree = "<group>"; };
 		18E77F6A2498633000BF9F5A /* LabelTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelTestViewController.m; sourceTree = "<group>"; };
+		18FD4E49249C5B1E006F3D1E /* TestContentAutoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestContentAutoViewController.h; sourceTree = "<group>"; };
+		18FD4E4A249C5B1E006F3D1E /* TestContentAutoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestContentAutoViewController.m; sourceTree = "<group>"; };
+		18FD4E4D249C9F96006F3D1E /* TestGridImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestGridImageViewController.h; sourceTree = "<group>"; };
+		18FD4E4E249C9F96006F3D1E /* TestGridImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestGridImageViewController.m; sourceTree = "<group>"; };
+		18FD4E51249CAB35006F3D1E /* TestVerticalAnimViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVerticalAnimViewController.h; sourceTree = "<group>"; };
+		18FD4E52249CAB35006F3D1E /* TestVerticalAnimViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVerticalAnimViewController.m; sourceTree = "<group>"; };
 		30FB91F8B97D3E03F3F43591 /* Pods-BTWidgetViewExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.release.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.release.xcconfig"; sourceTree = "<group>"; };
 		5E98408A0C95CC96F9CDA16D /* Pods-BTWidgetViewExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BTWidgetViewExample.debug.xcconfig"; path = "Target Support Files/Pods-BTWidgetViewExample/Pods-BTWidgetViewExample.debug.xcconfig"; sourceTree = "<group>"; };
 		6034D1772313E811009DBBDF /* BTPageHeadLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTPageHeadLabelView.m; sourceTree = "<group>"; };
@@ -294,6 +303,33 @@
 			path = labelTest;
 			sourceTree = "<group>";
 		};
+		18FD4E48249C5B04006F3D1E /* contentAutoView */ = {
+			isa = PBXGroup;
+			children = (
+				18FD4E49249C5B1E006F3D1E /* TestContentAutoViewController.h */,
+				18FD4E4A249C5B1E006F3D1E /* TestContentAutoViewController.m */,
+			);
+			path = contentAutoView;
+			sourceTree = "<group>";
+		};
+		18FD4E4C249C9F75006F3D1E /* gridImgView */ = {
+			isa = PBXGroup;
+			children = (
+				18FD4E4D249C9F96006F3D1E /* TestGridImageViewController.h */,
+				18FD4E4E249C9F96006F3D1E /* TestGridImageViewController.m */,
+			);
+			path = gridImgView;
+			sourceTree = "<group>";
+		};
+		18FD4E50249CAB24006F3D1E /* verticalAnim */ = {
+			isa = PBXGroup;
+			children = (
+				18FD4E51249CAB35006F3D1E /* TestVerticalAnimViewController.h */,
+				18FD4E52249CAB35006F3D1E /* TestVerticalAnimViewController.m */,
+			);
+			path = verticalAnim;
+			sourceTree = "<group>";
+		};
 		6034D1762313E800009DBBDF /* pageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +411,9 @@
 		60D28A66230692260043442B /* BTWidgetViewExample */ = {
 			isa = PBXGroup;
 			children = (
+				18FD4E50249CAB24006F3D1E /* verticalAnim */,
+				18FD4E4C249C9F75006F3D1E /* gridImgView */,
+				18FD4E48249C5B04006F3D1E /* contentAutoView */,
 				18E77F682498631900BF9F5A /* labelTest */,
 				18A1E9FC248E17B30067D00C /* inputeViewTest */,
 				1898CCD6246572B800F50264 /* SlideTest */,
@@ -575,6 +614,7 @@
 				1867A8F92445C0CE00DC819F /* BTSearchHeadView.m in Sources */,
 				6037C16D23168C880017D898 /* PageViewTestViewController.m in Sources */,
 				1883F742245804F6004D1F8E /* BTProgressView.m in Sources */,
+				18FD4E4B249C5B1E006F3D1E /* TestContentAutoViewController.m in Sources */,
 				1867739623C6FAE40068E3DC /* BTGridImgView.m in Sources */,
 				6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */,
 				60D28AA12306923A0043442B /* BTDialogTableView.m in Sources */,
@@ -605,9 +645,11 @@
 				18E77F6B2498633000BF9F5A /* LabelTestViewController.m in Sources */,
 				1898CCD524656EB800F50264 /* BTSlideView.m in Sources */,
 				0D41969D23B6483800F5079F /* BTAlertTextFieldView.m in Sources */,
+				18FD4E53249CAB35006F3D1E /* TestVerticalAnimViewController.m in Sources */,
 				6034D17E2313E811009DBBDF /* BTPageHeadView.m in Sources */,
 				60643D722318F5B5007C1E01 /* PageChildVcViewController.m in Sources */,
 				60D28A9E2306923A0043442B /* BTButton.m in Sources */,
+				18FD4E4F249C9F96006F3D1E /* TestGridImageViewController.m in Sources */,
 				18629BAD23BA05AF00CE552C /* BTContentAutoView.m in Sources */,
 				60D28A77230692270043442B /* main.m in Sources */,
 				60D28AA02306923A0043442B /* BTTextInputView.m in Sources */,

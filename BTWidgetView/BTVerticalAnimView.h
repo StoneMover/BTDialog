@@ -33,6 +33,7 @@
 - (void)reload;
 
 - (UIView*)getCacheView;
+
 @end
 
 

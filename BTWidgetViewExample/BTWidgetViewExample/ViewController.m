@@ -16,6 +16,10 @@
 #import "SlideTestViewController.h"
 #import "InputTestViewController.h"
 #import "LabelTestViewController.h"
+#import "TestContentAutoViewController.h"
+#import "TestGridImageViewController.h"
+#import "BTProgressView.h"
+#import "TestVerticalAnimViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -31,11 +35,19 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent=NO;
     self.title=@"BTWidget";
-    self.titles=@[@"BTPageViewTest",@"BTPageVcTest",@"BTDialogView&BTAlertView",@"BTSearchTest",@"SlideTestViewController",@"BTInputView",@"BTLabel+UIlabel"];
+    self.titles=@[@"BTPageViewTest",@"BTPageVcTest",@"BTDialogView&BTAlertView",@"BTSearchTest",@"SlideTestViewController",@"BTInputView",@"BTLabel+UIlabel",@"ContentAutoView",@"GridImageView",@"TestVerticalAnimViewController"];
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCellId"];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
     [self test:@"when i get old " str:@"you when will i get old and"];
+}
+
+- (void)initProgressView{
+    BTProgressView * progressView = [[BTProgressView alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+    progressView.backgroundColor = UIColor.redColor;
+    progressView.progressView.backgroundColor = UIColor.whiteColor;
+    progressView.type = 0;
+    progressView.percent = 0.25;
 }
 
 - (void)test:(NSString*)strOri str:(NSString*)changeStr{
@@ -201,6 +213,24 @@
         case 6:
         {
             LabelTestViewController * vc=[LabelTestViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 7:
+        {
+            TestContentAutoViewController * vc=[TestContentAutoViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 8:
+        {
+            TestGridImageViewController * vc=[TestGridImageViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 9:
+        {
+            TestVerticalAnimViewController * vc=[TestVerticalAnimViewController new];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;

@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^BTContentAutoBlock)(CGFloat resultH);
-
-typedef void(^BTContentClickBlock)(NSInteger index);
-
 @interface BTContentAutoView : UIView
 
 //文字的高度
@@ -41,9 +37,11 @@ typedef void(^BTContentClickBlock)(NSInteger index);
 //文字左右内边距
 @property (nonatomic, assign) CGFloat paddingLeftRight;
 
-@property (nonatomic, copy) BTContentAutoBlock block;
+//完成布局后使用的高度回调
+@property (nonatomic, copy) void(^block)(CGFloat resultH);
 
-@property (nonatomic, copy) BTContentClickBlock blockClick;
+//点击回调
+@property (nonatomic, copy) void(^blockClick)(NSInteger index);
 
 //清除数据
 - (void)clearData;

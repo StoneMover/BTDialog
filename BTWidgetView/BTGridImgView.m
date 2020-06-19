@@ -63,7 +63,7 @@
     BTGridImgViewCell * cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"BTGridImgViewCellId"
                                                                           forIndexPath:indexPath];
     if (indexPath.row == self.dataArray.count) {
-        cell.imgViewContent.image = [UIImage imageNamed:@"com_add_add"];
+        cell.imgViewContent.image = self.addImg;
     }else{
         NSObject * objc = self.dataArray[indexPath.row];
         if ([objc isKindOfClass:[UIImage class]]) {
@@ -167,14 +167,17 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     [self initSelf];
-    UILongPressGestureRecognizer * longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress)];
+    UILongPressGestureRecognizer * longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
     [self addGestureRecognizer:longPress];
     return  self;
 }
 
-- (void)longPress{
-    if (self.longPressBlock) {
-        self.longPressBlock();
+
+- (void)longPress:(UILongPressGestureRecognizer *)gestureRecognizer{
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        if (self.longPressBlock) {
+            self.longPressBlock();
+        }
     }
 }
 

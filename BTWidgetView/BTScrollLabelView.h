@@ -29,11 +29,14 @@ typedef NS_ENUM(NSInteger,BTScrollLabelType) {
 //文字的字体
 @property (nonatomic, strong) UIFont * font;
 
-//两个label之间的间距
+//两个label之间的间距，默认30
 @property (nonatomic, assign) CGFloat margin;
 
-//动画的时间
-@property (nonatomic, assign) int animTime;
+//动画的时间,默认10s
+@property (nonatomic, assign) NSInteger animTime;
+
+//当使用BTScrollLabelTypeBy方式时，跑马灯距离下次开始的时间，默认3s
+@property (nonatomic, assign) CGFloat nextAnimTime;
 
 -(void)start;
 
