@@ -322,10 +322,6 @@
     return labelSize.height;
 }
 
-+ (CGFloat)calculateLabelHeight:(UILabel*)label{
-    return [self calculateStrHeight:label.text width:label.frame.size.width font:label.font];
-}
-
 + (CGFloat)calculateStrHeight:(NSString*)str width:(CGFloat)width font:(UIFont*)font lineSpeace:(CGFloat)lineSpeace{
     NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
     paraStyle.lineSpacing = lineSpeace;
@@ -333,6 +329,10 @@
     
     CGSize labelSize =[str boundingRectWithSize:CGSizeMake(width, 1500) options:NSStringDrawingUsesLineFragmentOrigin  attributes:dic context:nil].size;
     return labelSize.height;
+}
+
++ (CGFloat)calculateLabelHeight:(UILabel*)label{
+    return [self calculateStrHeight:label.text width:label.frame.size.width font:label.font];
 }
 
 + (CGFloat)calculateStrWidth:(NSString*)str height:(CGFloat)height font:(UIFont*)font{

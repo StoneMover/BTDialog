@@ -17,9 +17,16 @@
 
 @interface BTLocation : NSObject
 
+//开始定位
 - (void)start;
+
+//停止定位
 - (void)stop;
+
+//是否有定位权限
 - (BOOL)isHasLocationPermission;
+
+//显示没有权限的弹框
 - (void)showAlert:(UIViewController*)vc;
 
 @property (nonatomic, weak) id<BTLocationDelegate>  delegate;

@@ -109,6 +109,7 @@
         self.photoVC.delegate = (id)self;
         self.photoVC.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
         self.photoVC.allowsEditing = self.isClip;
+        self.photoVC.modalPresentationStyle = UIModalPresentationFullScreen;
     }
     
     if (index == 0){

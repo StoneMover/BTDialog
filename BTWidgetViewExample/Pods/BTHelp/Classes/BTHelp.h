@@ -6,15 +6,17 @@
 //  Copyright © 2019 stonemover. All rights reserved.
 //
 
-#import "NSDate+BTDate.h"
 #import "BTModel.h"
 #import "BTTimerHelp.h"
-#import "BTLocation.h"
 #import "BTIconHelp.h"
 #import "BTKeyboardHelp.h"
 #import "BTPermission.h"
 #import "BTUtils.h"
-
+#import "BTLocation.h"
+#import "BTApplePay.h"
+#import "NSDate+BTDate.h"
+#import "BTLocation.h"
+#import "BTDownloadMananger.h"
 
 
 

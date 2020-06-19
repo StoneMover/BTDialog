@@ -22,12 +22,6 @@ typedef void(^BTPermissionBlock)(NSInteger index);
 + (instancetype)share;
 
 
-
-
-@property (nonatomic, assign) BOOL isLocation;
-
-
-
 //请求获取相机权限
 @property (nonatomic, assign) BOOL isCamera;
 - (void)getCameraPermission:(BTPermissionSuccessBlock)block;

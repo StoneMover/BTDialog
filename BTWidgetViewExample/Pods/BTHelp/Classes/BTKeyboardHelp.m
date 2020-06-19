@@ -165,8 +165,11 @@
 -(void)replaceDisplayView:(UIView*)viewDisplay withDistance:(NSInteger)distance{
     self.viewDisplay=viewDisplay;
     self.viewMoveOriY=self.viewMove.frame.origin.y;
-    //将移动view的坐标转换为屏幕坐标
+    //将移动view的坐标转换为屏幕坐标,这里是用frame还是bounds需要确认
+    //第一个参数rect应该是这个view自己内部的一块区域,这块区域如果你想是view自己本身,那么就是用view.bounds,如果你想是他内部的一块空间,你可以自己指定.但是切忌使用self.frame,那么基本上算出来的就是错误的结果
+    //https://www.jianshu.com/p/5a7387b21789
     CGRect rect =[self.viewDisplay convertRect: self.viewDisplay.bounds toView:[[[UIApplication sharedApplication] delegate] window]];
+//    CGRect rect =[self.viewDisplay convertRect: self.viewDisplay.frame toView:[[[UIApplication sharedApplication] delegate] window]];
     self.viewDisplayScreenY=rect.origin.y;
     if (!self.contraintTop) {
         for (NSLayoutConstraint * c in viewDisplay.constraints) {

@@ -12,7 +12,7 @@
 @class BTTimerHelp;
 @protocol BTTimerHelpDelegate <NSObject>
 
-@required
+@optional
 -(void)BTTimeChanged:(BTTimerHelp*)timer;
 
 @end
@@ -21,7 +21,7 @@ typedef void(^BTTimerChangeBlock)(void);
 
 @interface BTTimerHelp : NSObject
 
-//间隔时间,必须设置,且只能设置一次
+//间隔时间,必须调用设置
 @property(nonatomic,assign)CGFloat changeTime;
 
 //计时器目前跑的总的时间
