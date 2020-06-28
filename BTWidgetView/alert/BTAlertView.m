@@ -10,7 +10,6 @@
 #import "UIView+BTViewTool.h"
 #import "UIView+BTEasyDialog.h"
 #import <BTHelp/BTUtils.h>
-#import "UIImage+BTImage.h"
 
 @interface BTAlertView()
 

@@ -62,7 +62,6 @@
 		60D28A9A2306923A0043442B /* BTDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A882306923A0043442B /* BTDialogView.m */; };
 		60D28A9B2306923A0043442B /* UIView+BTConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A8C2306923A0043442B /* UIView+BTConstraint.m */; };
 		60D28A9C2306923A0043442B /* BTTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A8D2306923A0043442B /* BTTextField.m */; };
-		60D28A9D2306923A0043442B /* UIImage+BTImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A8F2306923A0043442B /* UIImage+BTImage.m */; };
 		60D28A9E2306923A0043442B /* BTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A912306923A0043442B /* BTButton.m */; };
 		60D28A9F2306923A0043442B /* UIView+BTEasyDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A922306923A0043442B /* UIView+BTEasyDialog.m */; };
 		60D28AA02306923A0043442B /* BTTextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A932306923A0043442B /* BTTextInputView.m */; };
@@ -183,12 +182,10 @@
 		60D28A862306923A0043442B /* UIView+BTEasyDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BTEasyDialog.h"; sourceTree = "<group>"; };
 		60D28A872306923A0043442B /* BTButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTButton.h; sourceTree = "<group>"; };
 		60D28A882306923A0043442B /* BTDialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDialogView.m; sourceTree = "<group>"; };
-		60D28A892306923A0043442B /* UIImage+BTImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BTImage.h"; sourceTree = "<group>"; };
 		60D28A8A2306923A0043442B /* BTTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTTextView.h; sourceTree = "<group>"; };
 		60D28A8C2306923A0043442B /* UIView+BTConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BTConstraint.m"; sourceTree = "<group>"; };
 		60D28A8D2306923A0043442B /* BTTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTTextField.m; sourceTree = "<group>"; };
 		60D28A8E2306923A0043442B /* BTLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTLineView.h; sourceTree = "<group>"; };
-		60D28A8F2306923A0043442B /* UIImage+BTImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BTImage.m"; sourceTree = "<group>"; };
 		60D28A902306923A0043442B /* BTDialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDialogView.h; sourceTree = "<group>"; };
 		60D28A912306923A0043442B /* BTButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTButton.m; sourceTree = "<group>"; };
 		60D28A922306923A0043442B /* UIView+BTEasyDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BTEasyDialog.m"; sourceTree = "<group>"; };
@@ -356,8 +353,6 @@
 				60D28A852306923A0043442B /* UIView+BTViewTool.m */,
 				60D28A802306923A0043442B /* UIView+BTConstraint.h */,
 				60D28A8C2306923A0043442B /* UIView+BTConstraint.m */,
-				60D28A892306923A0043442B /* UIImage+BTImage.h */,
-				60D28A8F2306923A0043442B /* UIImage+BTImage.m */,
 				60D28A862306923A0043442B /* UIView+BTEasyDialog.h */,
 				60D28A922306923A0043442B /* UIView+BTEasyDialog.m */,
 			);
@@ -658,7 +653,6 @@
 				185CF1E52446F0AC00866B1A /* BTVerticalAnimView.m in Sources */,
 				6037C17023168CAE0017D898 /* PageVcTestViewController.m in Sources */,
 				1867A8F62445C06D00DC819F /* BTSearchView.m in Sources */,
-				60D28A9D2306923A0043442B /* UIImage+BTImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
