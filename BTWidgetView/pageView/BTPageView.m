@@ -104,7 +104,7 @@
             //不是点击滑动的情况
             [self autoLoadSubView:self.nowIndex + 1];
         }
-        NSLog(@"hhhh:%ld",self.nowIndex);
+//        NSLog(@"hhhh:%ld",self.nowIndex);
         
     }else if (self.scrollView.contentOffset.x-self.lastContentOffsetX<0){
         //向右边滑动，加载上一个
