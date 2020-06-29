@@ -9,7 +9,7 @@
 #import "BTAlertTextView.h"
 #import <BTHelp/BTUtils.h>
 #import "UIView+BTViewTool.h"
-
+#import <BTHelp/UIColor+BTColor.h>
 
 
 
@@ -27,9 +27,9 @@
     textView.placeHolder = placeholder;
     textView.isSelfSetEdgeInsets = YES;
     textView.textContainerInset=UIEdgeInsetsMake(5, 5, 5, 5);
-    textView.textColor = [BTUtils RGB:10 G:10 B:10];
+    textView.textColor = [UIColor RGBSame:10];
     textView.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
-    textView.borderColor = [BTUtils RGBA:77 G:77 B:77 A:.78];
+    textView.borderColor = [UIColor RGBASame:77 A:0.78];
     textView.borderWidth = 0.5;
     textView.corner = 5;
     
@@ -55,7 +55,7 @@
         self.textView.backgroundColor = UIColor.clearColor;
     }else{
         self.textView.editable = YES;
-        self.textView.borderColor = [BTUtils RGBA:77 G:77 B:77 A:.78];
+        self.textView.borderColor = [UIColor RGBASame:77 A:0.78];
         self.textView.borderWidth = 0.5;
         self.textView.corner = 5;
         self.textView.backgroundColor = UIColor.whiteColor;

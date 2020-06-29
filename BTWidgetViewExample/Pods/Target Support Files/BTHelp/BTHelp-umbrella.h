@@ -14,6 +14,7 @@
 #import "BTDownloadMananger.h"
 #import "BTDownloadModel.h"
 #import "XMLReader.h"
+#import "BTFileHelp.h"
 #import "BTHelp.h"
 #import "BTIconHelp.h"
 #import "BTKeyboardHelp.h"
@@ -23,6 +24,9 @@
 #import "BTTimerHelp.h"
 #import "BTUtils.h"
 #import "NSDate+BTDate.h"
+#import "NSString+BTString.h"
+#import "UIColor+BTColor.h"
+#import "UIImage+BTImage.h"
 
 FOUNDATION_EXPORT double BTHelpVersionNumber;
 FOUNDATION_EXPORT const unsigned char BTHelpVersionString[];

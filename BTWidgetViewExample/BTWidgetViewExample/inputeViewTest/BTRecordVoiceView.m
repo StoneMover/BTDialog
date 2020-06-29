@@ -14,6 +14,7 @@
 #import "BTUtils.h"
 #include "lame.h"
 #import <BTHelp/NSDate+BTDate.h>
+#import <BTHelp/BTFileHelp.h>
 
 
 const int moveCancelDistance=20;//取消移动的距离
@@ -109,7 +110,7 @@ const int moveCancelDistance=20;//取消移动的距离
     //初始化默认参数
     if (!self.savePath) {
         NSString * time = [[NSDate initLocalDate] dateStr:@"YYYYMMddHHmmss"];
-        self.savePath=[NSString stringWithFormat:@"%@/%@.wav",[BTUtils getCacheVoice],time];
+        self.savePath=[NSString stringWithFormat:@"%@/%@.wav",BTFileHelp.cacheVoicePath,time];
     }
     
     if (!self.recordConfigDic) {

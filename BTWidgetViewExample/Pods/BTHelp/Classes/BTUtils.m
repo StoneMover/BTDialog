@@ -7,8 +7,12 @@
 //
 
 #import "BTUtils.h"
-#import<CommonCrypto/CommonDigest.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import "NSString+BTString.h"
+#import "UIImage+BTImage.h"
+#import "UIColor+BTColor.h"
+
+
 
 @implementation BTUtils
 
@@ -145,17 +149,6 @@
 }
 
 
-+ (UIColor*)RGB:(CGFloat)R G:(CGFloat)G B:(CGFloat)B{
-    return [UIColor colorWithRed:(R)/255.0 green:(G)/255.0 blue:(B)/255.0 alpha:1];
-}
-
-+ (UIColor*)RGBA:(CGFloat)R G:(CGFloat)G B:(CGFloat)B A:(CGFloat)A{
-    return [UIColor colorWithRed:(R)/255.0 green:(G)/255.0 blue:(B)/255.0 alpha:A];
-}
-
-+ (UIColor*)RANDOM_COLOR{
-    return [BTUtils RGB:arc4random_uniform(256) G:arc4random_uniform(256) B:arc4random_uniform(256)];
-}
 
 + (NSString*)SAFE_STR:(NSString*)str{
     if ([BTUtils isEmpty:str]) {
@@ -171,7 +164,10 @@
 
 + (NSURL*)URL:(NSString*)url{
     if (![BTUtils isEmpty:url]) {
-        return [NSURL URLWithString:url];
+        NSURL * result = [NSURL URLWithString:url];
+        if (result != nil) {
+            return result;
+        }
     }
     return [NSURL URLWithString:@"http://www.baidu.com"];
 }
@@ -206,29 +202,21 @@
 + (UIViewController *)getCurrentVCFrom:(UIViewController *)rootVc
 {
     UIViewController *currentVC;
-    
     if ([rootVc presentedViewController]) {
         // 视图是被presented出来的
-        
         rootVc = [rootVc presentedViewController];
     }
     
     if ([rootVc isKindOfClass:[UITabBarController class]]) {
         // 根视图为UITabBarController
-        
         currentVC = [self getCurrentVCFrom:[(UITabBarController *)rootVc selectedViewController]];
-        
     } else if ([rootVc isKindOfClass:[UINavigationController class]]){
         // 根视图为UINavigationController
-        
         currentVC = [self getCurrentVCFrom:[(UINavigationController *)rootVc visibleViewController]];
-        
     } else {
         // 根视图为非导航类
-        
         currentVC = rootVc;
     }
-    
     return currentVC;
 }
 
@@ -263,49 +251,6 @@
 
 
 
-+ (UIImage*)circleImage:(UIImage*)image {
-    
-    
-    CGRect rectClip;
-    
-    if (image.size.width>image.size.height) {
-        rectClip=CGRectMake(image.size.width/2-image.size.height/2, 0, image.size.height,image.size.height);
-    }else{
-        rectClip=CGRectMake(0, image.size.height/2-image.size.width/2, image.size.width, image.size.width);
-    }
-    
-    CGImageRef cgimg = CGImageCreateWithImageInRect([image CGImage], rectClip);
-    UIImage * clipImage = [UIImage imageWithCGImage:cgimg];
-    CGImageRelease(cgimg);//用完一定要释放，否则内存泄露
-    UIGraphicsBeginImageContext(clipImage.size);
-    
-    CGContextRef context =UIGraphicsGetCurrentContext();
-    
-    CGContextSetStrokeColorWithColor(context, [UIColor colorWithRed:1.0 green:0.1871 blue:0.3886 alpha:0].CGColor);
-    
-    CGRect rect=CGRectMake(0, 0, clipImage.size.width, clipImage.size.width);
-    
-    CGContextAddEllipseInRect(context, rect);
-    
-    CGContextClip(context);
-    
-    //在圆区域内画出image原图
-    
-    [clipImage drawInRect:rect];
-    
-    CGContextAddEllipseInRect(context, rect);
-    
-    CGContextStrokePath(context);
-    
-    //生成新的image
-    
-    UIImage *newimg = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    return newimg;
-    
-}
 
 + (void)setAppIconNotifiNum:(NSString*)num{
     // 应用程序右上角数字
@@ -315,34 +260,9 @@
 
 
 
-+ (CGFloat)calculateStrHeight:(NSString*)str width:(CGFloat)width font:(UIFont*)font{
-    
-    NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:font,NSFontAttributeName,nil];
-    CGSize labelSize =[str boundingRectWithSize:CGSizeMake(width, 1500) options:NSStringDrawingUsesLineFragmentOrigin  attributes:dic context:nil].size;
-    return labelSize.height;
-}
 
-+ (CGFloat)calculateStrHeight:(NSString*)str width:(CGFloat)width font:(UIFont*)font lineSpeace:(CGFloat)lineSpeace{
-    NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
-    paraStyle.lineSpacing = lineSpeace;
-    NSDictionary * dic =@{NSFontAttributeName:font, NSParagraphStyleAttributeName:paraStyle};
-    
-    CGSize labelSize =[str boundingRectWithSize:CGSizeMake(width, 1500) options:NSStringDrawingUsesLineFragmentOrigin  attributes:dic context:nil].size;
-    return labelSize.height;
-}
 
-+ (CGFloat)calculateLabelHeight:(UILabel*)label{
-    return [self calculateStrHeight:label.text width:label.frame.size.width font:label.font];
-}
 
-+ (CGFloat)calculateStrWidth:(NSString*)str height:(CGFloat)height font:(UIFont*)font{
-    NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:font,NSFontAttributeName,nil];
-    CGSize labelSize =[str boundingRectWithSize:CGSizeMake(1500, height) options:NSStringDrawingUsesLineFragmentOrigin  attributes:dic context:nil].size;
-    return labelSize.width;
-}
-+ (CGFloat)calculateLabelWidth:(UILabel*)label{
-    return [self calculateStrWidth:label.text height:label.frame.size.height font:label.font];
-}
 
 + (NSString *)translationArabicNum:(NSInteger)arabicNum{
     NSString *arabicNumStr = [NSString stringWithFormat:@"%ld",(long)arabicNum];
@@ -443,19 +363,7 @@
     return [NSString stringWithFormat:@"%@",[dict objectForKey:key]];
 }
 
-+ (NSDictionary *)convertJsonToDict:(NSString *)jsonString {
-    if (jsonString == nil) {
-        return nil;
-    }
-    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *err;
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
-    if(err) {
-        NSLog(@"json解析失败：%@",err);
-        return nil;
-    }
-    return dic;
-}
+
 
 + (NSString*)convertDictToJsonStr:(NSDictionary *)dic
 {
@@ -475,19 +383,7 @@
     return mutStr;
 }
 
-+ (NSArray *)convertJsonToArray:(NSString *)jsonString {
-    if (jsonString == nil) {
-        return nil;
-    }
-    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *err;
-    NSArray * array = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
-    if(err) {
-        NSLog(@"json解析失败：%@",err);
-        return nil;
-    }
-    return array;
-}
+
 
 + (NSString*)convertArrayToJsonStr:(NSArray *)array
 {
@@ -508,220 +404,14 @@
 }
 
 
-+ (NSString*)getHomePath{
-    return NSHomeDirectory();
-}
-
-
-
-+ (NSString*)getDocumentPath{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *path = [paths objectAtIndex:0];
-    return path;
-}
-
-
-+ (NSString*)getCachePath{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *path = [paths objectAtIndex:0];
-    return path;
-}
-
-
-+ (NSString*)getLibraryPath{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    NSString *path = [paths objectAtIndex:0];
-    return path;
-}
-
-
-+ (NSString*)getTmpPath{
-    NSString *path = NSTemporaryDirectory();
-    return path;
-}
-
-
-+ (BOOL)isFileExit:(NSString*)path{
-    return [[NSFileManager defaultManager] fileExistsAtPath:path];
-}
-
-
-+ (void)deleteFile:(NSString*)path{
-    if ([self isFileExit:path]) {
-        NSError *error;
-        [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
-        if (error) {
-            NSLog(@"删除%@出错:%@",path,error.domain);
-        }
-    }
-}
-
-
-+ (void)copyFile:(NSString*)filePath toPath:(NSString*)path isOverride:(BOOL)overrid{
-    NSFileManager * mananger=[NSFileManager defaultManager];
-    if (overrid) {
-        [self deleteFile:filePath];
-    }else{
-        if ([self isFileExit:path]) {
-            return;
-        }
-    }
-    [self deleteFile:path];
-    
-    NSString * parentPath=[path stringByDeletingLastPathComponent];
-    if (![self isFileExit:parentPath]) {
-        [self createPath:parentPath];
-    }
-    
-    NSError * error;
-    [mananger copyItemAtPath:filePath toPath:path error:&error];
-    if (error) {
-        NSLog(@"复制%@出错:%@",path,error.domain);
-    }
-}
-
-
-+ (void)createPath:(NSString*)path{
-    if (![self isFileExit:path]) {
-        NSFileManager * fileManager=[NSFileManager defaultManager];
-        NSString * parentPath=[path stringByDeletingLastPathComponent];
-        if ([self isFileExit:parentPath]) {
-            NSError * error;
-            [fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error];
-        }else{
-            [self createPath:parentPath];
-            [self createPath:path];
-        }
-        
-    }
-}
-
-+ (void)createDocumentPath:(NSString*)path{
-    NSString *pathRestul=[NSString stringWithFormat:@"%@/%@",[self getDocumentPath],path];
-    [self createPath:pathRestul];
-}
-
-
-+ (NSString*)saveFile:(NSString*)path withFileName:(NSString*)name withData:(NSData*)data{
-    return [self saveFile:path withFileName:name withData:data isCover:NO];
-}
-
-+ (NSString*)saveFile:(NSString*)path withFileName:(NSString*)name withData:(NSData*)data isCover:(BOOL)cover{
-    [self createPath:path];
-    NSData * resultData=nil;
-    NSString * resultPath=[NSString stringWithFormat:@"%@/%@",path,name];
-    if ([self isFileExit:resultPath]&&cover) {
-        NSMutableData * dataOri=[NSMutableData dataWithContentsOfFile:resultPath];
-        [dataOri appendData:data];
-        resultData=dataOri;
-    }else{
-        resultData=data;
-    }
-    
-    [[NSFileManager defaultManager] createFileAtPath:resultPath contents:resultData attributes:nil];
-    
-    return [NSString stringWithFormat:@"%@/%@",path,name];
-}
-
-+ (NSString*)getCachePic{
-    NSString * pic=[NSString stringWithFormat:@"%@/pic",[self getCachePath]];
-    if (![self isFileExit:pic]) {
-        [self createPath:pic];
-    }
-    
-    return pic;
-}
-+ (NSString*)getCacheVideo{
-    
-    NSString * video =[NSString stringWithFormat:@"%@/video",[self getCachePath]];
-    if (![self isFileExit:video]) {
-        [self createPath:video];
-    }
-    
-    return video;
-}
-
-+ (NSString*)getCacheVoice{
-    NSString * voice=[NSString stringWithFormat:@"%@/voice",[self getCachePath]];
-    if (![self isFileExit:voice]) {
-        [self createPath:voice];
-    }
-    return voice;
-}
-
-
-+ (NSArray*)getFolderAllFileName:(NSString*)folderPath fileType:(NSString*)fileType{
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSDirectoryEnumerator *myDirectoryEnumerator = [fileManager enumeratorAtPath:folderPath];  //baseSavePath 为文件夹的路径
-    NSMutableArray *filePathArray = [[NSMutableArray alloc]init];   //用来存目录名字的数组
-    NSString *file;
-    while((file=[myDirectoryEnumerator nextObject]))     //遍历当前目录
-    {
-        if (fileType) {
-            if([[file pathExtension] isEqualToString:fileType])  //取得后缀名为.xml的文件名
-            {
-                [filePathArray addObject:file];
-            }
-        }else{
-            [filePathArray addObject:file];
-        }
-        
-    }
-    return filePathArray;
-}
-
-
-
-
-+ (NSString*)createJsStr:(NSString*)name,...{
-    NSString*result=name;
-    NSString*ns;
-    va_list arg_list;
-    va_start(arg_list, name);
-    result=[result stringByAppendingString:@"("];
-    
-    while ((ns = va_arg(arg_list, NSString*))) {
-        result=[result stringByAppendingString:@"'"];
-        result=[result stringByAppendingString:ns];
-        result=[result stringByAppendingString:@"'"];
-        result=[result stringByAppendingString:@","];
-    }
-    NSString*fir=[result substringFromIndex:result.length-1];
-    if (![fir isEqualToString:@"("]) {
-        result=[result substringToIndex:result.length-1];
-    }
-    result=[result stringByAppendingString:@");"];
-    va_end(arg_list);
-    NSLog(@"%@",[NSString stringWithFormat:@"调用的JS方法:%@",result]);
-    return result;
-}
 
 
 
 
 
-+ (NSString*)base64Decode:(NSString*)str{
-    NSData *data = [[NSData alloc]initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-    return string;
-}
-+ (NSString*)base64Encode:(NSString*)str{
-    NSData *data = [[NSData alloc]initWithBase64EncodedString:str options:0];
-    return [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-}
-+ (NSString*)MD5:(NSString*)str{
-    const char *cStr = [str UTF8String];
-    unsigned char digest[CC_MD5_DIGEST_LENGTH];
-    CC_MD5(cStr, (CC_LONG)strlen(cStr), digest);
-    NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
-    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++){
-        [output appendFormat:@"%02x", digest[i]];
-    }
-    
-    
-    
-    return  output;
-}
+
+
+
 
 + (UIViewController*)createVc:(NSString*)storyBoardName{
     return [self createVc:storyBoardName storyBoardName:@"Main"];
@@ -776,29 +466,103 @@
     return [self createGradient:size start:CGPointMake(1, 1) end:CGPointMake(0, 0) colors:colors];
 }
 
-+ (BOOL)isStrAllNumber:(NSString*)checkedNumString{
-    checkedNumString = [checkedNumString stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
-    if(checkedNumString.length > 0) {
-        return NO;
-    }
-    return YES;
-}
+
 
 + (void)shake{
     AudioServicesPlaySystemSound(1520);
 }
 
+
+//MARK:废弃方法
 + (NSString*)phoneEncrypt:(NSString*)phone{
-    if ([BTUtils isEmpty:phone]) {
-        return @"";
-    }
-    
-    if (phone.length != 11) {
-        return @"";
-    }
-    
-    NSString * str = [phone stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
-    return str;
+    return phone.phoneEncrypt;
 }
 
++ (BOOL)isStrAllNumber:(NSString*)checkedNumString{
+    return checkedNumString.isStrAllNumber;
+}
+
++ (NSString*)base64Decode:(NSString*)str{
+    return str.base64Decode;
+}
+
++ (NSString*)base64Encode:(NSString*)str{
+    return str.base64Encode;
+}
+
++ (NSString*)MD5:(NSString*)str{
+    return str.md5;
+}
+
++ (NSString*)createJsStr:(NSString*)name,...{
+    NSString*result=name;
+    NSString*ns;
+    va_list arg_list;
+    va_start(arg_list, name);
+    result=[result stringByAppendingString:@"("];
+    
+    while ((ns = va_arg(arg_list, NSString*))) {
+        result=[result stringByAppendingString:@"'"];
+        result=[result stringByAppendingString:ns];
+        result=[result stringByAppendingString:@"'"];
+        result=[result stringByAppendingString:@","];
+    }
+    NSString*fir=[result substringFromIndex:result.length-1];
+    if (![fir isEqualToString:@"("]) {
+        result=[result substringToIndex:result.length-1];
+    }
+    result=[result stringByAppendingString:@");"];
+    va_end(arg_list);
+    NSLog(@"%@",[NSString stringWithFormat:@"调用的JS方法:%@",result]);
+    return result;
+}
+
++ (CGFloat)calculateStrHeight:(NSString*)str width:(CGFloat)width font:(UIFont*)font{
+    return [str calculateStrHeight:width font:font];
+}
+
++ (CGFloat)calculateStrHeight:(NSString*)str width:(CGFloat)width font:(UIFont*)font lineSpeace:(CGFloat)lineSpeace{
+    return [str calculateStrHeight:width font:font lineSpeace:lineSpeace];
+}
+
++ (CGFloat)calculateStrWidth:(NSString*)str height:(CGFloat)height font:(UIFont*)font{
+    return [str calculateStrWidth:height font:font];
+}
+
++ (CGFloat)calculateLabelHeight:(UILabel*)label{
+    return [label.text calculateStrHeight:label.frame.size.width font:label.font];
+}
+
+
++ (CGFloat)calculateLabelWidth:(UILabel*)label{
+    return [label.text calculateStrWidth:label.frame.size.height font:label.font];
+}
+
++ (UIImage*)circleImage:(UIImage*)image{
+    return image.circleImage;
+}
+
++ (NSDictionary *)convertJsonToDict:(NSString *)jsonString {
+    return jsonString.toDict;
+}
+
++ (NSArray *)convertJsonToArray:(NSString *)jsonString {
+    return jsonString.toArray;
+}
+
++ (UIColor*)RGB:(CGFloat)R G:(CGFloat)G B:(CGFloat)B{
+    return [UIColor R:R G:G B:B];
+}
+
++ (UIColor*)RGBA:(CGFloat)R G:(CGFloat)G B:(CGFloat)B A:(CGFloat)A{
+    return [UIColor colorWithRed:(R)/255.0 green:(G)/255.0 blue:(B)/255.0 alpha:A];
+}
+
++ (UIColor*)RANDOM_COLOR{
+    return [BTUtils RGB:arc4random_uniform(256) G:arc4random_uniform(256) B:arc4random_uniform(256)];
+}
+
+
 @end
+
+

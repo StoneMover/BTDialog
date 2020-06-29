@@ -9,7 +9,7 @@
 #import "PageViewTestViewController.h"
 #import "BTPageView.h"
 #import "UIView+BTViewTool.h"
-#import <BTHelp/BTUtils.h>
+#import <BTHelp/UIColor+BTColor.h>
 
 @interface PageViewTestViewController ()<BTPageViewDataSource,BTPageViewDelegate>
 
@@ -51,8 +51,8 @@
     label.font=[UIFont systemFontOfSize:146 weight:UIFontWeightBold];
     label.text=[NSString stringWithFormat:@"%ld",index];
     label.textAlignment=NSTextAlignmentCenter;
-    label.textColor=BTUtils.RANDOM_COLOR;
-    label.backgroundColor=BTUtils.RANDOM_COLOR;
+    label.textColor=UIColor.RANDOM_COLOR;
+    label.backgroundColor=UIColor.RANDOM_COLOR;
     return label;
 }
 

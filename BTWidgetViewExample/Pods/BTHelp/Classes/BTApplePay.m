@@ -7,7 +7,7 @@
 //
 
 #import "BTApplePay.h"
-
+#import "NSString+BTString.h"
 
 static BTApplePay * help =nil;
 

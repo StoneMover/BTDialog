@@ -9,6 +9,8 @@
 #import "BTAlertLabelView.h"
 #import <BTHelp/BTUtils.h>
 #import "UIView+BTViewTool.h"
+#import <BTHelp/UIColor+BTColor.h>
+#import "UILabel+BTLabel.h"
 
 @implementation BTAlertLabelView
 
@@ -16,12 +18,12 @@
     UILabel * labelContent = [UILabel new];
     labelContent.textAlignment = NSTextAlignmentCenter;
     labelContent.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
-    labelContent.textColor = [BTUtils RGB:5 G:5 B:5];
+    labelContent.textColor = [UIColor RGBSame:5];
     labelContent.text = msg;
     labelContent.numberOfLines = 0;
     labelContent.backgroundColor = UIColor.clearColor;
     labelContent.width = BTUtils.SCREEN_W-106-40;
-    CGFloat labelHeight = [BTUtils calculateLabelHeight:labelContent];
+    CGFloat labelHeight = labelContent.bt_calculateLabelHeight;
     labelContent.height = labelHeight;
     labelContent.left = 20;
     labelContent.top = 15;

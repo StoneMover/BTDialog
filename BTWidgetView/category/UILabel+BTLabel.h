@@ -56,6 +56,11 @@ NS_ASSUME_NONNULL_BEGIN
 //设置所有文字的行间距
 - (void)bt_setText:(NSString*)text lineSpacing:(CGFloat)lineSpacing;
 
+- (CGFloat)bt_calculateLabelHeight;
+
+
+- (CGFloat)bt_calculateLabelWidth;
+
 @end
 
 NS_ASSUME_NONNULL_END

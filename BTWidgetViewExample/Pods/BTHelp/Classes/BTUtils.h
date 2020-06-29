@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 @interface BTUtils : NSObject
 
@@ -62,12 +63,6 @@
 
 + (UIFont*)SYS_FONT_SIZE:(CGFloat)size;
 
-+ (UIColor*)RGB:(CGFloat)R G:(CGFloat)G B:(CGFloat)B;
-
-+ (UIColor*)RGBA:(CGFloat)R G:(CGFloat)G B:(CGFloat)B A:(CGFloat)A;
-
-+ (UIColor*)RANDOM_COLOR;
-
 + (NSString*)SAFE_STR:(NSString*)str;
 
 + (UIImage*)PLACE_HOLDER_IMAGE;
@@ -84,23 +79,8 @@
 
 + (BOOL)isEmpty:(NSString*)str;
 
-//将UIimage重绘成圆形,如果不是等宽,等高则绘制中心图片
-+ (UIImage*)circleImage:(UIImage*)image;
-
 //设置ios 推送bage 数字
 + (void)setAppIconNotifiNum:(NSString*)num;
-
-
-//计算文字的高度,
-+ (CGFloat)calculateStrHeight:(NSString*)str width:(CGFloat)width font:(UIFont*)font;
-
-+ (CGFloat)calculateStrHeight:(NSString*)str width:(CGFloat)width font:(UIFont*)font lineSpeace:(CGFloat)lineSpeace;
-
-+ (CGFloat)calculateLabelHeight:(UILabel*)label;
-
-+ (CGFloat)calculateStrWidth:(NSString*)str height:(CGFloat)height font:(UIFont*)font;
-
-+ (CGFloat)calculateLabelWidth:(UILabel*)label;
 
 //将阿拉伯数字转换为中文数字
 + (NSString *)translationArabicNum:(NSInteger)arabicNum;
@@ -114,94 +94,12 @@
 //得到字典中对应key的string类型字段
 + (NSString*)getString:(NSDictionary*)dict withKey:(NSString*)key;
 
-//将json字符串转为字典
-+ (NSDictionary *)convertJsonToDict:(NSString *)jsonString;
 
 //将字典转为json字符串
 + (NSString*)convertDictToJsonStr:(NSDictionary *)dic;
 
-+ (NSArray *)convertJsonToArray:(NSString *)jsonString;
-
 + (NSString*)convertArrayToJsonStr:(NSArray *)array;
 
-#pragma mark 沙盒常用方法
-/*
- 默认情况下，每个沙盒含有3个文件夹：Documents, Library 和 tmp和一个应用程序文件（也是一个文件）。因为应用的沙盒机制，应用只能在几个目录下读写文件
- 
- Documents：苹果建议将程序中建立的或在程序中浏览到的文件数据保存在该目录下，iTunes备份和恢复的时候会包括此目录
- 
- Library：存储程序的默认设置或其它状态信息；
- 
- Library/Caches：存放缓存文件，iTunes不会备份此目录，此目录下文件不会在应用退出删除
- 
- tmp：提供一个即时创建临时文件的地方。
- 
- iTunes在与iPhone同步时，备份所有的Documents和Library文件。
- 
- iPhone在重启时，会丢弃所有的tmp文件。
- 
- */
-
-//得到沙盒的root路径
-+ (NSString*)getHomePath;
-
-//得到沙盒下Document文件夹的路径
-+ (NSString*)getDocumentPath;
-
-//得到Cache文件夹的路径
-+ (NSString*)getCachePath;
-
-//得到Library文件夹的路径
-+ (NSString*)getLibraryPath;
-
-//得到tmp文件夹的路径
-+ (NSString*)getTmpPath;
-
-//文件是否存在
-+ (BOOL)isFileExit:(NSString*)path;
-
-//删除文件
-+ (void)deleteFile:(NSString*)path;
-
-//复制文件到某个路径
-+ (void)copyFile:(NSString*)filePath toPath:(NSString*)path isOverride:(BOOL)overrid;
-
-
-//创建路径
-+ (void)createPath:(NSString*)path;
-
-//在document目录下创建子文件路径
-+ (void)createDocumentPath:(NSString*)path;
-
-//保存文件到沙盒,如果存在该文件则继续写入
-+ (NSString*)saveFile:(NSString*)path withFileName:(NSString*)name withData:(NSData*)data;
-
-//保存文件到沙盒,如果存在该文件则继续写入
-+ (NSString*)saveFile:(NSString*)path withFileName:(NSString*)name withData:(NSData*)data isCover:(BOOL)cover;
-
-//获取cache目录下的图片文件夹,没有则创建
-+ (NSString*)getCachePic;
-
-//获取cache目录下的video文件夹,没有则创建
-+ (NSString*)getCacheVideo;
-
-//获取cache目录下的voice文件夹,没有则创建
-+ (NSString*)getCacheVoice;
-
-//获取某一个文件夹下的所有文件
-+ (NSArray*)getFolderAllFileName:(NSString*)folderPath fileType:(NSString*)fileType;
-
-#pragma mark webview 与js操作的方法
-
-+ (NSString*)createJsStr:(NSString*)name,...;
-
-
-#pragma mark 加密&解密
-+ (NSString*)base64Decode:(NSString*)str;
-
-+ (NSString*)base64Encode:(NSString*)str;
-
-+ (NSString*)MD5:(NSString*)str;
 
 #pragma mark storyboard
 
@@ -232,15 +130,53 @@
 + (CAGradientLayer*)createGradientInclinedOpposite:(CGSize)size
                                             colors:(NSArray*)colors;
 
-//是否全部为数字
-+ (BOOL)isStrAllNumber:(NSString*)checkedNumString;
+
 
 //震动
 + (void)shake;
 
+
+
+//MARK:废弃方法
+
 //返回156*****8016电话
-+ (NSString*)phoneEncrypt:(NSString*)phone;
++ (NSString*)phoneEncrypt:(NSString*)phone DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");
+
+//是否全部为数字
++ (BOOL)isStrAllNumber:(NSString*)checkedNumString DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");
+
++ (NSString*)base64Decode:(NSString*)str DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");
+
++ (NSString*)base64Encode:(NSString*)str DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");
+
++ (NSString*)MD5:(NSString*)str DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");
+
++ (NSString*)createJsStr:(NSString*)name,...DEPRECATED_MSG_ATTRIBUTE("废弃,仅仅使用UIWebView方式，现在使用WKWebView方式进行交互");
+
++ (CGFloat)calculateStrHeight:(NSString*)str width:(CGFloat)width font:(UIFont*)font DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");
+
++ (CGFloat)calculateStrHeight:(NSString*)str width:(CGFloat)width font:(UIFont*)font lineSpeace:(CGFloat)lineSpeace DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");
+
++ (CGFloat)calculateStrWidth:(NSString*)str height:(CGFloat)height font:(UIFont*)font DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");
+
++ (CGFloat)calculateLabelHeight:(UILabel*)label DEPRECATED_MSG_ATTRIBUTE("已废弃,使用UILabel+BTLabel");
+
++ (CGFloat)calculateLabelWidth:(UILabel*)label DEPRECATED_MSG_ATTRIBUTE("已废弃,使用UILabel+BTLabel");
+
++ (UIImage*)circleImage:(UIImage*)image DEPRECATED_MSG_ATTRIBUTE("已废弃,使用UIImage+BTImage");
+
+//将json字符串转为字典
++ (NSDictionary *)convertJsonToDict:(NSString *)jsonString DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");
+
++ (NSArray *)convertJsonToArray:(NSString *)jsonString DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");
+
++ (UIColor*)RGB:(CGFloat)R G:(CGFloat)G B:(CGFloat)B DEPRECATED_MSG_ATTRIBUTE("已废弃,使用UIColor+BTColor.h");
+
++ (UIColor*)RGBA:(CGFloat)R G:(CGFloat)G B:(CGFloat)B A:(CGFloat)A DEPRECATED_MSG_ATTRIBUTE("已废弃,使用UIColor+BTColor.h");
+
++ (UIColor*)RANDOM_COLOR DEPRECATED_MSG_ATTRIBUTE("已废弃,使用UIColor+BTColor.h");
 
 @end
 
 
+NS_ASSUME_NONNULL_END

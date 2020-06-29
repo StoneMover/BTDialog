@@ -9,6 +9,7 @@
 #import "BTContentAutoView.h"
 #import "BTUtils.h"
 #import "UIView+BTViewTool.h"
+#import <BTHelp/NSString+BTString.h>
 
 @interface BTContentAutoView()
 
@@ -61,7 +62,7 @@
     self.startY=0;
     for (UIButton * btn in self.dataBtns) {
         NSString * btnStr=btn.titleLabel.text;
-        CGFloat btnW=[BTUtils calculateStrWidth:btnStr height:self.contentH font:btn.titleLabel.font];
+        CGFloat btnW=[btnStr calculateStrWidth:self.contentH font:btn.titleLabel.font];
         btnW+=self.paddingLeftRight*2;//左右间隙
         
         CGFloat endX=0;
@@ -185,8 +186,7 @@
     CGFloat startX=0;
     CGFloat startY=0;
     for (NSString * btnStr in strs) {
-        
-        CGFloat btnW=[BTUtils calculateStrWidth:btnStr height:contentH font:textFont];
+        CGFloat btnW=[btnStr calculateStrWidth:contentH font:textFont];
         btnW+=paddingLeftRight * 2;//左右间隙
         
         CGFloat endX=0;

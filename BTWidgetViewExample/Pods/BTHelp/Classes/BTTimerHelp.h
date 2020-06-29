@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class BTTimerHelp;
+
 @protocol BTTimerHelpDelegate <NSObject>
 
 @optional
+
 -(void)BTTimeChanged:(BTTimerHelp*)timer;
 
 @end
@@ -28,31 +32,24 @@ typedef void(^BTTimerChangeBlock)(void);
 @property(nonatomic,assign,readonly)CGFloat totalTime;
 
 
-@property(nonatomic,weak)id<BTTimerHelpDelegate> delegate;
+@property(nonatomic,weak,nullable)id<BTTimerHelpDelegate> delegate;
 
 //时间变化后的block回调
 @property (nonatomic, copy) BTTimerChangeBlock block;
 
-/**
- *  @author StoneMover, 15-12-05 17:12:39
- *
- *  @brief 开始,暂停后重新开始,调用相同的方法
- */
+//开始,暂停后重新开始,调用相同的方法
 -(void)start;
-/**
- *  @author StoneMover, 15-12-05 17:12:34
- *
- *  @brief 暂停
- */
+
+//暂停
 -(void)pause;
-/**
- *  @author StoneMover, 15-12-05 17:12:20
- *
- *  @brief 不使用的调用,销毁
- */
+
+//不使用的调用,销毁
 -(void)stop;
 
-
+//设置totalTime为0
 -(void)resetTotalTime;
 
 @end
+
+
+NS_ASSUME_NONNULL_END

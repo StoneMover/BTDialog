@@ -11,6 +11,7 @@
 #import <BTHelp/BTUtils.h>
 #import "BTWidgetView.h"
 #import "UIView+BTEasyDialog.h"
+#import <BTHelp/UIColor+BTColor.h>
 
 @interface BTTextInputView()
 
@@ -163,7 +164,7 @@
 
 - (void)initSelf{
     UIView * viewLine=[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, .5)];
-    viewLine.backgroundColor=[BTUtils RGB:235 G:235 B:235];
+    viewLine.backgroundColor=[UIColor RGBSame:235];
     [self addSubview:viewLine];
     
     self.btnVoice = [[UIButton alloc] initWithSize:CGSizeMake(55, 55)];
@@ -182,11 +183,11 @@
     _textView=[[BTTextView alloc] initWithSize:CGSizeMake(100, self.basicHeight-20)];
     [self.textView setTextContainerInset:UIEdgeInsetsMake(8, 5, 8, 5)];
     self.textView.font=[UIFont systemFontOfSize:16];
-    self.textView.textColor=[BTUtils RGB:74 G:76 B:95];
+    self.textView.textColor=[UIColor R:74 G:76 B:95];
     self.textView.corner=5;
-    self.textView.borderColor=[BTUtils RGB:234 G:234 B:234];
+    self.textView.borderColor=[UIColor RGBSame:234];
     self.textView.borderWidth=.5;
-    self.textView.placeHolderColor=[BTUtils RGB:198 G:198 B:198];
+    self.textView.placeHolderColor=[UIColor RGBSame:198];
     self.textView.placeHolder=@"请输入评论";
     self.textView.maxStrNum=140;
     self.textView.blockMax = ^{

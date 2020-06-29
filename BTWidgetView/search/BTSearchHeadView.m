@@ -8,8 +8,9 @@
 
 #import "BTSearchHeadView.h"
 #import "UIView+BTViewTool.h"
-#import <BTHelp/BTUtils.h>
 #import "BTWidgetView.h"
+#import <BTHelp/UIColor+BTColor.h>
+#import <BTHelp/BTUtils.h>
 
 @interface BTSearchHeadView()<UITextFieldDelegate>
 
@@ -32,7 +33,7 @@
     [self.btnCancel addTarget:self action:@selector(cancelClick) forControlEvents:UIControlEventTouchUpInside];
     
     self.viewBgColor = [[UIView alloc] init];
-    self.viewBgColor.backgroundColor = [BTUtils RGBA:239 G:239 B:241 A:1];
+    self.viewBgColor.backgroundColor = [UIColor R:239 G:239 B:241];
     
     self.imgSearchIcon = [[UIImageView alloc] initWithEqualSize:28];
     self.imgSearchIcon.image = [BTWidgetView imageBundleName:@"bt_search_icon"];

@@ -9,6 +9,8 @@
 #import "BTAlertView.h"
 #import "UIView+BTViewTool.h"
 #import "UIView+BTEasyDialog.h"
+#import <BTHelp/UIImage+BTImage.h>
+#import <BTHelp/UIColor+BTColor.h>
 #import <BTHelp/BTUtils.h>
 
 @interface BTAlertView()
@@ -41,7 +43,7 @@
     self.clipsToBounds = YES;
     
     self.labelTitle = [UILabel new];
-    self.labelTitle.textColor = [BTUtils RGB:5 G:5 B:5];
+    self.labelTitle.textColor = [UIColor RGBSame:5];
     self.labelTitle.numberOfLines = 1;
     self.labelTitle.font = [UIFont systemFontOfSize:19 weight:UIFontWeightMedium];
     self.labelTitle.textAlignment = NSTextAlignmentCenter;
@@ -50,23 +52,23 @@
     self.btnCancel = [[UIButton alloc] init];
     self.btnCancel.titleLabel.font = [UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
     [self.btnCancel setTitle:@"取消" forState:UIControlStateNormal];
-    [self.btnCancel setTitleColor:[BTUtils RGBA:19 G:19 B:19 A:1] forState:UIControlStateNormal];
+    [self.btnCancel setTitleColor:[UIColor RGBSame:19] forState:UIControlStateNormal];
     [self.btnCancel addTarget:self action:@selector(cancelClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.btnCancel setBackgroundImage:[UIImage imageWithColor:[BTUtils RGB:219 G:219 B:219] size:CGSizeMake(100, 100)] forState:UIControlStateHighlighted];
+    [self.btnCancel setBackgroundImage:[UIImage imageWithColor:[UIColor RGBSame:219] size:CGSizeMake(100, 100)] forState:UIControlStateHighlighted];
     
     self.btnOk = [[UIButton alloc] init];
     self.btnOk.titleLabel.font = [UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
     [self.btnOk setTitle:@"确定" forState:UIControlStateNormal];
-    [self.btnOk setBackgroundImage:[UIImage imageWithColor:[BTUtils RGB:219 G:219 B:219] size:CGSizeMake(100, 100)] forState:UIControlStateHighlighted];
+    [self.btnOk setBackgroundImage:[UIImage imageWithColor:[UIColor RGBSame:219] size:CGSizeMake(100, 100)] forState:UIControlStateHighlighted];
     [self.btnOk setTitleColor:UIColor.systemBlueColor forState:UIControlStateNormal];
     [self.btnOk addTarget:self action:@selector(okClick) forControlEvents:UIControlEventTouchUpInside];
     
     self.viewLineHoz = [UIView new];
-    self.viewLineHoz.backgroundColor = [BTUtils RGBA:77 G:77 B:77 A:.78];
+    self.viewLineHoz.backgroundColor = [UIColor RGBASame:77 A:0.78];
     
     
     self.viewLineVertical = [UIView new];
-    self.viewLineVertical.backgroundColor = [BTUtils RGBA:77 G:77 B:77 A:.78];
+    self.viewLineVertical.backgroundColor = [UIColor RGBASame:77 A:0.78];
     
     
     [self addSubViewArray:@[self.labelTitle,self.contentView,self.btnCancel,self.btnOk,self.viewLineVertical,self.viewLineHoz]];

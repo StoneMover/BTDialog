@@ -17,8 +17,9 @@
 #import "NSDate+BTDate.h"
 #import "BTLocation.h"
 #import "BTDownloadMananger.h"
-
-
-
+#import "BTFileHelp.h"
+#import "NSString+BTString.h"
+#import "UIImage+BTImage.h"
+#import "UIColor+BTColor.h"
 
 

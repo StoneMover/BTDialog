@@ -9,6 +9,7 @@
 #import "BTButton.h"
 #import "UIView+BTViewTool.h"
 #import <BTHelp/BTUtils.h>
+#import <BTHelp/UIColor+BTColor.h>
 
 @interface BTButton()
 
@@ -37,7 +38,7 @@
     self.labelBage.layer.cornerRadius=self.labelBageHeight==0?6:self.labelBageHeight/2.0;
     self.labelBage.clipsToBounds=YES;
     self.labelBage.textColor=[UIColor whiteColor];
-    self.labelBage.backgroundColor=[BTUtils RGB:247 G:89 B:89];
+    self.labelBage.backgroundColor=[UIColor R:247 G:89 B:89];
     [self addSubview:self.labelBage];
 }
 

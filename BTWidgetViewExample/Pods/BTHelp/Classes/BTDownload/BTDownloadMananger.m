@@ -8,6 +8,8 @@
 
 #import "BTDownloadMananger.h"
 #import "XMLReader.h"
+#import "NSString+BTString.h"
+#import "BTFileHelp.h"
 
 static BTDownloadMananger * mananger=nil;
 
@@ -121,10 +123,10 @@ static BTDownloadMananger * mananger=nil;
         NSArray * array=[dict objectForKey:@"string"];
         NSDictionary * result=array[2];
         NSString * tmpName=[result objectForKey:@"text"];
-        NSString * path=[BTUtils getTmpPath];
+        NSString * path=[BTFileHelp tmpPath];
         NSString * filePath=[NSString stringWithFormat:@"%@/%@",path,tmpName];
         NSData * data=[NSData dataWithContentsOfFile:filePath];
-        [BTUtils saveFile:model.saveFolder withFileName:model.saveName withData:data];
+        [BTFileHelp saveFileWithPath:model.saveFolder fileName:model.saveName data:data];
     }];
 }
 
@@ -250,8 +252,8 @@ static BTDownloadMananger * mananger=nil;
     // location还是一个临时路径,需要自己挪到需要的路径(caches下面)
     BTDownloadModel * model=[self modelWithTask:downloadTask];
     NSData * data=[NSData dataWithContentsOfURL:location];
-    NSString * path =[NSString stringWithFormat:@"%@/%@",BTUtils.getDocumentPath,model.saveFolder];
-    [BTUtils saveFile:path withFileName:model.saveName withData:data];
+    NSString * path =[NSString stringWithFormat:@"%@/%@",BTFileHelp.documentPath,model.saveFolder];
+    [BTFileHelp saveFileWithPath:path fileName:model.saveName data:data];
     [self changeModelStatus:model status:BTDownloadStatusFinish];
     NSLog(@"%@,下载完成",model.downloadUrl);
 }

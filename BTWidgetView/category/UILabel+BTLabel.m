@@ -7,6 +7,7 @@
 //
 
 #import "UILabel+BTLabel.h"
+#import <BTHelp/NSString+BTString.h>
 
 @implementation UILabel (BTLabel)
 
@@ -123,5 +124,13 @@
     self.attributedText = [[NSAttributedString alloc] initWithString:text attributes:attributes];
 }
 
+- (CGFloat)bt_calculateLabelHeight{
+    return [self.text calculateStrHeight:self.frame.size.width font:self.font];
+}
+
+
+- (CGFloat)bt_calculateLabelWidth{
+    return [self.text calculateStrWidth:self.frame.size.height font:self.font];
+}
 
 @end

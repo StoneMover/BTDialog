@@ -9,6 +9,7 @@
 #import "BTSlideView.h"
 #import <BTHelp/BTUtils.h>
 #import "UIView+BTViewTool.h"
+#import <BTHelp/UIColor+BTColor.h>
 
 @interface BTSlideView()
 
@@ -161,7 +162,7 @@
 
 
 - (void)show:(UIView *)parentView{
-    self.backgroundColor = [BTUtils RGBA:0 G:0 B:0 A:.0];
+    self.backgroundColor = [UIColor RGBASame:0 A:0];
     self.frame = parentView.bounds;
     [parentView addSubview:self];
     switch (self.style) {
@@ -173,7 +174,7 @@
             break;
     }
     [UIView animateWithDuration:.3 animations:^{
-        self.backgroundColor = [BTUtils RGBA:0 G:0 B:0 A:.65];
+        self.backgroundColor = [UIColor RGBASame:0 A:0.65];
         switch (self.style) {
             case BTSlideStyleLeft:
                 self.slideView.left = 0;
@@ -189,7 +190,7 @@
 
 - (void)dismiss{
     [UIView animateWithDuration:.3 animations:^{
-        self.backgroundColor = [BTUtils RGBA:0 G:0 B:0 A:.0];
+        self.backgroundColor = [UIColor RGBASame:0 A:0];
         switch (self.style) {
             case BTSlideStyleLeft:
                 self.slideView.left = -self.slideView.width;

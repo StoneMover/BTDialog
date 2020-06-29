@@ -9,6 +9,7 @@
 #import "BTAlertTextFieldView.h"
 #import <BTHelp/BTUtils.h>
 #import "UIView+BTViewTool.h"
+#import <BTHelp/UIColor+BTColor.h>
 
 @implementation BTAlertTextFieldView
 
@@ -21,7 +22,7 @@
     textField.clipsToBounds = NO;
     
     UIView * viewParent = [[UIView alloc] initWithSize:CGSizeMake(BTUtils.SCREEN_W-106-20, 42)];
-    viewParent.borderColor = [BTUtils RGBA:77 G:77 B:77 A:.78];
+    viewParent.borderColor = [UIColor RGBASame:77 A:0.78];
     viewParent.borderWidth = 0.5;
     viewParent.corner = 5;
     [viewParent addSubview:textField];
