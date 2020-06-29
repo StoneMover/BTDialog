@@ -10,6 +10,7 @@
 #import <BTHelp/BTUtils.h>
 #import "UIView+BTConstraint.h"
 #import "BTWidgetView.h"
+#import <BTHelp/UIColor+BTColor.h>
 
 
 //当显示中间的时候距离屏幕两边的距离
@@ -215,6 +216,7 @@ int const BT_SHOW_VIEW_HEAD_H=45;
 
 - (void)initLineView{
     self.lineView=[[BTLineView alloc] initWithFrame:CGRectMake(0, self.height-1, self.width, 1)];
+    self.lineView.backgroundColor = [UIColor RGBASame:77 A:0.25];
     [self addSubview:self.lineView];
 }
 

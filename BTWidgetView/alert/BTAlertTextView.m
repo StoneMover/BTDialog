@@ -29,7 +29,7 @@
     textView.textContainerInset=UIEdgeInsetsMake(5, 5, 5, 5);
     textView.textColor = [UIColor RGBSame:10];
     textView.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
-    textView.borderColor = [UIColor RGBASame:77 A:0.78];
+    textView.borderColor = [UIColor RGBASame:77 A:0.25];
     textView.borderWidth = 0.5;
     textView.corner = 5;
     

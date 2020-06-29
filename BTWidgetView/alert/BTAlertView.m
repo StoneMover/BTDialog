@@ -64,11 +64,11 @@
     [self.btnOk addTarget:self action:@selector(okClick) forControlEvents:UIControlEventTouchUpInside];
     
     self.viewLineHoz = [UIView new];
-    self.viewLineHoz.backgroundColor = [UIColor RGBASame:77 A:0.78];
+    self.viewLineHoz.backgroundColor = [UIColor RGBASame:77 A:0.25];
     
     
     self.viewLineVertical = [UIView new];
-    self.viewLineVertical.backgroundColor = [UIColor RGBASame:77 A:0.78];
+    self.viewLineVertical.backgroundColor = [UIColor RGBASame:77 A:0.25];
     
     
     [self addSubViewArray:@[self.labelTitle,self.contentView,self.btnCancel,self.btnOk,self.viewLineVertical,self.viewLineHoz]];

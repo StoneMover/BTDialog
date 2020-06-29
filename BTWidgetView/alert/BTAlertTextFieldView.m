@@ -22,7 +22,7 @@
     textField.clipsToBounds = NO;
     
     UIView * viewParent = [[UIView alloc] initWithSize:CGSizeMake(BTUtils.SCREEN_W-106-20, 42)];
-    viewParent.borderColor = [UIColor RGBASame:77 A:0.78];
+    viewParent.borderColor = [UIColor RGBASame:77 A:0.25];
     viewParent.borderWidth = 0.5;
     viewParent.corner = 5;
     [viewParent addSubview:textField];
