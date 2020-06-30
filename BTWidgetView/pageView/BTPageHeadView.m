@@ -234,7 +234,10 @@
             }
         }
     }else{
-        self.viewIndicator.centerX = (endX - startX) * fabs(percent) +self.childViews[nowIndex].centerX;
+        //reload 的时候如果停在最后一个选项卡会造成越界
+        if (nowIndex < self.childViews.count) {
+            self.viewIndicator.centerX = (endX - startX) * fabs(percent) +self.childViews[nowIndex].centerX;
+        }
     }
     
     

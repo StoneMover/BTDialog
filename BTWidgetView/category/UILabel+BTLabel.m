@@ -133,4 +133,12 @@
     return [self.text calculateStrWidth:self.frame.size.height font:self.font];
 }
 
+- (instancetype)initWithColor:(UIColor*)color font:(UIFont*)font{
+    self = [super initWithFrame:CGRectZero];
+    self.textColor = color;
+    self.font = font;
+    [self sizeToFit];
+    return self;
+}
+
 @end

@@ -56,10 +56,14 @@ NS_ASSUME_NONNULL_BEGIN
 //设置所有文字的行间距
 - (void)bt_setText:(NSString*)text lineSpacing:(CGFloat)lineSpacing;
 
+//计算高度
 - (CGFloat)bt_calculateLabelHeight;
 
-
+//计算宽度
 - (CGFloat)bt_calculateLabelWidth;
+
+//字体和文字颜色初始化
+- (instancetype)initWithColor:(UIColor*)color font:(UIFont*)font;
 
 @end
 
