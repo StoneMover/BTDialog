@@ -21,14 +21,21 @@
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
     self=[super initWithCoder:aDecoder];
+    [self initSelf];
     return self;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame{
     self=[super initWithFrame:frame];
+    [self initSelf];
     return self;
 }
 
+
+- (void)initSelf{
+    [self addTarget:self action:@selector(bt_beginEdit) forControlEvents:UIControlEventEditingDidBegin];
+    [self addTarget:self action:@selector(bt_endEdit) forControlEvents:UIControlEventEditingDidEnd];
+}
 
 - (void)setMaxContent:(NSInteger)maxContent{
     if (_maxContent==0&&maxContent>0) {
@@ -111,6 +118,18 @@
 
 - (void)doneClick{
     [self endEditing:YES];
+}
+
+- (void)bt_beginEdit{
+    if (self.beginEditBlock) {
+        self.beginEditBlock();
+    }
+}
+
+- (void)bt_endEdit{
+    if (self.endEditBlock) {
+        self.endEditBlock();
+    }
 }
 
 @end

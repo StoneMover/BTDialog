@@ -14,16 +14,24 @@
 
 @interface BTSearchHeadView()<UITextFieldDelegate>
 
-
-
 @end
 
 
 @implementation BTSearchHeadView
 
-- (instancetype)initSearchHead{
+- (instancetype)initNavHead{
     self = [super initWithFrame:CGRectMake(0, 0, BTUtils.SCREEN_W, BTUtils.NAV_HEIGHT)];
-    
+    [self initSelf];
+    return self;
+}
+
+- (instancetype)initDefaultHead{
+    self = [super initWithFrame:CGRectMake(0, 0, BTUtils.SCREEN_W, 44)];
+    [self initSelf];
+    return self;
+}
+
+- (void)initSelf{
     self.backgroundColor = UIColor.whiteColor;
     
     self.btnCancel = [[UIButton alloc]initWithSize:CGSizeMake(60, 44)];
@@ -54,9 +62,9 @@
     [self.textFieldSearch addDoneView];
     
     [self addSubViewArray:@[self.btnCancel,self.viewBgColor,self.imgSearchIcon,self.viewLine,self.textFieldSearch]];
-    
-    return self;
 }
+
+
 
 - (void)layoutSubviews{
     self.viewLine.frame = CGRectMake(0, self.height - 1, self.width, 1);

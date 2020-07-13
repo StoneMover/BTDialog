@@ -57,12 +57,12 @@
 
 
 - (void)initPageView{
-    self.pageView=[[BTPageView alloc] initWithFrame:self.view.bounds];
+    self.pageView=[[BTPageView alloc] initWithFrame:self.pageViewFrame];
     self.pageView.delegate=self;
     self.pageView.dataSource=self;
     self.pageView.initSelectIndex=self.initIndex;
     self.pageView.isNeedLoadNextAndLast=self.isNeedLoadNextAndLast;
-    self.view=self.pageView;
+    [self.view addSubview:self.pageView];
 }
 
 - (void)reloadData{
@@ -171,6 +171,10 @@
 
 - (UIViewController*)vcSelect{
     return self.vcNowShow;
+}
+
+- (CGRect)pageViewFrame{
+    return self.view.bounds;
 }
 
 @end

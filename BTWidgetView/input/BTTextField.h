@@ -30,6 +30,12 @@
 //文字内容到达最大长度回调
 @property (nonatomic, copy) void(^maxContentBlock)(void);
 
+//开始编辑
+@property (nonatomic, copy) void(^beginEditBlock)(void);
+
+//结束编辑
+@property (nonatomic, copy) void(^endEditBlock)(void);
+
 //为键盘添加完成按钮
 - (void)addDoneView;
 

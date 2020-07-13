@@ -8,6 +8,7 @@
 
 #import "BTSearchView.h"
 #import "UIView+BTViewTool.h"
+#import <BTHelp/BTUtils.h>
 
 @interface BTSearchView()
 
@@ -22,7 +23,7 @@
     self = [super initWithFrame:frame];
     self.backgroundColor=[UIColor colorWithWhite:0 alpha:.5];
     __weak BTSearchView * weakSelf=self;
-    self.viewHead = [[BTSearchHeadView alloc] initSearchHead];
+    self.viewHead = [[BTSearchHeadView alloc] initNavHead];
     self.viewHead.cancelClickBlock = ^{
         [weakSelf dismiss];
     };

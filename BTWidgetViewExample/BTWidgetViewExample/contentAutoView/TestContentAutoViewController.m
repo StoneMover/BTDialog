@@ -41,7 +41,7 @@
 
 - (void)initHeadView{
     __weak TestContentAutoViewController * weakSelf=self;
-    self.headView = [[BTSearchHeadView alloc] initSearchHead];
+    self.headView = [[BTSearchHeadView alloc] initNavHead];
     self.headView.viewLine.backgroundColor = UIColor.lightTextColor;
     self.headView.cancelClickBlock = ^{
         [weakSelf.navigationController popToRootViewControllerAnimated:YES];

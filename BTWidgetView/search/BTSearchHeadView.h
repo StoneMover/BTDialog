@@ -14,10 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BTSearchHeadView : UIView
 
-- (instancetype)initSearchHead;
+- (instancetype)initNavHead;
+
+- (instancetype)initDefaultHead;
 
 @property (nonatomic, strong) UIImageView * imgSearchIcon;
 
+//取消按钮，设置显示隐藏即可改变相应的布局
 @property (nonatomic, strong) UIButton * btnCancel;
 
 @property (nonatomic, strong) BTTextField * textFieldSearch;
