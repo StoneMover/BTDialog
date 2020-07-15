@@ -15,7 +15,7 @@
 //光标最大高度设置
 @property (nonatomic, assign) IBInspectable NSInteger maxCursorH;
 
-//最大文字长度设置
+//最大文字长度设置,设置后maxContentBlock、maxContentBlock才会有回调
 @property (nonatomic, assign) IBInspectable NSInteger maxContent;
 
 //字符间距设置

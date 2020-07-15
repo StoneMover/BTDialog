@@ -33,6 +33,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) void(^searchClick) (NSString * _Nullable  searchStr);
 
+//是否在点击搜索按钮的时候情况输入框内容
+@property (nonatomic, assign) BOOL isSearchClickEmptyTextField;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -96,7 +96,9 @@
     if (self.searchClick) {
         self.searchClick(self.textFieldSearch.text);
     }
-    self.textFieldSearch.text=@"";
+    if (self.isSearchClickEmptyTextField) {
+        self.textFieldSearch.text=@"";
+    }
     return YES;
 }
 
