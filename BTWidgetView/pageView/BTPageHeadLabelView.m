@@ -99,10 +99,17 @@
 
 - (void)scrollViewIndicator:(CGFloat)percent{
     [super scrollViewIndicator:percent];
+    //防止数组越界
+    if (self.labels.count == 0)
+        return;
     
     CGFloat one = 1.0;
     CGFloat percentOne = one / (self.titles.count - 1);
     NSInteger indexNow = percent / percentOne;
+    if (indexNow + 1 >= self.labels.count) {
+        return;
+    }
+    
     UILabel * labelNow = self.labels[indexNow];
     UILabel * labelWillSelect = nil;
     CGFloat resultPercent = indexNow * percentOne - percent;
