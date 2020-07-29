@@ -63,11 +63,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIFont*)SYS_FONT_SIZE:(CGFloat)size;
 
-+ (NSString*)SAFE_STR:(NSString*)str;
++ (NSString*)SAFE_STR:(nullable NSString*)str;
 
 + (UIImage*)PLACE_HOLDER_IMAGE;
 
-+ (NSURL*)URL:(NSString*)url;
++ (NSURL*)URL:(nullable NSString*)url;
 
 + (NSString*)APP_VERSION;
 
@@ -77,7 +77,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIViewController *)getCurrentVCFrom:(UIViewController *)rootVc;
 
-+ (BOOL)isEmpty:(NSString*)str;
++ (BOOL)isEmpty:(nullable NSString*)str;
 
 //设置ios 推送bage 数字
 + (void)setAppIconNotifiNum:(NSString*)num;
@@ -140,10 +140,10 @@ NS_ASSUME_NONNULL_BEGIN
 //MARK:废弃方法
 
 //返回156*****8016电话
-+ (NSString*)phoneEncrypt:(NSString*)phone DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");
++ (NSString*)phoneEncrypt:(nullable NSString*)phone DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");
 
 //是否全部为数字
-+ (BOOL)isStrAllNumber:(NSString*)checkedNumString DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");
++ (BOOL)isStrAllNumber:(nullable NSString*)checkedNumString DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");
 
 + (NSString*)base64Decode:(NSString*)str DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");
 

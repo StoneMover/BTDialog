@@ -42,6 +42,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString*)day;
 
+- (NSString*)hour;
+
+- (NSString*)minute;
+
+- (NSString*)second;
+
 //英文的周几字符串
 - (NSString*)weekDay;
 
@@ -63,6 +69,15 @@ NS_ASSUME_NONNULL_BEGIN
 //获取日期字符串
 - (NSString*)dateStr:(NSString*)formater;
 
+//是否是同年、同月、同日、同时、同分
+- (BOOL)isSameMonthToDate:(NSDate*)date;
+
+- (BOOL)isSameDayToDate:(NSDate*)date;
+
+- (BOOL)isSameHourToDate:(NSDate*)date;
+
+- (BOOL)isSameMinuteToDate:(NSDate*)date;
+
 #pragma mark 根据出传入日期以及格式化样式获取date
 //根据时区获取对应的date
 + (instancetype)initLocalDate;
@@ -79,7 +94,8 @@ NS_ASSUME_NONNULL_BEGIN
 //传入日期,以及格式化样式获取date
 + (NSDate*)dateFromStr:(NSString*)dateStr formatter:(NSString*)formatterStr;
 
-
+//获取时区时差秒数
++ (NSInteger)bt_timeZoneSeconods;
 
 @end
 

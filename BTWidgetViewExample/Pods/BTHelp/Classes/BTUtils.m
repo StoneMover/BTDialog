@@ -150,7 +150,7 @@
 
 
 
-+ (NSString*)SAFE_STR:(NSString*)str{
++ (NSString*)SAFE_STR:(nullable NSString*)str{
     if ([BTUtils isEmpty:str]) {
         return @"";
     }
@@ -162,7 +162,7 @@
     return [UIImage imageNamed:@"bt_default_placeholder"];
 }
 
-+ (NSURL*)URL:(NSString*)url{
++ (NSURL*)URL:(nullable NSString*)url{
     if (![BTUtils isEmpty:url]) {
         NSURL * result = [NSURL URLWithString:url];
         if (result != nil) {
@@ -221,7 +221,7 @@
 }
 
 
-+ (BOOL)isEmpty:(NSString*)str{
++ (BOOL)isEmpty:(nullable NSString*)str{
     
     if (![str isKindOfClass:NSString.class]) {
         return YES;
@@ -474,11 +474,14 @@
 
 
 //MARK:废弃方法
-+ (NSString*)phoneEncrypt:(NSString*)phone{
++ (NSString*)phoneEncrypt:(nullable NSString*)phone{
+    if ([BTUtils isEmpty:phone]) {
+        return @"";
+    }
     return phone.phoneEncrypt;
 }
 
-+ (BOOL)isStrAllNumber:(NSString*)checkedNumString{
++ (BOOL)isStrAllNumber:(nullable NSString*)checkedNumString{
     return checkedNumString.isStrAllNumber;
 }
 

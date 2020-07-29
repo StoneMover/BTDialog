@@ -38,6 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable NSArray *)toArray;
 
+//获取domain（ip）
+- (nullable NSString*)bt_host;
+
+- (NSDictionary*)bt_urlParameters;
+
 @end
 
 NS_ASSUME_NONNULL_END

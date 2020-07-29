@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIColor*)RANDOM_COLOR;
 
++ (UIColor *)colorWithHexString: (NSString *)color;
+
 @end
 
 NS_ASSUME_NONNULL_END
