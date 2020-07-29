@@ -59,6 +59,7 @@
     self.textFieldSearch.delegate = self;
     self.textFieldSearch.font = [UIFont systemFontOfSize:14 weight:UIFontWeightMedium];
     self.textFieldSearch.clearButtonMode = UITextFieldViewModeWhileEditing;
+    self.textFieldSearch.maxContent = 20;
     [self.textFieldSearch addDoneView];
     
     [self addSubViewArray:@[self.btnCancel,self.viewBgColor,self.imgSearchIcon,self.viewLine,self.textFieldSearch]];
