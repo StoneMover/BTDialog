@@ -107,11 +107,16 @@
 }
 
 - (void)addDoneView{
+    [self addDoneView:@"完成"];
+}
+
+
+- (void)addDoneView:(NSString*)str{
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, BTUtils.UI_IS_IPHONEX?45:35)];
     toolbar.tintColor = [UIColor systemBlueColor];
     toolbar.backgroundColor = [UIColor systemGrayColor];
     UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *bar = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(doneClick)];
+    UIBarButtonItem *bar = [[UIBarButtonItem alloc] initWithTitle:str style:UIBarButtonItemStylePlain target:self action:@selector(doneClick)];
     toolbar.items = @[space, bar];
     self.inputAccessoryView = toolbar;
 }

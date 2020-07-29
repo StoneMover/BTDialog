@@ -38,6 +38,7 @@
 
 //为键盘添加完成按钮
 - (void)addDoneView;
+- (void)addDoneView:(NSString*)str;
 
 @end
 
