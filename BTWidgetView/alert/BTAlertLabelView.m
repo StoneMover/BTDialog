@@ -18,16 +18,16 @@
     UILabel * labelContent = [UILabel new];
     labelContent.textAlignment = NSTextAlignmentCenter;
     labelContent.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
-    labelContent.textColor = [UIColor RGBSame:5];
+    labelContent.textColor = [UIColor bt_RGBSame:5];
     labelContent.text = msg;
     labelContent.numberOfLines = 0;
     labelContent.backgroundColor = UIColor.clearColor;
-    labelContent.width = BTUtils.SCREEN_W-106-40;
+    labelContent.BTWidth = BTUtils.SCREEN_W-106-40;
     CGFloat labelHeight = labelContent.bt_calculateLabelHeight;
-    labelContent.height = labelHeight;
-    labelContent.left = 20;
-    labelContent.top = 15;
-    UIView * viewRoot = [[UIView alloc] initWithSize:CGSizeMake(BTUtils.SCREEN_W-106, labelHeight+35)];
+    labelContent.BTHeight = labelHeight;
+    labelContent.BTLeft = 20;
+    labelContent.BTTop = 15;
+    UIView * viewRoot = [[UIView alloc] initBTViewWithSize:CGSizeMake(BTUtils.SCREEN_W-106, labelHeight+35)];
     [viewRoot addSubview:labelContent];
     self= [super initWithcontentView:viewRoot];
     

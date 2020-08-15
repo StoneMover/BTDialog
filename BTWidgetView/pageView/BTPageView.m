@@ -70,31 +70,31 @@
 - (void)layoutSubviews{
     //这里是不是要循环下子view让其重新layout一遍？
     if (self.headView) {
-        self.scrollView.frame=CGRectMake(0, self.headView.bottom, self.width, self.height-self.headView.height);
-        [self.scrollView setContentSize:CGSizeMake(self.scrollView.contentSize.width, self.height-self.headView.height)];
+        self.scrollView.frame=CGRectMake(0, self.headView.BTBottom, self.BTWidth, self.BTHeight-self.headView.BTHeight);
+        [self.scrollView setContentSize:CGSizeMake(self.scrollView.contentSize.width, self.BTHeight-self.headView.BTHeight)];
     }else{
         self.scrollView.frame=self.bounds;
-        self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.scrollView.height);
+        self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.scrollView.BTHeight);
     }
     
 }
 
 #pragma mark UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if (self.headView && scrollView.contentSize.width-scrollView.width!=0) {
-        [self.headView scrollViewIndicator:(scrollView.contentOffset.x)/(scrollView.contentSize.width-scrollView.width)];
+    if (self.headView && scrollView.contentSize.width-scrollView.BTWidth!=0) {
+        [self.headView scrollViewIndicator:(scrollView.contentOffset.x)/(scrollView.contentSize.width-scrollView.BTWidth)];
     }
     
-    if (self.headViewOut && scrollView.contentSize.width-scrollView.width!=0) {
-        [self.headViewOut scrollViewIndicator:(scrollView.contentOffset.x)/(scrollView.contentSize.width-scrollView.width)];
+    if (self.headViewOut && scrollView.contentSize.width-scrollView.BTWidth!=0) {
+        [self.headViewOut scrollViewIndicator:(scrollView.contentOffset.x)/(scrollView.contentSize.width-scrollView.BTWidth)];
     }
     
     if (self.headView) {
-        [self.headView scrollViewItemPercent:(scrollView.contentOffset.x - self.nowIndex * self.width)/self.width];
+        [self.headView scrollViewItemPercent:(scrollView.contentOffset.x - self.nowIndex * self.BTWidth)/self.BTWidth];
     }
     
     if (self.headViewOut) {
-        [self.headViewOut scrollViewItemPercent:(scrollView.contentOffset.x - self.nowIndex * self.width)/self.width];
+        [self.headViewOut scrollViewItemPercent:(scrollView.contentOffset.x - self.nowIndex * self.BTWidth)/self.BTWidth];
     }
     
     //这里在横竖屏切换的时候可能会出现数组越界的情况
@@ -136,7 +136,7 @@
 
 - (void)didSelectIndex{
     self.lastContentOffsetX=self.scrollView.contentOffset.x;
-    NSInteger index = self.scrollView.contentOffset.x/self.scrollView.width;
+    NSInteger index = self.scrollView.contentOffset.x/self.scrollView.BTWidth;
     if (self.nowIndex == index || [self isIndexOut:index]) {
         return;
     }
@@ -164,7 +164,7 @@
 
 #pragma mark 相关方法
 - (void)reloadData{
-    if (self.width==0||self.height==0) {
+    if (self.BTWidth==0||self.BTHeight==0) {
         self.isNeedLayoutReload=YES;
         return;
     }
@@ -206,16 +206,16 @@
         [self addSubview:self.headView];
         if (self.dataSource&&[self.dataSource respondsToSelector:@selector(pageViewHeadOrigin:)]) {
             CGPoint point =[self.dataSource pageViewHeadOrigin:self];
-            self.headView.left=point.x;
-            self.headView.top=point.y;
+            self.headView.BTLeft=point.x;
+            self.headView.BTTop=point.y;
         }else{
-            self.headView.left=0;
-            self.headView.top=0;
+            self.headView.BTLeft=0;
+            self.headView.BTTop=0;
         }
         if (self.dataSource&&[self.dataSource respondsToSelector:@selector(pageViewContentFrame:)]) {
             self.scrollView.frame=[self.dataSource pageViewContentFrame:self];
         }else{
-            self.scrollView.frame=CGRectMake(0, self.headView.bottom, self.width, self.height-self.headView.height);
+            self.scrollView.frame=CGRectMake(0, self.headView.BTBottom, self.BTWidth, self.BTHeight-self.headView.BTHeight);
         }
         
     }else{
@@ -227,12 +227,12 @@
     }
     
     if (self.headView) {
-        [self.scrollView setContentSize:CGSizeMake(self.width*total, self.height-self.headView.height)];
+        [self.scrollView setContentSize:CGSizeMake(self.BTWidth*total, self.BTHeight-self.headView.BTHeight)];
     }else{
-        [self.scrollView setContentSize:CGSizeMake(self.width*total, self.height)];
+        [self.scrollView setContentSize:CGSizeMake(self.BTWidth*total, self.BTHeight)];
     }
     
-    self.lastContentOffsetX=self.width*self.initSelectIndex;
+    self.lastContentOffsetX=self.BTWidth*self.initSelectIndex;
     self.nowIndex=self.initSelectIndex;
     [self selectIndex:self.initSelectIndex animated:NO];
     if (self.initSelectIndex != 0 && self.headView) {
@@ -277,7 +277,7 @@
     
     if (![self isHasLoadView:index]&&![self isIndexOut:index]) {
         UIView * view=[self getChildView:index];
-        view.frame=CGRectMake(index*self.scrollView.width, 0, self.scrollView.width, self.scrollView.height);
+        view.frame=CGRectMake(index*self.scrollView.BTWidth, 0, self.scrollView.BTWidth, self.scrollView.BTHeight);
         self.childView[index].childView=view;
         [self.scrollView addSubview:view];
     }
@@ -288,14 +288,14 @@
     
     if (index!=0 && ![self isHasLoadView:index-1] && ![self isIndexOut:index -1]) {
         UIView * view=[self getChildView:index-1];
-        view.frame=CGRectMake((index-1)*self.scrollView.width, 0, self.scrollView.width, self.scrollView.height);
+        view.frame=CGRectMake((index-1)*self.scrollView.BTWidth, 0, self.scrollView.BTWidth, self.scrollView.BTHeight);
         self.childView[index-1].childView=view;
         [self.scrollView addSubview:view];
     }
     
     if (index!=self.childView.count-1&&![self isHasLoadView:index+1]&& ![self isIndexOut:index +1]) {
         UIView * view=[self getChildView:index+1];
-        view.frame=CGRectMake((index+1)*self.scrollView.width, 0, self.scrollView.width, self.scrollView.height);
+        view.frame=CGRectMake((index+1)*self.scrollView.BTWidth, 0, self.scrollView.BTWidth, self.scrollView.BTHeight);
         self.childView[index+1].childView=view;
         [self.scrollView addSubview:view];
     }
@@ -308,7 +308,7 @@
     _headView=nil;
     [self.childView removeAllObjects];
     self.childView=nil;
-    [self.scrollView removeAllChildView];
+    [self.scrollView bt_removeAllChildView];
 }
 
 
@@ -317,7 +317,7 @@
         self.scrollView.scrollEnabled=NO;
     }
     [self autoLoadSubView:index];
-    [self.scrollView setContentOffset:CGPointMake(self.scrollView.width*index, 0) animated:animated];
+    [self.scrollView setContentOffset:CGPointMake(self.scrollView.BTWidth*index, 0) animated:animated];
     //没有动画滑动不会触发scrollView的滑动代理，无法更新index
     if (!animated) {
         self.nowIndex = index;

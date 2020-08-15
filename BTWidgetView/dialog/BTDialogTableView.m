@@ -52,11 +52,11 @@ int const BT_SHOW_VIEW_HEAD_H=45;
     [self setValue:self.rootView forKey:@"showView"];
     [self addSubview:self.rootView];
     
-    self.headView=[[BTDialogTableHeadView alloc] initWithFrame:CGRectMake(0, 0, self.rootView.width, BT_SHOW_VIEW_HEAD_H)];
+    self.headView=[[BTDialogTableHeadView alloc] initWithFrame:CGRectMake(0, 0, self.rootView.BTWidth, BT_SHOW_VIEW_HEAD_H)];
     [self.headView.btnCancel addTarget:self action:@selector(closeClick) forControlEvents:UIControlEventTouchUpInside];
     
     self.tableView=[[UITableView alloc] init];
-    self.tableView.frame=CGRectMake(0, BT_SHOW_VIEW_HEAD_H, self.rootView.width, 0);
+    self.tableView.frame=CGRectMake(0, BT_SHOW_VIEW_HEAD_H, self.rootView.BTWidth, 0);
     [self.tableView registerClass:[BTDialogTableViewCell class] forCellReuseIdentifier:@"BTDialogTableViewCellId"];
     self.tableView.dataSource=self;
     self.tableView.delegate=self;
@@ -87,23 +87,23 @@ int const BT_SHOW_VIEW_HEAD_H=45;
         headH=BT_SHOW_VIEW_HEAD_H;
     }
     if (self.locationTable==BTDialogLocationTop) {
-        self.headView.top=BTUtils.STATUS_BAR_HEIGHT;
+        self.headView.BTTop=BTUtils.STATUS_BAR_HEIGHT;
     }
-    self.headView.height=headH;
-    self.tableView.top=self.headView.bottom;
+    self.headView.BTHeight=headH;
+    self.tableView.BTTop=self.headView.BTBottom;
     if (self.cellHeight==-1) {
-        self.tableView.height = self.maxRootHeight;
-        self.rootView.height = self.maxRootHeight;
+        self.tableView.BTHeight = self.maxRootHeight;
+        self.rootView.BTHeight = self.maxRootHeight;
     }else{
         if (self.dataArray.count*self.cellHeight>self.maxRootHeight-headH) {
-            self.tableView.height=self.maxRootHeight-headH;
-            self.rootView.height=self.maxRootHeight;
+            self.tableView.BTHeight=self.maxRootHeight-headH;
+            self.rootView.BTHeight=self.maxRootHeight;
         }else{
-            self.tableView.height=self.dataArray.count*self.cellHeight;
-            self.rootView.height=headH+self.tableView.height;
-            if (self.rootView.height<self.miniRootHeight) {
-                self.rootView.height=self.miniRootHeight;
-                self.tableView.height = self.miniRootHeight;
+            self.tableView.BTHeight=self.dataArray.count*self.cellHeight;
+            self.rootView.BTHeight=headH+self.tableView.BTHeight;
+            if (self.rootView.BTHeight<self.miniRootHeight) {
+                self.rootView.BTHeight=self.miniRootHeight;
+                self.tableView.BTHeight = self.miniRootHeight;
             }
             
         }
@@ -111,9 +111,9 @@ int const BT_SHOW_VIEW_HEAD_H=45;
     
     
     if (self.locationTable==BTDialogLocationBottom) {
-        self.rootView.height+=BTUtils.HOME_INDICATOR_HEIGHT;
+        self.rootView.BTHeight+=BTUtils.HOME_INDICATOR_HEIGHT;
     }else if (self.locationTable==BTDialogLocationTop){
-        self.rootView.height+=BTUtils.STATUS_BAR_HEIGHT;
+        self.rootView.BTHeight+=BTUtils.STATUS_BAR_HEIGHT;
     }
 }
 
@@ -202,21 +202,21 @@ int const BT_SHOW_VIEW_HEAD_H=45;
     self.labelTitle=[[UILabel alloc] init];
     self.labelTitle.font=[UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
     self.labelTitle.textColor=[UIColor blackColor];
-    self.labelTitle.frame=CGRectMake(20, 0, self.width-50-20, self.height);
+    self.labelTitle.frame=CGRectMake(20, 0, self.BTWidth-50-20, self.BTHeight);
     [self addSubview:self.labelTitle];
 }
 
 
 - (void)initBtnCancel{
-    self.btnCancel=[[UIButton alloc] initWithFrame:CGRectMake(self.width-50, 0, 50, self.height)];
+    self.btnCancel=[[UIButton alloc] initWithFrame:CGRectMake(self.BTWidth-50, 0, 50, self.BTHeight)];
     [self.btnCancel setImage:[BTWidgetView imageBundleName:@"bt_dialog_close"] forState:UIControlStateNormal];
     [self addSubview:self.btnCancel];
 }
 
 
 - (void)initLineView{
-    self.lineView=[[BTLineView alloc] initWithFrame:CGRectMake(0, self.height-1, self.width, 1)];
-    self.lineView.backgroundColor = [UIColor RGBASame:77 A:0.25];
+    self.lineView=[[BTLineView alloc] initWithFrame:CGRectMake(0, self.BTHeight-1, self.BTWidth, 1)];
+    self.lineView.backgroundColor = [UIColor bt_RGBASame:77 A:0.25];
     [self addSubview:self.lineView];
 }
 

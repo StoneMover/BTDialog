@@ -12,17 +12,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIColor (BTColor)
 
-+ (UIColor*)R:(CGFloat)R G:(CGFloat)G B:(CGFloat)B;
++ (UIColor*)bt_R:(CGFloat)R G:(CGFloat)G B:(CGFloat)B;
 
-+ (UIColor*)RGBSame:(CGFloat)value;
++ (UIColor*)bt_RGBSame:(CGFloat)value;
 
-+ (UIColor*)R:(CGFloat)R G:(CGFloat)G B:(CGFloat)B A:(CGFloat)A;
++ (UIColor*)bt_R:(CGFloat)R G:(CGFloat)G B:(CGFloat)B A:(CGFloat)A;
 
-+ (UIColor*)RGBASame:(CGFloat)value A:(CGFloat)A;
++ (UIColor*)bt_RGBASame:(CGFloat)value A:(CGFloat)A;
 
-+ (UIColor*)RANDOM_COLOR;
++ (UIColor*)bt_RANDOM_COLOR;
 
-+ (UIColor *)colorWithHexString: (NSString *)color;
++ (UIColor *)bt_colorWithHexString: (NSString *)color;
 
 @end
 

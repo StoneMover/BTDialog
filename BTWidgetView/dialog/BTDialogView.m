@@ -92,16 +92,16 @@
     
     switch (self.location) {
         case BTDialogLocationCenter:
-            self.showView.center=CGPointMake(self.width/2, self.height/2-self.centerOffset);
+            self.showView.center=CGPointMake(self.BTWidth/2, self.BTHeight/2-self.centerOffset);
             [self centerLocationShowAnim];
             break;
         case BTDialogLocationTop:
         {
-            self.showView.frame=CGRectMake(0, -self.showView.height, self.showView.width, self.showView.height);
+            self.showView.frame=CGRectMake(0, -self.showView.BTHeight, self.showView.BTWidth, self.showView.BTHeight);
             [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                 self.bgBlackColor.alpha=.5;
                 [self.showView setAlpha:1];
-                self.showView.frame=CGRectMake(0, 0, self.showView.width, self.showView.height);
+                self.showView.frame=CGRectMake(0, 0, self.showView.BTWidth, self.showView.BTHeight);
             } completion:^(BOOL finished) {
                 
             }];
@@ -110,11 +110,11 @@
             break;
         case BTDialogLocationBottom:
         {
-            self.showView.frame=CGRectMake(0, self.height, self.showView.width, self.showView.height);
+            self.showView.frame=CGRectMake(0, self.BTHeight, self.showView.BTWidth, self.showView.BTHeight);
             [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
                 self.bgBlackColor.alpha=.5;
                 [self.showView setAlpha:1];
-                self.showView.frame=CGRectMake(self.showView.left, self.height-self.showView.height, self.showView.width, self.showView.height);
+                self.showView.frame=CGRectMake(self.showView.BTLeft, self.BTHeight-self.showView.BTHeight, self.showView.BTWidth, self.showView.BTHeight);
             } completion:^(BOOL finished) {
                 
             }];
@@ -168,7 +168,7 @@
         {
             [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 self.bgBlackColor.alpha = 0;
-                self.showView.frame=CGRectMake(self.showView.left,-self.showView.height, self.showView.width, self.showView.height);
+                self.showView.frame=CGRectMake(self.showView.BTLeft,-self.showView.BTHeight, self.showView.BTWidth, self.showView.BTHeight);
             } completion:^(BOOL finished) {
                 [self destory];
             }];
@@ -178,7 +178,7 @@
         {
             [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 self.bgBlackColor.alpha = 0;
-                self.showView.frame=CGRectMake(self.showView.left, self.height, self.showView.width, self.showView.height);
+                self.showView.frame=CGRectMake(self.showView.BTLeft, self.BTHeight, self.showView.BTWidth, self.showView.BTHeight);
             } completion:^(BOOL finished) {
                 self.showView.alpha = 0;
                 [self destory];

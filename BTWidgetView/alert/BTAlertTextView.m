@@ -27,13 +27,13 @@
     textView.placeHolder = placeholder;
     textView.isSelfSetEdgeInsets = YES;
     textView.textContainerInset=UIEdgeInsetsMake(5, 5, 5, 5);
-    textView.textColor = [UIColor RGBSame:10];
+    textView.textColor = [UIColor bt_RGBSame:10];
     textView.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
-    textView.borderColor = [UIColor RGBASame:77 A:0.25];
-    textView.borderWidth = 0.5;
-    textView.corner = 5;
+    textView.BTBorderColor = [UIColor bt_RGBASame:77 A:0.25];
+    textView.BTBorderWidth = 0.5;
+    textView.BTCorner = 5;
     
-    UIView * viewRoot = [[UIView alloc] initWithSize:CGSizeMake(BTUtils.SCREEN_W-106, height+30)];
+    UIView * viewRoot = [[UIView alloc] initBTViewWithSize:CGSizeMake(BTUtils.SCREEN_W-106, height+30)];
     [viewRoot addSubview:textView];
 
     self= [super initWithcontentView:viewRoot];
@@ -50,14 +50,14 @@
     _isJustShowText = isJustShowText;
     if (isJustShowText) {
         self.textView.editable = NO;
-        self.textView.borderWidth = 0;
-        self.textView.corner = 0;
+        self.textView.BTBorderWidth = 0;
+        self.textView.BTCorner = 0;
         self.textView.backgroundColor = UIColor.clearColor;
     }else{
         self.textView.editable = YES;
-        self.textView.borderColor = [UIColor RGBASame:77 A:0.78];
-        self.textView.borderWidth = 0.5;
-        self.textView.corner = 5;
+        self.textView.BTBorderColor = [UIColor bt_RGBASame:77 A:0.78];
+        self.textView.BTBorderWidth = 0.5;
+        self.textView.BTCorner = 5;
         self.textView.backgroundColor = UIColor.whiteColor;
     }
 }

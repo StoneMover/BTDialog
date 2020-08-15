@@ -32,26 +32,26 @@
         if(self.aligntMent==BTLineViewAlignmentTop){
             //居上的情况
             CGContextMoveToPoint(ctx, 0, self.lineWidth/2);
-            CGContextAddLineToPoint(ctx, self.width, self.lineWidth/2);
+            CGContextAddLineToPoint(ctx, self.BTWidth, self.lineWidth/2);
         }else if (self.aligntMent==BTLineViewAlignmentCenter){
-            CGContextMoveToPoint(ctx, 0, self.height/2.0);
-            CGContextAddLineToPoint(ctx, self.width, self.height/2.0);
+            CGContextMoveToPoint(ctx, 0, self.BTHeight/2.0);
+            CGContextAddLineToPoint(ctx, self.BTWidth, self.BTHeight/2.0);
         }else if (self.aligntMent==BTLineViewAlignmentBottom){
-            CGContextMoveToPoint(ctx, 0, self.height-self.lineWidth/2);
-            CGContextAddLineToPoint(ctx, self.width, self.height-self.lineWidth/2);
+            CGContextMoveToPoint(ctx, 0, self.BTHeight-self.lineWidth/2);
+            CGContextAddLineToPoint(ctx, self.BTWidth, self.BTHeight-self.lineWidth/2);
         }
         
     }else{
         
         if (self.aligntMent==BTLineViewAlignmentLeft) {
             CGContextMoveToPoint(ctx, self.lineWidth/2, 0);
-            CGContextAddLineToPoint(ctx, self.lineWidth/2,self.height);
+            CGContextAddLineToPoint(ctx, self.lineWidth/2,self.BTHeight);
         }else if (self.aligntMent==BTLineViewAlignmentCenter){
-            CGContextMoveToPoint(ctx, self.width/2.0, 0);
-            CGContextAddLineToPoint(ctx, self.width/2.0,self.height);
+            CGContextMoveToPoint(ctx, self.BTWidth/2.0, 0);
+            CGContextAddLineToPoint(ctx, self.BTWidth/2.0,self.BTHeight);
         }else if (self.aligntMent==BTLineViewAlignmentRight){
-            CGContextMoveToPoint(ctx, self.width-self.lineWidth/2, 0);
-            CGContextAddLineToPoint(ctx, self.width-self.lineWidth/2,self.height);
+            CGContextMoveToPoint(ctx, self.BTWidth-self.lineWidth/2, 0);
+            CGContextAddLineToPoint(ctx, self.BTWidth-self.lineWidth/2,self.BTHeight);
         }
         
         

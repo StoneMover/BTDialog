@@ -63,9 +63,9 @@
     label.numberOfLines = 1;
     if (self.labelStyle == BTPageHeadViewStyleDefault) {
         [label sizeToFit];
-        label.height = self.height;
+        label.BTHeight = self.BTHeight;
     }else{
-        label.frame = CGRectMake(0, 0, self.width / self.titles.count, self.height);
+        label.frame = CGRectMake(0, 0, self.BTWidth / self.titles.count, self.BTHeight);
     }
     
     

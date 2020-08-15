@@ -21,15 +21,15 @@
     textField.placeholder = placeholder;
     textField.clipsToBounds = NO;
     
-    UIView * viewParent = [[UIView alloc] initWithSize:CGSizeMake(BTUtils.SCREEN_W-106-20, 42)];
-    viewParent.borderColor = [UIColor RGBASame:77 A:0.25];
-    viewParent.borderWidth = 0.5;
-    viewParent.corner = 5;
+    UIView * viewParent = [[UIView alloc] initBTViewWithSize:CGSizeMake(BTUtils.SCREEN_W-106-20, 42)];
+    viewParent.BTBorderColor = [UIColor bt_RGBASame:77 A:0.25];
+    viewParent.BTBorderWidth = 0.5;
+    viewParent.BTCorner = 5;
     [viewParent addSubview:textField];
-    viewParent.top = 15;
-    viewParent.left = 10;
+    viewParent.BTTop = 15;
+    viewParent.BTLeft = 10;
     
-    UIView * viewRoot = [[UIView alloc] initWithSize:CGSizeMake(BTUtils.SCREEN_W-106, 45+30)];
+    UIView * viewRoot = [[UIView alloc] initBTViewWithSize:CGSizeMake(BTUtils.SCREEN_W-106, 45+30)];
     [viewRoot addSubview:viewParent];
     
     self= [super initWithcontentView:viewRoot];

@@ -57,7 +57,7 @@
     __weak TestContentAutoViewController * weakSelf=self;
     NSArray * data = @[@"雪花飘飘",@"我是一只小小鸟",@"阿瓦大啃大瓜",@"君威GS",@"迈锐宝XL",@"蒙迪欧",@"标志内饰最好看",@"张翼德",@"关云长",@"我的马儿",@"曹孟德",@"许攸辱我"];
     
-    self.contentView = [[BTContentAutoView alloc] initWithFrame:CGRectMake(10, self.headView.bottom + 20, BTUtils.SCREEN_W - 20, 400)];
+    self.contentView = [[BTContentAutoView alloc] initWithFrame:CGRectMake(10, self.headView.BTBottom + 20, BTUtils.SCREEN_W - 20, 400)];
     self.contentView.textColor = UIColor.whiteColor;
     self.contentView.textFont = [UIFont systemFontOfSize:12 weight:UIFontWeightMedium];
     self.contentView.paddingLeftRight = 7;

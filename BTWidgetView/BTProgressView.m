@@ -36,9 +36,9 @@
 
 - (void)layoutSubviews{
     if (self.type == 0) {
-        self.progressView.frame = CGRectMake(0, 0, self.width * self.percent, self.height);
+        self.progressView.frame = CGRectMake(0, 0, self.BTWidth * self.percent, self.BTHeight);
     }else{
-        self.progressView.frame = CGRectMake(0, 0, self.width, self.height * self.percent);
+        self.progressView.frame = CGRectMake(0, 0, self.BTWidth, self.BTHeight * self.percent);
     }
 }
 

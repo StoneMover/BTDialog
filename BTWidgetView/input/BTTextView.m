@@ -109,8 +109,8 @@
 }
 
 - (void)layoutSubviews{
-    self.labelPlaceHolder.left=self.textContainerInset.left+3;
-    self.labelPlaceHolder.top=self.textContainerInset.top;
+    self.labelPlaceHolder.BTLeft=self.textContainerInset.left+3;
+    self.labelPlaceHolder.BTTop=self.textContainerInset.top;
 }
 
 - (void)textViewContentChange{

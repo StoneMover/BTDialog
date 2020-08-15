@@ -34,20 +34,20 @@
 - (void)initSelf{
     self.backgroundColor = UIColor.whiteColor;
     
-    self.btnCancel = [[UIButton alloc]initWithSize:CGSizeMake(60, 44)];
+    self.btnCancel = [[UIButton alloc]initBTViewWithSize:CGSizeMake(60, 44)];
     [self.btnCancel setTitleColor:UIColor.lightGrayColor forState:UIControlStateNormal];
     [self.btnCancel setTitle:@"取消" forState:UIControlStateNormal];
     self.btnCancel.titleLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightMedium];
     [self.btnCancel addTarget:self action:@selector(cancelClick) forControlEvents:UIControlEventTouchUpInside];
     
     self.viewBgColor = [[UIView alloc] init];
-    self.viewBgColor.backgroundColor = [UIColor R:239 G:239 B:241];
+    self.viewBgColor.backgroundColor = [UIColor bt_R:239 G:239 B:241];
     
-    self.imgSearchIcon = [[UIImageView alloc] initWithEqualSize:28];
+    self.imgSearchIcon = [[UIImageView alloc] initBTViewWithEqualSize:28];
     self.imgSearchIcon.image = [BTWidgetView imageBundleName:@"bt_search_icon"];
     self.imgSearchIcon.contentMode = UIViewContentModeCenter;
     
-    self.viewLine = [[BTLineView alloc] initWithSize:CGSizeMake(self.width, 1)];
+    self.viewLine = [[BTLineView alloc] initBTViewWithSize:CGSizeMake(self.BTWidth, 1)];
     self.viewLine.lineWidth = .5;
     self.viewLine.aligntMent = BTLineViewAlignmentBottom;
     self.viewLine.color = UIColor.lightGrayColor;
@@ -62,33 +62,33 @@
     self.textFieldSearch.maxContent = 20;
     [self.textFieldSearch addDoneView];
     
-    [self addSubViewArray:@[self.btnCancel,self.viewBgColor,self.imgSearchIcon,self.viewLine,self.textFieldSearch]];
+    [self bt_addSubViewArray:@[self.btnCancel,self.viewBgColor,self.imgSearchIcon,self.viewLine,self.textFieldSearch]];
 }
 
 
 
 - (void)layoutSubviews{
-    self.viewLine.frame = CGRectMake(0, self.height - 1, self.width, 1);
+    self.viewLine.frame = CGRectMake(0, self.BTHeight - 1, self.BTWidth, 1);
     
-    self.btnCancel.right = self.width;
-    self.btnCancel.bottom = self.viewLine.top;
-    
-    
+    self.btnCancel.BTRight = self.BTWidth;
+    self.btnCancel.BTBottom = self.viewLine.BTTop;
     
     
-    self.viewBgColor.corner = 16;
+    
+    
+    self.viewBgColor.BTCorner = 16;
     if (self.btnCancel.isHidden) {
-        self.viewBgColor.frame = CGRectMake(8, self.height - 32 - 6, self.width - 16, 32);
+        self.viewBgColor.frame = CGRectMake(8, self.BTHeight - 32 - 6, self.BTWidth - 16, 32);
     }else{
-        self.viewBgColor.frame = CGRectMake(8, self.height - 32 - 6, self.btnCancel.left - 8, 32);
+        self.viewBgColor.frame = CGRectMake(8, self.BTHeight - 32 - 6, self.btnCancel.BTLeft - 8, 32);
     }
     
     
     
-    self.imgSearchIcon.left = self.viewBgColor.left + 8;
-    self.imgSearchIcon.centerY = self.viewBgColor.centerY;
+    self.imgSearchIcon.BTLeft = self.viewBgColor.BTLeft + 8;
+    self.imgSearchIcon.BTCenterY = self.viewBgColor.BTCenterY;
     
-    self.textFieldSearch.frame = CGRectMake(self.imgSearchIcon.right + 2, self.viewBgColor.top, self.viewBgColor.right - self.imgSearchIcon.right - 2, self.viewBgColor.height);
+    self.textFieldSearch.frame = CGRectMake(self.imgSearchIcon.BTRight + 2, self.viewBgColor.BTTop, self.viewBgColor.BTRight - self.imgSearchIcon.BTRight - 2, self.viewBgColor.BTHeight);
     
     
 }

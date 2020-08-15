@@ -35,10 +35,10 @@
     self.view.backgroundColor = UIColor.whiteColor;
     
     
-    UIButton * btn = [[UIButton alloc] initWithFrame:CGRectMake(self.textField.left, self.textField.bottom + 20, self.textField.width, 40)];
-    btn.corner = 5;
-    btn.borderColor = UIColor.redColor;
-    btn.borderWidth = 0.5;
+    UIButton * btn = [[UIButton alloc] initWithFrame:CGRectMake(self.textField.BTLeft, self.textField.BTBottom + 20, self.textField.BTWidth, 40)];
+    btn.BTCorner = 5;
+    btn.BTBorderColor = UIColor.redColor;
+    btn.BTBorderWidth = 0.5;
     [btn setTitle:@"显示简单的评论输入框" forState:UIControlStateNormal];
     [btn setTitleColor:UIColor.redColor forState:UIControlStateNormal];
     [btn addTarget:self action:@selector(showInput) forControlEvents:UIControlEventTouchUpInside];
@@ -53,7 +53,7 @@
     [self.view addSubview:self.toolView];
  
     
-    self.recoardView = [BTRecordVoiceView loadInstanceFromNib];
+    self.recoardView = [BTRecordVoiceView BTLoadInstanceFromNib];
 }
 
 - (void)showInput{

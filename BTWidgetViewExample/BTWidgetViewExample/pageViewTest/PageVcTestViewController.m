@@ -50,7 +50,7 @@
 }
 
 - (CGRect)pageVcContentFrame:(BTPageViewController*)pageVc{
-    return CGRectMake(0, 50, self.view.width, self.view.height-50);
+    return CGRectMake(0, 50, self.view.BTWidth, self.view.BTHeight-50);
 }
 
 - (void)pageVc:(BTPageViewController*)pageView didShow:(NSInteger)index{

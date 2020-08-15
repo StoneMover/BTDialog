@@ -62,7 +62,7 @@
     self.startY=0;
     for (UIButton * btn in self.dataBtns) {
         NSString * btnStr=btn.titleLabel.text;
-        CGFloat btnW=[btnStr calculateStrWidth:self.contentH font:btn.titleLabel.font];
+        CGFloat btnW=[btnStr bt_calculateStrWidth:self.contentH font:btn.titleLabel.font];
         btnW+=self.paddingLeftRight*2;//左右间隙
         
         CGFloat endX=0;
@@ -73,20 +73,20 @@
             endX=btnW+self.contentHSpace+self.startX+4;
         }
         
-        if (endX>=self.width &&self.startX==0) {
+        if (endX>=self.BTWidth &&self.startX==0) {
             //说明需要自己单独一行
-            btn.frame=CGRectMake(self.startX, self.startY, self.width, self.contentH);
+            btn.frame=CGRectMake(self.startX, self.startY, self.BTWidth, self.contentH);
             self.startY+=self.contentVSpace+self.contentH;
             
             
         }else{
-            if (endX>=self.width) {
+            if (endX>=self.BTWidth) {
                 //当前行的宽度不够，到下一行
                 self.startX=0;
                 self.startY+=self.contentVSpace+self.contentH;
-                if (btnW>=self.width) {
+                if (btnW>=self.BTWidth) {
                     //需要自己一行
-                    btn.frame=CGRectMake(self.startX, self.startY, self.width, self.contentH);
+                    btn.frame=CGRectMake(self.startX, self.startY, self.BTWidth, self.contentH);
                     self.startX=0;
                     self.startY+=self.contentVSpace+self.contentH;
                 }else{
@@ -104,7 +104,7 @@
     
     if (self.block) {
         self.block(self.startY+self.contentH);
-        self.height = self.startY+self.contentH;
+        self.BTHeight = self.startY+self.contentH;
     }
     
 }
@@ -186,7 +186,7 @@
     CGFloat startX=0;
     CGFloat startY=0;
     for (NSString * btnStr in strs) {
-        CGFloat btnW=[btnStr calculateStrWidth:contentH font:textFont];
+        CGFloat btnW=[btnStr bt_calculateStrWidth:contentH font:textFont];
         btnW+=paddingLeftRight * 2;//左右间隙
         
         CGFloat endX=0;

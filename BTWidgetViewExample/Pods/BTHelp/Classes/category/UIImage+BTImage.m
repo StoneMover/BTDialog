@@ -10,12 +10,12 @@
 
 @implementation UIImage (BTImage)
 
-+ (UIImage *)imageWithColor:(UIColor *)color{
++ (UIImage *)bt_imageWithColor:(UIColor *)color{
     CGRect rect=CGRectMake(0.0f, 0.0f, 55.f, 1.f);
-    return [self imageWithColor:color size:rect.size];
+    return [self bt_imageWithColor:color size:rect.size];
 }
 
-+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size{
++ (UIImage *)bt_imageWithColor:(UIColor *)color size:(CGSize)size{
     CGRect rect=CGRectMake(0.0f, 0.0f, size.width, size.height);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -26,16 +26,16 @@
     return theImage;
 }
 
-+(UIImage *)imageWithColor:(UIColor *)color equalSize:(CGFloat)size{
-    return [self imageWithColor:color size:CGSizeMake(size, size)];
++(UIImage *)bt_imageWithColor:(UIColor *)color equalSize:(CGFloat)size{
+    return [self bt_imageWithColor:color size:CGSizeMake(size, size)];
 }
 
 
-+ (UIImage*)imageOriWithName:(NSString*)imgName{
++ (UIImage*)bt_imageOriWithName:(NSString*)imgName{
     return [[UIImage imageNamed:imgName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
-- (NSData *)compressQualityWithMaxLength:(NSInteger)maxLength {
+- (NSData *)bt_compressQualityWithMaxLength:(NSInteger)maxLength {
     CGFloat compression = 1;
     NSData *data = UIImageJPEGRepresentation(self, compression);
     if (data.length < maxLength) return data;
@@ -55,7 +55,7 @@
     return data;
 }
 
-- (UIImage *)scaleToSize:(CGSize)size{
+- (UIImage *)bt_scaleToSize:(CGSize)size{
     if (size.width>size.height) {
         if (size.width > self.size.width) {
             return  self;
@@ -81,7 +81,7 @@
     }
 }
 
-- (UIImage*)imageWithCornerRadius:(CGFloat)radius {
+- (UIImage*)bt_imageWithCornerRadius:(CGFloat)radius {
     UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
@@ -93,7 +93,7 @@
     return newImage;
 }
 
-- (UIImage*)circleImage{
+- (UIImage*)bt_circleImage{
     CGRect rectClip;
     
     if (self.size.width>self.size.height) {

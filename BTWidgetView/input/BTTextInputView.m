@@ -32,7 +32,7 @@
 - (void)initSelf{
     self.basicHeight=56;
     [self addKeyBoardNofication];
-    self.toolView=[[BTTextInputToolView alloc] initWithFrame:CGRectMake(0, self.height-self.basicHeight, self.width, self.basicHeight) type:BTTextInputViewTypeNoVoice];
+    self.toolView=[[BTTextInputToolView alloc] initWithFrame:CGRectMake(0, self.BTHeight-self.basicHeight, self.BTWidth, self.basicHeight) type:BTTextInputViewTypeNoVoice];
     self.toolView.backgroundColor=[UIColor whiteColor];
     [self addSubview:self.toolView];
     
@@ -45,9 +45,9 @@
         if (h>120) {
             h=120;
         }
-        weakSelf.toolView.height=h;
+        weakSelf.toolView.BTHeight=h;
         [weakSelf.toolView layoutSubviews];
-        weakSelf.toolView.bottom=[UIScreen mainScreen].bounds.size.height-weakSelf.keyboardH;
+        weakSelf.toolView.BTBottom=[UIScreen mainScreen].bounds.size.height-weakSelf.keyboardH;
     };
     
 }
@@ -89,7 +89,7 @@
 //当键盘消失的时候调用
 - (void)keyboardWillHide:(NSNotification *)notif {
     [UIView animateWithDuration:.2 animations:^{
-        self.toolView.bottom=[UIScreen mainScreen].bounds.size.height+self.toolView.height;
+        self.toolView.BTBottom=[UIScreen mainScreen].bounds.size.height+self.toolView.BTHeight;
         //        self.rootView.alpha=0;
     } completion:^(BOOL finished) {
         self.toolView.hidden=YES;
@@ -108,7 +108,7 @@
     
     self.toolView.hidden=NO;
     [UIView animateWithDuration:.25 animations:^{
-        self.toolView.bottom=[UIScreen mainScreen].bounds.size.height-self.keyboardH;
+        self.toolView.BTBottom=[UIScreen mainScreen].bounds.size.height-self.keyboardH;
     } completion:^(BOOL finished) {
     }];
 }
@@ -163,16 +163,16 @@
 
 
 - (void)initSelf{
-    UIView * viewLine=[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, .5)];
-    viewLine.backgroundColor=[UIColor RGBSame:235];
+    UIView * viewLine=[[UIView alloc] initWithFrame:CGRectMake(0, 0, self.BTWidth, .5)];
+    viewLine.backgroundColor=[UIColor bt_RGBSame:235];
     [self addSubview:viewLine];
     
-    self.btnVoice = [[UIButton alloc] initWithSize:CGSizeMake(55, 55)];
+    self.btnVoice = [[UIButton alloc] initBTViewWithSize:CGSizeMake(55, 55)];
     [self addSubview:self.btnVoice];
     [self.btnVoice addTarget:self action:@selector(statusClick) forControlEvents:UIControlEventTouchUpInside];
     
     
-    self.btnCommit=[[UIButton alloc] initWithSize:CGSizeMake(55, 55)];
+    self.btnCommit=[[UIButton alloc] initBTViewWithSize:CGSizeMake(55, 55)];
     [self.btnCommit addTarget:self action:@selector(saveClick) forControlEvents:UIControlEventTouchUpInside];
     [self.btnCommit setTitle:@"发布" forState:UIControlStateNormal];
     [self.btnCommit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
@@ -180,14 +180,14 @@
     [self addSubview:self.btnCommit];
     
     
-    _textView=[[BTTextView alloc] initWithSize:CGSizeMake(100, self.basicHeight-20)];
+    _textView=[[BTTextView alloc] initBTViewWithSize:CGSizeMake(100, self.basicHeight-20)];
     [self.textView setTextContainerInset:UIEdgeInsetsMake(8, 5, 8, 5)];
     self.textView.font=[UIFont systemFontOfSize:16];
-    self.textView.textColor=[UIColor R:74 G:76 B:95];
-    self.textView.corner=5;
-    self.textView.borderColor=[UIColor RGBSame:234];
-    self.textView.borderWidth=.5;
-    self.textView.placeHolderColor=[UIColor RGBSame:198];
+    self.textView.textColor=[UIColor bt_R:74 G:76 B:95];
+    self.textView.BTCorner=5;
+    self.textView.BTBorderColor=[UIColor bt_RGBSame:234];
+    self.textView.BTBorderWidth=.5;
+    self.textView.placeHolderColor=[UIColor bt_RGBSame:198];
     self.textView.placeHolder=@"请输入评论";
     self.textView.maxStrNum=140;
     self.textView.blockMax = ^{
@@ -204,9 +204,9 @@
     
     self.btnPressVoice = [UIButton buttonWithType:UIButtonTypeCustom];
     self.btnPressVoice.frame = self.textView.frame;
-    self.btnPressVoice.borderWidth = 0.5;
-    self.btnPressVoice.borderColor = [UIColor lightGrayColor];
-    self.btnPressVoice.corner = 5;
+    self.btnPressVoice.BTBorderWidth = 0.5;
+    self.btnPressVoice.BTBorderColor = [UIColor lightGrayColor];
+    self.btnPressVoice.BTCorner = 5;
     [self.btnPressVoice setTitle:@"按住说话" forState:UIControlStateNormal];
     [self.btnPressVoice setTitleColor:UIColor.grayColor forState:UIControlStateNormal];
     self.btnPressVoice.titleLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightMedium];
@@ -221,13 +221,13 @@
         case BTTextInputViewTypeNoVoice:
             self.btnVoice.hidden = YES;
             self.btnPressVoice.hidden = YES;
-            self.textView.frame=CGRectMake(15, 10, self.width-15-self.btnCommit.width, self.height-20);
-            self.btnCommit.frame=CGRectMake(self.textView.right, 0, self.btnCommit.width, self.height);
+            self.textView.frame=CGRectMake(15, 10, self.BTWidth-15-self.btnCommit.BTWidth, self.BTHeight-20);
+            self.btnCommit.frame=CGRectMake(self.textView.BTRight, 0, self.btnCommit.BTWidth, self.BTHeight);
             break;
         case BTTextInputViewTypeAll:
-            self.btnVoice.frame = CGRectMake(0, 0, self.btnVoice.width, self.height);
-            self.textView.frame = CGRectMake(self.btnVoice.right, 10, self.width-self.btnVoice.right-self.btnCommit.width, self.height-20);
-            self.btnCommit.frame = CGRectMake(self.textView.right, 0, self.btnCommit.width, self.height);
+            self.btnVoice.frame = CGRectMake(0, 0, self.btnVoice.BTWidth, self.BTHeight);
+            self.textView.frame = CGRectMake(self.btnVoice.BTRight, 10, self.BTWidth-self.btnVoice.BTRight-self.btnCommit.BTWidth, self.BTHeight-20);
+            self.btnCommit.frame = CGRectMake(self.textView.BTRight, 0, self.btnCommit.BTWidth, self.BTHeight);
             self.btnPressVoice.frame = self.textView.frame;
             break;
     }
@@ -293,13 +293,13 @@
         [self.btnVoice setImage:self.voiceImg forState:UIControlStateNormal];
         self.btnPressVoice.hidden = YES;
         self.textView.hidden = NO;
-        self.height = self.lastHeight;
+        self.BTHeight = self.lastHeight;
         if (self.delegate && [self.delegate respondsToSelector:@selector(BTTextInputToolViewChangeToText:)]) {
             [self.delegate BTTextInputToolViewChangeToText:self];
         }
     }else{
-        self.lastHeight = self.height;
-        self.height = self.basicHeight;
+        self.lastHeight = self.BTHeight;
+        self.BTHeight = self.basicHeight;
         [self.btnVoice setImage:self.keyboardImg forState:UIControlStateNormal];
         self.btnPressVoice.hidden = NO;
         self.textView.hidden = YES;

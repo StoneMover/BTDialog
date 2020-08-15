@@ -59,11 +59,11 @@
 }
 
 -(void)layoutSubviews{
-    self.label.left = 0;
-    self.label.centerY = self.height / 2;
-    self.labelNext.centerY = self.label.centerY;
-    self.labelNext.left = self.label.right + self.margin;
-    if (self.label.right > self.width) {
+    self.label.BTLeft = 0;
+    self.label.BTCenterY = self.BTHeight / 2;
+    self.labelNext.BTCenterY = self.label.BTCenterY;
+    self.labelNext.BTLeft = self.label.BTRight + self.margin;
+    if (self.label.BTRight > self.BTWidth) {
         self.labelNext.hidden=NO;
     }else{
         self.labelNext.hidden=YES;
@@ -95,7 +95,7 @@
 
 -(void)startRound{
     [UIView animateWithDuration:self.animTime delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionCurveLinear animations:^{
-        self.label.right = self.width;
+        self.label.BTRight = self.BTWidth;
     } completion:^(BOOL finished) {
         
     }];
@@ -103,8 +103,8 @@
 
 -(void)startBy{
     [UIView animateWithDuration:self.animTime delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-        self.label.right = - self.margin ;
-        self.labelNext.left = 0;
+        self.label.BTRight = - self.margin ;
+        self.labelNext.BTLeft = 0;
     } completion:^(BOOL finished) {
         [self layoutSubviews];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

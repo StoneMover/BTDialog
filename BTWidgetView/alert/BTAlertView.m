@@ -23,7 +23,7 @@
 @implementation BTAlertView
 
 - (instancetype)initWithcontentView:(UIView*)contentView{
-    self = [super initWithFrame:CGRectMake(0, 0, BTUtils.SCREEN_W-106, contentView.height+88)];
+    self = [super initWithFrame:CGRectMake(0, 0, BTUtils.SCREEN_W-106, contentView.BTHeight+88)];
     self.contentView = contentView;
     [self initSelf];
     return self;
@@ -43,7 +43,7 @@
     self.clipsToBounds = YES;
     
     self.labelTitle = [UILabel new];
-    self.labelTitle.textColor = [UIColor RGBSame:5];
+    self.labelTitle.textColor = [UIColor bt_RGBSame:5];
     self.labelTitle.numberOfLines = 1;
     self.labelTitle.font = [UIFont systemFontOfSize:19 weight:UIFontWeightMedium];
     self.labelTitle.textAlignment = NSTextAlignmentCenter;
@@ -52,45 +52,45 @@
     self.btnCancel = [[UIButton alloc] init];
     self.btnCancel.titleLabel.font = [UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
     [self.btnCancel setTitle:@"取消" forState:UIControlStateNormal];
-    [self.btnCancel setTitleColor:[UIColor RGBSame:19] forState:UIControlStateNormal];
+    [self.btnCancel setTitleColor:[UIColor bt_RGBSame:19] forState:UIControlStateNormal];
     [self.btnCancel addTarget:self action:@selector(cancelClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.btnCancel setBackgroundImage:[UIImage imageWithColor:[UIColor RGBSame:219] size:CGSizeMake(100, 100)] forState:UIControlStateHighlighted];
+    [self.btnCancel setBackgroundImage:[UIImage bt_imageWithColor:[UIColor bt_RGBSame:219] size:CGSizeMake(100, 100)] forState:UIControlStateHighlighted];
     
     self.btnOk = [[UIButton alloc] init];
     self.btnOk.titleLabel.font = [UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
     [self.btnOk setTitle:@"确定" forState:UIControlStateNormal];
-    [self.btnOk setBackgroundImage:[UIImage imageWithColor:[UIColor RGBSame:219] size:CGSizeMake(100, 100)] forState:UIControlStateHighlighted];
+    [self.btnOk setBackgroundImage:[UIImage bt_imageWithColor:[UIColor bt_RGBSame:219] size:CGSizeMake(100, 100)] forState:UIControlStateHighlighted];
     [self.btnOk setTitleColor:UIColor.systemBlueColor forState:UIControlStateNormal];
     [self.btnOk addTarget:self action:@selector(okClick) forControlEvents:UIControlEventTouchUpInside];
     
     self.viewLineHoz = [UIView new];
-    self.viewLineHoz.backgroundColor = [UIColor RGBASame:77 A:0.25];
+    self.viewLineHoz.backgroundColor = [UIColor bt_RGBASame:77 A:0.25];
     
     
     self.viewLineVertical = [UIView new];
-    self.viewLineVertical.backgroundColor = [UIColor RGBASame:77 A:0.25];
+    self.viewLineVertical.backgroundColor = [UIColor bt_RGBASame:77 A:0.25];
     
     
-    [self addSubViewArray:@[self.labelTitle,self.contentView,self.btnCancel,self.btnOk,self.viewLineVertical,self.viewLineHoz]];
+    [self bt_addSubViewArray:@[self.labelTitle,self.contentView,self.btnCancel,self.btnOk,self.viewLineVertical,self.viewLineHoz]];
     
 }
 
 - (void)layoutSubviews{
     self.effectView.frame = self.bounds;
-    self.labelTitle.frame = CGRectMake(10, 18, self.width-20, 24);
-    self.contentView.frame = CGRectMake(0, self.labelTitle.bottom, self.width, self.contentView.height);
+    self.labelTitle.frame = CGRectMake(10, 18, self.BTWidth-20, 24);
+    self.contentView.frame = CGRectMake(0, self.labelTitle.BTBottom, self.BTWidth, self.contentView.BTHeight);
     if (self.isJustOkBtn) {
         self.btnCancel.hidden = YES;
         self.viewLineVertical.hidden = YES;
-        self.btnOk.frame = CGRectMake(0, self.height-46, self.width, 46);
-        self.viewLineHoz.frame = CGRectMake(0, self.btnOk.top, self.width, .5);
+        self.btnOk.frame = CGRectMake(0, self.BTHeight-46, self.BTWidth, 46);
+        self.viewLineHoz.frame = CGRectMake(0, self.btnOk.BTTop, self.BTWidth, .5);
     }else{
         self.btnCancel.hidden = NO;
         self.viewLineVertical.hidden = NO;
-        self.btnCancel.frame = CGRectMake(0, self.height-46, self.width/2.0, 46);
-        self.btnOk.frame = CGRectMake(self.btnCancel.right, self.btnCancel.top, self.btnCancel.width, self.btnCancel.height);
-        self.viewLineHoz.frame = CGRectMake(0, self.btnOk.top, self.width, .5);
-        self.viewLineVertical.frame = CGRectMake(self.btnCancel.right, self.btnCancel.top, .5, self.btnCancel.height);
+        self.btnCancel.frame = CGRectMake(0, self.BTHeight-46, self.BTWidth/2.0, 46);
+        self.btnOk.frame = CGRectMake(self.btnCancel.BTRight, self.btnCancel.BTTop, self.btnCancel.BTWidth, self.btnCancel.BTHeight);
+        self.viewLineHoz.frame = CGRectMake(0, self.btnOk.BTTop, self.BTWidth, .5);
+        self.viewLineVertical.frame = CGRectMake(self.btnCancel.BTRight, self.btnCancel.BTTop, .5, self.btnCancel.BTHeight);
     }
 }
 

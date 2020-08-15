@@ -10,27 +10,27 @@
 
 @implementation UIColor (BTColor)
 
-+ (UIColor*)R:(CGFloat)R G:(CGFloat)G B:(CGFloat)B{
++ (UIColor*)bt_R:(CGFloat)R G:(CGFloat)G B:(CGFloat)B{
     return [UIColor colorWithRed:(R)/255.0 green:(G)/255.0 blue:(B)/255.0 alpha:1];
 }
 
-+ (UIColor*)RGBSame:(CGFloat)value{
++ (UIColor*)bt_RGBSame:(CGFloat)value{
     return [UIColor colorWithRed:(value)/255.0 green:(value)/255.0 blue:(value)/255.0 alpha:1];
 }
 
-+ (UIColor*)R:(CGFloat)R G:(CGFloat)G B:(CGFloat)B A:(CGFloat)A{
++ (UIColor*)bt_R:(CGFloat)R G:(CGFloat)G B:(CGFloat)B A:(CGFloat)A{
     return [UIColor colorWithRed:(R)/255.0 green:(G)/255.0 blue:(B)/255.0 alpha:A];
 }
 
-+ (UIColor*)RGBASame:(CGFloat)value A:(CGFloat)A{
++ (UIColor*)bt_RGBASame:(CGFloat)value A:(CGFloat)A{
     return [UIColor colorWithRed:(value)/255.0 green:(value)/255.0 blue:(value)/255.0 alpha:A];
 }
 
-+ (UIColor*)RANDOM_COLOR{
-    return [UIColor R:arc4random_uniform(256) G:arc4random_uniform(256) B:arc4random_uniform(256)];
++ (UIColor*)bt_RANDOM_COLOR{
+    return [UIColor bt_R:arc4random_uniform(256) G:arc4random_uniform(256) B:arc4random_uniform(256)];
 }
 
-+ (UIColor *)colorWithHexString: (NSString *)color
++ (UIColor *)bt_colorWithHexString: (NSString *)color
 {
     NSString *cString = [[color stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     

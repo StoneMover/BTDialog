@@ -38,7 +38,7 @@
     self.labelBage.layer.cornerRadius=self.labelBageHeight==0?6:self.labelBageHeight/2.0;
     self.labelBage.clipsToBounds=YES;
     self.labelBage.textColor=[UIColor whiteColor];
-    self.labelBage.backgroundColor=[UIColor R:247 G:89 B:89];
+    self.labelBage.backgroundColor=[UIColor bt_R:247 G:89 B:89];
     [self addSubview:self.labelBage];
 }
 
@@ -84,14 +84,14 @@
         self.labelBage.hidden=NO;
         self.labelBage.text=self.bageNum;
         [self.labelBage sizeToFit];
-        self.labelBage.height=self.labelBageHeight==0?12:self.labelBageHeight;
-        if (self.labelBage.width>self.labelBage.height) {
-            self.labelBage.width+=4;
+        self.labelBage.BTHeight=self.labelBageHeight==0?12:self.labelBageHeight;
+        if (self.labelBage.BTWidth>self.labelBage.BTHeight) {
+            self.labelBage.BTWidth+=4;
         }else{
-            self.labelBage.width=self.labelBage.height;
+            self.labelBage.BTWidth=self.labelBage.BTHeight;
         }
         
-        self.labelBage.center=CGPointMake(self.imageView.right+self.lefDistance, self.imageView.top+self.topDistance);
+        self.labelBage.center=CGPointMake(self.imageView.BTRight+self.lefDistance, self.imageView.BTTop+self.topDistance);
     }
     
     

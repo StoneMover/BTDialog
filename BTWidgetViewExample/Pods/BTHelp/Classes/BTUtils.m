@@ -478,23 +478,23 @@
     if ([BTUtils isEmpty:phone]) {
         return @"";
     }
-    return phone.phoneEncrypt;
+    return phone.bt_phoneEncrypt;
 }
 
 + (BOOL)isStrAllNumber:(nullable NSString*)checkedNumString{
-    return checkedNumString.isStrAllNumber;
+    return checkedNumString.bt_isStrAllNumber;
 }
 
 + (NSString*)base64Decode:(NSString*)str{
-    return str.base64Decode;
+    return str.bt_base64Decode;
 }
 
 + (NSString*)base64Encode:(NSString*)str{
-    return str.base64Encode;
+    return str.bt_base64Encode;
 }
 
 + (NSString*)MD5:(NSString*)str{
-    return str.md5;
+    return str.bt_md5;
 }
 
 + (NSString*)createJsStr:(NSString*)name,...{
@@ -521,40 +521,40 @@
 }
 
 + (CGFloat)calculateStrHeight:(NSString*)str width:(CGFloat)width font:(UIFont*)font{
-    return [str calculateStrHeight:width font:font];
+    return [str bt_calculateStrHeight:width font:font];
 }
 
 + (CGFloat)calculateStrHeight:(NSString*)str width:(CGFloat)width font:(UIFont*)font lineSpeace:(CGFloat)lineSpeace{
-    return [str calculateStrHeight:width font:font lineSpeace:lineSpeace];
+    return [str bt_calculateStrHeight:width font:font lineSpeace:lineSpeace];
 }
 
 + (CGFloat)calculateStrWidth:(NSString*)str height:(CGFloat)height font:(UIFont*)font{
-    return [str calculateStrWidth:height font:font];
+    return [str bt_calculateStrWidth:height font:font];
 }
 
 + (CGFloat)calculateLabelHeight:(UILabel*)label{
-    return [label.text calculateStrHeight:label.frame.size.width font:label.font];
+    return [label.text bt_calculateStrHeight:label.frame.size.width font:label.font];
 }
 
 
 + (CGFloat)calculateLabelWidth:(UILabel*)label{
-    return [label.text calculateStrWidth:label.frame.size.height font:label.font];
+    return [label.text bt_calculateStrWidth:label.frame.size.height font:label.font];
 }
 
 + (UIImage*)circleImage:(UIImage*)image{
-    return image.circleImage;
+    return image.bt_circleImage;
 }
 
 + (NSDictionary *)convertJsonToDict:(NSString *)jsonString {
-    return jsonString.toDict;
+    return jsonString.bt_toDict;
 }
 
 + (NSArray *)convertJsonToArray:(NSString *)jsonString {
-    return jsonString.toArray;
+    return jsonString.bt_toArray;
 }
 
 + (UIColor*)RGB:(CGFloat)R G:(CGFloat)G B:(CGFloat)B{
-    return [UIColor R:R G:G B:B];
+    return [UIColor bt_R:R G:G B:B];
 }
 
 + (UIColor*)RGBA:(CGFloat)R G:(CGFloat)G B:(CGFloat)B A:(CGFloat)A{

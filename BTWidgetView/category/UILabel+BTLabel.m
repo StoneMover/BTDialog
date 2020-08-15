@@ -125,15 +125,15 @@
 }
 
 - (CGFloat)bt_calculateLabelHeight{
-    return [self.text calculateStrHeight:self.frame.size.width font:self.font];
+    return [self.text bt_calculateStrHeight:self.frame.size.width font:self.font];
 }
 
 
 - (CGFloat)bt_calculateLabelWidth{
-    return [self.text calculateStrWidth:self.frame.size.height font:self.font];
+    return [self.text bt_calculateStrWidth:self.frame.size.height font:self.font];
 }
 
-- (instancetype)initWithColor:(UIColor*)color font:(UIFont*)font{
+- (instancetype)initBTLabelWithColor:(UIColor*)color font:(UIFont*)font{
     self = [super initWithFrame:CGRectZero];
     self.textColor = color;
     self.font = font;

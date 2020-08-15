@@ -53,12 +53,12 @@
     CGPoint point = [tap locationInView:self];
     switch (self.style) {
         case BTSlideStyleLeft:
-            if (point.x > self.slideView.width) {
+            if (point.x > self.slideView.BTWidth) {
                 [self dismiss];
             }
             break;
         case BTSlideStyleRight:
-            if (point.x < self.width - self.slideView.width) {
+            if (point.x < self.BTWidth - self.slideView.BTWidth) {
                 [self dismiss];
             }
             break;
@@ -84,25 +84,25 @@
                 CGPoint transP = [sender translationInView:self];
                 CGFloat x = transP.x;
                 
-                self.slideView.left += x;
+                self.slideView.BTLeft += x;
                 switch (self.style) {
                     case BTSlideStyleLeft:
-                        if (self.slideView.left > 0) {
-                            self.slideView.left = 0;
+                        if (self.slideView.BTLeft > 0) {
+                            self.slideView.BTLeft = 0;
                         }
 
-                        if (self.slideView.left < -self.slideView.width) {
-                            self.slideView.left = -self.slideView.width;
+                        if (self.slideView.BTLeft < -self.slideView.BTWidth) {
+                            self.slideView.BTLeft = -self.slideView.BTWidth;
                         }
 
                         break;
                     case BTSlideStyleRight:
-                        if (self.slideView.left < self.width - self.slideView.width) {
-                            self.slideView.left = self.width - self.slideView.width;
+                        if (self.slideView.BTLeft < self.BTWidth - self.slideView.BTWidth) {
+                            self.slideView.BTLeft = self.BTWidth - self.slideView.BTWidth;
                         }
 
-                        if (x > self.width) {
-                            self.slideView.left = self.width;
+                        if (x > self.BTWidth) {
+                            self.slideView.BTLeft = self.BTWidth;
                         }
                         break;
                 }
@@ -124,21 +124,21 @@
 //            NSLog(@"UIGestureRecognizerStateEnded");
             switch (self.style) {
                 case BTSlideStyleLeft:
-                    if (fabs(0 - self.slideView.left) > self.slideView.width / 3.0) {
+                    if (fabs(0 - self.slideView.BTLeft) > self.slideView.BTWidth / 3.0) {
                         [self dismiss];
                     }else{
                         [UIView animateWithDuration:.3 animations:^{
-                            self.slideView.left = 0;
+                            self.slideView.BTLeft = 0;
                         }];
                     }
 
                     break;
                 case BTSlideStyleRight:
-                    if (fabs(self.width - self.slideView.width - self.slideView.left) > self.slideView.width / 3.0) {
+                    if (fabs(self.BTWidth - self.slideView.BTWidth - self.slideView.BTLeft) > self.slideView.BTWidth / 3.0) {
                         [self dismiss];
                     }else{
                         [UIView animateWithDuration:.3 animations:^{
-                            self.slideView.left = self.width - self.slideView.width;
+                            self.slideView.BTLeft = self.BTWidth - self.slideView.BTWidth;
                         }];
                     }
                     break;
@@ -162,25 +162,25 @@
 
 
 - (void)show:(UIView *)parentView{
-    self.backgroundColor = [UIColor RGBASame:0 A:0];
+    self.backgroundColor = [UIColor bt_RGBASame:0 A:0];
     self.frame = parentView.bounds;
     [parentView addSubview:self];
     switch (self.style) {
         case BTSlideStyleLeft:
-            self.slideView.left = -self.slideView.width;
+            self.slideView.BTLeft = -self.slideView.BTWidth;
             break;
         case BTSlideStyleRight:
-            self.slideView.left = self.width;
+            self.slideView.BTLeft = self.BTWidth;
             break;
     }
     [UIView animateWithDuration:.3 animations:^{
-        self.backgroundColor = [UIColor RGBASame:0 A:0.65];
+        self.backgroundColor = [UIColor bt_RGBASame:0 A:0.65];
         switch (self.style) {
             case BTSlideStyleLeft:
-                self.slideView.left = 0;
+                self.slideView.BTLeft = 0;
                 break;
             case BTSlideStyleRight:
-                self.slideView.left = self.width - self.slideView.width;
+                self.slideView.BTLeft = self.BTWidth - self.slideView.BTWidth;
                 break;
         }
     }];
@@ -190,13 +190,13 @@
 
 - (void)dismiss{
     [UIView animateWithDuration:.3 animations:^{
-        self.backgroundColor = [UIColor RGBASame:0 A:0];
+        self.backgroundColor = [UIColor bt_RGBASame:0 A:0];
         switch (self.style) {
             case BTSlideStyleLeft:
-                self.slideView.left = -self.slideView.width;
+                self.slideView.BTLeft = -self.slideView.BTWidth;
                 break;
             case BTSlideStyleRight:
-                self.slideView.left = self.width;
+                self.slideView.BTLeft = self.BTWidth;
                 break;
         }
         

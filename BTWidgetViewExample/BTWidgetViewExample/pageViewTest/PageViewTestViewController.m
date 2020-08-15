@@ -51,8 +51,8 @@
     label.font=[UIFont systemFontOfSize:146 weight:UIFontWeightBold];
     label.text=[NSString stringWithFormat:@"%ld",index];
     label.textAlignment=NSTextAlignmentCenter;
-    label.textColor=UIColor.RANDOM_COLOR;
-    label.backgroundColor=UIColor.RANDOM_COLOR;
+    label.textColor=UIColor.bt_RANDOM_COLOR;
+    label.backgroundColor=UIColor.bt_RANDOM_COLOR;
     return label;
 }
 
@@ -62,7 +62,7 @@
 }
 
 - (CGRect)pageViewContentFrame:(BTPageView*)pageView{
-    return CGRectMake(0, 40, self.view.width, self.view.height-40);
+    return CGRectMake(0, 40, self.view.BTWidth, self.view.BTHeight-40);
 }
 
 - (CGPoint)pageViewHeadOrigin:(BTPageView *)pageView{

@@ -12,84 +12,84 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (BTViewTool)
 
-- (instancetype)initWithSubView:(UIView*)subView;
-- (instancetype)initWithSize:(CGSize)size;
-- (instancetype)initWithEqualSize:(CGFloat)size;
+- (instancetype)initBTViewWithSubView:(UIView*)subView;
+- (instancetype)initBTViewWithSize:(CGSize)size;
+- (instancetype)initBTViewWithEqualSize:(CGFloat)size;
 
 
 #pragma mark 位置坐标相关方法
 
-- (void)setWidth:(CGFloat)width;
-- (CGFloat)width;
+- (void)setBTWidth:(CGFloat)width;
+- (CGFloat)BTWidth;
 
-- (void)setHeight:(CGFloat)height;
-- (CGFloat)height;
+- (void)setBTHeight:(CGFloat)height;
+- (CGFloat)BTHeight;
 
-- (void)setLeft:(CGFloat)left;
-- (CGFloat)left;
+- (void)setBTLeft:(CGFloat)left;
+- (CGFloat)BTLeft;
 
-- (void)setRight:(CGFloat)right;
-- (CGFloat)right;
+- (void)setBTRight:(CGFloat)right;
+- (CGFloat)BTRight;
 
-- (void)setTop:(CGFloat)top;
-- (CGFloat)top;
+- (void)setBTTop:(CGFloat)top;
+- (CGFloat)BTTop;
 
-- (void)setBottom:(CGFloat)bottom;
-- (CGFloat)bottom;
+- (void)setBTBottom:(CGFloat)bottom;
+- (CGFloat)BTBottom;
 
-- (void)setCenterY:(CGFloat)centerY;
-- (CGFloat)centerY;
+- (void)setBTCenterY:(CGFloat)centerY;
+- (CGFloat)BTCenterY;
 
-- (void)setCenterX:(CGFloat)centerX;
-- (CGFloat)centerX;
+- (void)setBTCenterX:(CGFloat)centerX;
+- (CGFloat)BTCenterX;
 
-- (void)setSize:(CGSize)size;
-- (CGSize)size;
+- (void)setBTSize:(CGSize)size;
+- (CGSize)BTSize;
 
-- (void)setOrigin:(CGPoint)point;
-- (CGPoint)origin;
+- (void)setBTOrigin:(CGPoint)point;
+- (CGPoint)BTOrigin;
 
 #pragma mark 圆角相关处理
-@property (nonatomic, assign) CGFloat corner;
+@property (nonatomic, assign) CGFloat BTCorner;
     
-@property (nonatomic, assign) CGFloat borderWidth;
+@property (nonatomic, assign) CGFloat BTBorderWidth;
     
-@property (nonatomic, strong) UIColor * borderColor;
+@property (nonatomic, strong) UIColor * BTBorderColor;
     
-- (void)setCorner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor*)borderColor;
+- (void)setBTCorner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor*)borderColor;
     
-- (void)setCornerRadiusBottom:(CGFloat)corner;
-- (void)setCornerRadiusTop:(CGFloat)corner;
-- (void)setCornerRadiusLeft:(CGFloat)corner;
-- (void)setCornerRadiusRight:(CGFloat)corner;
+- (void)setBTCornerRadiusBottom:(CGFloat)corner;
+- (void)setBTCornerRadiusTop:(CGFloat)corner;
+- (void)setBTCornerRadiusLeft:(CGFloat)corner;
+- (void)setBTCornerRadiusRight:(CGFloat)corner;
     
 
 
 #pragma mark 其它
 //获取当前的VC
-- (UIViewController*)viewController;
+- (nullable UIViewController*)bt_viewController;
 
 //移除子view
-- (void)removeChild:(UIView*)childView;
+- (void)bt_removeChild:(UIView*)childView;
 
 //移除所有子view
-- (void)removeAllChildView;
+- (void)bt_removeAllChildView;
 
 //设置默认的阴影效果
-- (void)setDefaultShade;
+- (void)setBTDefaultShade;
 
 //设置阴影效果
-- (void)setShade:(CGFloat)opacity radius:(CGFloat)radius;
-- (void)setShade:(CGFloat)opacity color:(UIColor*)color radius:(CGFloat)radius offset:(CGSize)size;
+- (void)setBTShade:(CGFloat)opacity radius:(CGFloat)radius;
+- (void)setBTShade:(CGFloat)opacity color:(UIColor*)color radius:(CGFloat)radius offset:(CGSize)size;
 
 //从xib中加载对象
-+ (instancetype)loadInstanceFromNib;
++ (instancetype)BTLoadInstanceFromNib;
 
 //添加view
-- (void)addSubViewArray:(NSArray<UIView*>*)subviews;
+- (void)bt_addSubViewArray:(NSArray<UIView*>*)subviews;
 
 //生成当前view的图片
-- (UIImage*)selfImg;
+- (UIImage*)bt_selfImg;
 
 @end
 

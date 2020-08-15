@@ -10,135 +10,135 @@
 
 @implementation UIView (BTViewTool)
 
-- (instancetype)initWithSubView:(UIView*)subView{
+- (instancetype)initBTViewWithSubView:(UIView*)subView{
     self=[self initWithFrame:subView.bounds];
     [self addSubview:subView];
     return self;
 }
 
-- (instancetype)initWithSize:(CGSize)size{
+- (instancetype)initBTViewWithSize:(CGSize)size{
    return [self initWithFrame:CGRectMake(0, 0, size.width, size.height)];
 }
 
-- (instancetype)initWithEqualSize:(CGFloat)size{
+- (instancetype)initBTViewWithEqualSize:(CGFloat)size{
     return [self initWithFrame:CGRectMake(0, 0, size, size)];
 }
 
 
-- (void)setWidth:(CGFloat)width{
-    self.frame=CGRectMake(self.left, self.top, width, self.height);
+- (void)setBTWidth:(CGFloat)width{
+    self.frame=CGRectMake(self.BTLeft, self.BTTop, width, self.BTHeight);
 }
 
-- (CGFloat)width{
+- (CGFloat)BTWidth{
     return self.frame.size.width;
 }
 
-- (void)setHeight:(CGFloat)height{
-    self.frame=CGRectMake(self.left, self.top, self.width, height);
+- (void)setBTHeight:(CGFloat)height{
+    self.frame=CGRectMake(self.BTLeft, self.BTTop, self.BTWidth, height);
 }
 
-- (CGFloat)height{
+- (CGFloat)BTHeight{
     return self.frame.size.height;
 }
 
-- (void)setLeft:(CGFloat)left{
-    self.frame=CGRectMake(left, self.top, self.width, self.height);
+- (void)setBTLeft:(CGFloat)left{
+    self.frame=CGRectMake(left, self.BTTop, self.BTWidth, self.BTHeight);
 }
 
-- (CGFloat)left{
+- (CGFloat)BTLeft{
     return self.frame.origin.x;
 }
 
-- (void)setRight:(CGFloat)right{
-    self.frame=CGRectMake(right-self.width, self.top, self.width, self.height);
+- (void)setBTRight:(CGFloat)right{
+    self.frame=CGRectMake(right-self.BTWidth, self.BTTop, self.BTWidth, self.BTHeight);
 }
 
-- (CGFloat)right{
+- (CGFloat)BTRight{
     return self.frame.origin.x+self.frame.size.width;
 }
 
-- (void)setTop:(CGFloat)top{
-    self.frame=CGRectMake(self.left, top, self.width, self.height);
+- (void)setBTTop:(CGFloat)top{
+    self.frame=CGRectMake(self.BTLeft, top, self.BTWidth, self.BTHeight);
 }
 
-- (CGFloat)top{
+- (CGFloat)BTTop{
     return self.frame.origin.y;
 }
 
-- (void)setBottom:(CGFloat)bottom{
-    self.frame=CGRectMake(self.left, bottom-self.height, self.width, self.height);
+- (void)setBTBottom:(CGFloat)bottom{
+    self.frame=CGRectMake(self.BTLeft, bottom-self.BTHeight, self.BTWidth, self.BTHeight);
 }
 
-- (CGFloat)bottom{
+- (CGFloat)BTBottom{
     return self.frame.origin.y+self.frame.size.height;
 }
 
 
 
-- (void)setCenterY:(CGFloat)centerY{
-    self.center=CGPointMake(self.centerX, centerY);
+- (void)setBTCenterY:(CGFloat)centerY{
+    self.center=CGPointMake(self.BTCenterX, centerY);
 }
-- (CGFloat)centerY{
+- (CGFloat)BTCenterY{
     return self.center.y;
 }
 
-- (void)setCenterX:(CGFloat)centerX{
-    self.center=CGPointMake(centerX, self.centerY);
+- (void)setBTCenterX:(CGFloat)centerX{
+    self.center=CGPointMake(centerX, self.BTCenterY);
 }
-- (CGFloat)centerX{
+- (CGFloat)BTCenterX{
     return self.center.x;
 }
 
-- (void)setSize:(CGSize)size{
-    self.frame = CGRectMake(self.origin.x, self.origin.y, size.width, self.height);
+- (void)setBTSize:(CGSize)size{
+    self.frame = CGRectMake(self.BTOrigin.x, self.BTOrigin.y, size.width, size.height);
 }
 
-- (CGSize)size{
+- (CGSize)BTSize{
     return self.frame.size;
 }
 
-- (void)setOrigin:(CGPoint)point{
-    self.frame = CGRectMake(point.x, point.y, self.size.width, self.size.width);
+- (void)setBTOrigin:(CGPoint)point{
+    self.frame = CGRectMake(point.x, point.y, self.BTSize.width, self.BTSize.height);
 }
 
-- (CGPoint)origin{
+- (CGPoint)BTOrigin{
     return self.frame.origin;
 }
 
-- (void)setCorner:(CGFloat)corner{
+- (void)setBTCorner:(CGFloat)corner{
     self.layer.cornerRadius=corner;
     self.clipsToBounds=YES;
 }
 
-- (CGFloat)corner{
+- (CGFloat)BTCorner{
     return self.layer.cornerRadius;
 }
     
-- (void)setBorderColor:(UIColor *)borderColor{
+- (void)setBTBorderColor:(UIColor *)borderColor{
     self.layer.borderColor=borderColor.CGColor;
 }
     
-- (UIColor*)borderColor{
+- (UIColor*)BTBorderColor{
     //不知道怎么用CGColor转Color
     return [UIColor whiteColor];
 }
     
-- (void)setBorderWidth:(CGFloat)borderWidth{
+- (void)setBTBorderWidth:(CGFloat)borderWidth{
     self.layer.borderWidth=borderWidth;
 }
     
-- (CGFloat)borderWidth{
+- (CGFloat)BTBorderWidth{
     return self.layer.borderWidth;
 }
 
-- (void)setCorner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor*)borderColor{
+- (void)setBTCorner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor*)borderColor{
     self.layer.cornerRadius=corner;
     self.layer.borderColor=borderColor.CGColor;
     self.layer.borderWidth=borderWidth;
     self.clipsToBounds=YES;
 }
 
-- (void)setCornerRadiusBottom:(CGFloat)corner{
+- (void)setBTCornerRadiusBottom:(CGFloat)corner{
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:UIRectCornerBottomLeft | UIRectCornerBottomRight cornerRadii:CGSizeMake(corner, corner)];
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     maskLayer.frame = self.bounds;
@@ -146,7 +146,7 @@
     self.layer.mask = maskLayer;
 }
     
-- (void)setCornerRadiusTop:(CGFloat)corner{
+- (void)setBTCornerRadiusTop:(CGFloat)corner{
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(corner, corner)];
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     maskLayer.frame = self.bounds;
@@ -154,7 +154,7 @@
     self.layer.mask = maskLayer;
 }
     
-- (void)setCornerRadiusLeft:(CGFloat)corner{
+- (void)setBTCornerRadiusLeft:(CGFloat)corner{
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerBottomLeft cornerRadii:CGSizeMake(corner, corner)];
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     maskLayer.frame = self.bounds;
@@ -162,7 +162,7 @@
     self.layer.mask = maskLayer;
 }
     
-- (void)setCornerRadiusRight:(CGFloat)corner{
+- (void)setBTCornerRadiusRight:(CGFloat)corner{
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:UIRectCornerTopRight | UIRectCornerBottomRight cornerRadii:CGSizeMake(corner, corner)];
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
     maskLayer.frame = self.bounds;
@@ -170,7 +170,7 @@
     self.layer.mask = maskLayer;
 }
     
-- (void)removeChild:(UIView*)childView{
+- (void)bt_removeChild:(UIView*)childView{
     if (!childView) {
         return;
     }
@@ -181,13 +181,13 @@
         }
     }
 }
-- (void)removeAllChildView{
+- (void)bt_removeAllChildView{
     for (UIView * view in self.subviews) {
         [view removeFromSuperview];
     }
 }
 
-- (UIViewController *)viewController {
+- (nullable UIViewController *)bt_viewController {
     for (UIView *view = self; view; view = view.superview) {
         UIResponder *nextResponder = [view nextResponder];
         if ([nextResponder isKindOfClass:[UIViewController class]]) {
@@ -197,15 +197,15 @@
     return nil;
 }
 
-- (void)setDefaultShade{
-    [self setShade:.35 color:[UIColor blackColor] radius:6 offset:CGSizeZero];
+- (void)setBTDefaultShade{
+    [self setBTShade:.35 color:[UIColor blackColor] radius:6 offset:CGSizeZero];
 }
     
-- (void)setShade:(CGFloat)opacity radius:(CGFloat)radius{
-    [self setShade:opacity color:[UIColor blackColor] radius:radius offset:CGSizeZero];
+- (void)setBTShade:(CGFloat)opacity radius:(CGFloat)radius{
+    [self setBTShade:opacity color:[UIColor blackColor] radius:radius offset:CGSizeZero];
 }
     
-- (void)setShade:(CGFloat)opacity color:(UIColor*)color radius:(CGFloat)radius offset:(CGSize)size{
+- (void)setBTShade:(CGFloat)opacity color:(UIColor*)color radius:(CGFloat)radius offset:(CGSize)size{
     self.layer.shadowOpacity=opacity;
     self.layer.shadowColor=color.CGColor;
     self.layer.shadowRadius=radius;
@@ -214,7 +214,7 @@
 
 
 
-+(instancetype)loadInstanceFromNib
++(instancetype)BTLoadInstanceFromNib
 {
     UIView *result = nil;
     NSString * name = NSStringFromClass([self class]);
@@ -233,13 +233,13 @@
     return result;
 }
 
-- (void)addSubViewArray:(NSArray<UIView*>*)subviews{
+- (void)bt_addSubViewArray:(NSArray<UIView*>*)subviews{
     for (UIView * v in subviews) {
         [self addSubview:v];
     }
 }
 
-- (UIImage*)selfImg{
+- (UIImage*)bt_selfImg{
     CGFloat scale =[UIScreen mainScreen].scale;
     UIImage *imageRet = [[UIImage alloc]init];
     //UIGraphicsBeginImageContextWithOptions(区域大小, 是否是非透明的, 屏幕密度);

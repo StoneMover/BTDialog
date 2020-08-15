@@ -24,8 +24,8 @@
     label.font=[UIFont systemFontOfSize:146 weight:UIFontWeightBold];
     label.text=[NSString stringWithFormat:@"%ld",self.index];
     label.textAlignment=NSTextAlignmentCenter;
-    label.textColor=UIColor.RANDOM_COLOR;
-    label.backgroundColor=UIColor.RANDOM_COLOR;
+    label.textColor=UIColor.bt_RANDOM_COLOR;
+    label.backgroundColor=UIColor.bt_RANDOM_COLOR;
     label.autoresizingMask=UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:label];
 }

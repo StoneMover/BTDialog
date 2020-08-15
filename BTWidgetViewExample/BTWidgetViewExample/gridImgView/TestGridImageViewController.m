@@ -39,7 +39,7 @@
     self.gridImgView.addImg = [UIImage imageNamed:@"add"];
     
     self.gridImgView.dataArray = [NSMutableArray new];
-    self.gridImgView.height = self.gridImgView.contentHeight;
+    self.gridImgView.BTHeight = self.gridImgView.contentHeight;
     self.gridImgView.delegate = self;
     
     [self.view addSubview:self.gridImgView];
@@ -58,7 +58,7 @@
         self.iconHelp = [[BTIconHelp alloc] init:self];
         self.iconHelp.block = ^(UIImage *image) {
             [weakSelf.gridImgView.dataArray addObject:image];
-            weakSelf.gridImgView.height = weakSelf.gridImgView.contentHeight;
+            weakSelf.gridImgView.BTHeight = weakSelf.gridImgView.contentHeight;
             [weakSelf.gridImgView reloadData];
         };
     }
@@ -72,7 +72,7 @@
     [alert showCenter];
     alert.okBlock = ^BOOL{
         [self.gridImgView removeDataAtIndex:index];
-        self.gridImgView.height = self.gridImgView.contentHeight;
+        self.gridImgView.BTHeight = self.gridImgView.contentHeight;
         [self.gridImgView reloadData];
         return YES;
     };

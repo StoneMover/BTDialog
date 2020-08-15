@@ -142,7 +142,7 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
 }
 
 - (CGFloat)cellWidth{
-    return (self.width - (self.line-1)*self.space)/self.line;
+    return (self.BTWidth - (self.line-1)*self.space)/self.line;
 }
 
 - (void)setDataArray:(NSMutableArray*)dataArray{

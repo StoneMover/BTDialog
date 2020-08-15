@@ -109,7 +109,7 @@ const int moveCancelDistance=20;//取消移动的距离
 -(void)startRecordVoice{
     //初始化默认参数
     if (!self.savePath) {
-        NSString * time = [[NSDate initLocalDate] dateStr:@"YYYYMMddHHmmss"];
+        NSString * time = [[NSDate bt_initLocalDate] bt_dateStr:@"YYYYMMddHHmmss"];
         self.savePath=[NSString stringWithFormat:@"%@/%@.wav",BTFileHelp.cacheVoicePath,time];
     }
     

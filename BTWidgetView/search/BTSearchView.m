@@ -36,12 +36,12 @@
     
     self.btnCancel = [[UIButton alloc] init];
     [self.btnCancel addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubViewArray:@[self.viewHead,self.btnCancel]];
+    [self bt_addSubViewArray:@[self.viewHead,self.btnCancel]];
     return self;
 }
 
 - (void)layoutSubviews{
-    self.btnCancel.frame = CGRectMake(0, self.viewHead.bottom, self.width, self.height - self.viewHead.height);
+    self.btnCancel.frame = CGRectMake(0, self.viewHead.BTBottom, self.BTWidth, self.BTHeight - self.viewHead.BTHeight);
 }
 
 - (void)show:(UIView*)view{

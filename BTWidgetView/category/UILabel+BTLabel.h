@@ -63,7 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGFloat)bt_calculateLabelWidth;
 
 //字体和文字颜色初始化
-- (instancetype)initWithColor:(UIColor*)color font:(UIFont*)font;
+- (instancetype)initBTLabelWithColor:(UIColor*)color font:(UIFont*)font;
 
 @end
 

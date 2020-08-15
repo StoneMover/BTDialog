@@ -106,7 +106,7 @@
     [self.timerHelp pause];
     
     [self.cacheViews removeAllObjects];
-    [self removeAllChildView];
+    [self bt_removeAllChildView];
     [self updateTotalNum];
     self.nowIndex=0;
     UIView * viewNow=[self.delegate BTVerticalAnimView:self viewWithIndex:self.nowIndex];
