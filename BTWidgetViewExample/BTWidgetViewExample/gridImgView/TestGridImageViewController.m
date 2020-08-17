@@ -69,7 +69,7 @@
 //长按照片，你可以做一些自己的交互，比如提示是否删除
 - (void)BTGridImgLongPress:(NSInteger)index{
     BTAlertLabelView * alert = [[BTAlertLabelView alloc] initWithTitle:@"提示" msg:@"是否删除?"];
-    [alert showCenter];
+    [alert bt_showCenter];
     alert.okBlock = ^BOOL{
         [self.gridImgView removeDataAtIndex:index];
         self.gridImgView.BTHeight = self.gridImgView.contentHeight;

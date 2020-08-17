@@ -96,23 +96,23 @@
 
 - (void)cancelClick{
     if (!self.cancelBlock) {
-        [self.dialogView dismiss];
+        [self.bt_dialogView dismiss];
         return;
     }
     
     if (self.cancelBlock()) {
-        [self.dialogView dismiss];
+        [self.bt_dialogView dismiss];
     }
 }
 
 - (void)okClick{
     if (!self.okBlock) {
-        [self.dialogView dismiss];
+        [self.bt_dialogView dismiss];
         return;
     }
     
     if (self.okBlock()) {
-        [self.dialogView dismiss];
+        [self.bt_dialogView dismiss];
     }
 }
 

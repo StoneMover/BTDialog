@@ -12,64 +12,62 @@
 
 #pragma mark width
 
-- (void)addConstraintWidth:(CGFloat)c{
-    [self addConstraintWidth:NSLayoutRelationEqual constant:c];
+- (void)bt_addConstraintWidth:(CGFloat)c{
+    [self bt_addConstraintWidth:NSLayoutRelationEqual constant:c];
 }
 
-- (void)addConstraintWidth:(NSLayoutRelation)relation constant:(CGFloat)c{
-    NSLayoutConstraint * constraint=[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:relation toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:c];
-    [self addConstraint:constraint];
+- (void)bt_addConstraintWidth:(NSLayoutRelation)relation constant:(CGFloat)c{
+    BTBTConstraintModel * model = [[BTBTConstraintModel alloc] initWithView:self attribute:NSLayoutAttributeWidth relation:relation];
+    BTBTConstraintModel * toItemModel = [[BTBTConstraintModel alloc] initWithToItemView:nil attribute:NSLayoutAttributeNotAnAttribute];
+    [self bt_addConstraint:model toItemModel:toItemModel multiplier:1 constant:c];
 }
 
 #pragma mark height
 
-- (void)addConstraintHeight:(CGFloat)c{
-    [self addConstraintHeight:NSLayoutRelationEqual constant:c];
+- (void)bt_addConstraintHeight:(CGFloat)c{
+    [self bt_addConstraintHeight:NSLayoutRelationEqual constant:c];
 }
 
-- (void)addConstraintHeight:(NSLayoutRelation)relation constant:(CGFloat)c{
-    NSLayoutConstraint * constraint=[NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:relation toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:c];
-    [self addConstraint:constraint];
+- (void)bt_addConstraintHeight:(NSLayoutRelation)relation constant:(CGFloat)c{
+    BTBTConstraintModel * model = [[BTBTConstraintModel alloc] initWithView:self attribute:NSLayoutAttributeHeight relation:relation];
+    BTBTConstraintModel * toItemModel = [[BTBTConstraintModel alloc] initWithToItemView:nil attribute:NSLayoutAttributeNotAnAttribute];
+    [self bt_addConstraint:model toItemModel:toItemModel multiplier:1 constant:c];
 }
 
 #pragma mark left
 
-- (void)addConstraintLeft:(UIView*)view
-               toItemView:(UIView*)toItemView{
-    [self addConstraintLeft:view toItemView:toItemView constant:0];
+- (void)bt_addConstraintLeft:(UIView*)view
+                  toItemView:(UIView*)toItemView{
+    [self bt_addConstraintLeft:view toItemView:toItemView constant:0];
 }
 
-- (void)addConstraintLeft:(UIView*)view
-               toItemView:(UIView*)toItemView
-                   isSame:(BOOL)isSame
+- (void)bt_addConstraintLeft:(UIView*)view
+                  toItemView:(UIView*)toItemView
+                      isSame:(BOOL)isSame
 {
-    [self addConstraintLeft:view toItemView:toItemView constant:0 isSame:isSame];
+    [self bt_addConstraintLeft:view toItemView:toItemView constant:0 isSame:isSame];
 }
 
-- (void)addConstraintLeft:(UIView*)view
-               toItemView:(UIView*)toItemView
-                 constant:(CGFloat)c{
+- (void)bt_addConstraintLeft:(UIView*)view
+                  toItemView:(UIView*)toItemView
+                    constant:(CGFloat)c{
     if ([view superview]==toItemView||[toItemView superview]==view) {
-        [self addConstraintLeft:view toItemView:toItemView constant:c isSame:YES];
+        [self bt_addConstraintLeft:view toItemView:toItemView constant:c isSame:YES];
     }else{
-        [self addConstraintLeft:view toItemView:toItemView constant:c isSame:NO];
+        [self bt_addConstraintLeft:view toItemView:toItemView constant:c isSame:NO];
     }
     
 }
 
 
-- (void)addConstraintLeft:(UIView*)view
-               toItemView:(UIView*)toItemView
-                 constant:(CGFloat)c
-                   isSame:(BOOL)isSame
+- (void)bt_addConstraintLeft:(UIView*)view
+                  toItemView:(UIView*)toItemView
+                    constant:(CGFloat)c
+                      isSame:(BOOL)isSame
 {
-    if (isSame) {
-        NSLayoutConstraint * constraint=[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:toItemView attribute:NSLayoutAttributeLeading multiplier:1 constant:c];
-        [self addConstraint:constraint];
-    }else{
-        NSLayoutConstraint * constraint=[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:toItemView attribute:NSLayoutAttributeTrailing multiplier:1 constant:c];
-        [self addConstraint:constraint];
-    }
+    BTBTConstraintModel * model = [[BTBTConstraintModel alloc] initWithView:view attribute:NSLayoutAttributeLeading relation:NSLayoutRelationEqual];
+    BTBTConstraintModel * toItemModel = [[BTBTConstraintModel alloc] initWithToItemView:toItemView attribute:isSame?NSLayoutAttributeLeading:NSLayoutAttributeTrailing];
+    [self bt_addConstraint:model toItemModel:toItemModel multiplier:1 constant:c];
     
 }
 
@@ -79,150 +77,186 @@
 
 #pragma mark right
 
-- (void)addConstraintRight:(UIView*)view
-               toItemView:(UIView*)toItemView{
-    [self addConstraintRight:view toItemView:toItemView constant:0];
+- (void)bt_addConstraintRight:(UIView*)view
+                   toItemView:(UIView*)toItemView{
+    [self bt_addConstraintRight:view toItemView:toItemView constant:0];
 }
 
-- (void)addConstraintRight:(UIView*)view
-               toItemView:(UIView*)toItemView
-                   isSame:(BOOL)isSame
+- (void)bt_addConstraintRight:(UIView*)view
+                   toItemView:(UIView*)toItemView
+                       isSame:(BOOL)isSame
 {
-    [self addConstraintRight:view toItemView:toItemView constant:0 isSame:isSame];
+    [self bt_addConstraintRight:view toItemView:toItemView constant:0 isSame:isSame];
 }
 
-- (void)addConstraintRight:(UIView*)view
-               toItemView:(UIView*)toItemView
-                 constant:(CGFloat)c{
+- (void)bt_addConstraintRight:(UIView*)view
+                   toItemView:(UIView*)toItemView
+                     constant:(CGFloat)c{
     if ([view superview]==toItemView||[toItemView superview]==view) {
-        [self addConstraintRight:view toItemView:toItemView constant:c isSame:YES];
+        [self bt_addConstraintRight:view toItemView:toItemView constant:c isSame:YES];
     }else{
-        [self addConstraintRight:view toItemView:toItemView constant:c isSame:NO];
+        [self bt_addConstraintRight:view toItemView:toItemView constant:c isSame:NO];
     }
     
 }
 
 
-- (void)addConstraintRight:(UIView*)view
-               toItemView:(UIView*)toItemView
-                 constant:(CGFloat)c
-                   isSame:(BOOL)isSame
+- (void)bt_addConstraintRight:(UIView*)view
+                   toItemView:(UIView*)toItemView
+                     constant:(CGFloat)c
+                       isSame:(BOOL)isSame
 {
-    if (isSame) {
-        NSLayoutConstraint * constraint=[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:toItemView attribute:NSLayoutAttributeTrailing multiplier:1 constant:c];
-        [self addConstraint:constraint];
-    }else{
-        NSLayoutConstraint * constraint=[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:toItemView attribute:NSLayoutAttributeLeading multiplier:1 constant:c];
-        [self addConstraint:constraint];
-    }
     
+    BTBTConstraintModel * model = [[BTBTConstraintModel alloc] initWithView:view attribute:NSLayoutAttributeTrailing relation:NSLayoutRelationEqual];
+    BTBTConstraintModel * toItemModel = [[BTBTConstraintModel alloc] initWithToItemView:toItemView attribute:isSame?NSLayoutAttributeTrailing:NSLayoutAttributeLeading];
+    [self bt_addConstraint:model toItemModel:toItemModel multiplier:1 constant:c];
 }
 #pragma mark top
-- (void)addConstraintTop:(UIView*)view
-                toItemView:(UIView*)toItemView{
-    [self addConstraintTop:view toItemView:toItemView constant:0];
+- (void)bt_addConstraintTop:(UIView*)view
+                 toItemView:(UIView*)toItemView{
+    [self bt_addConstraintTop:view toItemView:toItemView constant:0];
 }
 
-- (void)addConstraintTop:(UIView*)view
-                toItemView:(UIView*)toItemView
-                    isSame:(BOOL)isSame
+- (void)bt_addConstraintTop:(UIView*)view
+                 toItemView:(UIView*)toItemView
+                     isSame:(BOOL)isSame
 {
-    [self addConstraintTop:view toItemView:toItemView constant:0 isSame:isSame];
+    [self bt_addConstraintTop:view toItemView:toItemView constant:0 isSame:isSame];
 }
 
-- (void)addConstraintTop:(UIView*)view
-                toItemView:(UIView*)toItemView
-                  constant:(CGFloat)c{
+- (void)bt_addConstraintTop:(UIView*)view
+                 toItemView:(UIView*)toItemView
+                   constant:(CGFloat)c{
     if ([view superview]==toItemView||[toItemView superview]==view) {
-        [self addConstraintTop:view toItemView:toItemView constant:c isSame:YES];
+        [self bt_addConstraintTop:view toItemView:toItemView constant:c isSame:YES];
     }else{
-        [self addConstraintTop:view toItemView:toItemView constant:c isSame:NO];
+        [self bt_addConstraintTop:view toItemView:toItemView constant:c isSame:NO];
     }
     
 }
 
 
-- (void)addConstraintTop:(UIView*)view
-                toItemView:(UIView*)toItemView
-                  constant:(CGFloat)c
-                    isSame:(BOOL)isSame
+- (void)bt_addConstraintTop:(UIView*)view
+                 toItemView:(UIView*)toItemView
+                   constant:(CGFloat)c
+                     isSame:(BOOL)isSame
 {
-    if (isSame) {
-        NSLayoutConstraint * constraint=[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:toItemView attribute:NSLayoutAttributeTop multiplier:1 constant:c];
-        [self addConstraint:constraint];
-    }else{
-        NSLayoutConstraint * constraint=[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:toItemView attribute:NSLayoutAttributeBottom multiplier:1 constant:c];
-        [self addConstraint:constraint];
-    }
+    BTBTConstraintModel * model = [[BTBTConstraintModel alloc] initWithView:view attribute:NSLayoutAttributeTop relation:NSLayoutRelationEqual];
+    BTBTConstraintModel * toItemModel = [[BTBTConstraintModel alloc] initWithToItemView:toItemView attribute:isSame?NSLayoutAttributeTop:NSLayoutAttributeBottom];
+    [self bt_addConstraint:model toItemModel:toItemModel multiplier:1 constant:c];
     
 }
 
 
 #pragma mark bottom
-- (void)addConstraintBottom:(UIView*)view
+- (void)bt_addConstraintBottom:(UIView*)view
               toItemView:(UIView*)toItemView{
-    [self addConstraintBottom:view toItemView:toItemView constant:0];
+    [self bt_addConstraintBottom:view toItemView:toItemView constant:0];
 }
 
-- (void)addConstraintBottom:(UIView*)view
+- (void)bt_addConstraintBottom:(UIView*)view
               toItemView:(UIView*)toItemView
                   isSame:(BOOL)isSame
 {
-    [self addConstraintBottom:view toItemView:toItemView constant:0 isSame:isSame];
+    [self bt_addConstraintBottom:view toItemView:toItemView constant:0 isSame:isSame];
 }
 
-- (void)addConstraintBottom:(UIView*)view
+- (void)bt_addConstraintBottom:(UIView*)view
               toItemView:(UIView*)toItemView
                 constant:(CGFloat)c{
     if ([view superview]==toItemView||[toItemView superview]==view) {
-        [self addConstraintBottom:view toItemView:toItemView constant:c isSame:YES];
+        [self bt_addConstraintBottom:view toItemView:toItemView constant:c isSame:YES];
     }else{
-        [self addConstraintBottom:view toItemView:toItemView constant:c isSame:NO];
+        [self bt_addConstraintBottom:view toItemView:toItemView constant:c isSame:NO];
     }
     
 }
 
 
-- (void)addConstraintBottom:(UIView*)view
+- (void)bt_addConstraintBottom:(UIView*)view
               toItemView:(UIView*)toItemView
                 constant:(CGFloat)c
                   isSame:(BOOL)isSame
 {
-    if (isSame) {
-        NSLayoutConstraint * constraint=[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:toItemView attribute:NSLayoutAttributeBottom multiplier:1 constant:c];
-        [self addConstraint:constraint];
-    }else{
-        NSLayoutConstraint * constraint=[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:toItemView attribute:NSLayoutAttributeTop multiplier:1 constant:c];
-        [self addConstraint:constraint];
-    }
-    
+    BTBTConstraintModel * model = [[BTBTConstraintModel alloc] initWithView:view attribute:NSLayoutAttributeBottom relation:NSLayoutRelationEqual];
+    BTBTConstraintModel * toItemModel = [[BTBTConstraintModel alloc] initWithToItemView:toItemView attribute:isSame?NSLayoutAttributeBottom:NSLayoutAttributeTop];
+    [self bt_addConstraint:model toItemModel:toItemModel multiplier:1 constant:c];
 }
 
 #pragma mark center
 
-- (void)addConstraintCenterX:(UIView*)view toItemView:(UIView*)toItemView{
-    [self addConstraintCenterX:view toItemView:toItemView constant:0];
+- (void)bt_addConstraintCenterX:(UIView*)view toItemView:(UIView*)toItemView{
+    [self bt_addConstraintCenterX:view toItemView:toItemView constant:0];
 }
 
-- (void)addConstraintCenterX:(UIView*)view toItemView:(UIView*)toItemView  constant:(CGFloat)c{
-    NSLayoutConstraint * constraint=[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:toItemView attribute:NSLayoutAttributeCenterX multiplier:1 constant:c];
+- (void)bt_addConstraintCenterX:(UIView*)view toItemView:(UIView*)toItemView  constant:(CGFloat)c{
+    
+    BTBTConstraintModel * model = [[BTBTConstraintModel alloc] initWithView:view attribute:NSLayoutAttributeCenterX relation:NSLayoutRelationEqual];
+    BTBTConstraintModel * toItemModel = [[BTBTConstraintModel alloc] initWithToItemView:toItemView attribute:NSLayoutAttributeCenterX];
+    [self bt_addConstraint:model toItemModel:toItemModel multiplier:1 constant:c];
+}
+
+- (void)bt_addConstraintCenterY:(UIView*)view toItemView:(UIView*)toItemView{
+    [self bt_addConstraintCenterY:view toItemView:toItemView constant:0];
+}
+
+- (void)bt_addConstraintCenterY:(UIView*)view toItemView:(UIView*)toItemView  constant:(CGFloat)c{
+    BTBTConstraintModel * model = [[BTBTConstraintModel alloc] initWithView:view attribute:NSLayoutAttributeCenterY relation:NSLayoutRelationEqual];
+    BTBTConstraintModel * toItemModel = [[BTBTConstraintModel alloc] initWithToItemView:toItemView attribute:NSLayoutAttributeCenterY];
+    [self bt_addConstraint:model toItemModel:toItemModel multiplier:1 constant:c];
+}
+
+
+- (void)bt_addConstraintCenter:(UIView*)view toItemView:(UIView*)toItemView{
+    [self bt_addConstraintCenterX:view toItemView:toItemView];
+    [self bt_addConstraintCenterY:view toItemView:toItemView];
+}
+
+- (void)bt_addConstraint:(BTBTConstraintModel*)model
+             toItemModel:(BTBTConstraintModel*)toItemModel
+              multiplier:(CGFloat)multiplier
+                constant:(CGFloat)c{
+    NSLayoutConstraint * constraint=[NSLayoutConstraint constraintWithItem:model.view
+                                                                 attribute:model.attribute
+                                                                 relatedBy:model.relation
+                                                                    toItem:toItemModel.view
+                                                                 attribute:toItemModel.attribute
+                                                                multiplier:multiplier
+                                                                  constant:c];
     [self addConstraint:constraint];
 }
 
-- (void)addConstraintCenterY:(UIView*)view toItemView:(UIView*)toItemView{
-    [self addConstraintCenterY:view toItemView:toItemView constant:0];
+- (void)bt_addConstraint:(BTBTConstraintModel*)model
+             toItemModel:(BTBTConstraintModel*)toItemModel{
+    [self bt_addConstraint:model toItemModel:toItemModel multiplier:1 constant:0];
 }
 
-- (void)addConstraintCenterY:(UIView*)view toItemView:(UIView*)toItemView  constant:(CGFloat)c{
-    NSLayoutConstraint * constraint=[NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:toItemView attribute:NSLayoutAttributeCenterY multiplier:1 constant:c];
-    [self addConstraint:constraint];
+- (void)bt_addConstraint:(BTBTConstraintModel*)model
+             toItemModel:(BTBTConstraintModel*)toItemModel
+                constant:(CGFloat)c{
+    [self bt_addConstraint:model toItemModel:toItemModel multiplier:1 constant:c];
 }
 
 
-- (void)addConstraintCenter:(UIView*)view toItemView:(UIView*)toItemView{
-    [self addConstraintCenterX:view toItemView:toItemView];
-    [self addConstraintCenterY:view toItemView:toItemView];
+@end
+
+
+
+@implementation BTBTConstraintModel
+
+- (instancetype)initWithView:(UIView*)view attribute:(NSLayoutAttribute)attribute relation:(NSLayoutRelation)relation{
+    self = [super init];
+    self.view = view;
+    self.attribute = attribute;
+    self.relation = relation;
+    return self;
 }
 
+- (instancetype)initWithToItemView:(nullable UIView*)view attribute:(NSLayoutAttribute)attribute{
+    self = [super init];
+    self.view = view;
+    self.attribute = attribute;
+    return self;
+}
 
 @end

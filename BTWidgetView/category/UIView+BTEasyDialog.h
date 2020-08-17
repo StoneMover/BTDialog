@@ -11,20 +11,20 @@
 
 @interface UIView (BTEasyDialog)
 
-- (BTDialogView*)createDialog:(BTDialogLocation)location;
+- (BTDialogView*)bt_createDialog:(BTDialogLocation)location;
 
-- (BTDialogView*)show:(BTDialogLocation)location inView:(UIView*)view;
+- (BTDialogView*)bt_show:(BTDialogLocation)location inView:(UIView*)view;
 
-- (BTDialogView*)show:(BTDialogLocation)location;
+- (BTDialogView*)bt_show:(BTDialogLocation)location;
 
-- (BTDialogView*)showBottom;
+- (BTDialogView*)bt_showBottom;
 
-- (BTDialogView*)showCenter;
+- (BTDialogView*)bt_showCenter;
 
-- (BTDialogView*)showTop;
+- (BTDialogView*)bt_showTop;
 
 //当显示后view自身成为dialog的childView，然后即可用该方法获取值
-- (BTDialogView*)dialogView;
+- (BTDialogView*)bt_dialogView;
 
 @end
 

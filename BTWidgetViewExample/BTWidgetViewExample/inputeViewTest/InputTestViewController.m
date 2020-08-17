@@ -102,7 +102,7 @@
 //MARK: BTTextInputToolViewDelegate
 - (void)BTTextInputToolViewStart:(BTTextInputToolView *)view{
     self.recoardView.label.text = @"松开发送";
-    [self.recoardView showCenter];
+    [self.recoardView bt_showCenter];
 }
 
 - (void)BTTextInputToolViewStatus:(BTTextInputToolView *)view isCancel:(BOOL)isCancel{
@@ -114,7 +114,7 @@
 }
 
 - (void)BTTextInputToolViewEnd:(BTTextInputToolView *)view{
-    [self.recoardView.dialogView dismiss];
+    [self.recoardView.bt_dialogView dismiss];
 }
 
 @end

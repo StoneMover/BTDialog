@@ -9,34 +9,34 @@
 
 @implementation UIView (BTEasyDialog)
 
-- (BTDialogView*)createDialog:(BTDialogLocation)location{
+- (BTDialogView*)bt_createDialog:(BTDialogLocation)location{
     BTDialogView * dialogView = [[BTDialogView alloc] init:self withLocation:location];
     return dialogView;
 }
 
-- (BTDialogView*)show:(BTDialogLocation)location inView:(UIView*)view{
-    BTDialogView * dialogView = [self createDialog:location];
+- (BTDialogView*)bt_show:(BTDialogLocation)location inView:(UIView*)view{
+    BTDialogView * dialogView = [self bt_createDialog:location];
     [dialogView show:view];
     return dialogView;
 }
 
-- (BTDialogView*)show:(BTDialogLocation)location{
-    return [self show:location inView:[UIApplication sharedApplication].delegate.window];
+- (BTDialogView*)bt_show:(BTDialogLocation)location{
+    return [self bt_show:location inView:[UIApplication sharedApplication].delegate.window];
 }
 
-- (BTDialogView*)showBottom{
-    return [self show:BTDialogLocationBottom inView:[UIApplication sharedApplication].delegate.window];
+- (BTDialogView*)bt_showBottom{
+    return [self bt_show:BTDialogLocationBottom inView:[UIApplication sharedApplication].delegate.window];
 }
 
-- (BTDialogView*)showCenter{
-    return [self show:BTDialogLocationCenter inView:[UIApplication sharedApplication].delegate.window];
+- (BTDialogView*)bt_showCenter{
+    return [self bt_show:BTDialogLocationCenter inView:[UIApplication sharedApplication].delegate.window];
 }
 
-- (BTDialogView*)showTop{
-    return [self show:BTDialogLocationTop inView:[UIApplication sharedApplication].delegate.window];
+- (BTDialogView*)bt_showTop{
+    return [self bt_show:BTDialogLocationTop inView:[UIApplication sharedApplication].delegate.window];
 }
 
-- (BTDialogView*)dialogView{
+- (BTDialogView*)bt_dialogView{
     if (self.superview) {
         if ([self.superview isKindOfClass:[BTDialogView class]]) {
             return (BTDialogView*)(self.superview);
