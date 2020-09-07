@@ -17,101 +17,77 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark width
 
-- (void)bt_addConstraintWidth:(CGFloat)c;
+- (void)bt_addWidth:(CGFloat)c;
 
-- (void)bt_addConstraintWidth:(NSLayoutRelation)relation constant:(CGFloat)c;
+- (void)bt_addWidth:(NSLayoutRelation)relation constant:(CGFloat)c;
 
 #pragma mark height
 
-- (void)bt_addConstraintHeight:(CGFloat)c;
+- (void)bt_addHeight:(CGFloat)c;
 
-- (void)bt_addConstraintHeight:(NSLayoutRelation)relation constant:(CGFloat)c;
+- (void)bt_addHeight:(NSLayoutRelation)relation constant:(CGFloat)c;
 
 #pragma mark left
 
-- (void)bt_addConstraintLeft:(UIView*)view
-                  toItemView:(UIView*)toItemView;
+- (void)bt_addLeftToParent;
 
-- (void)bt_addConstraintLeft:(UIView*)view
-                  toItemView:(UIView*)toItemView
-                      isSame:(BOOL)isSame;
+- (void)bt_addLeftToItemView:(UIView*)toItemView;
 
-- (void)bt_addConstraintLeft:(UIView*)view
-                  toItemView:(UIView*)toItemView
-                    constant:(CGFloat)c;
+- (void)bt_addLeftToItemView:(UIView*)toItemView isSame:(BOOL)isSame;
 
-/*
- 
- */
-- (void)bt_addConstraintLeft:(UIView*)view
-                  toItemView:(UIView*)toItemView
-                    constant:(CGFloat)c
-                      isSame:(BOOL)isSame;
+- (void)bt_addLeftToItemView:(UIView*)toItemView constant:(CGFloat)c;
+
+- (void)bt_addLeftToItemView:(UIView*)toItemView constant:(CGFloat)c isSame:(BOOL)isSame;
 
 #pragma mark right
-- (void)bt_addConstraintRight:(UIView*)view
-                   toItemView:(UIView*)toItemView;
 
-- (void)bt_addConstraintRight:(UIView*)view
-                   toItemView:(UIView*)toItemView
-                       isSame:(BOOL)isSame;
+- (void)bt_addRightToParent;
 
-- (void)bt_addConstraintRight:(UIView*)view
-                   toItemView:(UIView*)toItemView
-                     constant:(CGFloat)c;
+- (void)bt_addRightToItemView:(UIView*)toItemView;
 
+- (void)bt_addRightToItemView:(UIView*)toItemView isSame:(BOOL)isSame;
 
-- (void)bt_addConstraintRight:(UIView*)view
-                   toItemView:(UIView*)toItemView
-                     constant:(CGFloat)c
-                       isSame:(BOOL)isSame;
+- (void)bt_addRightToItemView:(UIView*)toItemView constant:(CGFloat)c;
+
+- (void)bt_addRightToItemView:(UIView*)toItemView constant:(CGFloat)c isSame:(BOOL)isSame;
 
 #pragma mark top
-- (void)bt_addConstraintTop:(UIView*)view
-                 toItemView:(UIView*)toItemView;
 
-- (void)bt_addConstraintTop:(UIView*)view
-                 toItemView:(UIView*)toItemView
-                     isSame:(BOOL)isSame;
+- (void)bt_addTopToParent;
 
-- (void)bt_addConstraintTop:(UIView*)view
-                 toItemView:(UIView*)toItemView
-                   constant:(CGFloat)c;
+- (void)bt_addTopToItemView:(UIView*)toItemView;
 
+- (void)bt_addTopToItemView:(UIView*)toItemView isSame:(BOOL)isSame;
 
-- (void)bt_addConstraintTop:(UIView*)view
-                 toItemView:(UIView*)toItemView
-                   constant:(CGFloat)c
-                     isSame:(BOOL)isSame;
+- (void)bt_addTopToItemView:(UIView*)toItemView constant:(CGFloat)c;
+
+- (void)bt_addTopToItemView:(UIView*)toItemView constant:(CGFloat)c isSame:(BOOL)isSame;
 
 #pragma mark bottom
-- (void)bt_addConstraintBottom:(UIView*)view
-                    toItemView:(UIView*)toItemView;
 
-- (void)bt_addConstraintBottom:(UIView*)view
-                    toItemView:(UIView*)toItemView
-                        isSame:(BOOL)isSame;
+- (void)bt_addBottomToParent;
 
-- (void)bt_addConstraintBottom:(UIView*)view
-                    toItemView:(UIView*)toItemView
-                      constant:(CGFloat)c;
+- (void)bt_addBottomToItemView:(UIView*)toItemView;
 
+- (void)bt_addBottomToItemView:(UIView*)toItemView isSame:(BOOL)isSame;
 
-- (void)bt_addConstraintBottom:(UIView*)view
-                    toItemView:(UIView*)toItemView
-                      constant:(CGFloat)c
-                        isSame:(BOOL)isSame;
+- (void)bt_addBottomToItemView:(UIView*)toItemView constant:(CGFloat)c;
+
+- (void)bt_addBottomToItemView:(UIView*)toItemView constant:(CGFloat)c isSame:(BOOL)isSame;
 
 
 #pragma mark center
 
-- (void)bt_addConstraintCenterX:(UIView*)view toItemView:(UIView*)toItemView;
-- (void)bt_addConstraintCenterX:(UIView*)view toItemView:(UIView*)toItemView  constant:(CGFloat)c;
+- (void)bt_addCenterXToParent;
+- (void)bt_addCenterXToItemView:(UIView*)toItemView;
+- (void)bt_addCenterXToItemView:(UIView*)toItemView constant:(CGFloat)c;
 
-- (void)bt_addConstraintCenterY:(UIView*)view toItemView:(UIView*)toItemView;
-- (void)bt_addConstraintCenterY:(UIView*)view toItemView:(UIView*)toItemView  constant:(CGFloat)c;
+- (void)bt_addCenterYToParent;
+- (void)bt_addCenterYToItemView:(UIView*)toItemView;
+- (void)bt_addCenterYToItemView:(UIView*)toItemView  constant:(CGFloat)c;
 
-- (void)bt_addConstraintCenter:(UIView*)view toItemView:(UIView*)toItemView;
+- (void)bt_addCenterToParent:(UIView*)toItemView;
+- (void)bt_addCenterToItemView:(UIView*)toItemView;
 
 
 #pragma mark 用model创建

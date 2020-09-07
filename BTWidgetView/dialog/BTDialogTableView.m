@@ -256,12 +256,18 @@ int const BT_SHOW_VIEW_HEAD_H=45;
     self.labelContent.font=[UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
     self.labelContent.textColor=[UIColor blackColor];
     self.labelContent.numberOfLines=0;
-    [self.labelContent bt_addConstraintHeight:NSLayoutRelationGreaterThanOrEqual constant:24];
+    [self.labelContent bt_addHeight:NSLayoutRelationGreaterThanOrEqual constant:24];
     [self addSubview:self.labelContent];
-    [self bt_addConstraintLeft:self.labelContent toItemView:self constant:20];
-    [self bt_addConstraintTop:self.labelContent toItemView:self constant:8];
-    [self bt_addConstraintBottom:self.labelContent toItemView:self constant:-8];
-    [self bt_addConstraintRight:self.labelContent toItemView:self.imgViewSelect constant:-10];
+    
+    [self.labelContent bt_addLeftToItemView:self constant:20];
+    [self.labelContent bt_addTopToItemView:self constant:8];
+    [self.labelContent bt_addBottomToItemView:self constant:-8];
+    [self.labelContent bt_addRightToItemView:self constant:-10];
+    
+//    [self bt_addConstraintLeft:self.labelContent toItemView:self constant:20];
+//    [self bt_addConstraintTop:self.labelContent toItemView:self constant:8];
+//    [self bt_addConstraintBottom:self.labelContent toItemView:self constant:-8];
+//    [self bt_addConstraintRight:self.labelContent toItemView:self.imgViewSelect constant:-10];
     
 }
 
@@ -272,10 +278,15 @@ int const BT_SHOW_VIEW_HEAD_H=45;
     self.imgViewSelect.image=[self imageBundleName:@"bt_dialog_select"];
     [self addSubview:self.imgViewSelect];
     
-    [self bt_addConstraintRight:self.imgViewSelect toItemView:self];
-    [self bt_addConstraintTop:self.imgViewSelect toItemView:self];
-    [self bt_addConstraintBottom:self.imgViewSelect toItemView:self];
-    [self.imgViewSelect bt_addConstraintWidth:50];
+    [self.imgViewSelect bt_addRightToParent];
+    [self.imgViewSelect bt_addTopToParent];
+    [self.imgViewSelect bt_addBottomToParent];
+    [self.imgViewSelect bt_addWidth:50];
+    
+//    [self bt_addConstraintRight:self.imgViewSelect toItemView:self];
+//    [self bt_addConstraintTop:self.imgViewSelect toItemView:self];
+//    [self bt_addConstraintBottom:self.imgViewSelect toItemView:self];
+//    [self.imgViewSelect bt_addConstraintWidth:50];
 }
 
 - (UIImage*)imageBundleName:(NSString*)name{
