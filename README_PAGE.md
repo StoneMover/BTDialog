@@ -2,7 +2,7 @@
 
 左右滑动的```page```控件，可基于```UIView```、```UIViewController```展示，支持头部自定义
 
-[GIF](https://upload-images.jianshu.io/upload_images/1243802-f7acb17be4624935.gif)
+[GIF](https://s1.ax1x.com/2020/09/09/w3tPsK.gif)
 
 相关项目使用展示
 
