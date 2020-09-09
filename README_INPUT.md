@@ -157,6 +157,7 @@
 
 ![Jietu20200617-110830.gif](https://s1.ax1x.com/2020/09/09/w31kZ9.gif)
 
+[看不了GIF点这里](https://s1.ax1x.com/2020/09/09/w31kZ9.gif)
 
 初始化使用
 
