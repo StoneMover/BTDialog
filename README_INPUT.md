@@ -155,9 +155,8 @@
 
 可以快速的弹出一个简单的评论框，自动处理文字的高度变化以及键盘的位移处理。
 
-![Jietu20200617-110830.gif](https://upload-images.jianshu.io/upload_images/1243802-a98084bd0d8af906.gif)
+![Jietu20200617-110830.gif](https://s1.ax1x.com/2020/09/09/w31kZ9.gif)
 
-[看不了GIF点这里](https://upload-images.jianshu.io/upload_images/1243802-a98084bd0d8af906.gif)
 
 初始化使用
 
