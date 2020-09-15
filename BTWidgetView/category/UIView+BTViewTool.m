@@ -105,6 +105,17 @@
     return self.frame.origin;
 }
 
+- (void)setBTCenterParentX{
+    self.BTCenterX = self.BTWidth / 2.0;
+}
+- (void)setBTCenterParentY{
+    self.BTCenterY = self.BTHeight / 2.0;
+}
+- (void)setBTCenterParent{
+    [self setBTCenterParentY];
+    [self setBTCenterParentX];
+}
+
 - (void)setBTCorner:(CGFloat)corner{
     self.layer.cornerRadius=corner;
     self.clipsToBounds=YES;

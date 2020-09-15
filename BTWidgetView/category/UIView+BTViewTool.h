@@ -49,6 +49,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setBTOrigin:(CGPoint)point;
 - (CGPoint)BTOrigin;
 
+- (void)setBTCenterParentX;
+- (void)setBTCenterParentY;
+- (void)setBTCenterParent;
+
 #pragma mark 圆角相关处理
 @property (nonatomic, assign) CGFloat BTCorner;
     
