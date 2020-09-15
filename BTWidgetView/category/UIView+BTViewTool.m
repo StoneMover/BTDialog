@@ -106,10 +106,10 @@
 }
 
 - (void)setBTCenterParentX{
-    self.BTCenterX = self.BTWidth / 2.0;
+    self.BTCenterX = self.superview.BTWidth / 2.0;
 }
 - (void)setBTCenterParentY{
-    self.BTCenterY = self.BTHeight / 2.0;
+    self.BTCenterY = self.superview.BTHeight / 2.0;
 }
 - (void)setBTCenterParent{
     [self setBTCenterParentY];
