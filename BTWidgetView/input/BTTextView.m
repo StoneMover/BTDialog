@@ -9,6 +9,7 @@
 #import "BTTextView.h"
 #import "UIView+BTViewTool.h"
 #import <BTHelp/BTUtils.h>
+#import <BTHelp/NSString+BTString.h>
 
 @interface BTTextView()
 
@@ -44,6 +45,7 @@
     }
     self.labelPlaceHolder=[[UILabel alloc] init];
     self.labelPlaceHolder.font=self.font;
+    self.labelPlaceHolder.numberOfLines = 0;
     if (self.placeHolderColor) {
         self.labelPlaceHolder.textColor=self.placeHolderColor;
     }else{
@@ -111,6 +113,9 @@
 - (void)layoutSubviews{
     self.labelPlaceHolder.BTLeft=self.textContainerInset.left+3;
     self.labelPlaceHolder.BTTop=self.textContainerInset.top;
+    self.labelPlaceHolder.BTWidth = self.BTWidth;
+    self.labelPlaceHolder.BTHeight = [self.labelPlaceHolder.text bt_calculateStrHeight:self.BTWidth font:self.labelPlaceHolder.font];
+//    [self.labelPlaceHolder sizeToFit];
 }
 
 - (void)textViewContentChange{
