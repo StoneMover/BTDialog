@@ -224,11 +224,12 @@
                                                                  attribute:toItemModel.attribute
                                                                 multiplier:multiplier
                                                                   constant:c];
-    if (model.view.superview == toItemModel.view) {
+    //增加空判断，去除两个果两个都为nil的情况
+    if (model.view.superview != nil && model.view.superview == toItemModel.view) {
         [toItemModel.view addConstraint:constraint];
-    }else if (toItemModel.view.superview == model.view){
+    }else if (toItemModel.view.superview != nil && toItemModel.view.superview == model.view){
         [model.view addConstraint:constraint];
-    }else if (model.view.superview == toItemModel.view.superview){
+    }else if (model.view.superview != nil && model.view.superview == toItemModel.view.superview){
         [model.view.superview addConstraint:constraint];
     }else{
         [self addConstraint:constraint];
