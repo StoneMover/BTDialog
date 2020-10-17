@@ -209,7 +209,7 @@
 }
 
 - (void)setBTDefaultShade{
-    [self setBTShade:.35 color:[UIColor blackColor] radius:6 offset:CGSizeZero];
+    [self setBTShade:.08 color:[UIColor blackColor] radius:2 offset:CGSizeZero];
 }
     
 - (void)setBTShade:(CGFloat)opacity radius:(CGFloat)radius{

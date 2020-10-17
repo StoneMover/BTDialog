@@ -213,4 +213,8 @@
     label.transform = CGAffineTransformMakeScale(1+size, 1+size);
 }
 
+- (void)unSelectLabel:(NSInteger)index{
+    self.labels[index].textColor = self.normalColor;
+}
+
 @end

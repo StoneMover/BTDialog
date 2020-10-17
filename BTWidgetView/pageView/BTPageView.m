@@ -313,7 +313,8 @@
 
 
 - (void)selectIndex:(NSInteger)index animated:(BOOL)animated{
-    if (animated) {
+    //如果index相同不会触发滚动结束回调，这里不能设置为NO
+    if (animated&&self.nowIndex!=index) {
         self.scrollView.scrollEnabled=NO;
     }
     [self autoLoadSubView:index];

@@ -24,6 +24,8 @@
 //未选中文字颜色
 @property (nonatomic, strong) UIColor * normalColor;
 
+//将label恢复到出事状态，解决初始化的时候颜色不更新问题
+- (void)unSelectLabel:(NSInteger)index;
 
 @end
 
