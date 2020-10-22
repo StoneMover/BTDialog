@@ -105,14 +105,25 @@
     
     CGFloat one = 1.0;
     CGFloat percentOne = one / (self.titles.count - 1);
-    NSInteger indexNow = percent / percentOne;
+    //这里放大10000倍进行计算，否则会出现精度问题
+    NSInteger indexNow = (int)(percent * 10000) / (int)(percentOne * 10000);
     if (indexNow + 1 >= self.labels.count) {
+        //解决直接滑动到最后一个item颜色不会重置到normal的问题
+        for (UILabel * label in self.labels) {
+            if (label == self.labels.lastObject) {
+                label.textColor = [self nowLabelColorLeft:abs(0)];
+                [self nowLabelScale:abs(0) label:label];
+            }else{
+                label.textColor = self.normalColor;
+                label.transform = CGAffineTransformMakeScale(1, 1);
+            }
+        }
         return;
     }
     
     UILabel * labelNow = self.labels[indexNow];
     UILabel * labelWillSelect = nil;
-    CGFloat resultPercent = indexNow * percentOne - percent;
+    CGFloat resultPercent = ((int)(indexNow * percentOne *10000) - (int)(percent*10000))/10000.0;
     if (resultPercent == 0) {
         for (UILabel * label in self.labels) {
             if (label == labelNow) {
