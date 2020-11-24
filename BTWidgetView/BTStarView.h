@@ -11,7 +11,12 @@
 @interface BTStarView : UIView
 
 //需要的总星数量，图片的大小，选中的样式，未选中的样式
-- (instancetype)initWithNumber:(NSInteger)number imgViewSize:(CGSize)size imgSelect:(UIImage*)imgSelect imgNormal:(UIImage*)imgNormal;
+- (instancetype)initWithNumber:(NSInteger)number
+                   imgViewSize:(CGSize)size
+                     imgSelect:(UIImage*)imgSelect
+                     imgNormal:(UIImage*)imgNormal;
+
+- (instancetype)initWithDrawStartNumber:(CGFloat)number size:(CGFloat)size;
 
 //需要选中的星星数量
 @property (nonatomic, assign) NSInteger selectIndex;
@@ -26,4 +31,10 @@
 
 @end
 
+
+@interface BTStarDrawView : UIView
+
+- (instancetype)initWithRect:(CGRect)rect color:(UIColor*)color percent:(CGFloat)percent;
+
+@end
 

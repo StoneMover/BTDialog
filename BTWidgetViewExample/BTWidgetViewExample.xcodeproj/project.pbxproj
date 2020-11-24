@@ -16,6 +16,8 @@
 		0DCC398D23B71A6C00197B15 /* BTAlertTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCC398C23B71A6C00197B15 /* BTAlertTextView.m */; };
 		0DD56D082445F65C00708775 /* SearchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD56D062445F65C00708775 /* SearchTestViewController.m */; };
 		0DE9CFD823C1F658004607AD /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE9CFD723C1F658004607AD /* DataModel.m */; };
+		1843328F256BA346003A6C41 /* TestProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1843328D256BA346003A6C41 /* TestProgressViewController.m */; };
+		18433290256BA346003A6C41 /* TestProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1843328E256BA346003A6C41 /* TestProgressViewController.xib */; };
 		185CF1E52446F0AC00866B1A /* BTVerticalAnimView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185CF1E42446F0AC00866B1A /* BTVerticalAnimView.m */; };
 		185CF1EB2446F1EE00866B1A /* BTScrollLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185CF1EA2446F1EE00866B1A /* BTScrollLabelView.m */; };
 		1860860823D160F100E2749E /* BTStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1860860723D160F100E2749E /* BTStarView.m */; };
@@ -99,6 +101,9 @@
 		0DD56D062445F65C00708775 /* SearchTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTestViewController.m; sourceTree = "<group>"; };
 		0DE9CFD623C1F658004607AD /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		0DE9CFD723C1F658004607AD /* DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		1843328C256BA346003A6C41 /* TestProgressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestProgressViewController.h; sourceTree = "<group>"; };
+		1843328D256BA346003A6C41 /* TestProgressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestProgressViewController.m; sourceTree = "<group>"; };
+		1843328E256BA346003A6C41 /* TestProgressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestProgressViewController.xib; sourceTree = "<group>"; };
 		185CF1E32446F0AC00866B1A /* BTVerticalAnimView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTVerticalAnimView.h; sourceTree = "<group>"; };
 		185CF1E42446F0AC00866B1A /* BTVerticalAnimView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTVerticalAnimView.m; sourceTree = "<group>"; };
 		185CF1E92446F1EE00866B1A /* BTScrollLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTScrollLabelView.h; sourceTree = "<group>"; };
@@ -240,6 +245,16 @@
 				0DD56D062445F65C00708775 /* SearchTestViewController.m */,
 			);
 			path = searchTest;
+			sourceTree = "<group>";
+		};
+		1843328B256BA329003A6C41 /* progress */ = {
+			isa = PBXGroup;
+			children = (
+				1843328C256BA346003A6C41 /* TestProgressViewController.h */,
+				1843328D256BA346003A6C41 /* TestProgressViewController.m */,
+				1843328E256BA346003A6C41 /* TestProgressViewController.xib */,
+			);
+			path = progress;
 			sourceTree = "<group>";
 		};
 		186F1D4124371934002BB121 /* search */ = {
@@ -406,6 +421,7 @@
 		60D28A66230692260043442B /* BTWidgetViewExample */ = {
 			isa = PBXGroup;
 			children = (
+				1843328B256BA329003A6C41 /* progress */,
 				18FD4E50249CAB24006F3D1E /* verticalAnim */,
 				18FD4E4C249C9F75006F3D1E /* gridImgView */,
 				18FD4E48249C5B04006F3D1E /* contentAutoView */,
@@ -546,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A1EA07248E46800067D00C /* BTRecordVoiceView.xib in Resources */,
+				18433290256BA346003A6C41 /* TestProgressViewController.xib in Resources */,
 				60D28A74230692270043442B /* LaunchScreen.storyboard in Resources */,
 				0DCC398A23B7142E00197B15 /* BTDialogBundle.bundle in Resources */,
 				60D28A71230692270043442B /* Assets.xcassets in Resources */,
@@ -633,6 +650,7 @@
 				0D41969223B63CBD00F5079F /* DialogTestViewController.m in Sources */,
 				6037C17423168E430017D898 /* HomeTableViewCell.m in Sources */,
 				60D28A9C2306923A0043442B /* BTTextField.m in Sources */,
+				1843328F256BA346003A6C41 /* TestProgressViewController.m in Sources */,
 				60D28A962306923A0043442B /* BTTextView.m in Sources */,
 				0D41969623B6413100F5079F /* BTAlertLabelView.m in Sources */,
 				18859B202446B1F600B8B1D9 /* BTWidgetView.m in Sources */,
