@@ -35,7 +35,7 @@
     self.hozProgressView.slideImgView.BTCorner = 10;
     
     self.drawView = [[BTStarDrawView alloc] initWithFrame:CGRectMake(0, 250, 150, 40)];
-    self.drawView.starNumber = 3.5;
+//    self.drawView.starNumber = 3.5;
     [self.view addSubview:self.drawView];
     
 }

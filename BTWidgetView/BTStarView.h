@@ -16,7 +16,7 @@
                      imgSelect:(UIImage*)imgSelect
                      imgNormal:(UIImage*)imgNormal;
 
-//- (instancetype)initWithDrawStartNumber:(CGFloat)number size:(CGFloat)size;
+- (instancetype)initWithDrawStartNumber:(NSInteger)number size:(CGFloat)size;
 
 //需要选中的星星数量
 @property (nonatomic, assign) NSInteger selectIndex;
