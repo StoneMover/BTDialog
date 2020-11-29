@@ -247,9 +247,13 @@
 }
 
 - (void)setIsNeedMoveFollowKeyboard:(BOOL)isNeedMoveFollowKeyboard{
+    [self setIsNeedMoveFollowKeyboard:isNeedMoveFollowKeyboard margin:18];
+}
+
+- (void)setIsNeedMoveFollowKeyboard:(BOOL)isNeedMoveFollowKeyboard margin:(CGFloat)margin{
     _isNeedMoveFollowKeyboard = isNeedMoveFollowKeyboard;
     if (isNeedMoveFollowKeyboard) {
-        self.keyboardHelp = [[BTKeyboardHelp alloc] initWithShowView:self.showView moveView:self.showView margin:18];
+        self.keyboardHelp = [[BTKeyboardHelp alloc] initWithShowView:self.showView moveView:self.showView margin:margin];
     }else{
         self.keyboardHelp = nil;
     }

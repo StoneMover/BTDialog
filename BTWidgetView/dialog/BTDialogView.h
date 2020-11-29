@@ -43,6 +43,8 @@ typedef void (^BTDialogDissmisFinishBlock)(void);
 //是否需要跟随键盘移动
 @property (nonatomic, assign) BOOL isNeedMoveFollowKeyboard;
 
+- (void)setIsNeedMoveFollowKeyboard:(BOOL)isNeedMoveFollowKeyboard margin:(CGFloat)margin;
+
 //初始化
 -(instancetype)init:(UIView*)showView withLocation:(BTDialogLocation)location;
 
