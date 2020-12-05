@@ -99,7 +99,9 @@
         {
             CGFloat startX = 0;
             CGFloat width = self.BTWidth;
-            
+            if (self.progressSize == 0) {
+                self.progressSize = self.BTHeight;
+            }
             if (self.isCanSlide) {
                 
                 if (self.slideImgView.image) {
@@ -115,11 +117,11 @@
             }
             
             [self.progressBgColor setFill];
-            UIBezierPath * pathBg = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(startX, 0, width, self.BTHeight) cornerRadius:self.progressCorner];
+            UIBezierPath * pathBg = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(startX, (self.BTHeight - self.progressSize) / 2.0, width, self.progressSize) cornerRadius:self.progressCorner];
             [pathBg fill];
             
             [self.progressColor setFill];
-            UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(startX, 0, self.percent * width, self.BTHeight) cornerRadius:self.progressCorner];
+            UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(startX, (self.BTHeight - self.progressSize) / 2.0, self.percent * width, self.progressSize) cornerRadius:self.progressCorner];
             [path fill];
             
             
@@ -129,7 +131,9 @@
         {
             CGFloat startY = 0;
             CGFloat height = self.BTHeight;
-            
+            if (self.progressSize == 0) {
+                self.progressSize = self.BTHeight;
+            }
             if (self.isCanSlide) {
                 
                 if (self.slideImgView.image) {
@@ -143,10 +147,10 @@
             }
             
             [self.progressBgColor setFill];
-            UIBezierPath * pathBg = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, startY, self.BTWidth, height) cornerRadius:self.progressCorner];
+            UIBezierPath * pathBg = [UIBezierPath bezierPathWithRoundedRect:CGRectMake((self.BTWidth - self.progressSize)/2.0, startY, self.progressSize, height) cornerRadius:self.progressCorner];
             [pathBg fill];
             
-            UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, startY, self.BTWidth, height * self.percent) cornerRadius:self.progressCorner];
+            UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake((self.BTWidth - self.progressSize)/2.0, startY, self.progressSize, height * self.percent) cornerRadius:self.progressCorner];
             [self.progressColor setFill];
             [path fill];
             
