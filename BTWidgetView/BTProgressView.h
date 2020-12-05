@@ -65,6 +65,9 @@ typedef NS_ENUM(NSInteger,BTProgressStyle) {
 
 @property (nonatomic, weak) id<BTProgressDelegate> delegate;
 
+//是否正在触摸
+@property (nonatomic, assign) BOOL isTouch;
+
 @end
 
 NS_ASSUME_NONNULL_END

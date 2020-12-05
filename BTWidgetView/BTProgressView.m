@@ -229,6 +229,7 @@
     if (!self.isCanSlide) {
         return;
     }
+    self.isTouch = YES;
     UITouch * touch=[touches anyObject];
     CGPoint point=[touch locationInView:self];
     [self change:point];
@@ -242,6 +243,10 @@
     UITouch * touch=[touches anyObject];
     CGPoint point=[touch locationInView:self];
     [self change:point];
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    self.isTouch = NO;
 }
 
 
