@@ -36,6 +36,8 @@
 		18A1EA08248E46800067D00C /* BTRecordVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A1EA05248E46800067D00C /* BTRecordVoiceView.m */; };
 		18A1EA09248E46800067D00C /* record_voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A1EA06248E46800067D00C /* record_voice.png */; };
 		18A1EA0C248E46B00067D00C /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A1EA0A248E46AF0067D00C /* libmp3lame.a */; };
+		18C9082A257DFC1F00C6BC14 /* StarTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C90828257DFC1F00C6BC14 /* StarTestViewController.m */; };
+		18C9082B257DFC1F00C6BC14 /* StarTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C90829257DFC1F00C6BC14 /* StarTestViewController.xib */; };
 		18E5647D249762430050C13E /* InputTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5647B249762430050C13E /* InputTestViewController.m */; };
 		18E5647E249762430050C13E /* InputTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E5647C249762430050C13E /* InputTestViewController.xib */; };
 		18E77F6724985E7C00BF9F5A /* UILabel+BTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E77F6624985E7C00BF9F5A /* UILabel+BTLabel.m */; };
@@ -135,6 +137,9 @@
 		18A1EA06248E46800067D00C /* record_voice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_voice.png; sourceTree = "<group>"; };
 		18A1EA0A248E46AF0067D00C /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		18A1EA0B248E46AF0067D00C /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		18C90827257DFC1F00C6BC14 /* StarTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarTestViewController.h; sourceTree = "<group>"; };
+		18C90828257DFC1F00C6BC14 /* StarTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarTestViewController.m; sourceTree = "<group>"; };
+		18C90829257DFC1F00C6BC14 /* StarTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarTestViewController.xib; sourceTree = "<group>"; };
 		18E5647A249762430050C13E /* InputTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InputTestViewController.h; sourceTree = "<group>"; };
 		18E5647B249762430050C13E /* InputTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InputTestViewController.m; sourceTree = "<group>"; };
 		18E5647C249762430050C13E /* InputTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputTestViewController.xib; sourceTree = "<group>"; };
@@ -306,6 +311,16 @@
 			path = input;
 			sourceTree = "<group>";
 		};
+		18C90826257DFBFF00C6BC14 /* starView */ = {
+			isa = PBXGroup;
+			children = (
+				18C90827257DFC1F00C6BC14 /* StarTestViewController.h */,
+				18C90828257DFC1F00C6BC14 /* StarTestViewController.m */,
+				18C90829257DFC1F00C6BC14 /* StarTestViewController.xib */,
+			);
+			path = starView;
+			sourceTree = "<group>";
+		};
 		18E77F682498631900BF9F5A /* labelTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,6 +436,7 @@
 		60D28A66230692260043442B /* BTWidgetViewExample */ = {
 			isa = PBXGroup;
 			children = (
+				18C90826257DFBFF00C6BC14 /* starView */,
 				1843328B256BA329003A6C41 /* progress */,
 				18FD4E50249CAB24006F3D1E /* verticalAnim */,
 				18FD4E4C249C9F75006F3D1E /* gridImgView */,
@@ -567,6 +583,7 @@
 				0DCC398A23B7142E00197B15 /* BTDialogBundle.bundle in Resources */,
 				60D28A71230692270043442B /* Assets.xcassets in Resources */,
 				18E5647E249762430050C13E /* InputTestViewController.xib in Resources */,
+				18C9082B257DFC1F00C6BC14 /* StarTestViewController.xib in Resources */,
 				0D41969323B63CBD00F5079F /* DialogTestViewController.xib in Resources */,
 				6037C17523168E430017D898 /* HomeTableViewCell.xib in Resources */,
 				60D28A6F230692260043442B /* Main.storyboard in Resources */,
@@ -655,6 +672,7 @@
 				0D41969623B6413100F5079F /* BTAlertLabelView.m in Sources */,
 				18859B202446B1F600B8B1D9 /* BTWidgetView.m in Sources */,
 				0DD56D082445F65C00708775 /* SearchTestViewController.m in Sources */,
+				18C9082A257DFC1F00C6BC14 /* StarTestViewController.m in Sources */,
 				18E77F6B2498633000BF9F5A /* LabelTestViewController.m in Sources */,
 				1898CCD524656EB800F50264 /* BTSlideView.m in Sources */,
 				0D41969D23B6483800F5079F /* BTAlertTextFieldView.m in Sources */,

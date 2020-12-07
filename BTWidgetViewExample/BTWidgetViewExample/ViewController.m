@@ -21,6 +21,7 @@
 #import "BTProgressView.h"
 #import "TestVerticalAnimViewController.h"
 #import "TestProgressViewController.h"
+#import "StarTestViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -46,7 +47,8 @@
                   @"ContentAutoView",
                   @"GridImageView",
                   @"TestVerticalAnimViewController",
-                  @"TestProgressViewController"
+                  @"TestProgressViewController",
+                  @"StarTestViewController"
     ];
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCellId"];
     self.tableView.delegate=self;
@@ -252,6 +254,11 @@
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
+        case 11:
+        {
+            StarTestViewController * vc=[StarTestViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
             
     }
 }

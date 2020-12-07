@@ -11,96 +11,143 @@
 
 @interface BTStarView()
 
+@property (nonatomic, assign) BTStarViewType type;
+
 @property (nonatomic, assign) NSInteger totalNumber;
 
-@property (nonatomic, strong) NSMutableArray * imgViewArray;
+@property (nonatomic, strong) NSMutableArray * starViewArray;
 
 @property (nonatomic, assign) CGSize imgViewSize;
 
-@property (nonatomic, strong) UIImage * starNormalImg;
-
-@property (nonatomic, strong) UIImage * starSelectImg;
+@property (nonatomic, strong) UIColor * starColor;
 
 @end
 
 
 @implementation BTStarView
 
-- (instancetype)initWithNumber:(NSInteger)number imgViewSize:(CGSize)size imgSelect:(UIImage*)imgSelect imgNormal:(UIImage*)imgNormal{
+- (instancetype)initImgStarWithNum:(NSInteger)totalNum size:(CGFloat)size{
     self = [super init];
-    self.space = 10;
-    self.totalNumber = number;
-    self.imgViewSize = size;
-    self.starNormalImg = imgNormal;
-    self.starSelectImg = imgSelect;
+    self.type = BTStarViewTypeImg;
+    self.totalNumber = totalNum;
+    self.imgViewSize = CGSizeMake(size, size);
+    [self initSelf];
+    return self;
+}
+- (instancetype)initDrawStarWithNum:(NSInteger)totalNum size:(CGFloat)size starColor:(UIColor*)color{
+    self = [super init];
+    self.type = BTStarViewTypeDraw;
+    self.totalNumber = totalNum;
+    self.imgViewSize = CGSizeMake(size, size);
+    self.starColor = color;
     [self initSelf];
     return self;
 }
 
-
 - (void)initSelf{
-    self.imgViewArray = [NSMutableArray new];
-    for (int i=0; i<self.totalNumber; i++) {
-        UIImageView * imgView = [[UIImageView alloc] init];
-        imgView.image = self.starNormalImg;
-        [self.imgViewArray addObject:imgView];
-        [self addSubview:imgView];
+    self.speace = 10;
+    self.starViewArray = [NSMutableArray new];
+    if (self.type == BTStarViewTypeImg) {
+        for (int i=0; i<self.totalNumber; i++) {
+            UIImageView * imgView = [[UIImageView alloc] init];
+            imgView.image = self.emptyStarImg;
+            [self.starViewArray addObject:imgView];
+            [self addSubview:imgView];
+        }
+    }else{
+        for (int i=0; i<self.totalNumber; i++) {
+            BTStarDrawView * starView = [[BTStarDrawView alloc] initWithRect:CGRectMake(0, 0, self.imgViewSize.width, self.imgViewSize.height) color:self.starColor];
+            starView.percent = 0;
+            [self.starViewArray addObject:starView];
+            [self addSubview:starView];
+        }
     }
+    
 }
 
 - (void)layoutSubviews{
     CGFloat startX = 0;
-    for (UIImageView * imgView in self.imgViewArray) {
-        imgView.frame = CGRectMake(startX, 0, self.imgViewSize.width, self.imgViewSize.height);
-        startX = startX + self.space + self.imgViewSize.width;
+    for (UIView * view in self.starViewArray) {
+        view.frame = CGRectMake(startX, 0, self.imgViewSize.width, self.imgViewSize.height);
+        startX = startX + self.speace + self.imgViewSize.width;
     }
 }
 
-- (void)setSelectIndex:(NSInteger)selectIndex{
+- (void)setSelectIndex:(CGFloat)selectIndex{
     _selectIndex = selectIndex;
-    for (int i=0; i<self.imgViewArray.count; i++) {
-        UIImageView * imgView = self.imgViewArray[i];
-        if (i < selectIndex) {
-            if (self.selectColor) {
-                imgView.image = [self.starNormalImg imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-            }else{
-                imgView.image = self.starSelectImg;
+    NSInteger index = (NSInteger)selectIndex;
+    if (self.type == BTStarViewTypeImg) {
+        if (self.halfStarImg) {
+            for (int i=0; i<self.starViewArray.count; i++) {
+                UIImageView * imgView = self.starViewArray[i];
+                if (i < index) {
+                    imgView.image = self.fullStarImg;
+                }else if(i == index && selectIndex - index >= 0.5){
+                    imgView.image = self.halfStarImg;
+                }else{
+                    imgView.image = self.emptyStarImg;
+                }
             }
-            
         }else{
-            imgView.image = self.starNormalImg;
+            for (int i=0; i<self.starViewArray.count; i++) {
+                UIImageView * imgView = self.starViewArray[i];
+                if (i < selectIndex) {
+                    imgView.image = self.fullStarImg;
+                }else{
+                    imgView.image = self.emptyStarImg;
+                }
+            }
+        }
+        
+    }else{
+        
+        for (int i=0; i<self.starViewArray.count; i++) {
+            BTStarDrawView * starView = self.starViewArray[i];
+            if (i < index) {
+                starView.percent = 1;
+            }else if(i == index){
+                starView.percent = selectIndex - index;
+            }else{
+                starView.percent = 0;
+            }
         }
     }
 }
 
 - (CGFloat)calculateWidth{
-    return self.imgViewSize.width * self.totalNumber + (self.totalNumber - 1) * self.space;
+    return self.imgViewSize.width * self.totalNumber + (self.totalNumber - 1) * self.speace;
 }
 
-- (void)setSelectColor:(UIColor *)selectColor{
-    _selectColor = selectColor;
-    for (int i=0; i<self.imgViewArray.count; i++) {
-        UIImageView * imgView = self.imgViewArray[i];
-        imgView.tintColor = selectColor;
-    }
-}
+
+@end
+
+
+
+@interface BTStarDrawView()
+
+@property (nonatomic, strong) UIColor * starColor;
+
+@property (nonatomic, strong) NSMutableArray * starLayers;
 
 @end
 
 
 @implementation BTStarDrawView
 
-- (instancetype)initWithRect:(CGRect)rect color:(UIColor*)color percent:(CGFloat)percent{
+- (instancetype)initWithRect:(CGRect)rect color:(UIColor*)color{
     self = [super initWithFrame:rect];
-    
-    [self creatViewWitNumber:percent color:color];
-    
+    self.starColor = color;
+    self.starLayers = [NSMutableArray new];
     return self;
 }
 
--(void)creatViewWitNumber:(CGFloat)percent color:(UIColor*)color
-{
-    float R = self.frame.size.height/2;
+- (void)drawRect:(CGRect)rect{
+    
+    for (CALayer * layer in self.starLayers) {
+        [layer removeFromSuperlayer];
+    }
+    
+    float R = rect.size.height/2;
     float r = R * sinf(M_PI * 18/180.0)/sinf(M_PI * 36/180.0);
     
     //用来画五角星
@@ -116,8 +163,7 @@
         
         CGPoint point = CGPointMake(x, y);
         CGPoint point1 = CGPointMake(x1, y1);
-        if(i == 0)
-        {
+        if(i == 0){
             [path moveToPoint:point];
             [path addLineToPoint:point1];
         }else{
@@ -130,26 +176,30 @@
     
     //外侧五角星框
     CAShapeLayer * slayer = [CAShapeLayer layer];
-    slayer.frame = CGRectMake(self.frame.size.height, 0, self.frame.size.height, self.frame.size.height);
+    slayer.frame = CGRectMake(0,0,rect.size.width,rect.size.height);
     slayer.path = path.CGPath;
     slayer.fillColor = [UIColor clearColor].CGColor;
-    slayer.strokeColor = color.CGColor;
+    slayer.strokeColor = self.starColor.CGColor;
     slayer.lineWidth = 1;
+    [self.starLayers addObject:slayer];
     [self.layer addSublayer:slayer];
     
     //内侧五角星
     CAShapeLayer * slayer1 = [CAShapeLayer layer];
-    slayer1.frame = CGRectMake(self.frame.size.height, 0, self.frame.size.height, self.frame.size.height);
+    slayer1.frame = CGRectMake(0, 0, rect.size.width * self.percent, rect.size.height);
     slayer1.path = path.CGPath;
     
     CALayer * layer1 = [CALayer layer];
-    layer1.frame = CGRectMake(self.frame.size.height,
-                              0,
-                              self.frame.size.height * percent,
-                              self.frame.size.height);
-    layer1.backgroundColor = color.CGColor;
+    layer1.frame = CGRectMake(0,0,rect.size.width * self.percent,rect.size.height);
+    layer1.backgroundColor = self.starColor.CGColor;
     layer1.mask = slayer1 ;
+    [self.starLayers addObject:layer1];
     [self.layer addSublayer:layer1];
+}
+
+- (void)setPercent:(CGFloat)percent{
+    _percent = percent;
+    [self setNeedsDisplay];
 }
 
 
