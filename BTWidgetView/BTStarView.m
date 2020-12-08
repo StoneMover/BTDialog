@@ -19,7 +19,9 @@
 
 @property (nonatomic, assign) CGSize imgViewSize;
 
-@property (nonatomic, strong) UIColor * starColor;
+@property (nonatomic, strong) UIColor * selectColor;
+
+@property (nonatomic, strong) UIColor * normalColor;
 
 @end
 
@@ -34,12 +36,15 @@
     [self initSelf];
     return self;
 }
-- (instancetype)initDrawStarWithNum:(NSInteger)totalNum size:(CGFloat)size starColor:(UIColor*)color{
+
+
+- initDrawStarWithNum:(NSInteger)totalNum size:(CGFloat)size selectColor:(UIColor*)selectColor normalColor:(UIColor *_Nullable)normalColor{
     self = [super init];
     self.type = BTStarViewTypeDraw;
     self.totalNumber = totalNum;
     self.imgViewSize = CGSizeMake(size, size);
-    self.starColor = color;
+    self.selectColor = selectColor;
+    self.normalColor = normalColor;
     [self initSelf];
     return self;
 }
@@ -56,7 +61,7 @@
         }
     }else{
         for (int i=0; i<self.totalNumber; i++) {
-            BTStarDrawView * starView = [[BTStarDrawView alloc] initWithRect:CGRectMake(0, 0, self.imgViewSize.width, self.imgViewSize.height) color:self.starColor];
+            BTStarDrawView * starView = [[BTStarDrawView alloc] initWithRect:CGRectMake(0, 0, self.imgViewSize.width, self.imgViewSize.height) selectColor:self.selectColor normalColor:self.normalColor];
             starView.percent = 0;
             [self.starViewArray addObject:starView];
             [self addSubview:starView];
@@ -125,7 +130,9 @@
 
 @interface BTStarDrawView()
 
-@property (nonatomic, strong) UIColor * starColor;
+@property (nonatomic, strong) UIColor * selectColor;
+
+@property (nonatomic, strong) UIColor * normalColor;
 
 @property (nonatomic, strong) NSMutableArray * starLayers;
 
@@ -134,12 +141,14 @@
 
 @implementation BTStarDrawView
 
-- (instancetype)initWithRect:(CGRect)rect color:(UIColor*)color{
+- (instancetype)initWithRect:(CGRect)rect selectColor:(UIColor*)selectColor normalColor:(UIColor *_Nullable)normalColor{
     self = [super initWithFrame:rect];
-    self.starColor = color;
+    self.selectColor = selectColor;
+    self.normalColor = normalColor;
     self.starLayers = [NSMutableArray new];
     return self;
 }
+
 
 - (void)drawRect:(CGRect)rect{
     
@@ -175,26 +184,35 @@
     [path closePath];
     
     //外侧五角星框
-    CAShapeLayer * slayer = [CAShapeLayer layer];
-    slayer.frame = CGRectMake(0,0,rect.size.width,rect.size.height);
-    slayer.path = path.CGPath;
-    slayer.fillColor = [UIColor clearColor].CGColor;
-    slayer.strokeColor = self.starColor.CGColor;
-    slayer.lineWidth = 1;
-    [self.starLayers addObject:slayer];
-    [self.layer addSublayer:slayer];
+    CAShapeLayer * layerNormal = [CAShapeLayer layer];
+    layerNormal.frame = CGRectMake(0,0,rect.size.width,rect.size.height);
+    layerNormal.path = path.CGPath;
+    layerNormal.allowsEdgeAntialiasing = YES;
+    if (self.normalColor) {
+        layerNormal.fillColor = self.normalColor.CGColor;
+        layerNormal.lineWidth = 2;
+        layerNormal.strokeColor = [UIColor clearColor].CGColor;
+    }else{
+        layerNormal.fillColor = [UIColor clearColor].CGColor;
+        layerNormal.strokeColor = self.selectColor.CGColor;
+        layerNormal.lineWidth = 1;
+    }
+    
+    [self.starLayers addObject:layerNormal];
+    [self.layer addSublayer:layerNormal];
     
     //内侧五角星
-    CAShapeLayer * slayer1 = [CAShapeLayer layer];
-    slayer1.frame = CGRectMake(0, 0, rect.size.width * self.percent, rect.size.height);
-    slayer1.path = path.CGPath;
+    CAShapeLayer * slayer = [CAShapeLayer layer];
+    slayer.frame = CGRectMake(0, 0, rect.size.width, rect.size.height);
+    slayer.path = path.CGPath;
     
-    CALayer * layer1 = [CALayer layer];
-    layer1.frame = CGRectMake(0,0,rect.size.width * self.percent,rect.size.height);
-    layer1.backgroundColor = self.starColor.CGColor;
-    layer1.mask = slayer1 ;
-    [self.starLayers addObject:layer1];
-    [self.layer addSublayer:layer1];
+    CALayer * layer = [CALayer layer];
+    layer.allowsEdgeAntialiasing = YES;
+    layer.frame = CGRectMake(0,0,rect.size.width * self.percent,rect.size.height);
+    layer.backgroundColor = self.selectColor.CGColor;
+    layer.mask = slayer;
+    [self.starLayers addObject:layer];
+    [self.layer addSublayer:layer];
 }
 
 - (void)setPercent:(CGFloat)percent{

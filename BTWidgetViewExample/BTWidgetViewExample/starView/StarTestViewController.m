@@ -20,10 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"StarView";
-    self.starDrawView = [[BTStarView alloc] initDrawStarWithNum:5 size:50 starColor:UIColor.redColor];
+    self.starDrawView = [[BTStarView alloc] initDrawStarWithNum:5 size:50 selectColor:UIColor.redColor normalColor:nil];
     self.starDrawView.frame = CGRectMake(0, 100, self.starDrawView.calculateWidth, 50);
     [self.view addSubview:self.starDrawView];
-    self.starDrawView.selectIndex = 1.5;
+    self.starDrawView.selectIndex = 1.75;
     
 }
 

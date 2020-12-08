@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_ENUM(NSInteger,BTStarViewType) {
     BTStarViewTypeImg = 0,
     BTStarViewTypeDraw
@@ -16,7 +18,7 @@ typedef NS_ENUM(NSInteger,BTStarViewType) {
 @interface BTStarView : UIView
 
 - (instancetype)initImgStarWithNum:(NSInteger)totalNum size:(CGFloat)size;
-- (instancetype)initDrawStarWithNum:(NSInteger)totalNum size:(CGFloat)size starColor:(UIColor*)color;
+- (instancetype)initDrawStarWithNum:(NSInteger)totalNum size:(CGFloat)size selectColor:(UIColor*)selectColor normalColor:(UIColor *_Nullable)normalColor;
 
 //填充的星星图片，BTStarViewTypeImg下使用
 @property (nonatomic, strong) UIImage * fullStarImg;
@@ -45,7 +47,8 @@ typedef NS_ENUM(NSInteger,BTStarViewType) {
 
 @interface BTStarDrawView : UIView
 
-- (instancetype)initWithRect:(CGRect)rect color:(UIColor*)color;
+//当normalColor为空则显示为边框样式，不为空则为填充样式
+- (instancetype)initWithRect:(CGRect)rect selectColor:(UIColor*)selectColor normalColor:(UIColor *_Nullable)normalColor;
 
 //0.0~1.0
 @property (nonatomic, assign) CGFloat percent;
@@ -53,3 +56,5 @@ typedef NS_ENUM(NSInteger,BTStarViewType) {
 
 @end
 
+
+NS_ASSUME_NONNULL_END
