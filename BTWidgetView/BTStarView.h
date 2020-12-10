@@ -18,6 +18,8 @@ typedef NS_ENUM(NSInteger,BTStarViewType) {
 @interface BTStarView : UIView
 
 - (instancetype)initImgStarWithNum:(NSInteger)totalNum size:(CGFloat)size;
+
+//当normalColor为空则显示为边框样式，不为空则为填充样式
 - (instancetype)initDrawStarWithNum:(NSInteger)totalNum size:(CGFloat)size selectColor:(UIColor*)selectColor normalColor:(UIColor *_Nullable)normalColor;
 
 //填充的星星图片，BTStarViewTypeImg下使用
@@ -41,6 +43,11 @@ typedef NS_ENUM(NSInteger,BTStarViewType) {
  BTStarViewTypeDraw: 支持小数显示模式
  */
 @property (nonatomic, assign) CGFloat selectIndex;
+
+//是否可以选择星星选中数量
+@property (nonatomic, assign) BOOL isCanTouchSelect;
+
+@property (nonatomic, copy) void(^selectIndexTouchChange)(void);
 
 @end
 

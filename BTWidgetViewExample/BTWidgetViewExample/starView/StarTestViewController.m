@@ -21,6 +21,7 @@
     [super viewDidLoad];
     self.title = @"StarView";
     self.starDrawView = [[BTStarView alloc] initDrawStarWithNum:5 size:50 selectColor:UIColor.redColor normalColor:nil];
+    self.starDrawView.isCanTouchSelect = YES;
     self.starDrawView.frame = CGRectMake(0, 100, self.starDrawView.calculateWidth, 50);
     [self.view addSubview:self.starDrawView];
     self.starDrawView.selectIndex = 1.75;

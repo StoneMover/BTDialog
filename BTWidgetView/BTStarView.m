@@ -123,6 +123,40 @@
     return self.imgViewSize.width * self.totalNumber + (self.totalNumber - 1) * self.speace;
 }
 
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    if (!self.isCanTouchSelect) {
+        return;
+    }
+    
+    UITouch * touch=[touches anyObject];
+    [self selectTouch:touch];
+}
+
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    if (!self.isCanTouchSelect) {
+        return;
+    }
+    
+    UITouch * touch=[touches anyObject];
+    [self selectTouch:touch];
+}
+
+
+- (void)selectTouch:(UITouch*)touch{
+    
+    CGPoint point=[touch locationInView:self];
+    CGFloat fullWitdth = self.imgViewSize.width + self.speace;
+    if (fullWitdth == 0) {
+        return;
+    }
+    CGFloat result = point.x / fullWitdth;
+    self.selectIndex = result;
+    if (self.selectIndexTouchChange) {
+        self.selectIndexTouchChange();
+    }
+}
+
 
 @end
 
