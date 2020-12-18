@@ -57,6 +57,6 @@ typedef void (^BTDialogDissmisFinishBlock)(void);
 
 //消失
 - (void)dismiss;
-
+- (void)dismissAnimTime:(CGFloat)time;
 
 @end

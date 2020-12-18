@@ -160,13 +160,18 @@
 
 #pragma mark 消失动画
 -(void)dismiss{
+    [self dismissAnimTime:0.3];
+    
+}
+
+- (void)dismissAnimTime:(CGFloat)time{
     switch (self.location) {
         case BTDialogLocationCenter:
-            [self dismissCenterAnim];
+            [self dismissCenterAnim:time];
             break;
         case BTDialogLocationTop:
         {
-            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            [UIView animateWithDuration:time delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 self.bgBlackColor.alpha = 0;
                 self.showView.frame=CGRectMake(self.showView.BTLeft,-self.showView.BTHeight, self.showView.BTWidth, self.showView.BTHeight);
             } completion:^(BOOL finished) {
@@ -176,7 +181,7 @@
             break;
         case BTDialogLocationBottom:
         {
-            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            [UIView animateWithDuration:time delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 self.bgBlackColor.alpha = 0;
                 self.showView.frame=CGRectMake(self.showView.BTLeft, self.BTHeight, self.showView.BTWidth, self.showView.BTHeight);
             } completion:^(BOOL finished) {
@@ -189,14 +194,13 @@
         default:
             break;
     }
-    
 }
 
--(void)dismissCenterAnim{
+-(void)dismissCenterAnim:(CGFloat)time{
     switch (self.animStyle) {
         case BTDialogAnimStyleStyleDefault:
         {
-            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            [UIView animateWithDuration:time delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
                 self.showView.alpha = 0;
                 self.bgBlackColor.alpha = 0;
             }completion:^(BOOL finished){
@@ -205,7 +209,7 @@
         }
             break;
         case BTDialogAnimStyleAndroid:{
-            [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            [UIView animateWithDuration:time delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
                 self.bgBlackColor.alpha = 0;
                 self.showView.alpha=0;
                 self.showView.transform=CGAffineTransformMakeScale(.25f, .25f);
@@ -247,13 +251,9 @@
 }
 
 - (void)setIsNeedMoveFollowKeyboard:(BOOL)isNeedMoveFollowKeyboard{
-    [self setIsNeedMoveFollowKeyboard:isNeedMoveFollowKeyboard margin:18];
-}
-
-- (void)setIsNeedMoveFollowKeyboard:(BOOL)isNeedMoveFollowKeyboard margin:(CGFloat)margin{
     _isNeedMoveFollowKeyboard = isNeedMoveFollowKeyboard;
     if (isNeedMoveFollowKeyboard) {
-        self.keyboardHelp = [[BTKeyboardHelp alloc] initWithShowView:self.showView moveView:self.showView margin:margin];
+        self.keyboardHelp = [[BTKeyboardHelp alloc] initWithShowView:self.showView moveView:self.showView margin:18];
     }else{
         self.keyboardHelp = nil;
     }
