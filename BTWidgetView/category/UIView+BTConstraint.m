@@ -248,6 +248,13 @@
     [self bt_addConstraint:model toItemModel:toItemModel multiplier:1 constant:c];
 }
 
+- (void)bt_addToParentWithPadding:(CGFloat)padding{
+    [self bt_addLeftToItemView:self.superview constant:padding];
+    [self bt_addTopToItemView:self.superview constant:padding];
+    [self bt_addRightToItemView:self.superview constant:-padding];
+    [self bt_addBottomToItemView:self.superview constant:-padding];
+}
+
 
 @end
 

@@ -103,6 +103,8 @@ NS_ASSUME_NONNULL_BEGIN
              toItemModel:(BTBTConstraintModel*)toItemModel
                 constant:(CGFloat)c;
 
+- (void)bt_addToParentWithPadding:(CGFloat)padding;
+
 
 @end
 
