@@ -57,6 +57,11 @@
         
     }
     
+    if (self.dashedLineWidthAndMargin != 0) {
+        CGFloat arr[] = {self.dashedLineWidthAndMargin,self.dashedLineWidthAndMargin};
+        CGContextSetLineDash(ctx, 0, arr, 2);
+    }
+    
     CGContextSetLineWidth(ctx, lineWidth);
     
     CGContextStrokePath(ctx);
@@ -79,6 +84,14 @@
 
 - (void)setAligntMent:(NSInteger)aligntMent{
     _aligntMent=aligntMent;
+    [self setNeedsDisplay];
+}
+
+- (void)setDashedLineWidthAndMargin:(NSInteger)dashedLineWidthAndMargin{
+    _dashedLineWidthAndMargin = dashedLineWidthAndMargin;
+    if (dashedLineWidthAndMargin == 0) {
+        return;
+    }
     [self setNeedsDisplay];
 }
 

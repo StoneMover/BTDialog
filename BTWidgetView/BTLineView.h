@@ -37,4 +37,7 @@ typedef NS_ENUM(NSInteger,BTLineViewAlignment) {
 //方位,垂直情况默认是居左,水平情况默认是居上
 @property(nonatomic,assign) IBInspectable NSInteger aligntMent;
 
+//虚线的宽度以及虚线两个点之间的间隔，默认为0，不为0则会绘制虚线
+@property (nonatomic, assign) IBInspectable NSInteger dashedLineWidthAndMargin;
+
 @end
