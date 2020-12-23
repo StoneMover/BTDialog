@@ -9,6 +9,7 @@
 #import "NSString+BTString.h"
 #import "BTUtils.h"
 #import<CommonCrypto/CommonDigest.h>
+#import "NSDate+BTDate.h"
 
 @implementation NSString (BTString)
 
@@ -41,8 +42,9 @@
 }
 
 - (NSString*)bt_base64Encode{
-    NSData *data = [[NSData alloc]initWithBase64EncodedString:self options:0];
-    return [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSData * data = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSString * base64String = [data base64EncodedStringWithOptions:0];
+    return base64String;
 }
 
 - (NSString*)bt_md5{
@@ -91,7 +93,7 @@
     return dic;
 }
 
-- (nullable NSArray *)bt_toArray{
+- (nullable NSArray<NSDictionary *> *)bt_toArray{
     NSData *jsonData = [self dataUsingEncoding:NSUTF8StringEncoding];
     NSError *err;
     NSArray * array = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
@@ -115,6 +117,13 @@
     }];
     
     return params;
+}
+
++ (NSString*)bt_randomStr{
+    NSString * randomStr = [self bt_randomStrWithLenth:16];
+    NSDate * date = [NSDate bt_initLocalDate];
+    randomStr = [NSString stringWithFormat:@"%@%.0f",randomStr,date.bt_timeIntervalSince1970];
+    return randomStr;
 }
 
 
@@ -154,7 +163,8 @@
     NSMutableString *resultStr = [[NSMutableString alloc] init];
     for (int i = 0; i < lenth; i++)
     {
-        unsigned index = rand() % [sourceStr length];
+        //可以用来产生0～(x-1)范围内的随机数
+        NSInteger index =arc4random_uniform((int)sourceStr.length);
         NSString *oneStr = [sourceStr substringWithRange:NSMakeRange(index, 1)];
         [resultStr appendString:oneStr];
     }

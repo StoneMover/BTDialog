@@ -65,4 +65,16 @@
 }
 
 
++ (UIColor*)bt_51Color{
+    return [UIColor bt_RGBSame:51];
+}
+
++ (UIColor*)bt_235Color{
+    return [UIColor bt_RGBSame:235];
+}
+
++ (UIColor*)bt_83Color{
+    return [UIColor bt_RGBSame:83];
+}
+
 @end

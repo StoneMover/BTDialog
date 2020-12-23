@@ -31,17 +31,23 @@
 
 + (BTDownloadMananger*)share;
 
-- (void)downLoad:(NSString*)url;
+- (BTDownloadModel*)downLoad:(NSString*)url;
 
-- (void)downLoad:(NSString*)url obj:(NSObject*)obj;
+- (BTDownloadModel*)downLoad:(NSString*)url obj:(NSObject*)obj;
 
-- (void)downLoad:(NSString *)url savePath:(NSString*)savePath;
+- (BTDownloadModel*)downLoad:(NSString *)url savePath:(NSString*)savePath;
 
-- (void)downLoad:(NSString *)url savePath:(NSString*)savePath saveName:(NSString*)saveName;
+- (BTDownloadModel*)downLoad:(NSString *)url savePath:(NSString*)savePath saveName:(NSString*)saveName;
 
-- (void)downLoad:(NSString *)url savePath:(NSString*)savePath saveName:(NSString*)saveName obj:(NSObject*)obj;
+- (BTDownloadModel*)downLoad:(NSString *)url savePath:(NSString*)savePath saveName:(NSString*)saveName obj:(NSObject*)obj;
+
+- (void)downLoadWithModel:(BTDownloadModel *)model;
+
+- (void)cancelWithModel:(BTDownloadModel *)model;
 
 - (void)cancel:(NSString*)url;
+
+- (void)canelAll;
 
 - (void)setMaxDownLoadNum:(NSInteger)maxDownLoadNum;
 

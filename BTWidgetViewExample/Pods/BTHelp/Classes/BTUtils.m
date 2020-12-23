@@ -28,6 +28,13 @@
     return [[UIApplication sharedApplication] statusBarFrame].size.height;
 }
 
++ (CGFloat)IPHONEX_MORE_BAR_HEIGHT{
+    if ([BTUtils UI_IS_IPHONEX]) {
+        return [[UIApplication sharedApplication] statusBarFrame].size.height - 20;
+    }
+    return 0;
+}
+
 + (CGFloat)HOME_INDICATOR_HEIGHT{
     if (BTUtils.UI_IS_IPHONEX) {
         return 34;
@@ -61,11 +68,20 @@
 }
 
 + (BOOL)UI_IS_IPHONEX{
-    if (BTUtils.SCREEN_W == 375.f && BTUtils.SCREEN_H == 812.f) {
+    
+    if (BTUtils.SCREEN_W + BTUtils.SCREEN_H == 812 + 375) {
         return YES;
     }
     
-    if (BTUtils.SCREEN_W == 414.f && BTUtils.SCREEN_H == 896.f) {
+    if (BTUtils.SCREEN_W + BTUtils.SCREEN_H == 896 + 414) {
+        return YES;
+    }
+    
+    if (BTUtils.SCREEN_W + BTUtils.SCREEN_H == 844 + 390) {
+        return YES;
+    }
+    
+    if (BTUtils.SCREEN_W + BTUtils.SCREEN_H == 926 + 428) {
         return YES;
     }
     
@@ -73,7 +89,7 @@
 }
 
 + (BOOL)UI_IS_IPHONE_6{
-    if (BTUtils.SCREEN_W == 375.f && BTUtils.SCREEN_H == 667.f) {
+    if (BTUtils.SCREEN_W + BTUtils.SCREEN_H == 667 + 375) {
         return YES;
     }
     
@@ -81,7 +97,7 @@
 }
 
 + (BOOL)UI_IS_IPHONE_6_P{
-    if (BTUtils.SCREEN_W == 414.f && BTUtils.SCREEN_H == 736.f) {
+    if (BTUtils.SCREEN_W + BTUtils.SCREEN_H == 736 + 414) {
         return YES;
     }
     
@@ -89,13 +105,12 @@
 }
 
 + (BOOL)UI_IS_IPHONE_SE{
-    if (BTUtils.SCREEN_W == 320.f && BTUtils.SCREEN_H == 568.f) {
+    if (BTUtils.SCREEN_W + BTUtils.SCREEN_H == 568 + 320) {
         return YES;
     }
     
     return NO;
 }
-
 + (UIApplication*)APP{
     return [UIApplication sharedApplication];
 }
@@ -116,7 +131,7 @@
     return [NSNotificationCenter defaultCenter];
 }
 
-+ (CGFloat)SYS_VERION{
++ (CGFloat)SYS_VERSION{
     return [[UIDevice currentDevice].systemVersion doubleValue];
 }
 
@@ -472,6 +487,23 @@
     AudioServicesPlaySystemSound(1520);
 }
 
+
++ (NSInteger)getDaysInMonth:(NSInteger)year month:(NSInteger)month {
+    // imonth == 0的情况是应对在CourseViewController里month-1的情况
+    if((month == 0)||(month == 1)||(month == 3)||(month == 5)||(month == 7)||(month == 8)||(month == 10)||(month == 12))
+        return 31;
+    if((month == 4)||(month == 6)||(month == 9)||(month == 11))
+        return 30;
+    if((year%4 == 1)||(year%4 == 2)||(year%4 == 3))
+    {
+        return 28;
+    }
+    if(year%400 == 0)
+        return 29;
+    if(year%100 == 0)
+        return 28;
+    return 29;
+}
 
 //MARK:废弃方法
 + (NSString*)phoneEncrypt:(nullable NSString*)phone{

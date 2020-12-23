@@ -56,30 +56,41 @@ static BTDownloadMananger * mananger=nil;
 }
 
 
-- (void)downLoad:(NSString*)url{
-    [self downLoad:url savePath:nil saveName:nil];
+- (BTDownloadModel*)downLoad:(NSString*)url{
+    return [self downLoad:url savePath:nil saveName:nil];
 }
 
-- (void)downLoad:(NSString*)url obj:(NSObject*)obj{
-    [self downLoad:url savePath:nil saveName:nil obj:obj];
+- (BTDownloadModel*)downLoad:(NSString*)url obj:(NSObject*)obj{
+    return [self downLoad:url savePath:nil saveName:nil obj:obj];
 }
 
-- (void)downLoad:(NSString *)url savePath:(NSString*)savePath{
-    [self downLoad:url savePath:savePath saveName:nil];
+- (BTDownloadModel*)downLoad:(NSString *)url savePath:(NSString*)savePath{
+    return [self downLoad:url savePath:savePath saveName:nil];
 }
 
-- (void)downLoad:(NSString *)url savePath:(NSString*)savePath saveName:(NSString*)saveName{
-    [self downLoad:url savePath:savePath saveName:saveName obj:nil];
+- (BTDownloadModel*)downLoad:(NSString *)url savePath:(NSString*)savePath saveName:(NSString*)saveName{
+    return [self downLoad:url savePath:savePath saveName:saveName obj:nil];
 }
 
-- (void)downLoad:(NSString *)url savePath:(NSString*)savePath saveName:(NSString*)saveName obj:(NSObject*)obj{
-    if ([self modelWithUrl:url]) {
+- (BTDownloadModel*)downLoad:(NSString *)url savePath:(NSString*)savePath saveName:(NSString*)saveName obj:(NSObject*)obj{
+    BTDownloadModel * model = [self modelWithUrl:url];
+    if (model) {
+        NSLog(@"%@",@"该文件正在下载中");
+        return model;
+    }
+    
+    model =[[BTDownloadModel alloc] initWithUrl:url savePath:savePath saveName:saveName];
+    model.obj=obj;
+    [self downLoadWithModel:model];
+    return model;
+}
+
+- (void)downLoadWithModel:(BTDownloadModel *)model{
+    if ([self.dataModel containsObject:model]) {
         NSLog(@"%@",@"该文件正在下载中");
         return;
     }
     
-    BTDownloadModel * model =[[BTDownloadModel alloc] initWithUrl:url savePath:savePath saveName:saveName];
-    model.obj=obj;
     if (model.status==BTDownloadStatusFinish) {
         NSLog(@"%@",@"该文件存在本地并且下载完成");
         [self changeModelStatus:model status:BTDownloadStatusFinish];
@@ -95,6 +106,7 @@ static BTDownloadMananger * mananger=nil;
     [self startDownLoad:model];
 }
 
+
 - (void)startDownLoad:(BTDownloadModel*)model{
     [self.dataModel addObject:model];
     [self createTask:model];
@@ -102,12 +114,7 @@ static BTDownloadMananger * mananger=nil;
     [model.task resume];
 }
 
-- (void)cancel:(NSString*)url{
-    if ([BTUtils isEmpty:url]) {
-        NSLog(@"取消下载链接为空");
-        return;
-    }
-    BTDownloadModel * model=[self modelWithUrl:url];
+- (void)cancelWithModel:(BTDownloadModel *)model{
     if (!model) {
         NSLog(@"取消下载链接获取不到model为空");
         return;
@@ -128,6 +135,21 @@ static BTDownloadMananger * mananger=nil;
         NSData * data=[NSData dataWithContentsOfFile:filePath];
         [BTFileHelp saveFileWithPath:model.saveFolder fileName:model.saveName data:data];
     }];
+}
+
+- (void)cancel:(NSString*)url{
+    if ([BTUtils isEmpty:url]) {
+        NSLog(@"取消下载链接为空");
+        return;
+    }
+    BTDownloadModel * model=[self modelWithUrl:url];
+    [self cancelWithModel:model];
+}
+
+- (void)canelAll{
+    for (BTDownloadModel * model in self.dataModel) {
+        [self cancelWithModel:model];
+    }
 }
 
 - (void)changeModelStatus:(BTDownloadModel*)model status:(BTDownloadStatus)status{

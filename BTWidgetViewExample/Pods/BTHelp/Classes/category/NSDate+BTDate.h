@@ -97,6 +97,11 @@ NS_ASSUME_NONNULL_BEGIN
 //获取时区时差秒数
 + (NSInteger)bt_timeZoneSeconods;
 
+/*
+ 由于调用系统方法会在原有的date上加8小时的秒数，调用这个会在在原有的秒数上减去时区的相差秒数，仅限校正时区后的date使用
+ */
+- (NSTimeInterval)bt_timeIntervalSince1970;
+
 @end
 
 NS_ASSUME_NONNULL_END

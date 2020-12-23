@@ -11,7 +11,7 @@
 @implementation NSDate (BTDate)
 
 - (NSString*)bt_year{
-    return [self bt_dateStr:@"YYYY"];
+    return [self bt_dateStr:@"yyyy"];
 }
 
 - (NSString*)bt_month{
@@ -121,26 +121,26 @@
 }
 
 - (BOOL)bt_isSameMonthToDate:(NSDate*)date{
-    NSString * strSelf = [self bt_dateStr:@"YYYY-MM"];
-    NSString * strDate = [date bt_dateStr:@"YYYY-MM"];
+    NSString * strSelf = [self bt_dateStr:@"yyyy-MM"];
+    NSString * strDate = [date bt_dateStr:@"yyyy-MM"];
     return [strSelf isEqualToString:strDate];
 }
 
 - (BOOL)bt_isSameDayToDate:(NSDate*)date{
-    NSString * strSelf = [self bt_dateStr:@"YYYY-MM-dd"];
-    NSString * strDate = [date bt_dateStr:@"YYYY-MM-dd"];
+    NSString * strSelf = [self bt_dateStr:@"yyyy-MM-dd"];
+    NSString * strDate = [date bt_dateStr:@"yyyy-MM-dd"];
     return [strSelf isEqualToString:strDate];
 }
 
 - (BOOL)bt_isSameHourToDate:(NSDate*)date{
-    NSString * strSelf = [self bt_dateStr:@"YYYY-MM-dd HH"];
-    NSString * strDate = [date bt_dateStr:@"YYYY-MM-dd HH"];
+    NSString * strSelf = [self bt_dateStr:@"yyyy-MM-dd HH"];
+    NSString * strDate = [date bt_dateStr:@"yyyy-MM-dd HH"];
     return [strSelf isEqualToString:strDate];
 }
 
 - (BOOL)bt_isSameMinuteToDate:(NSDate*)date{
-    NSString * strSelf = [self bt_dateStr:@"YYYY-MM-dd HH:mm"];
-    NSString * strDate = [date bt_dateStr:@"YYYY-MM-dd HH:mm"];
+    NSString * strSelf = [self bt_dateStr:@"yyyy-MM-dd HH:mm"];
+    NSString * strDate = [date bt_dateStr:@"yyyy-MM-dd HH:mm"];
     return [strSelf isEqualToString:strDate];
 }
 
@@ -151,18 +151,18 @@
 }
 
 + (NSDate*)bt_dateYMD:(NSString*)dateStr{
-    return [self bt_dateFromStr:dateStr formatter:@"YYYY-MM-dd"];
+    return [self bt_dateFromStr:dateStr formatter:@"yyyy-MM-dd"];
 }
 
 
 
 + (NSDate*)bt_dateYMDHMS:(NSString*)dateStr{
-    return [self bt_dateFromStr:dateStr formatter:@"YYYY-MM-dd HH:mm:ss"];
+    return [self bt_dateFromStr:dateStr formatter:@"yyyy-MM-dd HH:mm:ss"];
 }
 
 
 + (NSDate*)bt_dateYMDHM:(NSString*)dateStr{
-    return [self bt_dateFromStr:dateStr formatter:@"YYYY-MM-dd HH:mm"];
+    return [self bt_dateFromStr:dateStr formatter:@"yyyy-MM-dd HH:mm"];
 }
 
 + (NSDate*)bt_dateFromStr:(NSString*)dateStr formatter:(NSString*)formatterStr{
@@ -181,6 +181,10 @@
     NSTimeZone * zone = [NSTimeZone systemTimeZone];
     NSInteger interval = [zone secondsFromGMTForDate: date];
     return interval;
+}
+
+- (NSTimeInterval)bt_timeIntervalSince1970{
+    return self.timeIntervalSince1970 - [NSDate bt_timeZoneSeconods];
 }
 
 @end

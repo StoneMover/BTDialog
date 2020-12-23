@@ -58,6 +58,8 @@
 //需要抬高的view的约束,这个值不为空的时候则会以改变约束的值为标准执行
 @property (nonatomic, strong) NSLayoutConstraint * contraintTop;
 
+//contraintTop约束所属于的view，用于contraintTop执行动画时候的动画效果显示,如果为空则执行displayView和moveView的layoutIfNeeded方法
+@property (nonatomic, strong) UIView * contraintTopView;
 
 - (void)replaceDisplayView:(UIView*)displayView withDistance:(NSInteger)distance;
 

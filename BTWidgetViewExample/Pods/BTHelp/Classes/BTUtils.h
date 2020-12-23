@@ -4,7 +4,12 @@
 //
 //  Created by whbt_mac on 16/4/23.
 //  Copyright © 2016年 StoneMover. All rights reserved.
-//
+//  IPhone7 375*667;
+//  IPhone7P 414*736
+//  IPhone11Pro IPhone12MINI 375*812
+//  IPhone11 IPhone11ProMax 414*896
+//  IPhone12 IPhone12Pro 390 * 844
+//  IPhone12ProMax 428 * 926
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -15,26 +20,38 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark 常用方法
 
+//导航器总体高度NAVCONTENT_HEIGHT+STATUS_BAR_HEIGHT
 + (CGFloat)NAV_HEIGHT;
 
+//导航器内容高度44
 + (CGFloat)NAVCONTENT_HEIGHT;
 
+//状态栏高度
 + (CGFloat)STATUS_BAR_HEIGHT;
 
+//全面屏比普通屏幕多出的状态栏高度
++ (CGFloat)IPHONEX_MORE_BAR_HEIGHT;
+
+//全面屏底部指示器高度
 + (CGFloat)HOME_INDICATOR_HEIGHT;
 
 + (CGFloat)HOME_INDICATOR_HEIGHT_MEDIUM;
 
 + (CGFloat)HOME_INDICATOR_HEIGHT_SMALL;
 
+//tabbar高度
 + (CGFloat)TAB_HEIGHT;
 
+//是否为全面屏
 + (BOOL)UI_IS_IPHONEX;
 
+//是否为IPhone6,IPhone7,IPhone8,IPhoneSE第二代 尺寸
 + (BOOL)UI_IS_IPHONE_6;
 
+//是否为IPhone6Plus,IPhone7Plus,IPhone8Plus 尺寸
 + (BOOL)UI_IS_IPHONE_6_P;
 
+//是否为IPhone5,IPhoneSE第一代尺寸
 + (BOOL)UI_IS_IPHONE_SE;
 
 + (UIApplication*)APP;
@@ -45,38 +62,50 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSObject<UIApplicationDelegate>*)APP_DELEGATE;
 
+//通知中心对象
 + (NSNotificationCenter*)NOTIFI_CENTER;
 
-+ (CGFloat)SYS_VERION;
+//系统版本号
++ (CGFloat)SYS_VERSION;
 
+//屏幕宽度
 + (CGFloat)SCREEN_W;
 
+//屏幕高度
 + (CGFloat)SCREEN_H;
 
 + (CGRect)SCREEN_BOUNDS;
 
+//以宽度的缩放比例，计算对应的高度，比如在375的宽度高度为100，那么在414宽度的屏幕上即为414/375*100
 + (CGFloat)SCALE_6_W:(CGFloat)value;
 
+//以高度的缩放比例，计算对应的宽度
 + (CGFloat)SCALE_6_H:(CGFloat)value;
 
 + (UIFont*)SYS_FONT_SIZE:(CGFloat)size weight:(UIFontWeight)weight;
 
 + (UIFont*)SYS_FONT_SIZE:(CGFloat)size;
 
+//处理空字符串，如果为空则返回@"";
 + (NSString*)SAFE_STR:(nullable NSString*)str;
 
+//默认的暂未图
 + (UIImage*)PLACE_HOLDER_IMAGE;
 
+//处理为空的URL对象，为空的时候返回[NSURL URLWithString:@"http://www.baidu.com"]
 + (NSURL*)URL:(nullable NSString*)url;
 
+//应用的版本号
 + (NSString*)APP_VERSION;
 
+//打开系统设置界面
 + (void)openSetVc;
 
+//获取当前VC
 + (UIViewController*)getCurrentVc;
-
 + (UIViewController *)getCurrentVCFrom:(UIViewController *)rootVc;
 
+//字符串是否为空
 + (BOOL)isEmpty:(nullable NSString*)str;
 
 //设置ios 推送bage 数字
@@ -135,6 +164,8 @@ NS_ASSUME_NONNULL_BEGIN
 //震动
 + (void)shake;
 
+//获取某月的总天数
++ (NSInteger)getDaysInMonth:(NSInteger)year month:(NSInteger)month;
 
 
 //MARK:废弃方法

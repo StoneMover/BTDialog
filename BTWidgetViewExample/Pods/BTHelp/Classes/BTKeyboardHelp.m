@@ -88,7 +88,12 @@
         if (self.contraintTop) {
             [UIView animateWithDuration:.25 animations:^{
                 self.contraintTop.constant=self.viewOriContraintTop;
-                [self.viewDisplay.superview layoutIfNeeded];
+                if (self.contraintTopView) {
+                    [self.contraintTopView.superview layoutIfNeeded];
+                }else{
+                    [self.viewDisplay.superview layoutIfNeeded];
+                    [self.viewMove.superview layoutIfNeeded];
+                }
             } completion:^(BOOL finished) {
                 if(self.delegate&&[self.delegate respondsToSelector:@selector(keyboardDidHide)]){
                     [self.delegate keyboardDidHide];
@@ -136,7 +141,12 @@
             if (self.contraintTop) {
                 [UIView animateWithDuration:.25 animations:^{
                     self.contraintTop.constant=self.viewOriContraintTop+result;
-                    [self.viewDisplay.superview layoutIfNeeded];
+                    if (self.contraintTopView) {
+                        [self.contraintTopView.superview layoutIfNeeded];
+                    }else{
+                        [self.viewDisplay.superview layoutIfNeeded];
+                        [self.viewMove.superview layoutIfNeeded];
+                    }
                 }];
             }else{
                 [UIView animateWithDuration:.25 animations:^{

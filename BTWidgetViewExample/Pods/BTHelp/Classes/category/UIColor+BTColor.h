@@ -24,6 +24,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIColor *)bt_colorWithHexString: (NSString *)color;
 
++ (UIColor*)bt_51Color;
+
++ (UIColor*)bt_235Color;
+
++ (UIColor*)bt_83Color;
+
 @end
 
 NS_ASSUME_NONNULL_END
