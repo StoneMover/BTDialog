@@ -9,6 +9,22 @@
 
 #import <UIKit/UIKit.h>
 
+struct
+BTPadding {
+    CGFloat top;
+    CGFloat bottom;
+    CGFloat left;
+    CGFloat right;
+};
+
+typedef struct CG_BOXABLE BTPadding BTPadding;
+
+CG_INLINE BTPadding
+BTPaddingMake(CGFloat top, CGFloat bottom,CGFloat left,CGFloat right)
+{
+    struct BTPadding p; p.top = top; p.bottom = bottom;p.left = left;p.right = right; return p;
+}
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class BTBTConstraintModel;
@@ -17,93 +33,105 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark width
 
-- (void)bt_addWidth:(CGFloat)c;
+- (NSLayoutConstraint *)bt_addWidth:(CGFloat)c;
 
-- (void)bt_addWidth:(NSLayoutRelation)relation constant:(CGFloat)c;
+- (NSLayoutConstraint *)bt_addWidth:(NSLayoutRelation)relation constant:(CGFloat)c;
 
 #pragma mark height
 
-- (void)bt_addHeight:(CGFloat)c;
+- (NSLayoutConstraint *)bt_addHeight:(CGFloat)c;
 
-- (void)bt_addHeight:(NSLayoutRelation)relation constant:(CGFloat)c;
+- (NSLayoutConstraint *)bt_addHeight:(NSLayoutRelation)relation constant:(CGFloat)c;
 
 #pragma mark left
 
-- (void)bt_addLeftToParent;
+- (NSLayoutConstraint *)bt_addLeftToParent;
 
-- (void)bt_addLeftToItemView:(UIView*)toItemView;
+- (NSLayoutConstraint *)bt_addLeftToParentWithPadding:(CGFloat)padding;
 
-- (void)bt_addLeftToItemView:(UIView*)toItemView isSame:(BOOL)isSame;
+- (NSLayoutConstraint *)bt_addLeftToItemView:(UIView*)toItemView;
 
-- (void)bt_addLeftToItemView:(UIView*)toItemView constant:(CGFloat)c;
+- (NSLayoutConstraint *)bt_addLeftToItemView:(UIView*)toItemView isSame:(BOOL)isSame;
 
-- (void)bt_addLeftToItemView:(UIView*)toItemView constant:(CGFloat)c isSame:(BOOL)isSame;
+- (NSLayoutConstraint *)bt_addLeftToItemView:(UIView*)toItemView constant:(CGFloat)c;
+
+- (NSLayoutConstraint *)bt_addLeftToItemView:(UIView*)toItemView constant:(CGFloat)c isSame:(BOOL)isSame;
 
 #pragma mark right
 
-- (void)bt_addRightToParent;
+- (NSLayoutConstraint *)bt_addRightToParent;
 
-- (void)bt_addRightToItemView:(UIView*)toItemView;
+- (NSLayoutConstraint *)bt_addRightToParentWithPadding:(CGFloat)padding;
 
-- (void)bt_addRightToItemView:(UIView*)toItemView isSame:(BOOL)isSame;
+- (NSLayoutConstraint *)bt_addRightToItemView:(UIView*)toItemView;
 
-- (void)bt_addRightToItemView:(UIView*)toItemView constant:(CGFloat)c;
+- (NSLayoutConstraint *)bt_addRightToItemView:(UIView*)toItemView isSame:(BOOL)isSame;
 
-- (void)bt_addRightToItemView:(UIView*)toItemView constant:(CGFloat)c isSame:(BOOL)isSame;
+- (NSLayoutConstraint *)bt_addRightToItemView:(UIView*)toItemView constant:(CGFloat)c;
+
+- (NSLayoutConstraint *)bt_addRightToItemView:(UIView*)toItemView constant:(CGFloat)c isSame:(BOOL)isSame;
 
 #pragma mark top
 
-- (void)bt_addTopToParent;
+- (NSLayoutConstraint *)bt_addTopToParent;
 
-- (void)bt_addTopToItemView:(UIView*)toItemView;
+- (NSLayoutConstraint *)bt_addTopToParentWithPadding:(CGFloat)padding;
 
-- (void)bt_addTopToItemView:(UIView*)toItemView isSame:(BOOL)isSame;
+- (NSLayoutConstraint *)bt_addTopToItemView:(UIView*)toItemView;
 
-- (void)bt_addTopToItemView:(UIView*)toItemView constant:(CGFloat)c;
+- (NSLayoutConstraint *)bt_addTopToItemView:(UIView*)toItemView isSame:(BOOL)isSame;
 
-- (void)bt_addTopToItemView:(UIView*)toItemView constant:(CGFloat)c isSame:(BOOL)isSame;
+- (NSLayoutConstraint *)bt_addTopToItemView:(UIView*)toItemView constant:(CGFloat)c;
+
+- (NSLayoutConstraint *)bt_addTopToItemView:(UIView*)toItemView constant:(CGFloat)c isSame:(BOOL)isSame;
 
 #pragma mark bottom
 
-- (void)bt_addBottomToParent;
+- (NSLayoutConstraint *)bt_addBottomToParent;
 
-- (void)bt_addBottomToItemView:(UIView*)toItemView;
+- (NSLayoutConstraint *)bt_addBottomToParentWithPadding:(CGFloat)padding;
 
-- (void)bt_addBottomToItemView:(UIView*)toItemView isSame:(BOOL)isSame;
+- (NSLayoutConstraint *)bt_addBottomToItemView:(UIView*)toItemView;
 
-- (void)bt_addBottomToItemView:(UIView*)toItemView constant:(CGFloat)c;
+- (NSLayoutConstraint *)bt_addBottomToItemView:(UIView*)toItemView isSame:(BOOL)isSame;
 
-- (void)bt_addBottomToItemView:(UIView*)toItemView constant:(CGFloat)c isSame:(BOOL)isSame;
+- (NSLayoutConstraint *)bt_addBottomToItemView:(UIView*)toItemView constant:(CGFloat)c;
+
+- (NSLayoutConstraint *)bt_addBottomToItemView:(UIView*)toItemView constant:(CGFloat)c isSame:(BOOL)isSame;
 
 
 #pragma mark center
 
-- (void)bt_addCenterXToParent;
-- (void)bt_addCenterXToItemView:(UIView*)toItemView;
-- (void)bt_addCenterXToItemView:(UIView*)toItemView constant:(CGFloat)c;
+- (NSLayoutConstraint *)bt_addCenterXToParent;
+- (NSLayoutConstraint *)bt_addCenterXToItemView:(UIView*)toItemView;
+- (NSLayoutConstraint *)bt_addCenterXToItemView:(UIView*)toItemView constant:(CGFloat)c;
 
-- (void)bt_addCenterYToParent;
-- (void)bt_addCenterYToItemView:(UIView*)toItemView;
-- (void)bt_addCenterYToItemView:(UIView*)toItemView  constant:(CGFloat)c;
+- (NSLayoutConstraint *)bt_addCenterYToParent;
+- (NSLayoutConstraint *)bt_addCenterYToItemView:(UIView*)toItemView;
+- (NSLayoutConstraint *)bt_addCenterYToItemView:(UIView*)toItemView  constant:(CGFloat)c;
 
-- (void)bt_addCenterToParent:(UIView*)toItemView;
-- (void)bt_addCenterToItemView:(UIView*)toItemView;
+//第一个为X约束，第二个为Y约束
+- (NSArray<NSLayoutConstraint*> *)bt_addCenterToParent;
+- (NSArray<NSLayoutConstraint*> *)bt_addCenterToItemView:(UIView*)toItemView;
 
+#pragma mark 其它
+//约束顺序为上下左右
+- (NSArray<NSLayoutConstraint*> *)bt_addToParentWithPadding:(BTPadding)padding;
 
 #pragma mark 用model创建
-- (void)bt_addConstraint:(BTBTConstraintModel*)model
+- (NSLayoutConstraint *)bt_addConstraint:(BTBTConstraintModel*)model
              toItemModel:(BTBTConstraintModel*)toItemModel
               multiplier:(CGFloat)multiplier
                 constant:(CGFloat)c;
 
-- (void)bt_addConstraint:(BTBTConstraintModel*)model
+- (NSLayoutConstraint *)bt_addConstraint:(BTBTConstraintModel*)model
              toItemModel:(BTBTConstraintModel*)toItemModel;
 
-- (void)bt_addConstraint:(BTBTConstraintModel*)model
+- (NSLayoutConstraint *)bt_addConstraint:(BTBTConstraintModel*)model
              toItemModel:(BTBTConstraintModel*)toItemModel
                 constant:(CGFloat)c;
 
-- (void)bt_addToParentWithPadding:(CGFloat)padding;
+//- (void)bt_removeAllCon
 
 
 @end
