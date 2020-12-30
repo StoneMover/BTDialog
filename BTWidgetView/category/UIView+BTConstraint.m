@@ -22,6 +22,12 @@
     return [self bt_addConstraint:model toItemModel:toItemModel multiplier:1 constant:c];
 }
 
+- (NSLayoutConstraint *)bt_addEqualWidthToView:(UIView*)toView{
+    BTBTConstraintModel * model = [[BTBTConstraintModel alloc] initWithView:self attribute:NSLayoutAttributeWidth relation:NSLayoutRelationEqual];
+    BTBTConstraintModel * toItemModel = [[BTBTConstraintModel alloc] initWithToItemView:toView attribute:NSLayoutAttributeWidth];
+    return [self bt_addConstraint:model toItemModel:toItemModel multiplier:1 constant:0];
+}
+
 #pragma mark height
 
 - (NSLayoutConstraint *)bt_addHeight:(CGFloat)c{
@@ -32,6 +38,12 @@
     BTBTConstraintModel * model = [[BTBTConstraintModel alloc] initWithView:self attribute:NSLayoutAttributeHeight relation:relation];
     BTBTConstraintModel * toItemModel = [[BTBTConstraintModel alloc] initWithToItemView:nil attribute:NSLayoutAttributeNotAnAttribute];
     return [self bt_addConstraint:model toItemModel:toItemModel multiplier:1 constant:c];
+}
+
+- (NSLayoutConstraint *)bt_addEqualHeightToView:(UIView*)toView{
+    BTBTConstraintModel * model = [[BTBTConstraintModel alloc] initWithView:self attribute:NSLayoutAttributeHeight relation:NSLayoutRelationEqual];
+    BTBTConstraintModel * toItemModel = [[BTBTConstraintModel alloc] initWithToItemView:toView attribute:NSLayoutAttributeHeight];
+    return [self bt_addConstraint:model toItemModel:toItemModel multiplier:1 constant:0];
 }
 
 #pragma mark left

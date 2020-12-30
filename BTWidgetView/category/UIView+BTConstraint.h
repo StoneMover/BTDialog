@@ -37,11 +37,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSLayoutConstraint *)bt_addWidth:(NSLayoutRelation)relation constant:(CGFloat)c;
 
+- (NSLayoutConstraint *)bt_addEqualWidthToView:(UIView*)toView;
+
 #pragma mark height
 
 - (NSLayoutConstraint *)bt_addHeight:(CGFloat)c;
 
 - (NSLayoutConstraint *)bt_addHeight:(NSLayoutRelation)relation constant:(CGFloat)c;
+
+- (NSLayoutConstraint *)bt_addEqualHeightToView:(UIView*)toView;
 
 #pragma mark left
 
