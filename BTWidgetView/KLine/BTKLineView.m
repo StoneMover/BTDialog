@@ -54,13 +54,13 @@
     NSArray * dataArray = dict[@"data"][@"timedata"];
     self.dataArray = [NSMutableArray new];
     
-    NSArray * arrayResult = [[[KLineModel modelWithArray:dataArray]reverseObjectEnumerator]allObjects];
+    NSArray * arrayResult = [[[BTKLineModel modelWithArray:dataArray]reverseObjectEnumerator]allObjects];
     
     for (int i=0; i<arrayResult.count; i++) {
 //        if (i>30) {
 //
 //        }
-        KLineModel * model = arrayResult[i];
+        BTKLineModel * model = arrayResult[i];
         NSLog(@"BTKLine-time:%@",model.times);
         [self.dataArray addObject:arrayResult[i]];
     }
@@ -140,7 +140,7 @@
 - (void)drawXText{
     NSInteger index = self.dataArray.count / 4;
     for (int i=0; i<5; i++) {
-        KLineModel * model = nil;
+        BTKLineModel * model = nil;
         if (i == 0) {
             model = self.dataArray.firstObject;
         }else if(i == 4){
@@ -185,7 +185,7 @@
     CGContextSetStrokeColorWithColor(ctx, UIColor.redColor.CGColor);
     
     for (int i=0; i<self.dataArray.count; i++) {
-        KLineModel * model = self.dataArray[i];
+        BTKLineModel * model = self.dataArray[i];
         if (model.openp < model.nowv) {
             if (!isRedColor) {
                 isRedColor = YES;
@@ -216,7 +216,7 @@
     isRedColor = YES;
     CGContextSetStrokeColorWithColor(ctx, UIColor.redColor.CGColor);
     for (int i=0; i<self.dataArray.count; i++) {
-        KLineModel * model = self.dataArray[i];
+        BTKLineModel * model = self.dataArray[i];
         if (model.openp < model.nowv) {
             if (!isRedColor) {
                 isRedColor = YES;
@@ -248,7 +248,7 @@
 - (void)reloadData{
     self.minValueY = self.dataArray.firstObject.lowp;
     self.maxValueY = self.dataArray.firstObject.highp;
-    for (KLineModel * model in self.dataArray) {
+    for (BTKLineModel * model in self.dataArray) {
         if (model.lowp < self.minValueY) {
             self.minValueY = model.lowp;
         }

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KLineModel : BTModel
+@interface BTKLineModel : BTModel
 
 // 成交量
 @property (nonatomic) NSString * curvol;

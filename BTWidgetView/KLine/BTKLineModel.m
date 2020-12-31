@@ -6,8 +6,8 @@
 //  Copyright © 2020 stone. All rights reserved.
 //
 
-#import "KLineModel.h"
+#import "BTKLineModel.h"
 
-@implementation KLineModel
+@implementation BTKLineModel
 
 @end

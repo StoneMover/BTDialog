@@ -38,7 +38,7 @@
 		18A1EA09248E46800067D00C /* record_voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A1EA06248E46800067D00C /* record_voice.png */; };
 		18A1EA0C248E46B00067D00C /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A1EA0A248E46AF0067D00C /* libmp3lame.a */; };
 		18B4D4FC259C6628008882C3 /* LineTestData.txt in Resources */ = {isa = PBXBuildFile; fileRef = 18B4D4FB259C6628008882C3 /* LineTestData.txt */; };
-		18B4D4FF259C668A008882C3 /* KLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4D4FE259C668A008882C3 /* KLineModel.m */; };
+		18B4D4FF259C668A008882C3 /* BTKLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4D4FE259C668A008882C3 /* BTKLineModel.m */; };
 		18C9082A257DFC1F00C6BC14 /* StarTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C90828257DFC1F00C6BC14 /* StarTestViewController.m */; };
 		18C9082B257DFC1F00C6BC14 /* StarTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C90829257DFC1F00C6BC14 /* StarTestViewController.xib */; };
 		18E5647D249762430050C13E /* InputTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5647B249762430050C13E /* InputTestViewController.m */; };
@@ -143,8 +143,8 @@
 		18A1EA0A248E46AF0067D00C /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		18A1EA0B248E46AF0067D00C /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
 		18B4D4FB259C6628008882C3 /* LineTestData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LineTestData.txt; sourceTree = "<group>"; };
-		18B4D4FD259C668A008882C3 /* KLineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLineModel.h; sourceTree = "<group>"; };
-		18B4D4FE259C668A008882C3 /* KLineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLineModel.m; sourceTree = "<group>"; };
+		18B4D4FD259C668A008882C3 /* BTKLineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTKLineModel.h; sourceTree = "<group>"; };
+		18B4D4FE259C668A008882C3 /* BTKLineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTKLineModel.m; sourceTree = "<group>"; };
 		18C90827257DFC1F00C6BC14 /* StarTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarTestViewController.h; sourceTree = "<group>"; };
 		18C90828257DFC1F00C6BC14 /* StarTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarTestViewController.m; sourceTree = "<group>"; };
 		18C90829257DFC1F00C6BC14 /* StarTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarTestViewController.xib; sourceTree = "<group>"; };
@@ -287,8 +287,8 @@
 				18B4D4FB259C6628008882C3 /* LineTestData.txt */,
 				188A24B5259C5BD600B2549B /* BTKLineView.h */,
 				188A24B6259C5BD600B2549B /* BTKLineView.m */,
-				18B4D4FD259C668A008882C3 /* KLineModel.h */,
-				18B4D4FE259C668A008882C3 /* KLineModel.m */,
+				18B4D4FD259C668A008882C3 /* BTKLineModel.h */,
+				18B4D4FE259C668A008882C3 /* BTKLineModel.m */,
 			);
 			path = KLine;
 			sourceTree = "<group>";
@@ -662,7 +662,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18B4D4FF259C668A008882C3 /* KLineModel.m in Sources */,
+				18B4D4FF259C668A008882C3 /* BTKLineModel.m in Sources */,
 				1867A8F92445C0CE00DC819F /* BTSearchHeadView.m in Sources */,
 				6037C16D23168C880017D898 /* PageViewTestViewController.m in Sources */,
 				1883F742245804F6004D1F8E /* BTProgressView.m in Sources */,

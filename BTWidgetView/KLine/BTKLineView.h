@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KLineModel.h"
+#import "BTKLineModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BTKLineView : UIView
 
-@property (nonatomic, strong) NSMutableArray<KLineModel*> * dataArray;
+@property (nonatomic, strong) NSMutableArray<BTKLineModel*> * dataArray;
 
 @end
 
