@@ -81,12 +81,19 @@
 
 #pragma mark UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if (self.headView && scrollView.contentSize.width-scrollView.BTWidth!=0) {
-        [self.headView scrollViewIndicator:(scrollView.contentOffset.x)/(scrollView.contentSize.width-scrollView.BTWidth)];
-    }
-    
-    if (self.headViewOut && scrollView.contentSize.width-scrollView.BTWidth!=0) {
-        [self.headViewOut scrollViewIndicator:(scrollView.contentOffset.x)/(scrollView.contentSize.width-scrollView.BTWidth)];
+    if (scrollView.contentSize.width-scrollView.BTWidth!=0) {
+        CGFloat percent = (scrollView.contentOffset.x)/(scrollView.contentSize.width-scrollView.BTWidth);
+        if (self.headView) {
+            [self.headView scrollViewIndicator:percent];
+        }
+        
+        if (self.headViewOut) {
+            [self.headViewOut scrollViewIndicator:percent];
+        }
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(pageViewScroll:percent:)]) {
+            [self.delegate pageViewScroll:self percent:percent];
+        }
     }
     
     if (self.headView) {

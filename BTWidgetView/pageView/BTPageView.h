@@ -45,6 +45,9 @@
 //
 //- (void)pageView:(BTPageView*)pageView willDismiss:(NSInteger)index;
 
+//滑动百分比回调
+- (void)pageViewScroll:(BTPageView*)pageView percent:(CGFloat)percent;
+
 @end
 
 
