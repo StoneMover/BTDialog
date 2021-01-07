@@ -21,8 +21,11 @@
 //字符间距设置
 @property (nonatomic, assign) IBInspectable NSInteger kern;
 
-//placeHolder字体大小设置
+//placeHolder字体大小设置 需要与placeHolderColor一起设置
 @property (nonatomic, assign) IBInspectable NSInteger placeHolderFontSize;
+
+//placeHolder 颜色设置 需要与placeHolderFontSize一起设置
+@property (nonatomic, assign) IBInspectable UIColor * placeHolderColor;
 
 //文字内容改变回调
 @property (nonatomic, copy) void(^changeBlock)(void);
@@ -40,6 +43,7 @@
 - (void)addDoneView;
 - (void)addDoneView:(NSString*)str;
 
+- (void)setAttributedPlaceholderWithFont:(UIFont*)font color:(UIColor*)color;
 @end
 
 

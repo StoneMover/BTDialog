@@ -55,7 +55,12 @@
 
 - (void)setPlaceHolderFontSize:(NSInteger)placeHolderFontSize{
     _placeHolderFontSize=placeHolderFontSize;
-    self.attributedPlaceholder=[[NSAttributedString  alloc]initWithString:self.placeholder attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:placeHolderFontSize weight:UIFontWeightMedium]}];
+    [self setAttributedPlaceholderWithFont:[UIFont systemFontOfSize:self.placeHolderFontSize] color:self.placeHolderColor];
+}
+
+- (void)setPlaceHolderColor:(UIColor *)placeHolderColor{
+    _placeHolderColor = placeHolderColor;
+    [self setAttributedPlaceholderWithFont:[UIFont systemFontOfSize:self.placeHolderFontSize] color:self.placeHolderColor];
 }
 
 - (CGRect)caretRectForPosition:(UITextPosition *)position
@@ -135,6 +140,18 @@
     if (self.endEditBlock) {
         self.endEditBlock();
     }
+}
+
+- (void)setAttributedPlaceholderWithFont:(UIFont*)font color:(UIColor*)color{
+    
+    if (!font) {
+        font = self.font;
+    }
+    
+    if (!color) {
+        color = self.textColor;
+    }
+    self.attributedPlaceholder=[[NSAttributedString  alloc]initWithString:self.placeholder attributes:@{NSFontAttributeName:font,NSForegroundColorAttributeName:color}];
 }
 
 @end
