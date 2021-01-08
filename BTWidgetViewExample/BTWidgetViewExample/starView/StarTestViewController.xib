@@ -41,9 +41,18 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jH1-57-RUi">
+                    <rect key="frame" x="180" y="822" width="54" height="30"/>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="15"/>
+                    <state key="normal" title="Button"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="jH1-57-RUi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5QM-o0-0Gw"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="jH1-57-RUi" secondAttribute="bottom" constant="10" id="OEH-wt-GPM"/>
+            </constraints>
             <point key="canvasLocation" x="142" y="125"/>
         </view>
     </objects>
