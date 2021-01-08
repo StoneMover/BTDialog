@@ -118,7 +118,7 @@
 
 - (void)bt_setText:(NSString*)text lineSpacing:(CGFloat)lineSpacing{
     NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
-    paragraphStyle.lineSpacing = lineSpacing - (self.font.lineHeight - self.font.pointSize);
+    paragraphStyle.lineSpacing = lineSpacing;
     NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
     [attributes setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
     self.attributedText = [[NSAttributedString alloc] initWithString:text attributes:attributes];
