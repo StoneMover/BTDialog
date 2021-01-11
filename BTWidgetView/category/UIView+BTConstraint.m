@@ -294,7 +294,7 @@
 
 - (BOOL)autoRemoveConstraint:(NSLayoutConstraint *)createConstraint inView:(UIView*)inView{
     for (NSLayoutConstraint * c in inView.constraints) {
-        if (c.firstItem == createConstraint.firstItem && c.secondItem == createConstraint.secondItem && c.firstAttribute == createConstraint.firstAttribute && c.secondAttribute == createConstraint.secondAttribute) {
+        if (c.firstItem == createConstraint.firstItem && c.firstAttribute == createConstraint.firstAttribute) {
             [inView removeConstraint:c];
             return YES;
         }
