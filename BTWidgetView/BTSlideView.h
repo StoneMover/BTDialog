@@ -4,7 +4,7 @@
 //
 //  Created by apple on 2020/5/8.
 //  Copyright © 2020 stone. All rights reserved.
-//
+//  侧滑View
 
 #import <UIKit/UIKit.h>
 

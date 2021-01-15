@@ -9,6 +9,8 @@
 #import "StarTestViewController.h"
 #import "BTStarView.h"
 #import "UIView+BTConstraint.h"
+#import "BTNumAnimView.h"
+#import "UIView+BTViewTool.h"
 
 @interface StarTestViewController ()
 
@@ -41,6 +43,16 @@
 //        [viewBg removeConstraints:viewBg.constraints];
 //        [viewBg bt_addToParentWithPadding:BTPaddingMake(10, -30, 100, -200)];
 //    });
+    
+//    UIStackView * stackView = [[UIStackView alloc] initWithArrangedSubviews:<#(nonnull NSArray<__kindof UIView *> *)#>]
+    
+    BTNumAnimView * animView = [[BTNumAnimView alloc] initWithFrame:CGRectMake(0, 150, 50, 50) color:UIColor.redColor font:[UIFont systemFontOfSize:34]];
+    animView.BTBorderColor = UIColor.redColor;
+    animView.BTBorderWidth = 1;
+    animView.BTCorner = 4;
+    [self.view addSubview:animView];
+    [animView startAnimTo:1 time:3];
+    
 }
 
 

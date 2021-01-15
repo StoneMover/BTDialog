@@ -59,11 +59,15 @@
     }
 }
 
++ (CGFloat)TAB_HEIGHT_DEFAULT{
+    return 49;
+}
+
 + (CGFloat)TAB_HEIGHT{
     if (BTUtils.UI_IS_IPHONEX) {
-        return 49+34;
+        return BTUtils.TAB_HEIGHT_DEFAULT + BTUtils.HOME_INDICATOR_HEIGHT;
     }else{
-        return 49;
+        return BTUtils.TAB_HEIGHT_DEFAULT;
     }
 }
 
@@ -147,24 +151,6 @@
     return [UIScreen mainScreen].bounds;
 }
 
-+ (CGFloat)SCALE_6_W:(CGFloat)width{
-    return (width)*(BTUtils.SCREEN_W/375.0f);
-}
-
-+ (CGFloat)SCALE_6_H:(CGFloat)height{
-    return (height)*(BTUtils.SCREEN_H/667.0f);
-}
-
-+ (UIFont*)SYS_FONT_SIZE:(CGFloat)size weight:(UIFontWeight)weight{
-    return [UIFont systemFontOfSize:size weight:weight];
-}
-
-+ (UIFont*)SYS_FONT_SIZE:(CGFloat)size{
-    return [BTUtils SYS_FONT_SIZE:size weight:UIFontWeightThin];
-}
-
-
-
 + (NSString*)SAFE_STR:(nullable NSString*)str{
     if ([BTUtils isEmpty:str]) {
         return @"";
@@ -173,9 +159,6 @@
     return str;
 }
 
-+ (UIImage*)PLACE_HOLDER_IMAGE{
-    return [UIImage imageNamed:@"bt_default_placeholder"];
-}
 
 + (NSURL*)URL:(nullable NSString*)url{
     if (![BTUtils isEmpty:url]) {
@@ -332,10 +315,10 @@
 }
 
 
-+ (NSString*)convertSecToTime:(int)second{
-    int h=0;
-    int m=0;
-    int s=0;
++ (NSString*)convertSecToTime:(NSInteger)second{
+    NSInteger h=0;
+    NSInteger m=0;
+    NSInteger s=0;
     
     if (second%3600==0) {
         h=second/3600;
@@ -355,12 +338,12 @@
     return [self convertSecToTimeStr:h minute:m second:s];
 }
 
-+ (NSString*)convertSecToTimeStr:(int)h minute:(int)minute second:(int)second{
-    NSString * hstr=h<10?[NSString stringWithFormat:@"0%d",h]:[NSString stringWithFormat:@"%d",h];
++ (NSString*)convertSecToTimeStr:(NSInteger)h minute:(NSInteger)minute second:(NSInteger)second{
+    NSString * hstr=h<10?[NSString stringWithFormat:@"0%ld",(long)h]:[NSString stringWithFormat:@"%ld",(long)h];
     
-    NSString * mstr=minute<10?[NSString stringWithFormat:@"0%d",minute]:[NSString stringWithFormat:@"%d",minute];
+    NSString * mstr=minute<10?[NSString stringWithFormat:@"0%ld",(long)minute]:[NSString stringWithFormat:@"%ld",(long)minute];
     
-    NSString * sstr=second<10?[NSString stringWithFormat:@"0%d",second]:[NSString stringWithFormat:@"%d",second];
+    NSString * sstr=second<10?[NSString stringWithFormat:@"0%ld",(long)second]:[NSString stringWithFormat:@"%ld",(long)second];
     if (h==0) {
         return [NSString stringWithFormat:@"%@:%@",mstr,sstr];
     }
@@ -506,6 +489,14 @@
 }
 
 //MARK:废弃方法
++ (CGFloat)SCALE_6_W:(CGFloat)width{
+    return (width)*(BTUtils.SCREEN_W/375.0f);
+}
+
++ (CGFloat)SCALE_6_H:(CGFloat)height{
+    return (height)*(BTUtils.SCREEN_H/667.0f);
+}
+
 + (NSString*)phoneEncrypt:(nullable NSString*)phone{
     if ([BTUtils isEmpty:phone]) {
         return @"";

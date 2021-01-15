@@ -26,11 +26,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString*)bt_md5;
 
-//计算文字高度、宽度
+//计算文字高度,传入文字的固定高度、字体、行间距参数
 - (CGFloat)bt_calculateStrHeight:(CGFloat)width font:(UIFont*)font;
 
 - (CGFloat)bt_calculateStrHeight:(CGFloat)width font:(UIFont*)font lineSpeace:(CGFloat)lineSpeace;
 
+//计算文字宽度，传入文字的固定高度
 - (CGFloat)bt_calculateStrWidth:(CGFloat)height font:(UIFont*)font;
 
 //将字典转为字符串

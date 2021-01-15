@@ -21,6 +21,7 @@
 #import "BTLocation.h"
 #import "BTModel.h"
 #import "BTPermission.h"
+#import "BTScaleHelp.h"
 #import "BTTimerHelp.h"
 #import "BTUtils.h"
 #import "NSDate+BTDate.h"

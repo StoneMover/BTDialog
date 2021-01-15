@@ -84,9 +84,9 @@
 
 - (NSString*)bt_dateFromNowStr{
     NSDate * d= self;
-    NSTimeInterval late=[d timeIntervalSince1970]*1;
+    NSTimeInterval late=[d bt_timeIntervalSince1970]*1;
     NSDate * dat = [NSDate bt_initLocalDate];
-    NSTimeInterval now=[dat timeIntervalSince1970]*1;
+    NSTimeInterval now=[dat bt_timeIntervalSince1970]*1;
     NSTimeInterval cha=now-late;
     int second=cha;
     int minute=second/60;

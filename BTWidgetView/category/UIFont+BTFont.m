@@ -6,7 +6,7 @@
 //
 
 #import "UIFont+BTFont.h"
-#import <BTHelp/BTUtils.h>
+#import <BTHelp/BTScaleHelp.h>
 #import <objc/runtime.h>
 
 @implementation UIFont (BTFont)
@@ -18,21 +18,17 @@
 //}
 //
 
-+ (CGFloat)BTAutoFontSize:(CGFloat)size{
-    return [BTUtils SCALE_6_W:size];
-}
-
 + (UIFont*)BTAutoFontSizeWithName:(NSString*)fontName size:(CGFloat)fontSize{
-    UIFont * font = [UIFont fontWithName:fontName size:[UIFont BTAutoFontSize:fontSize]];
+    UIFont * font = [UIFont fontWithName:fontName size:[BTScaleHelp scaleFontSize:fontSize]];
     return font;
 }
 
 + (UIFont*)BTAutoFontWithSize:(CGFloat)size weight:(UIFontWeight)weight{
-    return [UIFont systemFontOfSize:[UIFont BTAutoFontSize:size] weight:weight];
+    return [UIFont systemFontOfSize:[BTScaleHelp scaleFontSize:size] weight:weight];
 }
 
 + (UIFont*)BTAutoFontWithSize:(CGFloat)size{
-    return [UIFont systemFontOfSize:size weight:UIFontWeightRegular];
+    return [UIFont systemFontOfSize:[BTScaleHelp scaleFontSize:size] weight:UIFontWeightRegular];
 }
 
 + (UIFontWeight)BTGetFontWeight:(UIFont*)font{
@@ -97,7 +93,7 @@
 - (id)BTFontInitWithCoder:(NSCoder*)aDecode{
     [self BTFontInitWithCoder:aDecode];
     
-    if (self && self.tag != 0) {
+    if (self && self.tag == 1024) {
         UIFont * font = self.titleLabel.font;
         
 //        NSLog(@"ssss%@",font);
@@ -123,7 +119,7 @@
 - (id)BTFontInitWithCoder:(NSCoder*)aDecode{
     [self BTFontInitWithCoder:aDecode];
     
-    if (self && self.tag != 0) {
+    if (self && self.tag == 1024) {
         UIFont * font = self.font;
         
 //        NSLog(@"ssss%@",font);
@@ -149,7 +145,7 @@
 - (id)BTFontInitWithCoder:(NSCoder*)aDecode{
     [self BTFontInitWithCoder:aDecode];
     
-    if (self && self.tag != 0) {
+    if (self && self.tag == 1024) {
         UIFont * font = self.font;
         
 //        NSLog(@"ssss%@",font);
@@ -175,7 +171,7 @@
 - (id)BTFontInitWithCoder:(NSCoder*)aDecode{
     [self BTFontInitWithCoder:aDecode];
     
-    if (self && self.tag != 0) {
+    if (self && self.tag == 1024) {
         UIFont * font = self.font;
         
 //        NSLog(@"ssss%@",font);

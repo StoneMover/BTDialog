@@ -9,8 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-struct
-BTPadding {
+struct BTPadding {
     CGFloat top;
     CGFloat bottom;
     CGFloat left;

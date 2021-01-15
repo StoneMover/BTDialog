@@ -17,6 +17,10 @@
 }
 
 +(NSMutableArray*)modelWithArray:(NSArray*)array{
+    if (![array isKindOfClass:[NSArray class]]) {
+        NSLog(@"BaseModelAnalisys modelWithArray parameter is not array : %@-%@",self,array);
+        return [NSMutableArray new];
+    }
     NSMutableArray * dataArray =[NSMutableArray new];
     for (NSDictionary * dict in array) {
         [dataArray addObject:[self modelWithDict:dict]];

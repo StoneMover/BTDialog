@@ -63,7 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
 //是否是未来时间
 - (BOOL)bt_isFutureTime;
 
-//得到距离系统当前时间的显示时间,比如一小时前,三分钟前,时间格式:yyyy-MM-dd HH:mm:ss
+//得到距离系统当前时间的显示时间,比如一小时前,三分钟前,时间格式:yyyy-MM-dd HH:mm:ss,仅限使用该分类生成对象使用
 - (NSString*)bt_dateFromNowStr;
 
 //获取日期字符串

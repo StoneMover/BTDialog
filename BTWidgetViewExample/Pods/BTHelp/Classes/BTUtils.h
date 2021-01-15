@@ -40,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (CGFloat)HOME_INDICATOR_HEIGHT_SMALL;
 
 //tabbar高度
++ (CGFloat)TAB_HEIGHT_DEFAULT;
 + (CGFloat)TAB_HEIGHT;
 
 //是否为全面屏
@@ -76,21 +77,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (CGRect)SCREEN_BOUNDS;
 
-//以宽度的缩放比例，计算对应的高度，比如在375的宽度高度为100，那么在414宽度的屏幕上即为414/375*100
-+ (CGFloat)SCALE_6_W:(CGFloat)value;
-
-//以高度的缩放比例，计算对应的宽度
-+ (CGFloat)SCALE_6_H:(CGFloat)value;
-
-+ (UIFont*)SYS_FONT_SIZE:(CGFloat)size weight:(UIFontWeight)weight;
-
-+ (UIFont*)SYS_FONT_SIZE:(CGFloat)size;
 
 //处理空字符串，如果为空则返回@"";
 + (NSString*)SAFE_STR:(nullable NSString*)str;
-
-//默认的暂未图
-+ (UIImage*)PLACE_HOLDER_IMAGE;
 
 //处理为空的URL对象，为空的时候返回[NSURL URLWithString:@"http://www.baidu.com"]
 + (NSURL*)URL:(nullable NSString*)url;
@@ -116,14 +105,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 //传入秒数,转换成00:00:00格式
-+ (NSString*)convertSecToTime:(int)second;
++ (NSString*)convertSecToTime:(NSInteger)second;
 
 #pragma mark 字典常用方法
-
-//得到字典中对应key的string类型字段
-+ (NSString*)getString:(NSDictionary*)dict withKey:(NSString*)key;
-
-
 //将字典转为json字符串
 + (NSString*)convertDictToJsonStr:(NSDictionary *)dic;
 
@@ -169,6 +153,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 //MARK:废弃方法
+
+//以宽度的缩放比例，计算对应的高度，比如在375的宽度高度为100，那么在414宽度的屏幕上即为414/375*100
++ (CGFloat)SCALE_6_W:(CGFloat)value DEPRECATED_MSG_ATTRIBUTE("已废弃,BTScaleHelp");
+
+//以高度的缩放比例，计算对应的宽度
++ (CGFloat)SCALE_6_H:(CGFloat)value DEPRECATED_MSG_ATTRIBUTE("已废弃,BTScaleHelp");
+
 
 //返回156*****8016电话
 + (NSString*)phoneEncrypt:(nullable NSString*)phone DEPRECATED_MSG_ATTRIBUTE("已废弃,使用NSString+BTString");

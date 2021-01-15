@@ -4,7 +4,7 @@
 //
 //  Created by apple on 2020/4/28.
 //  Copyright © 2020 stone. All rights reserved.
-//  
+//  进度条控件
 
 #import <UIKit/UIKit.h>
 
