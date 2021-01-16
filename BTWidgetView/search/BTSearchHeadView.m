@@ -11,6 +11,7 @@
 #import "BTWidgetView.h"
 #import <BTHelp/UIColor+BTColor.h>
 #import <BTHelp/BTUtils.h>
+#import "UIFont+BTFont.h"
 
 @interface BTSearchHeadView()<UITextFieldDelegate>
 
@@ -37,7 +38,7 @@
     self.btnCancel = [[UIButton alloc]initBTViewWithSize:CGSizeMake(60, 44)];
     [self.btnCancel setTitleColor:UIColor.lightGrayColor forState:UIControlStateNormal];
     [self.btnCancel setTitle:@"取消" forState:UIControlStateNormal];
-    self.btnCancel.titleLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightMedium];
+    self.btnCancel.titleLabel.font = [UIFont BTAutoFontWithSize:14 weight:UIFontWeightMedium];
     [self.btnCancel addTarget:self action:@selector(cancelClick) forControlEvents:UIControlEventTouchUpInside];
     
     self.viewBgColor = [[UIView alloc] init];
@@ -57,7 +58,7 @@
     self.textFieldSearch.returnKeyType = UIReturnKeySearch;
     self.textFieldSearch.placeholder = @"请输入搜索内容";
     self.textFieldSearch.delegate = self;
-    self.textFieldSearch.font = [UIFont systemFontOfSize:14 weight:UIFontWeightMedium];
+    self.textFieldSearch.font = [UIFont BTAutoFontWithSize:14 weight:UIFontWeightMedium];
     self.textFieldSearch.clearButtonMode = UITextFieldViewModeWhileEditing;
     self.textFieldSearch.maxContent = 20;
     [self.textFieldSearch addDoneView];

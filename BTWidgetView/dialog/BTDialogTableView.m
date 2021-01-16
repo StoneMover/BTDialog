@@ -11,7 +11,7 @@
 #import "UIView+BTConstraint.h"
 #import "BTWidgetView.h"
 #import <BTHelp/UIColor+BTColor.h>
-
+#import "UIFont+BTFont.h"
 
 //当显示中间的时候距离屏幕两边的距离
 int const BT_SHOW_VIEW_PADDING=50;
@@ -200,7 +200,7 @@ int const BT_SHOW_VIEW_HEAD_H=45;
 
 - (void)initLabel{
     self.labelTitle=[[UILabel alloc] init];
-    self.labelTitle.font=[UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
+    self.labelTitle.font=[UIFont BTAutoFontWithSize:16 weight:UIFontWeightMedium];
     self.labelTitle.textColor=[UIColor blackColor];
     self.labelTitle.frame=CGRectMake(20, 0, self.BTWidth-50-20, self.BTHeight);
     [self addSubview:self.labelTitle];
@@ -253,7 +253,7 @@ int const BT_SHOW_VIEW_HEAD_H=45;
 - (void)initLabel{
     self.labelContent=[[UILabel alloc] init];
     self.labelContent.translatesAutoresizingMaskIntoConstraints=NO;
-    self.labelContent.font=[UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
+    self.labelContent.font=[UIFont BTAutoFontWithSize:15 weight:UIFontWeightMedium];
     self.labelContent.textColor=[UIColor blackColor];
     self.labelContent.numberOfLines=0;
     [self.labelContent bt_addHeight:NSLayoutRelationGreaterThanOrEqual constant:24];

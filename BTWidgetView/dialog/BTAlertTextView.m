@@ -10,7 +10,7 @@
 #import <BTHelp/BTUtils.h>
 #import "UIView+BTViewTool.h"
 #import <BTHelp/UIColor+BTColor.h>
-
+#import "UIFont+BTFont.h"
 
 
 
@@ -28,7 +28,7 @@
     textView.isSelfSetEdgeInsets = YES;
     textView.textContainerInset=UIEdgeInsetsMake(5, 5, 5, 5);
     textView.textColor = [UIColor bt_RGBSame:10];
-    textView.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
+    textView.font = [UIFont BTAutoFontWithSize:16 weight:UIFontWeightMedium];
     textView.BTBorderColor = [UIColor bt_RGBASame:77 A:0.25];
     textView.BTBorderWidth = 0.5;
     textView.BTCorner = 5;

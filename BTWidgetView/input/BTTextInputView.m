@@ -12,6 +12,7 @@
 #import "BTWidgetView.h"
 #import "UIView+BTEasyDialog.h"
 #import <BTHelp/UIColor+BTColor.h>
+#import "UIFont+BTFont.h"
 
 @interface BTTextInputView()
 
@@ -176,13 +177,13 @@
     [self.btnCommit addTarget:self action:@selector(saveClick) forControlEvents:UIControlEventTouchUpInside];
     [self.btnCommit setTitle:@"发布" forState:UIControlStateNormal];
     [self.btnCommit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    self.btnCommit.titleLabel.font=[UIFont systemFontOfSize:16 weight:UIFontWeightSemibold];
+    self.btnCommit.titleLabel.font=[UIFont BTAutoFontWithSize:16 weight:UIFontWeightSemibold];
     [self addSubview:self.btnCommit];
     
     
     _textView=[[BTTextView alloc] initBTViewWithSize:CGSizeMake(100, self.basicHeight-20)];
     [self.textView setTextContainerInset:UIEdgeInsetsMake(8, 5, 8, 5)];
-    self.textView.font=[UIFont systemFontOfSize:16];
+    self.textView.font=[UIFont BTAutoFontWithSize:16];
     self.textView.textColor=[UIColor bt_R:74 G:76 B:95];
     self.textView.BTCorner=5;
     self.textView.BTBorderColor=[UIColor bt_RGBSame:234];
@@ -209,7 +210,7 @@
     self.btnPressVoice.BTCorner = 5;
     [self.btnPressVoice setTitle:@"按住说话" forState:UIControlStateNormal];
     [self.btnPressVoice setTitleColor:UIColor.grayColor forState:UIControlStateNormal];
-    self.btnPressVoice.titleLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightMedium];
+    self.btnPressVoice.titleLabel.font = [UIFont BTAutoFontWithSize:14 weight:UIFontWeightMedium];
     self.btnPressVoice.enabled = NO;
     
     [self addSubview:self.textView];

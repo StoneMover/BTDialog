@@ -11,13 +11,14 @@
 #import "UIView+BTViewTool.h"
 #import <BTHelp/UIColor+BTColor.h>
 #import "UILabel+BTLabel.h"
+#import "UIFont+BTFont.h"
 
 @implementation BTAlertLabelView
 
 - (instancetype)initWithTitle:(NSString*)title msg:(NSString*)msg{
     UILabel * labelContent = [UILabel new];
     labelContent.textAlignment = NSTextAlignmentCenter;
-    labelContent.font = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
+    labelContent.font = [UIFont BTAutoFontWithSize:16 weight:UIFontWeightMedium];
     labelContent.textColor = [UIColor bt_RGBSame:5];
     labelContent.text = msg;
     labelContent.numberOfLines = 0;

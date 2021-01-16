@@ -44,19 +44,19 @@ static BTScaleHelp * help = nil;
 - (void)iniSelf{
     self.uiDesignWidth = 375;
     self.scaleViewBlock = ^CGFloat(CGFloat value) {
-        return self.uiDesignWidth / BTUtils.SCREEN_W * value;
+        return BTUtils.SCREEN_W / self.uiDesignWidth * value;
     };
     
     self.scaleViewFullBlock = ^CGFloat(CGFloat value, CGFloat uiDesignWidth) {
-        return uiDesignWidth / BTUtils.SCREEN_W * value;
+        return BTUtils.SCREEN_W / uiDesignWidth * value;
     };
     
     self.scaleFontSizeBlock = ^CGFloat(CGFloat fontSize) {
-        return self.uiDesignWidth / BTUtils.SCREEN_W * fontSize;
+        return BTUtils.SCREEN_W / self.uiDesignWidth  * fontSize;
     };
     
     self.scaleFontSizeFullBlock = ^CGFloat(CGFloat fontSize, CGFloat uiDesignWidth) {
-        return uiDesignWidth / BTUtils.SCREEN_W * fontSize;
+        return BTUtils.SCREEN_W / uiDesignWidth  * fontSize;
     };
     
 }

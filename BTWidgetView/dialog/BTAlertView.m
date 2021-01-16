@@ -12,6 +12,7 @@
 #import <BTHelp/UIImage+BTImage.h>
 #import <BTHelp/UIColor+BTColor.h>
 #import <BTHelp/BTUtils.h>
+#import "UIFont+BTFont.h"
 
 @interface BTAlertView()
 
@@ -45,19 +46,19 @@
     self.labelTitle = [UILabel new];
     self.labelTitle.textColor = [UIColor bt_RGBSame:5];
     self.labelTitle.numberOfLines = 1;
-    self.labelTitle.font = [UIFont systemFontOfSize:19 weight:UIFontWeightMedium];
+    self.labelTitle.font = [UIFont BTAutoFontWithSize:19 weight:UIFontWeightMedium];
     self.labelTitle.textAlignment = NSTextAlignmentCenter;
     self.labelTitle.text = @"标题";
     
     self.btnCancel = [[UIButton alloc] init];
-    self.btnCancel.titleLabel.font = [UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
+    self.btnCancel.titleLabel.font = [UIFont BTAutoFontWithSize:17 weight:UIFontWeightMedium];
     [self.btnCancel setTitle:@"取消" forState:UIControlStateNormal];
     [self.btnCancel setTitleColor:[UIColor bt_RGBSame:19] forState:UIControlStateNormal];
     [self.btnCancel addTarget:self action:@selector(cancelClick) forControlEvents:UIControlEventTouchUpInside];
     [self.btnCancel setBackgroundImage:[UIImage bt_imageWithColor:[UIColor bt_RGBSame:219] size:CGSizeMake(100, 100)] forState:UIControlStateHighlighted];
     
     self.btnOk = [[UIButton alloc] init];
-    self.btnOk.titleLabel.font = [UIFont systemFontOfSize:17 weight:UIFontWeightMedium];
+    self.btnOk.titleLabel.font = [UIFont BTAutoFontWithSize:17 weight:UIFontWeightMedium];
     [self.btnOk setTitle:@"确定" forState:UIControlStateNormal];
     [self.btnOk setBackgroundImage:[UIImage bt_imageWithColor:[UIColor bt_RGBSame:219] size:CGSizeMake(100, 100)] forState:UIControlStateHighlighted];
     [self.btnOk setTitleColor:UIColor.systemBlueColor forState:UIControlStateNormal];

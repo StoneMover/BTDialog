@@ -10,6 +10,7 @@
 #import <BTHelp/BTUtils.h>
 #import "UIView+BTViewTool.h"
 #import <BTHelp/UIColor+BTColor.h>
+#import "UIFont+BTFont.h"
 
 @implementation BTAlertTextFieldView
 
@@ -20,6 +21,7 @@
     textField.text = content;
     textField.placeholder = placeholder;
     textField.clipsToBounds = NO;
+    textField.font = [UIFont BTAutoFontWithSize:16];
     
     UIView * viewParent = [[UIView alloc] initBTViewWithSize:CGSizeMake(BTUtils.SCREEN_W-106-20, 42)];
     viewParent.BTBorderColor = [UIColor bt_RGBASame:77 A:0.25];
