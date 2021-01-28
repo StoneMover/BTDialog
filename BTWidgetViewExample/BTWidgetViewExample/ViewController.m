@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "PageViewTestViewController.h"
 #import "PageVcTestViewController.h"
-#import "HomeTableViewCell.h"
 #import "DialogTestViewController.h"
 #import "DataModel.h"
 #import "SearchTestViewController.h"
@@ -22,6 +21,8 @@
 #import "TestVerticalAnimViewController.h"
 #import "TestProgressViewController.h"
 #import "StarTestViewController.h"
+#import "BTGeneralCell.h"
+#import "CellStyleTestViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -48,9 +49,10 @@
                   @"GridImageView",
                   @"TestVerticalAnimViewController",
                   @"TestProgressViewController",
-                  @"StarTestViewController"
+                  @"StarTestViewController",
+                  @"CellStyleTestViewController"
     ];
-    [self.tableView registerNib:[UINib nibWithNibName:@"HomeTableViewCell" bundle:nil] forCellReuseIdentifier:@"HomeTableViewCellId"];
+    [self.tableView registerClass:[BTGeneralCell class] forCellReuseIdentifier:@"HomeTableViewCellId"];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
     [self test:@"when i get old " str:@"you when will i get old and"];
@@ -175,8 +177,12 @@
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    HomeTableViewCell * cell=[tableView dequeueReusableCellWithIdentifier:@"HomeTableViewCellId"];
-    cell.labelTitle.text=self.titles[indexPath.row];
+    BTGeneralCell * cell=[tableView dequeueReusableCellWithIdentifier:@"HomeTableViewCellId"];
+    cell.titleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
+        config.leftPadding = 20;
+    };
+    [cell initWidget:BTGeneralCellStyleJustTitle];
+    cell.titleLabel.text=self.titles[indexPath.row];
     return cell;
 }
 
@@ -259,6 +265,13 @@
             StarTestViewController * vc=[StarTestViewController new];
             [self.navigationController pushViewController:vc animated:YES];
         }
+            break;
+        case 12:
+        {
+            CellStyleTestViewController * vc=[CellStyleTestViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
             
     }
 }

@@ -38,12 +38,15 @@
 		18A1EA08248E46800067D00C /* BTRecordVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A1EA05248E46800067D00C /* BTRecordVoiceView.m */; };
 		18A1EA09248E46800067D00C /* record_voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A1EA06248E46800067D00C /* record_voice.png */; };
 		18A1EA0C248E46B00067D00C /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A1EA0A248E46AF0067D00C /* libmp3lame.a */; };
+		18A5526825C2967400A88339 /* CellStyleTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5526625C2967400A88339 /* CellStyleTestViewController.m */; };
+		18A5526925C2967400A88339 /* CellStyleTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A5526725C2967400A88339 /* CellStyleTestViewController.xib */; };
 		18C9082A257DFC1F00C6BC14 /* StarTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C90828257DFC1F00C6BC14 /* StarTestViewController.m */; };
 		18C9082B257DFC1F00C6BC14 /* StarTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C90829257DFC1F00C6BC14 /* StarTestViewController.xib */; };
 		18E5647D249762430050C13E /* InputTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5647B249762430050C13E /* InputTestViewController.m */; };
 		18E5647E249762430050C13E /* InputTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E5647C249762430050C13E /* InputTestViewController.xib */; };
 		18E77F6724985E7C00BF9F5A /* UILabel+BTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E77F6624985E7C00BF9F5A /* UILabel+BTLabel.m */; };
 		18E77F6B2498633000BF9F5A /* LabelTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E77F6A2498633000BF9F5A /* LabelTestViewController.m */; };
+		18ECAE6A25BFFDA3007CB11E /* BTGeneralCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18ECAE6925BFFDA3007CB11E /* BTGeneralCell.m */; };
 		18FD4E4B249C5B1E006F3D1E /* TestContentAutoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FD4E4A249C5B1E006F3D1E /* TestContentAutoViewController.m */; };
 		18FD4E4F249C9F96006F3D1E /* TestGridImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FD4E4E249C9F96006F3D1E /* TestGridImageViewController.m */; };
 		18FD4E53249CAB35006F3D1E /* TestVerticalAnimViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FD4E52249CAB35006F3D1E /* TestVerticalAnimViewController.m */; };
@@ -53,8 +56,6 @@
 		6034D1842313E96F009DBBDF /* BTPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6034D1832313E96F009DBBDF /* BTPageViewController.m */; };
 		6037C16D23168C880017D898 /* PageViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6037C16C23168C880017D898 /* PageViewTestViewController.m */; };
 		6037C17023168CAE0017D898 /* PageVcTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6037C16F23168CAE0017D898 /* PageVcTestViewController.m */; };
-		6037C17423168E430017D898 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6037C17223168E430017D898 /* HomeTableViewCell.m */; };
-		6037C17523168E430017D898 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6037C17323168E430017D898 /* HomeTableViewCell.xib */; };
 		60643D722318F5B5007C1E01 /* PageChildVcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60643D712318F5B5007C1E01 /* PageChildVcViewController.m */; };
 		60D28A69230692260043442B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A68230692260043442B /* AppDelegate.m */; };
 		60D28A6C230692260043442B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D28A6B230692260043442B /* ViewController.m */; };
@@ -143,6 +144,9 @@
 		18A1EA06248E46800067D00C /* record_voice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = record_voice.png; sourceTree = "<group>"; };
 		18A1EA0A248E46AF0067D00C /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		18A1EA0B248E46AF0067D00C /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		18A5526525C2967400A88339 /* CellStyleTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellStyleTestViewController.h; sourceTree = "<group>"; };
+		18A5526625C2967400A88339 /* CellStyleTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellStyleTestViewController.m; sourceTree = "<group>"; };
+		18A5526725C2967400A88339 /* CellStyleTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellStyleTestViewController.xib; sourceTree = "<group>"; };
 		18C90827257DFC1F00C6BC14 /* StarTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarTestViewController.h; sourceTree = "<group>"; };
 		18C90828257DFC1F00C6BC14 /* StarTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarTestViewController.m; sourceTree = "<group>"; };
 		18C90829257DFC1F00C6BC14 /* StarTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarTestViewController.xib; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 		18E77F6624985E7C00BF9F5A /* UILabel+BTLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BTLabel.m"; sourceTree = "<group>"; };
 		18E77F692498633000BF9F5A /* LabelTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelTestViewController.h; sourceTree = "<group>"; };
 		18E77F6A2498633000BF9F5A /* LabelTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelTestViewController.m; sourceTree = "<group>"; };
+		18ECAE6825BFFDA3007CB11E /* BTGeneralCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTGeneralCell.h; sourceTree = "<group>"; };
+		18ECAE6925BFFDA3007CB11E /* BTGeneralCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTGeneralCell.m; sourceTree = "<group>"; };
 		18FD4E49249C5B1E006F3D1E /* TestContentAutoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestContentAutoViewController.h; sourceTree = "<group>"; };
 		18FD4E4A249C5B1E006F3D1E /* TestContentAutoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestContentAutoViewController.m; sourceTree = "<group>"; };
 		18FD4E4D249C9F96006F3D1E /* TestGridImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestGridImageViewController.h; sourceTree = "<group>"; };
@@ -173,9 +179,6 @@
 		6037C16C23168C880017D898 /* PageViewTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewTestViewController.m; sourceTree = "<group>"; };
 		6037C16E23168CAE0017D898 /* PageVcTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageVcTestViewController.h; sourceTree = "<group>"; };
 		6037C16F23168CAE0017D898 /* PageVcTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageVcTestViewController.m; sourceTree = "<group>"; };
-		6037C17123168E430017D898 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
-		6037C17223168E430017D898 /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
-		6037C17323168E430017D898 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		60643D702318F5B5007C1E01 /* PageChildVcViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageChildVcViewController.h; sourceTree = "<group>"; };
 		60643D712318F5B5007C1E01 /* PageChildVcViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageChildVcViewController.m; sourceTree = "<group>"; };
 		60D28A64230692260043442B /* BTWidgetViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BTWidgetViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -302,6 +305,16 @@
 			path = input;
 			sourceTree = "<group>";
 		};
+		18A5526425C2965900A88339 /* cellStyleTest */ = {
+			isa = PBXGroup;
+			children = (
+				18A5526525C2967400A88339 /* CellStyleTestViewController.h */,
+				18A5526625C2967400A88339 /* CellStyleTestViewController.m */,
+				18A5526725C2967400A88339 /* CellStyleTestViewController.xib */,
+			);
+			path = cellStyleTest;
+			sourceTree = "<group>";
+		};
 		18C90826257DFBFF00C6BC14 /* starView */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +332,44 @@
 				18E77F6A2498633000BF9F5A /* LabelTestViewController.m */,
 			);
 			path = labelTest;
+			sourceTree = "<group>";
+		};
+		18ECAE6625BFF01F007CB11E /* anim */ = {
+			isa = PBXGroup;
+			children = (
+				183EC11525AEE08300CF0EE0 /* BTNumAnimView.h */,
+				183EC11625AEE08300CF0EE0 /* BTNumAnimView.m */,
+				185CF1E32446F0AC00866B1A /* BTVerticalAnimView.h */,
+				185CF1E42446F0AC00866B1A /* BTVerticalAnimView.m */,
+				185CF1E92446F1EE00866B1A /* BTScrollLabelView.h */,
+				185CF1EA2446F1EE00866B1A /* BTScrollLabelView.m */,
+			);
+			path = anim;
+			sourceTree = "<group>";
+		};
+		18ECAE6725BFFC17007CB11E /* other */ = {
+			isa = PBXGroup;
+			children = (
+				60D28A872306923A0043442B /* BTButton.h */,
+				60D28A912306923A0043442B /* BTButton.m */,
+				60D28A8E2306923A0043442B /* BTLineView.h */,
+				60D28A822306923A0043442B /* BTLineView.m */,
+				1860860623D160F100E2749E /* BTStarView.h */,
+				1860860723D160F100E2749E /* BTStarView.m */,
+				18629BAB23BA05AF00CE552C /* BTContentAutoView.h */,
+				18629BAC23BA05AF00CE552C /* BTContentAutoView.m */,
+				1867739423C6FAE40068E3DC /* BTGridImgView.h */,
+				1867739523C6FAE40068E3DC /* BTGridImgView.m */,
+				18859B1E2446B1F600B8B1D9 /* BTWidgetView.h */,
+				18859B1F2446B1F600B8B1D9 /* BTWidgetView.m */,
+				1883F740245804F6004D1F8E /* BTProgressView.h */,
+				1883F741245804F6004D1F8E /* BTProgressView.m */,
+				1898CCD324656EB800F50264 /* BTSlideView.h */,
+				1898CCD424656EB800F50264 /* BTSlideView.m */,
+				18ECAE6825BFFDA3007CB11E /* BTGeneralCell.h */,
+				18ECAE6925BFFDA3007CB11E /* BTGeneralCell.m */,
+			);
+			path = other;
 			sourceTree = "<group>";
 		};
 		18FD4E48249C5B04006F3D1E /* contentAutoView */ = {
@@ -437,6 +488,7 @@
 		60D28A66230692260043442B /* BTWidgetViewExample */ = {
 			isa = PBXGroup;
 			children = (
+				18A5526425C2965900A88339 /* cellStyleTest */,
 				18C90826257DFBFF00C6BC14 /* starView */,
 				1843328B256BA329003A6C41 /* progress */,
 				18FD4E50249CAB24006F3D1E /* verticalAnim */,
@@ -454,9 +506,6 @@
 				60D28A68230692260043442B /* AppDelegate.m */,
 				60D28A6A230692260043442B /* ViewController.h */,
 				60D28A6B230692260043442B /* ViewController.m */,
-				6037C17123168E430017D898 /* HomeTableViewCell.h */,
-				6037C17223168E430017D898 /* HomeTableViewCell.m */,
-				6037C17323168E430017D898 /* HomeTableViewCell.xib */,
 				60D28A6D230692260043442B /* Main.storyboard */,
 				60D28A70230692270043442B /* Assets.xcassets */,
 				60D28A72230692270043442B /* LaunchScreen.storyboard */,
@@ -469,33 +518,13 @@
 		60D28A7D2306923A0043442B /* BTWidgetView */ = {
 			isa = PBXGroup;
 			children = (
+				18ECAE6725BFFC17007CB11E /* other */,
+				18ECAE6625BFF01F007CB11E /* anim */,
 				18A1EA00248E2E160067D00C /* input */,
 				186F1D4124371934002BB121 /* search */,
 				6034D1812313E86C009DBBDF /* dialog */,
 				6034D1802313E81A009DBBDF /* category */,
 				6034D1762313E800009DBBDF /* pageView */,
-				60D28A872306923A0043442B /* BTButton.h */,
-				60D28A912306923A0043442B /* BTButton.m */,
-				60D28A8E2306923A0043442B /* BTLineView.h */,
-				60D28A822306923A0043442B /* BTLineView.m */,
-				1860860623D160F100E2749E /* BTStarView.h */,
-				1860860723D160F100E2749E /* BTStarView.m */,
-				18629BAB23BA05AF00CE552C /* BTContentAutoView.h */,
-				18629BAC23BA05AF00CE552C /* BTContentAutoView.m */,
-				1867739423C6FAE40068E3DC /* BTGridImgView.h */,
-				1867739523C6FAE40068E3DC /* BTGridImgView.m */,
-				185CF1E32446F0AC00866B1A /* BTVerticalAnimView.h */,
-				185CF1E42446F0AC00866B1A /* BTVerticalAnimView.m */,
-				185CF1E92446F1EE00866B1A /* BTScrollLabelView.h */,
-				185CF1EA2446F1EE00866B1A /* BTScrollLabelView.m */,
-				18859B1E2446B1F600B8B1D9 /* BTWidgetView.h */,
-				18859B1F2446B1F600B8B1D9 /* BTWidgetView.m */,
-				1883F740245804F6004D1F8E /* BTProgressView.h */,
-				1883F741245804F6004D1F8E /* BTProgressView.m */,
-				1898CCD324656EB800F50264 /* BTSlideView.h */,
-				1898CCD424656EB800F50264 /* BTSlideView.m */,
-				183EC11525AEE08300CF0EE0 /* BTNumAnimView.h */,
-				183EC11625AEE08300CF0EE0 /* BTNumAnimView.m */,
 			);
 			name = BTWidgetView;
 			path = ../../BTWidgetView;
@@ -585,9 +614,9 @@
 				0DCC398A23B7142E00197B15 /* BTDialogBundle.bundle in Resources */,
 				60D28A71230692270043442B /* Assets.xcassets in Resources */,
 				18E5647E249762430050C13E /* InputTestViewController.xib in Resources */,
+				18A5526925C2967400A88339 /* CellStyleTestViewController.xib in Resources */,
 				18C9082B257DFC1F00C6BC14 /* StarTestViewController.xib in Resources */,
 				0D41969323B63CBD00F5079F /* DialogTestViewController.xib in Resources */,
-				6037C17523168E430017D898 /* HomeTableViewCell.xib in Resources */,
 				60D28A6F230692260043442B /* Main.storyboard in Resources */,
 				18A1EA09248E46800067D00C /* record_voice.png in Resources */,
 			);
@@ -650,6 +679,7 @@
 				6034D17D2313E811009DBBDF /* BTPageHeadLabelView.m in Sources */,
 				60D28AA12306923A0043442B /* BTDialogTableView.m in Sources */,
 				60D28A9F2306923A0043442B /* UIView+BTEasyDialog.m in Sources */,
+				18A5526825C2967400A88339 /* CellStyleTestViewController.m in Sources */,
 				18E77F6724985E7C00BF9F5A /* UILabel+BTLabel.m in Sources */,
 				18E5647D249762430050C13E /* InputTestViewController.m in Sources */,
 				185CF1EB2446F1EE00866B1A /* BTScrollLabelView.m in Sources */,
@@ -664,11 +694,11 @@
 				6034D17F2313E811009DBBDF /* BTPageView.m in Sources */,
 				60D28A9B2306923A0043442B /* UIView+BTConstraint.m in Sources */,
 				6034D1842313E96F009DBBDF /* BTPageViewController.m in Sources */,
+				18ECAE6A25BFFDA3007CB11E /* BTGeneralCell.m in Sources */,
 				0DE9CFD823C1F658004607AD /* DataModel.m in Sources */,
 				0D41968D23B639BF00F5079F /* BTAlertView.m in Sources */,
 				18629BAA23BA054300CE552C /* WKWebView+FullImg.m in Sources */,
 				0D41969223B63CBD00F5079F /* DialogTestViewController.m in Sources */,
-				6037C17423168E430017D898 /* HomeTableViewCell.m in Sources */,
 				60D28A9C2306923A0043442B /* BTTextField.m in Sources */,
 				1843328F256BA346003A6C41 /* TestProgressViewController.m in Sources */,
 				60D28A962306923A0043442B /* BTTextView.m in Sources */,
