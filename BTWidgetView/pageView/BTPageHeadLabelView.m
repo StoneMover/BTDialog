@@ -228,4 +228,22 @@
     self.labels[index].textColor = self.normalColor;
 }
 
+
+- (void)selectIndex:(NSInteger)index{
+    [super selectIndex:index];
+    
+    for (int i=0; i<self.labels.count; i++) {
+        UILabel * label = self.labels[i];
+        if (i == index) {
+            label.transform = CGAffineTransformMakeScale(self.selectFontSize / self.normalFontSize, self.selectFontSize / self.normalFontSize);
+            label.textColor = self.selectColor;
+            [UIView animateWithDuration:0.2 animations:^{
+                self.viewIndicator.BTCenterX = label.superview.BTCenterX;
+            }];
+        }else{
+            label.transform = CGAffineTransformMakeScale(1, 1);
+            label.textColor = self.normalColor;
+        }
+    }
+}
 @end

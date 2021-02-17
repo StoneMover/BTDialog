@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithTitle:(NSString*)title msg:(NSString*)msg;
 
+- (instancetype)initWithTitle:(NSString*)title msg:(NSString*)msg msgFont:(UIFont*)font lineSpeace:(CGFloat)lineSpeace;
+
 @property (nonatomic, strong) UILabel * labelContent;
 
 @end

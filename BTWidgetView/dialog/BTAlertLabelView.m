@@ -12,19 +12,24 @@
 #import <BTHelp/UIColor+BTColor.h>
 #import "UILabel+BTLabel.h"
 #import "UIFont+BTFont.h"
+#import <BTHelp/NSString+BTString.h>
 
 @implementation BTAlertLabelView
 
 - (instancetype)initWithTitle:(NSString*)title msg:(NSString*)msg{
+    return [self initWithTitle:title msg:msg msgFont:[UIFont BTAutoFontWithSize:16 weight:UIFontWeightMedium] lineSpeace:2];
+}
+
+- (instancetype)initWithTitle:(NSString*)title msg:(NSString*)msg msgFont:(UIFont*)font lineSpeace:(CGFloat)lineSpeace{
     UILabel * labelContent = [UILabel new];
     labelContent.textAlignment = NSTextAlignmentCenter;
-    labelContent.font = [UIFont BTAutoFontWithSize:16 weight:UIFontWeightMedium];
+    labelContent.font = font;
     labelContent.textColor = [UIColor bt_RGBSame:5];
     labelContent.text = msg;
     labelContent.numberOfLines = 0;
     labelContent.backgroundColor = UIColor.clearColor;
     labelContent.BTWidth = BTUtils.SCREEN_W-106-40;
-    CGFloat labelHeight = labelContent.bt_calculateLabelHeight;
+    CGFloat labelHeight = [msg bt_calculateStrHeight:labelContent.BTWidth font:font lineSpeace:lineSpeace];
     labelContent.BTHeight = labelHeight;
     labelContent.BTLeft = 20;
     labelContent.BTTop = 15;
@@ -33,8 +38,8 @@
     self= [super initWithcontentView:viewRoot];
     
     self.labelContent = labelContent;
+    [self.labelContent bt_setText:msg lineSpacing:lineSpeace];
     self.labelTitle.text = title;
-    
     return self;
 }
 
