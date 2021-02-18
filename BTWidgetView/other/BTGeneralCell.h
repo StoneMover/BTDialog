@@ -15,6 +15,7 @@ typedef NS_ENUM(NSInteger,BTGeneralCellStyle) {
     BTGeneralCellStyleFullSwitch,   //图标-文字----------------- 开关
     BTGeneralCellStyleSimpleText,   //文字----------------- 箭头
     BTGeneralCellStyleSimpleText2,   //文字-----------------文字-箭头
+    BTGeneralCellStyleSimpleText3,   //文字-----------------文字
     BTGeneralCellStyleSimpleSwitch,  //文字----------------- 开关
     BTGeneralCellStyleJustTitle      //文字
 };
@@ -47,6 +48,9 @@ typedef void (^BTGeneralCellConfigBlock)(BTGeneralCellConfig * config);
 
 //右边的开关按钮，会和副标题文字重合
 @property (nonatomic, strong) UISwitch * contentSwitch;
+
+//开关上的按钮可以实现BlockUI点击事件的回调来改变contentSwitch的状态
+@property (nonatomic, strong) UIButton * switchBtn;
 
 @property (nonatomic, copy) BTGeneralCellConfigBlock contentSwitchBlock;
 

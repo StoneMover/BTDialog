@@ -63,6 +63,10 @@
             [self initArrowImgView];
             [self initSubTitleLabel];
             break;
+        case BTGeneralCellStyleSimpleText3:
+            [self initTitleLabel];
+            [self initSubTitleLabel];
+            break;
         case BTGeneralCellStyleSimpleSwitch:
             [self initTitleLabel];
             [self initSwitch];
@@ -131,7 +135,12 @@
     }
     self.subTitleLabel.font = config.font;
     self.subTitleLabel.textColor = config.textColor;
-    [self.subTitleLabel bt_addRightToItemView:self.arrowImgView constant:config.rightPadding];
+    if (self.generalStyle == BTGeneralCellStyleSimpleText3) {
+        [self.subTitleLabel bt_addRightToParentWithPadding:config.rightPadding];
+    }else{
+        [self.subTitleLabel bt_addRightToItemView:self.arrowImgView constant:config.rightPadding];
+    }
+    
     [self.subTitleLabel bt_addCenterYToParent];
 }
 
@@ -169,6 +178,13 @@
     
     [self.contentSwitch bt_addRightToParentWithPadding:config.rightPadding];
     [self.contentSwitch bt_addCenterYToParent];
+    
+    self.switchBtn = [UIButton new];
+    self.switchBtn.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.contentView addSubview:self.switchBtn];
+    [self.switchBtn bt_addEqualWidthToView:self.contentSwitch];
+    [self.switchBtn bt_addEqualHeightToView:self.contentSwitch];
+    [self.switchBtn bt_addCenterToItemView:self.contentSwitch];
 }
 
 
