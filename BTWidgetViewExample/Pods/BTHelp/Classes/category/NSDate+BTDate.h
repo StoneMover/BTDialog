@@ -28,6 +28,13 @@
  ss: 秒，2位
  S：毫秒
  
+ 扩展方法生成的对象都是在格林尼治时间基础上加了时区的秒数差值
+ 所以使用扩展对象获取时间戳的时候需要减去时区差值，才为格林尼治时间戳，直接调用bt_timeIntervalSince1970获取
+ 
+ 用字符串转日期的时候formatter的timeZone不会自动加上相差的秒数，只能自己加上时区的间隔秒数后生成新的date才正确
+ 用日期转字符串的时候formatter的timeZone起作用且为手机本地时区，会将date对象自动加上与格林尼治时区的差值
+ 如果formatter的timeZone为UTC（格林尼治时区）则差值为0不会改变date，date显示的是多少转出来的就是多少
+ 
  **/
 
 #import <Foundation/Foundation.h>
@@ -66,10 +73,12 @@ NS_ASSUME_NONNULL_BEGIN
 //得到距离系统当前时间的显示时间,比如一小时前,三分钟前,时间格式:yyyy-MM-dd HH:mm:ss,仅限使用该分类生成对象使用
 - (NSString*)bt_dateFromNowStr;
 
-//获取日期字符串
+//获取日期字符串,仅支持校正时区差值后的对象调用
 - (NSString*)bt_dateStr:(NSString*)formater;
 
 //是否是同年、同月、同日、同时、同分
+- (BOOL)bt_isSameYearToDate:(NSDate*)date;
+
 - (BOOL)bt_isSameMonthToDate:(NSDate*)date;
 
 - (BOOL)bt_isSameDayToDate:(NSDate*)date;
@@ -79,7 +88,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)bt_isSameMinuteToDate:(NSDate*)date;
 
 #pragma mark 根据出传入日期以及格式化样式获取date
-//根据时区获取对应的date
+//根据时区获取对应的date，以下获取方法都会自动校正时区，会比调用系统方法生成的对象多出8个小时
 + (instancetype)bt_initLocalDate;
 
 //传入2010-01-01 这个字符串获取date
@@ -94,11 +103,11 @@ NS_ASSUME_NONNULL_BEGIN
 //传入日期,以及格式化样式获取date
 + (NSDate*)bt_dateFromStr:(NSString*)dateStr formatter:(NSString*)formatterStr;
 
-//获取时区时差秒数
+//获取时区时差秒数,如果给的时间戳是基于格林尼治的时间戳，那么加上这个值获取当前时区的时间戳
 + (NSInteger)bt_timeZoneSeconods;
 
 /*
- 由于调用系统方法会在原有的date上加8小时的秒数，调用这个会在在原有的秒数上减去时区的相差秒数，仅限校正时区后的date使用
+  仅限校正时区后的对象使用，会减去时区相差的秒数，得到格林尼治时间的时间戳
  */
 - (NSTimeInterval)bt_timeIntervalSince1970;
 

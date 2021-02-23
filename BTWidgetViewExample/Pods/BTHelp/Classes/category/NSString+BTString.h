@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 //是否全部为数字
 - (BOOL)bt_isStrAllNumber;
 
+//是否为浮点型数据
+- (BOOL)bt_isPureFloat;
+
 //加密&解密
 - (NSString*)bt_base64Decode;
 

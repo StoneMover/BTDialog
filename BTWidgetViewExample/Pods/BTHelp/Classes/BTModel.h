@@ -40,15 +40,15 @@
 @end
 
 
-typedef NS_ENUM(NSInteger,BaseModelType) {
-    BaseModelTypeString=0,
-    BaseModelTypeInt,
-    BaseModelTypeFloat,
-    BaseModelTypeDouble,
-    BaseModelTypeBool,
-    BaseModelTypeArray,
-    BaseModelTypeMutableArray,
-    BaseModelTypeBase
+typedef NS_ENUM(NSInteger,BTModelType) {
+    BTModelTypeString=0,
+    BTModelTypeInt,
+    BTModelTypeFloat,
+    BTModelTypeDouble,
+    BTModelTypeBool,
+    BTModelTypeArray,
+    BTModelTypeMutableArray,
+    BTModelTypeBase
 };
 
 @interface BTModelProperty : NSObject
@@ -57,7 +57,7 @@ typedef NS_ENUM(NSInteger,BaseModelType) {
 
 @property (nonatomic, strong) NSString * aliasName;
 
-@property (nonatomic, assign) BaseModelType type;
+@property (nonatomic, assign) BTModelType type;
 
 -(void)autoType:(NSString*)typeStr;
 

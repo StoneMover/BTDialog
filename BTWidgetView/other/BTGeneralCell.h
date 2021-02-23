@@ -11,13 +11,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger,BTGeneralCellStyle) {
-    BTGeneralCellStyleFullText = 0, //图标-文字-----------------文字-箭头
-    BTGeneralCellStyleFullSwitch,   //图标-文字----------------- 开关
-    BTGeneralCellStyleSimpleText,   //文字----------------- 箭头
-    BTGeneralCellStyleSimpleText2,   //文字-----------------文字-箭头
-    BTGeneralCellStyleSimpleText3,   //文字-----------------文字
-    BTGeneralCellStyleSimpleSwitch,  //文字----------------- 开关
-    BTGeneralCellStyleJustTitle      //文字
+    BTGeneralCellStyleFullText = 0, //图标-标题-----------------副标题-箭头
+    BTGeneralCellStyleFullSwitch,   //图标-标题----------------- 开关
+    BTGeneralCellStyleSimpleText,   //标题----------------- 箭头
+    BTGeneralCellStyleSimpleText2,   //标题-----------------副标题-箭头
+    BTGeneralCellStyleSimpleText3,   //标题-----------------副标题
+    BTGeneralCellStyleSimpleSwitch,  //标题----------------- 开关
+    BTGeneralCellStyleJustTitle      //标题
 };
 
 @class BTGeneralCellConfig;
@@ -31,12 +31,12 @@ typedef void (^BTGeneralCellConfigBlock)(BTGeneralCellConfig * config);
 
 @property (nonatomic, copy) BTGeneralCellConfigBlock titleIconImgViewBlock;
 
-//左边的标题文字
+//标题文字
 @property (nonatomic, strong) UILabel * titleLabel;
 
 @property (nonatomic, copy) BTGeneralCellConfigBlock titleLabelBlock;
 
-//右边的副标题
+//副标题
 @property (nonatomic, strong) UILabel * subTitleLabel;
 
 @property (nonatomic, copy) BTGeneralCellConfigBlock subTitleLabelBlock;

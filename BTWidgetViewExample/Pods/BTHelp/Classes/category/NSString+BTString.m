@@ -34,6 +34,16 @@
     return YES;
 }
 
+- (BOOL)bt_isPureFloat{
+    if ([BTUtils isEmpty:self]) {
+        return NO;
+    }
+    NSScanner* scan = [NSScanner scannerWithString:self];
+    float val;
+    return [scan scanFloat:&val] && [scan isAtEnd];
+}
+
+
 //加密&解密
 - (NSString*)bt_base64Decode{
     NSData * data = [[NSData alloc]initWithBase64EncodedString:self options:NSDataBase64DecodingIgnoreUnknownCharacters];

@@ -1,5 +1,5 @@
 PODS:
-  - BTHelp (0.3.10)
+  - BTHelp (0.3.12)
 
 DEPENDENCIES:
   - BTHelp
@@ -9,7 +9,7 @@ SPEC REPOS:
     - BTHelp
 
 SPEC CHECKSUMS:
-  BTHelp: f6fb086b081da18bc5a69154cbacdd956ccaf9d8
+  BTHelp: d7a9a178b60db8e6c77d32a0dd5fdb38e752d967
 
 PODFILE CHECKSUM: ded3ce68471f099b9edaab199f764ba130e6663e
 

@@ -66,21 +66,21 @@
 
 -(void)autoType:(NSString*)typeStr{
     if ([typeStr hasPrefix:@"Ti"]||[typeStr hasPrefix:@"Tq"]) {
-        self.type=BaseModelTypeInt;
+        self.type=BTModelTypeInt;
     }else if ([typeStr hasPrefix:@"Tf"]){
-        self.type=BaseModelTypeFloat;
+        self.type=BTModelTypeFloat;
     }else if ([typeStr hasPrefix:@"Td"]){
-        self.type=BaseModelTypeDouble;
+        self.type=BTModelTypeDouble;
     }else if ([typeStr hasPrefix:@"TB"]){
-        self.type=BaseModelTypeBool;
+        self.type=BTModelTypeBool;
     }else if ([typeStr hasPrefix:@"T@\"NSMutableArray\""]){
-        self.type=BaseModelTypeMutableArray;
+        self.type=BTModelTypeMutableArray;
     }else if ([typeStr hasPrefix:@"T@\"NSString\""]){
-        self.type=BaseModelTypeString;
+        self.type=BTModelTypeString;
     }else if ([typeStr hasPrefix:@"T@\"NSArray\""]){
-        self.type=BaseModelTypeArray;
+        self.type=BTModelTypeArray;
     }else{
-        self.type=BaseModelTypeBase;
+        self.type=BTModelTypeBase;
     }
 }
 
@@ -99,7 +99,7 @@
         if ([dict valueForKey:dictKey]) {
             //当字典中存在该key的时候
             switch (key.type) {
-                case BaseModelTypeString:
+                case BTModelTypeString:
                 {
                     id result=[NSString stringWithFormat:@"%@",[dict objectForKey:dictKey]];
                     if ([result class]==[NSNull class]||[result isEqualToString:@"<null>"]){
@@ -108,10 +108,10 @@
                     [model setValue:result forKey:key.propertyName];
                 }
                     break;
-                case BaseModelTypeInt:
-                case BaseModelTypeFloat:
-                case BaseModelTypeDouble:
-                case BaseModelTypeBool:
+                case BTModelTypeInt:
+                case BTModelTypeFloat:
+                case BTModelTypeDouble:
+                case BTModelTypeBool:
                 {
                     id result=[dict objectForKey:dictKey];
                     if ([result class]==[NSNull class]){
@@ -121,8 +121,8 @@
                     break;
                 }
                     
-                case BaseModelTypeArray:
-                case BaseModelTypeMutableArray:
+                case BTModelTypeArray:
+                case BTModelTypeMutableArray:
                 {
                     //判断数组是否为0
                     NSArray * dictArray=[dict objectForKey:dictKey];
@@ -148,7 +148,7 @@
                             [mutableArray addObject:modelChild];
                         }
                         
-                        if (key.type==BaseModelTypeArray) {
+                        if (key.type==BTModelTypeArray) {
                             NSArray * array=[NSArray arrayWithArray:mutableArray];
                             [model setValue:array forKey:key.propertyName];
                         }else{
@@ -156,12 +156,21 @@
                         }
                         
                     }else{
-                        [model setValue:dictArray forKey:key.propertyName];
+                        NSMutableArray * array = [NSMutableArray new];
+                        for (int i=0; i<dictArray.count; i++) {
+                            NSObject * obj = dictArray[i];
+                            if ([obj isKindOfClass:[NSNull class]]) {
+                                [array addObject:@""];
+                            }else{
+                                [array addObject:obj];
+                            }
+                        }
+                        [model setValue:array forKey:key.propertyName];
                     }
                     break;
                 }
                     
-                case BaseModelTypeBase:{
+                case BTModelTypeBase:{
                     NSDictionary * dictChild=[dict objectForKey:dictKey];
                     if (![dictChild isKindOfClass:[NSDictionary class]]) {
                         [self LogError:[NSString stringWithFormat:@"return data type error,there is need dictionary,but get other:%@-%@-%@",NSStringFromClass(model.class),dictKey,dictChild]];
@@ -193,19 +202,19 @@
     NSArray * attributes=[self propertyKeys:model isAnalisys:NO];
     for (BTModelProperty * property in attributes) {
         switch (property.type) {
-            case BaseModelTypeString:
-            case BaseModelTypeInt:
-            case BaseModelTypeFloat:
-            case BaseModelTypeDouble:
-            case BaseModelTypeBool:
+            case BTModelTypeString:
+            case BTModelTypeInt:
+            case BTModelTypeFloat:
+            case BTModelTypeDouble:
+            case BTModelTypeBool:
             {
                 id value=[model valueForKey:property.propertyName];
                 [dict setValue:value forKey:property.aliasName];
                 break;
             }
                 
-            case BaseModelTypeArray:
-            case BaseModelTypeMutableArray:
+            case BTModelTypeArray:
+            case BTModelTypeMutableArray:
             {
                 NSMutableArray * array=[[NSMutableArray alloc]init];
                 NSArray * arrayData=[model valueForKey:property.propertyName];
@@ -224,7 +233,7 @@
                 break;
             }
                 
-            case BaseModelTypeBase:{
+            case BTModelTypeBase:{
                 BTModel * childModel=[model valueForKey:property.propertyName];
                 NSDictionary * dictValue=[self autoDataToDictionary:childModel];
                 [dict setValue:dictValue forKey:property.aliasName];

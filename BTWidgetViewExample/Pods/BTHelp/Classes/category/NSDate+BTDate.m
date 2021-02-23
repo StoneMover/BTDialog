@@ -83,33 +83,17 @@
 
 
 - (NSString*)bt_dateFromNowStr{
-    NSDate * d= self;
-    NSTimeInterval late=[d bt_timeIntervalSince1970]*1;
-    NSDate * dat = [NSDate bt_initLocalDate];
-    NSTimeInterval now=[dat bt_timeIntervalSince1970]*1;
-    NSTimeInterval cha=now-late;
-    int second=cha;
-    int minute=second/60;
-    int hour=minute/60;
-    int day=hour/24;
-    if (day!=0) {
-        if (day>30) {
-            return [NSString stringWithFormat:@"%d月前",day/30];
-        }
-        
-        if (day>365) {
-            return [NSString stringWithFormat:@"%d年前",day/365];
-        }
-        
-        return [NSString stringWithFormat:@"%d天前",day];
+    
+    NSDate * dateNow = [NSDate bt_initLocalDate];
+    if ([self bt_isSameDayToDate:dateNow]) {
+        return [self bt_dateStr:@"HH:mm"];
     }
-    if (hour!=0) {
-        return [NSString stringWithFormat:@"%d小时前",hour];
+    
+    if (![self bt_isSameYearToDate:dateNow]) {
+        return [self bt_dateStr:@"yyyy-MM-dd"];
     }
-    if (minute!=0) {
-        return [NSString stringWithFormat:@"%d分钟前",minute];
-    }
-    return @"刚刚";
+    
+    return [self bt_dateStr:@"MM-dd HH:mm"];
 }
 
 - (NSString*)bt_dateStr:(NSString*)formater{
@@ -118,6 +102,12 @@
     formatter.dateFormat=formater;
     NSString * str = [formatter stringFromDate:self];
     return str;
+}
+
+- (BOOL)bt_isSameYearToDate:(NSDate*)date{
+    NSString * strSelf = [self bt_dateStr:@"yyyy"];
+    NSString * strDate = [date bt_dateStr:@"yyyy"];
+    return [strSelf isEqualToString:strDate];
 }
 
 - (BOOL)bt_isSameMonthToDate:(NSDate*)date{
@@ -169,9 +159,7 @@
     NSDateFormatter * formatter =[[NSDateFormatter alloc] init];
     formatter.dateFormat=formatterStr;
     NSDate * date = [formatter dateFromString:dateStr];
-    NSTimeZone * zone = [NSTimeZone systemTimeZone];
-    NSInteger interval = [zone secondsFromGMTForDate: date];
-    NSDate * localeDate = [date dateByAddingTimeInterval: interval];
+    NSDate * localeDate = [date dateByAddingTimeInterval: [self bt_timeZoneSeconods]];
     return localeDate;
 }
 
