@@ -18,7 +18,7 @@
  例如 图片+文字，宽度都不确定
  设置图片的Content Hugging 水平为251
  设置图片的Content Compression Resistance 水平为751
- 
+ 即可保证图片优先展示，文字过长将会压缩文字
  */
 
 #import <UIKit/UIKit.h>

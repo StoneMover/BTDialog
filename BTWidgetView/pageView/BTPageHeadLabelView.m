@@ -28,6 +28,7 @@
     self.labelStyle=style;
     self.dataSource=self;
     self.labels = [NSMutableArray new];
+    self.weight = UIFontWeightMedium;
     return self;
 }
 
@@ -56,7 +57,7 @@
 
 - (UIView*)pageHeadView:(BTPageHeadView*)headView contentViewForIndex:(NSInteger)index{
     UILabel * label = [[UILabel alloc] init];
-    label.font=[UIFont systemFontOfSize:self.normalFontSize weight:UIFontWeightMedium];
+    label.font=[UIFont systemFontOfSize:self.normalFontSize weight:self.weight];
     label.textColor=self.normalColor;
     label.text=self.titles[index];
     label.textAlignment=NSTextAlignmentCenter;
