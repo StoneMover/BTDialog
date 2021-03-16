@@ -22,7 +22,6 @@
 		185CF1E52446F0AC00866B1A /* BTVerticalAnimView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185CF1E42446F0AC00866B1A /* BTVerticalAnimView.m */; };
 		185CF1EB2446F1EE00866B1A /* BTScrollLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185CF1EA2446F1EE00866B1A /* BTScrollLabelView.m */; };
 		1860860823D160F100E2749E /* BTStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1860860723D160F100E2749E /* BTStarView.m */; };
-		18629BAA23BA054300CE552C /* WKWebView+FullImg.m in Sources */ = {isa = PBXBuildFile; fileRef = 18629BA923BA054300CE552C /* WKWebView+FullImg.m */; };
 		18629BAD23BA05AF00CE552C /* BTContentAutoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18629BAC23BA05AF00CE552C /* BTContentAutoView.m */; };
 		1867739623C6FAE40068E3DC /* BTGridImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867739523C6FAE40068E3DC /* BTGridImgView.m */; };
 		1867A8F62445C06D00DC819F /* BTSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867A8F52445C06D00DC819F /* BTSearchView.m */; };
@@ -40,6 +39,7 @@
 		18A1EA0C248E46B00067D00C /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A1EA0A248E46AF0067D00C /* libmp3lame.a */; };
 		18A5526825C2967400A88339 /* CellStyleTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5526625C2967400A88339 /* CellStyleTestViewController.m */; };
 		18A5526925C2967400A88339 /* CellStyleTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A5526725C2967400A88339 /* CellStyleTestViewController.xib */; };
+		18B6280126008F850018BC7C /* UIScrollView+FullImg.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6280026008F850018BC7C /* UIScrollView+FullImg.m */; };
 		18C9082A257DFC1F00C6BC14 /* StarTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C90828257DFC1F00C6BC14 /* StarTestViewController.m */; };
 		18C9082B257DFC1F00C6BC14 /* StarTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C90829257DFC1F00C6BC14 /* StarTestViewController.xib */; };
 		18E5647D249762430050C13E /* InputTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5647B249762430050C13E /* InputTestViewController.m */; };
@@ -117,8 +117,6 @@
 		185CF1EA2446F1EE00866B1A /* BTScrollLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTScrollLabelView.m; sourceTree = "<group>"; };
 		1860860623D160F100E2749E /* BTStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTStarView.h; sourceTree = "<group>"; };
 		1860860723D160F100E2749E /* BTStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTStarView.m; sourceTree = "<group>"; };
-		18629BA823BA054300CE552C /* WKWebView+FullImg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView+FullImg.h"; sourceTree = "<group>"; };
-		18629BA923BA054300CE552C /* WKWebView+FullImg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+FullImg.m"; sourceTree = "<group>"; };
 		18629BAB23BA05AF00CE552C /* BTContentAutoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTContentAutoView.h; sourceTree = "<group>"; };
 		18629BAC23BA05AF00CE552C /* BTContentAutoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTContentAutoView.m; sourceTree = "<group>"; };
 		1867739423C6FAE40068E3DC /* BTGridImgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTGridImgView.h; sourceTree = "<group>"; };
@@ -147,6 +145,8 @@
 		18A5526525C2967400A88339 /* CellStyleTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellStyleTestViewController.h; sourceTree = "<group>"; };
 		18A5526625C2967400A88339 /* CellStyleTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellStyleTestViewController.m; sourceTree = "<group>"; };
 		18A5526725C2967400A88339 /* CellStyleTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellStyleTestViewController.xib; sourceTree = "<group>"; };
+		18B627FF26008F850018BC7C /* UIScrollView+FullImg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+FullImg.h"; sourceTree = "<group>"; };
+		18B6280026008F850018BC7C /* UIScrollView+FullImg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+FullImg.m"; sourceTree = "<group>"; };
 		18C90827257DFC1F00C6BC14 /* StarTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarTestViewController.h; sourceTree = "<group>"; };
 		18C90828257DFC1F00C6BC14 /* StarTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarTestViewController.m; sourceTree = "<group>"; };
 		18C90829257DFC1F00C6BC14 /* StarTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarTestViewController.xib; sourceTree = "<group>"; };
@@ -417,12 +417,12 @@
 		6034D1802313E81A009DBBDF /* category */ = {
 			isa = PBXGroup;
 			children = (
+				18B627FF26008F850018BC7C /* UIScrollView+FullImg.h */,
+				18B6280026008F850018BC7C /* UIScrollView+FullImg.m */,
 				187A8E9B25A833F600B1A689 /* UIFont+BTFont.h */,
 				187A8E9C25A833F600B1A689 /* UIFont+BTFont.m */,
 				18E77F6524985E7C00BF9F5A /* UILabel+BTLabel.h */,
 				18E77F6624985E7C00BF9F5A /* UILabel+BTLabel.m */,
-				18629BA823BA054300CE552C /* WKWebView+FullImg.h */,
-				18629BA923BA054300CE552C /* WKWebView+FullImg.m */,
 				60D28A942306923A0043442B /* UIView+BTViewTool.h */,
 				60D28A852306923A0043442B /* UIView+BTViewTool.m */,
 				60D28A802306923A0043442B /* UIView+BTConstraint.h */,
@@ -697,13 +697,13 @@
 				18ECAE6A25BFFDA3007CB11E /* BTGeneralCell.m in Sources */,
 				0DE9CFD823C1F658004607AD /* DataModel.m in Sources */,
 				0D41968D23B639BF00F5079F /* BTAlertView.m in Sources */,
-				18629BAA23BA054300CE552C /* WKWebView+FullImg.m in Sources */,
 				0D41969223B63CBD00F5079F /* DialogTestViewController.m in Sources */,
 				60D28A9C2306923A0043442B /* BTTextField.m in Sources */,
 				1843328F256BA346003A6C41 /* TestProgressViewController.m in Sources */,
 				60D28A962306923A0043442B /* BTTextView.m in Sources */,
 				0D41969623B6413100F5079F /* BTAlertLabelView.m in Sources */,
 				18859B202446B1F600B8B1D9 /* BTWidgetView.m in Sources */,
+				18B6280126008F850018BC7C /* UIScrollView+FullImg.m in Sources */,
 				0DD56D082445F65C00708775 /* SearchTestViewController.m in Sources */,
 				18C9082A257DFC1F00C6BC14 /* StarTestViewController.m in Sources */,
 				18E77F6B2498633000BF9F5A /* LabelTestViewController.m in Sources */,
