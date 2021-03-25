@@ -33,7 +33,7 @@
 - (void)initSelf{
     self.basicHeight=56;
     [self addKeyBoardNofication];
-    self.toolView=[[BTTextInputToolView alloc] initWithFrame:CGRectMake(0, self.BTHeight-self.basicHeight, self.BTWidth, self.basicHeight) type:BTTextInputViewTypeNoVoice];
+    self.toolView=[[BTTextInputToolView alloc] initWithFrame:CGRectMake(0, self.BTHeight-self.basicHeight, self.BTWidth, self.basicHeight) type:BTTextInputViewTypeSimple];
     self.toolView.backgroundColor=[UIColor whiteColor];
     [self addSubview:self.toolView];
     
@@ -136,12 +136,6 @@
 //上次的内容高度
 @property (nonatomic, assign) CGFloat lastHeight;
 
-//发送按钮
-@property (nonatomic, strong) UIButton * btnCommit;
-
-//切换语音、键盘按钮
-@property (nonatomic, strong) UIButton * btnVoice;
-
 //按住说话按钮
 @property (nonatomic, strong) UIButton * btnPressVoice;
 
@@ -168,19 +162,20 @@
     viewLine.backgroundColor=[UIColor bt_RGBSame:235];
     [self addSubview:viewLine];
     
-    self.btnVoice = [[UIButton alloc] initBTViewWithSize:CGSizeMake(55, 55)];
+    //语音按钮
+    _btnVoice = [[UIButton alloc] initBTViewWithSize:CGSizeMake(55, 55)];
     [self addSubview:self.btnVoice];
     [self.btnVoice addTarget:self action:@selector(statusClick) forControlEvents:UIControlEventTouchUpInside];
     
-    
-    self.btnCommit=[[UIButton alloc] initBTViewWithSize:CGSizeMake(55, 55)];
+    //发送按钮
+    _btnCommit=[[UIButton alloc] initBTViewWithSize:CGSizeMake(55, 55)];
     [self.btnCommit addTarget:self action:@selector(saveClick) forControlEvents:UIControlEventTouchUpInside];
     [self.btnCommit setTitle:@"发布" forState:UIControlStateNormal];
     [self.btnCommit setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     self.btnCommit.titleLabel.font=[UIFont BTAutoFontWithSize:16 weight:UIFontWeightSemibold];
     [self addSubview:self.btnCommit];
     
-    
+    //输入框
     _textView=[[BTTextView alloc] initBTViewWithSize:CGSizeMake(100, self.basicHeight-20)];
     [self.textView setTextContainerInset:UIEdgeInsetsMake(8, 5, 8, 5)];
     self.textView.font=[UIFont BTAutoFontWithSize:16];
@@ -203,6 +198,7 @@
         }
     };
     
+    //按下说话按钮
     self.btnPressVoice = [UIButton buttonWithType:UIButtonTypeCustom];
     self.btnPressVoice.frame = self.textView.frame;
     self.btnPressVoice.BTBorderWidth = 0.5;
@@ -212,25 +208,93 @@
     [self.btnPressVoice setTitleColor:UIColor.grayColor forState:UIControlStateNormal];
     self.btnPressVoice.titleLabel.font = [UIFont BTAutoFontWithSize:14 weight:UIFontWeightMedium];
     self.btnPressVoice.enabled = NO;
+    self.btnPressVoice.hidden = YES;
     
     [self addSubview:self.textView];
     [self addSubview:self.btnPressVoice];
+    
+    //表情按钮
+    _btnEmoj = [[UIButton alloc] initBTViewWithSize:CGSizeMake(55, 55)];
+    [self.btnEmoj setTitle:@"表情" forState:UIControlStateNormal];
+    [self.btnEmoj setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    self.btnEmoj.titleLabel.font=[UIFont BTAutoFontWithSize:16 weight:UIFontWeightSemibold];
+    [self addSubview:self.btnEmoj];
+    
+    //更多按钮
+    _btnMore = [[UIButton alloc] initBTViewWithSize:CGSizeMake(55, 55)];
+    [self.btnMore setTitle:@"更多" forState:UIControlStateNormal];
+    [self.btnMore setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    self.btnMore.titleLabel.font=[UIFont BTAutoFontWithSize:16 weight:UIFontWeightSemibold];
+    [self addSubview:self.btnMore];
+    
+    switch (self.type) {
+        case BTTextInputViewTypeSimple:
+        {
+            self.btnVoice.hidden = YES;
+            self.btnMore.hidden = YES;
+            self.btnEmoj.hidden = YES;
+        }
+            break;
+        case BTTextInputViewTypeVoice:
+        {
+            self.btnMore.hidden = YES;
+            self.btnEmoj.hidden = YES;
+            break;
+        }
+        case BTTextInputViewTypeAll:
+        {
+            
+            break;
+        }
+    }
 }
 
+//布局顺序为微信输入框顺序，语音按钮-输入框-表情-更多-发送，如果控件为隐藏则从中间移除
 - (void)layoutSubviews{
-    switch (self.type) {
-        case BTTextInputViewTypeNoVoice:
-            self.btnVoice.hidden = YES;
-            self.btnPressVoice.hidden = YES;
-            self.textView.frame=CGRectMake(15, 10, self.BTWidth-15-self.btnCommit.BTWidth, self.BTHeight-20);
-            self.btnCommit.frame=CGRectMake(self.textView.BTRight, 0, self.btnCommit.BTWidth, self.BTHeight);
-            break;
-        case BTTextInputViewTypeAll:
-            self.btnVoice.frame = CGRectMake(0, 0, self.btnVoice.BTWidth, self.BTHeight);
-            self.textView.frame = CGRectMake(self.btnVoice.BTRight, 10, self.BTWidth-self.btnVoice.BTRight-self.btnCommit.BTWidth, self.BTHeight-20);
-            self.btnCommit.frame = CGRectMake(self.textView.BTRight, 0, self.btnCommit.BTWidth, self.BTHeight);
-            self.btnPressVoice.frame = self.textView.frame;
-            break;
+    CGFloat x = 0;
+    CGFloat textViewW = self.BTWidth - 15;
+    if (!self.btnVoice.isHidden) {
+        textViewW -= self.btnVoice.BTWidth;
+    }
+    
+    if (!self.btnEmoj.isHidden) {
+        textViewW -= self.btnEmoj.BTWidth;
+    }
+    
+    if (!self.btnMore.isHidden) {
+        textViewW -= self.btnMore.BTWidth;
+    }
+    
+    if (!self.btnCommit.isHidden) {
+        textViewW -= self.btnCommit.BTWidth;
+    }
+    
+    
+    if (!self.btnVoice.isHidden) {
+        self.btnVoice.BTLeft = x;
+        x = self.btnVoice.BTRight;
+    }
+    if (x == 0) {
+        x = 15;
+    }else{
+        textViewW += 15;
+    }
+    self.textView.frame=CGRectMake(x, 10, textViewW, self.BTHeight-20);
+    x = self.textView.BTRight;
+    
+    if (!self.btnEmoj.isHidden) {
+        self.btnEmoj.BTLeft = x;
+        x = self.btnEmoj.BTRight;
+    }
+    
+    if (!self.btnMore.isHidden) {
+        self.btnMore.BTLeft = x;
+        x = self.btnMore.BTRight;
+    }
+    
+    if (!self.btnCommit.isHidden) {
+        self.btnCommit.BTLeft = x;
+        x = self.btnCommit.BTRight;
     }
     
 }
@@ -289,7 +353,7 @@
     }else{
         self.status = 0;
     }
-    
+    self.btnPressVoice.frame = self.textView.frame;
     if (self.status == 0) {
         [self.btnVoice setImage:self.voiceImg forState:UIControlStateNormal];
         self.btnPressVoice.hidden = YES;
@@ -310,9 +374,6 @@
     }
 }
 
-- (void)speakClick{
-    
-}
 
 - (void)saveClick{
     if (self.textView.text.length==0) {
@@ -326,8 +387,8 @@
     }
     
     
-    if (self.block) {
-        self.block();
+    if (self.sendClickBlock) {
+        self.sendClickBlock();
     }
 }
 

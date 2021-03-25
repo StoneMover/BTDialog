@@ -12,8 +12,9 @@
 @class BTTextInputToolView;
 
 typedef NS_ENUM(NSInteger,BTTextInputToolType) {
-    BTTextInputViewTypeNoVoice = 0,//没有语音功能，有输入框和发送按钮，用于普通的评论
-    BTTextInputViewTypeAll//有语音输入的按钮、有发送按钮、有输入框,用于聊天对话中
+    BTTextInputViewTypeSimple = 0,//没有语音功能，有输入框和发送按钮，用于普通的评论
+    BTTextInputViewTypeVoice,//有语音输入的按钮、有发送按钮、有输入框,用于聊天对话中
+    BTTextInputViewTypeAll
 };
 
 @interface BTTextInputView : UIView
@@ -51,10 +52,23 @@ typedef NS_ENUM(NSInteger,BTTextInputToolType) {
 
 - (instancetype)initWithFrame:(CGRect)frame type:(BTTextInputToolType)type;
 
+//设置当前输入状态为文字状态
 - (void)setDefaultStatus;
 
 //输入框
 @property (nonatomic, strong, readonly) BTTextView * textView;
+
+//发送按钮
+@property (nonatomic, strong, readonly) UIButton * btnCommit;
+
+//切换语音、键盘按钮
+@property (nonatomic, strong, readonly) UIButton * btnVoice;
+
+//表情按钮
+@property (nonatomic, strong, readonly) UIButton * btnEmoj;
+
+//更多
+@property (nonatomic, strong, readonly) UIButton * btnMore;
 
 //语音图标
 @property (nonatomic, strong) UIImage * voiceImg;
@@ -66,7 +80,10 @@ typedef NS_ENUM(NSInteger,BTTextInputToolType) {
 @property (nonatomic, weak) id<BTTextInputToolViewDelegate> delegate;
 
 //点击发送按钮回调
-@property (nonatomic, copy) void(^block)(void);
+@property (nonatomic, copy) void(^sendClickBlock)(void);
+
+//布局回调，可以自己调整想要的自定义布局
+@property (nonatomic, copy) void(^layoutBlock)(void);
 
 //能够发送文字状态下的发送文字颜色
 @property (nonatomic, strong) UIColor * commitColor;

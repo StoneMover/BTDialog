@@ -1,15 +1,15 @@
 //
-//  UIScrollView+FullImg.m
-//  word
+//  UIScrollView+BTScrollView.m
+//  BTWidgetViewExample
 //
-//  Created by liao on 2021/3/13.
-//  Copyright © 2021 stonemover. All rights reserved.
+//  Created by apple on 2021/3/25.
+//  Copyright © 2021 stone. All rights reserved.
 //
 
-#import "UIScrollView+FullImg.h"
+#import "UIScrollView+BTScrollView.h"
 #import "UIView+BTViewTool.h"
 
-@implementation UIScrollView (FullImg)
+@implementation UIScrollView (BTScrollView)
 
 - (void)bt_clipImgWithBottomMargin:(CGFloat)margin
                   placeHolderBlock:(void(^)(UIImageView * imgView))placeHolderBlock

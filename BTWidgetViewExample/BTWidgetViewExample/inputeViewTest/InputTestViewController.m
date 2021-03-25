@@ -45,7 +45,8 @@
     [self.view addSubview:btn];
     
     
-    self.toolView = [[BTTextInputToolView alloc] initWithFrame:CGRectMake(0, BTUtils.SCREEN_H - BTUtils.NAV_HEIGHT - 56, BTUtils.SCREEN_W, 56) type:BTTextInputViewTypeAll];
+    self.toolView = [[BTTextInputToolView alloc] initWithFrame:CGRectMake(0, BTUtils.SCREEN_H - BTUtils.NAV_HEIGHT - 56, BTUtils.SCREEN_W, 56) type:BTTextInputViewTypeVoice];
+    self.toolView.btnEmoj.hidden = NO;
     self.toolView.voiceImg = [UIImage imageNamed:@"voice"];
     self.toolView.delegate = self;
     self.toolView.keyboardImg = [UIImage imageNamed:@"keyboard"];
