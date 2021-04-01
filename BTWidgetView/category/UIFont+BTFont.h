@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIFont*)BTAutoFontWithSize:(CGFloat)size weight:(UIFontWeight)weight;
 + (UIFont*)BTAutoFontWithSize:(CGFloat)size;
 
+//精确计算正确的行间距
+- (CGFloat)autoLineHeight:(CGFloat)lineHeight;
+
 @end
 
 

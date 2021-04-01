@@ -45,6 +45,8 @@
         }
         if (h>120) {
             h=120;
+            //保持内容显示在最底部
+            [weakSelf.toolView.textView setContentOffset:CGPointMake(0, weakSelf.toolView.textView.contentSize.height - weakSelf.toolView.textView.BTHeight) animated:YES];
         }
         weakSelf.toolView.BTHeight=h;
         [weakSelf.toolView layoutSubviews];

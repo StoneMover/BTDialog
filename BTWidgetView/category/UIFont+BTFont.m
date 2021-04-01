@@ -78,6 +78,10 @@
     return UIFontWeightRegular;
 }
 
+- (CGFloat)autoLineHeight:(CGFloat)lineHeight{
+    return lineHeight - (self.lineHeight - self.pointSize);
+}
+
 @end
 
 

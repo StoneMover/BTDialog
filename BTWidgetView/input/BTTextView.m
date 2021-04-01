@@ -64,6 +64,11 @@
                                              selector:@selector(textViewContentChange)
                                                  name:UITextViewTextDidChangeNotification
                                                object:self];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textViewStartEdit) name:UITextViewTextDidBeginEditingNotification object:self];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textViewEndEdit) name:UITextViewTextDidEndEditingNotification object:self];
 }
 
 - (void)addObserver{
@@ -101,6 +106,8 @@
 - (void)setPlaceHolder:(NSString *)placeHolder{
     _placeHolder=placeHolder;
     self.labelPlaceHolder.text=placeHolder;
+    self.labelPlaceHolder.font = self.font;
+    self.labelPlaceHolder.textColor = self.placeHolderColor;
     [self.labelPlaceHolder sizeToFit];
     [self layoutSubviews];
 }
@@ -111,9 +118,10 @@
 }
 
 - (void)layoutSubviews{
+    [super layoutSubviews];
     self.labelPlaceHolder.BTLeft=self.textContainerInset.left+3;
     self.labelPlaceHolder.BTTop=self.textContainerInset.top;
-    self.labelPlaceHolder.BTWidth = self.BTWidth;
+    self.labelPlaceHolder.BTWidth = self.BTWidth - self.textContainerInset.left - self.textContainerInset.right;
     self.labelPlaceHolder.BTHeight = [self.labelPlaceHolder.text bt_calculateStrHeight:self.BTWidth font:self.labelPlaceHolder.font];
 //    [self.labelPlaceHolder sizeToFit];
 }
@@ -144,6 +152,18 @@
         self.blockContentChange();
     }
     
+}
+
+- (void)textViewStartEdit{
+    if (self.blockStartEdit) {
+        self.blockStartEdit();
+    }
+}
+
+- (void)textViewEndEdit{
+    if (self.blockEndEdit) {
+        self.blockEndEdit();
+    }
 }
 
 
@@ -183,6 +203,30 @@
     }
 }
 
+
+- (void)hidePlaceholder{
+    self.labelPlaceHolder.hidden = YES;
+}
+
+
+- (void)showPlaceholder{
+    self.labelPlaceHolder.hidden = NO;
+}
+
+
+//返回自定义的光标大小
+- (CGRect)caretRectForPosition:(UITextPosition *)position {
+    CGRect originalRect = [super caretRectForPosition:position];
+//    NSLog(@"%f,%f,%f,%f",originalRect.origin.x,originalRect.origin.y,originalRect.size.width,originalRect.size.height);
+    if (self.cursorSize.width != 0) {
+        originalRect.size.width = self.cursorSize.width;
+    }
+    
+    if (self.cursorSize.height != 0) {
+        originalRect.size.height = self.cursorSize.height;
+    }
+    return originalRect;
+}
 
 
 @end
