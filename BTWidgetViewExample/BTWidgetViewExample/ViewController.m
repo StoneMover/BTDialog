@@ -23,6 +23,7 @@
 #import "StarTestViewController.h"
 #import "BTGeneralCell.h"
 #import "CellStyleTestViewController.h"
+#import "LeadViewTestVC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -50,7 +51,8 @@
                   @"TestVerticalAnimViewController",
                   @"TestProgressViewController",
                   @"StarTestViewController",
-                  @"CellStyleTestViewController"
+                  @"CellStyleTestViewController",
+                  @"BTLeadView"
     ];
     [self.tableView registerClass:[BTGeneralCell class] forCellReuseIdentifier:@"HomeTableViewCellId"];
     self.tableView.delegate=self;
@@ -269,6 +271,13 @@
         case 12:
         {
             CellStyleTestViewController * vc=[CellStyleTestViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 13:
+        {
+            LeadViewTestVC * vc=[LeadViewTestVC new];
+            vc.title = self.titles[indexPath.row];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
