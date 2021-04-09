@@ -16,6 +16,7 @@
     self.type = type;
     self.padding = padding;
     self.rect = [view convertRect:view.bounds toView:BTUtils.APP_WINDOW];
+    self.arcMovePoint = CGPointMake(0, 0);
     return self;
 }
 
@@ -76,6 +77,19 @@
                 [rootPath appendPath:path];
             }
                 break;
+            case BTLeadEmptyTypeArc:
+            {
+                CGFloat radius = 0;
+                if (model.rect.size.width > model.rect.size.height) {
+                    radius = (model.rect.size.height - model.padding.top - model.padding.bottom) / 2.0;
+                }else{
+                    radius = (model.rect.size.width - model.padding.left - model.padding.right) / 2.0;
+                }
+                CGPoint point = CGPointMake(model.rect.origin.x + model.rect.size.width / 2.0 + model.arcMovePoint.x, model.rect.origin.y + model.rect.size.height / 2.0 + model.arcMovePoint.y);
+                UIBezierPath * path = [[UIBezierPath bezierPathWithArcCenter:point radius:radius startAngle:-0.5 * M_PI endAngle:1 * M_PI * 2 - 0.5 * M_PI clockwise:YES] bezierPathByReversingPath];
+                [rootPath appendPath:path];
+            }
+                break;
         }
         
         
@@ -101,6 +115,10 @@
         return;
     }
     
+    if (self.blockClick) {
+        self.blockClick();
+    }
+    
     for (BTLeadModel * model in self.dataArray) {
         CGFloat starX = model.rect.origin.x;
         CGFloat endX = model.rect.origin.x + model.rect.size.width;
@@ -108,10 +126,11 @@
         CGFloat endY = model.rect.origin.y + model.rect.size.height;
         if (point.x > starX && point.x < endX && point.y > starY && point.y < endY && model.blockClick){
             model.blockClick();
-            break;
+            return;
         }
         
     }
+    
     
 }
 
@@ -128,6 +147,14 @@
 
 #pragma mark 相关方法
 - (void)show{
+    self.alpha = 0;
+    [BTUtils.APP_WINDOW addSubview:self];
+    [UIView animateWithDuration:0.6 animations:^{
+        self.alpha = 1;
+    }];
+}
+
+- (void)showWithOutAnim{
     [BTUtils.APP_WINDOW addSubview:self];
 }
 

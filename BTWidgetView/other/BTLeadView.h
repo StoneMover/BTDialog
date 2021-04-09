@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger,BTLeadEmptyType) {
     BTLeadEmptyTypeRectangle = 0, //矩形
-    BTLeadEmptyTypeOval //椭圆形
+    BTLeadEmptyTypeOval, //椭圆形
+    BTLeadEmptyTypeArc  //圆形
 };
 
 @interface BTLeadModel : NSObject
@@ -44,6 +45,9 @@ typedef NS_ENUM(NSInteger,BTLeadEmptyType) {
 @property (nonatomic, copy, nullable) void(^blockClick)(void);
 
 
+//BTLeadEmptyTypeArc,原点的偏移量
+@property (nonatomic, assign) CGPoint arcMovePoint;
+
 @end
 
 @interface BTLeadView : UIView
@@ -52,7 +56,11 @@ typedef NS_ENUM(NSInteger,BTLeadEmptyType) {
 
 @property (nonatomic, strong, readonly) NSArray<BTLeadModel*> * dataArray;
 
+@property (nonatomic, copy, nullable) void(^blockClick)(void);
+
 - (void)show;
+
+- (void)showWithOutAnim;
 
 - (void)dismiss;
 
