@@ -24,6 +24,7 @@
 #import "BTGeneralCell.h"
 #import "CellStyleTestViewController.h"
 #import "LeadViewTestVC.h"
+#import "StickyTestViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -52,12 +53,13 @@
                   @"TestProgressViewController",
                   @"StarTestViewController",
                   @"CellStyleTestViewController",
-                  @"BTLeadView"
+                  @"BTLeadView",
+                  @"StickyTestView"
     ];
     [self.tableView registerClass:[BTGeneralCell class] forCellReuseIdentifier:@"HomeTableViewCellId"];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
-    [self test:@"when i get old " str:@"you when will i get old and"];
+//    [self test:@"when i get old " str:@"you when will i get old and"];
 }
 
 - (void)initProgressView{
@@ -277,6 +279,13 @@
         case 13:
         {
             LeadViewTestVC * vc=[LeadViewTestVC new];
+            vc.title = self.titles[indexPath.row];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 14:
+        {
+            StickyTestViewController * vc=[StickyTestViewController new];
             vc.title = self.titles[indexPath.row];
             [self.navigationController pushViewController:vc animated:YES];
         }

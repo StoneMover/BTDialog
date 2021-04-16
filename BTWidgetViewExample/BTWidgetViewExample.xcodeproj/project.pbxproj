@@ -16,6 +16,8 @@
 		0DCC398D23B71A6C00197B15 /* BTAlertTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCC398C23B71A6C00197B15 /* BTAlertTextView.m */; };
 		0DD56D082445F65C00708775 /* SearchTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD56D062445F65C00708775 /* SearchTestViewController.m */; };
 		0DE9CFD823C1F658004607AD /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE9CFD723C1F658004607AD /* DataModel.m */; };
+		1806128726243D2A00036B64 /* StickyTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806128626243D2A00036B64 /* StickyTestViewController.m */; };
+		1806128C2624439F00036B64 /* StickyTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1806128B2624439F00036B64 /* StickyTestView.m */; };
 		1815E324261EA7180065C115 /* BTLeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1815E323261EA7180065C115 /* BTLeadView.m */; };
 		1815E329261EAC3D0065C115 /* LeadViewTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1815E327261EAC3D0065C115 /* LeadViewTestVC.m */; };
 		1815E32A261EAC3D0065C115 /* LeadViewTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1815E328261EAC3D0065C115 /* LeadViewTestVC.xib */; };
@@ -110,6 +112,10 @@
 		0DD56D062445F65C00708775 /* SearchTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTestViewController.m; sourceTree = "<group>"; };
 		0DE9CFD623C1F658004607AD /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		0DE9CFD723C1F658004607AD /* DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		1806128526243D2A00036B64 /* StickyTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickyTestViewController.h; sourceTree = "<group>"; };
+		1806128626243D2A00036B64 /* StickyTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StickyTestViewController.m; sourceTree = "<group>"; };
+		1806128A2624439F00036B64 /* StickyTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StickyTestView.h; sourceTree = "<group>"; };
+		1806128B2624439F00036B64 /* StickyTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StickyTestView.m; sourceTree = "<group>"; };
 		1815E322261EA7180065C115 /* BTLeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTLeadView.h; sourceTree = "<group>"; };
 		1815E323261EA7180065C115 /* BTLeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTLeadView.m; sourceTree = "<group>"; };
 		1815E326261EAC3D0065C115 /* LeadViewTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeadViewTestVC.h; sourceTree = "<group>"; };
@@ -486,6 +492,10 @@
 				6037C16F23168CAE0017D898 /* PageVcTestViewController.m */,
 				60643D702318F5B5007C1E01 /* PageChildVcViewController.h */,
 				60643D712318F5B5007C1E01 /* PageChildVcViewController.m */,
+				1806128526243D2A00036B64 /* StickyTestViewController.h */,
+				1806128626243D2A00036B64 /* StickyTestViewController.m */,
+				1806128A2624439F00036B64 /* StickyTestView.h */,
+				1806128B2624439F00036B64 /* StickyTestView.m */,
 			);
 			path = pageViewTest;
 			sourceTree = "<group>";
@@ -725,8 +735,10 @@
 				6034D1842313E96F009DBBDF /* BTPageViewController.m in Sources */,
 				18ECAE6A25BFFDA3007CB11E /* BTGeneralCell.m in Sources */,
 				0DE9CFD823C1F658004607AD /* DataModel.m in Sources */,
+				1806128726243D2A00036B64 /* StickyTestViewController.m in Sources */,
 				0D41968D23B639BF00F5079F /* BTAlertView.m in Sources */,
 				0D41969223B63CBD00F5079F /* DialogTestViewController.m in Sources */,
+				1806128C2624439F00036B64 /* StickyTestView.m in Sources */,
 				1815E324261EA7180065C115 /* BTLeadView.m in Sources */,
 				60D28A9C2306923A0043442B /* BTTextField.m in Sources */,
 				1843328F256BA346003A6C41 /* TestProgressViewController.m in Sources */,

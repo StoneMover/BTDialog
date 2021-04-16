@@ -26,9 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BTStickyPageView : UIScrollView
 
-@property (nonatomic, weak) id<BTStickyPageViewDataSourse> dataSource;
+@property (nonatomic, weak) id<BTStickyPageViewDataSourse> stickyDataSource;
 
-- (void)reloadData;
+- (void)reloadStickyData;
 
 @end
 
