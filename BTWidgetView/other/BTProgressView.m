@@ -240,6 +240,7 @@
     if (!self.isCanSlide || !self.isCanClickChangePercent) {
         return;
     }
+    self.isTouch = YES;
     UITouch * touch=[touches anyObject];
     CGPoint point=[touch locationInView:self];
     [self change:point];
@@ -247,6 +248,9 @@
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     self.isTouch = NO;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(BTProgressSlideEnd:)]) {
+        [self.delegate BTProgressSlideEnd:self.percent];
+    }
 }
 
 

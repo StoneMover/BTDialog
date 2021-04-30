@@ -19,8 +19,13 @@ typedef NS_ENUM(NSInteger,BTProgressStyle) {
 
 @protocol BTProgressDelegate <NSObject>
 
+@optional
+
 //进度值改变，BTProgressStyleLineHoz,BTProgressStyleLineVer下有效
 - (void)BTProgressSlideChange:(CGFloat)percent;
+
+//抬起手指不在滑动的回调
+- (void)BTProgressSlideEnd:(CGFloat)percent;
 
 @end
 
