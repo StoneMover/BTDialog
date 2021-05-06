@@ -7,7 +7,7 @@
 //
 
 #import "BTDialogView.h"
-#import <BTHelp/BTKeyboardHelp.h>
+#import <BTHelp/BTHelp.h>
 
 @interface BTDialogView()
 

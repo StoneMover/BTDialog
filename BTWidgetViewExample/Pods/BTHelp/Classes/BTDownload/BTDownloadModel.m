@@ -8,7 +8,7 @@
 
 #import "BTDownloadModel.h"
 #import "BTDownloadMananger.h"
-#import "BTFileHelp.h"
+#import "BTHelp.h"
 
 @interface BTDownloadModel()
 

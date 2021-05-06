@@ -10,11 +10,11 @@
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
 #import <AudioToolbox/AudioToolbox.h>
-#import <BTHelp/BTTimerHelp.h>
+#import <BTHelp/BTHelp.h>
 #import "BTUtils.h"
 #include "lame.h"
 #import <BTHelp/NSDate+BTDate.h>
-#import <BTHelp/BTFileHelp.h>
+#import <BTHelp/BTHelp.h>
 
 
 const int moveCancelDistance=20;//取消移动的距离

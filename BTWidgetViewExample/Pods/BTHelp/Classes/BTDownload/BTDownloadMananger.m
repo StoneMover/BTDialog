@@ -9,7 +9,7 @@
 #import "BTDownloadMananger.h"
 #import "XMLReader.h"
 #import "NSString+BTString.h"
-#import "BTFileHelp.h"
+#import "BTHelp.h"
 
 static BTDownloadMananger * mananger=nil;
 

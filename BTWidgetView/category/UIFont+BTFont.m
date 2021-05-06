@@ -6,7 +6,7 @@
 //
 
 #import "UIFont+BTFont.h"
-#import <BTHelp/BTScaleHelp.h>
+#import <BTHelp/BTHelp.h>
 #import <objc/runtime.h>
 
 @implementation UIFont (BTFont)

@@ -59,6 +59,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)bt_randomStrWithLenth:(NSInteger)lenth isNumber:(BOOL)isNumber isCapital:(BOOL)isCapital isLowercase:(BOOL)isLowercase;
 
++ (NSString *)bt_integer:(NSInteger)integerValue;
+
++ (NSString *)bt_float:(CGFloat)floatValue;
+
 @end
 
 NS_ASSUME_NONNULL_END

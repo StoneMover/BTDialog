@@ -7,10 +7,9 @@
 //
 
 #import "TestGridImageViewController.h"
+#import <BTHelp/BTHelp.h>
 #import "BTGridImgView.h"
-#import <BTHelp/BTUtils.h>
 #import "UIView+BTViewTool.h"
-#import <BTHelp/BTIconHelp.h>
 #import "BTAlertLabelView.h"
 #import "UIView+BTEasyDialog.h"
 

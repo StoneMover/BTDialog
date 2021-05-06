@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIImage*)bt_imageWithColor:(UIColor *)color equalSize:(CGFloat)size;
 
-//加载图片不受系统颜色的影响显示
+//加载图片不受系统tintColor颜色的影响显示
 + (UIImage*)bt_imageOriWithName:(NSString*)imgName;
 
 //压缩大小到指定的大小

@@ -181,4 +181,12 @@
     return resultStr;
 }
 
++ (NSString *)bt_integer:(NSInteger)integerValue{
+    return [NSString stringWithFormat:@"%ld",(long)integerValue];
+}
+
++ (NSString *)bt_float:(CGFloat)floatValue{
+    return [NSString stringWithFormat:@"%f",floatValue];
+}
+
 @end

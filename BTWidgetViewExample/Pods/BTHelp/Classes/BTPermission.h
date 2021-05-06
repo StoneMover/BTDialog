@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define BTPermissionObj [BTPermission share]
+NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^BTPermissionSuccessBlock)(void);
 typedef void(^BTPermissionBlock)(NSInteger index);
@@ -25,22 +25,45 @@ typedef void(^BTPermissionBlock)(NSInteger index);
 //请求获取相机权限
 @property (nonatomic, assign) BOOL isCamera;
 - (void)getCameraPermission:(BTPermissionSuccessBlock)block;
-- (void)getCameraPermission:(NSString*)meg success:(BTPermissionSuccessBlock)block;
+- (void)getCameraPermission:(NSString*_Nullable)meg success:(BTPermissionSuccessBlock)block;
 
 
 //请求获取相册权限
 @property (nonatomic, assign) BOOL isAlbum;
 - (void)getAlbumPermission:(BTPermissionSuccessBlock)block;
-- (void)getAlbumPermission:(NSString*)meg success:(BTPermissionSuccessBlock)block;
+- (void)getAlbumPermission:(NSString*_Nullable)meg success:(BTPermissionSuccessBlock)block;
 
 
 
 //请求麦克风权限
 @property (nonatomic, assign) BOOL isMic;
 - (void)getMicPermission:(BTPermissionSuccessBlock)block;
-- (void)getMicPermission:(NSString*)meg success:(BTPermissionSuccessBlock)block;
+- (void)getMicPermission:(NSString*_Nullable)meg success:(BTPermissionSuccessBlock)block;
 
 
 
 @end
 
+
+@protocol BTLocationDelegate <NSObject>
+
+- (void)locationSuccess:(NSString*)province city:(NSString*)city;
+
+@end
+
+@interface BTLocation : NSObject
+
+//开始定位
+- (void)start;
+
+//停止定位
+- (void)stop;
+
+//是否有定位权限
+- (BOOL)isHasLocationPermission;
+
+@property (nonatomic, weak) id<BTLocationDelegate>  delegate;
+
+@end
+
+NS_ASSUME_NONNULL_END

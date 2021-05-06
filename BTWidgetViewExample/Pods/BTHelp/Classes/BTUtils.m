@@ -488,6 +488,43 @@
     return 29;
 }
 
++ (NSString*)convertNumToShortStr:(NSInteger)value isBigSuffix:(BOOL)isBigSuffix basicNum:(NSInteger)basicNum{
+    if (value < basicNum) {
+        return [NSString stringWithFormat:@"%ld",(long)value];
+    }
+    
+    if (value > 100000) {
+        NSString * suffix = @"w";
+        if (isBigSuffix) {
+            suffix = @"W";
+        }
+        return [NSString stringWithFormat:@"%ld%@",(long)(value / 10000),suffix];
+    }
+    
+    if (value > 10000) {
+        NSString * suffix = @"w";
+        if (isBigSuffix) {
+            suffix = @"W";
+        }
+        return [NSString stringWithFormat:@"%.1f%@",value / 10000.0,suffix];
+    }
+    
+    if (value > 1000) {
+        NSString * suffix = @"k";
+        if (isBigSuffix) {
+            suffix = @"K";
+        }
+        
+        return [NSString stringWithFormat:@"%.1f%@",value / 1000.0,suffix];
+    }
+    
+    return [NSString stringWithFormat:@"%ld",(long)value];
+}
+
++ (NSString*)convertNumToShortStr:(NSInteger)value{
+    return [self convertNumToShortStr:value isBigSuffix:NO basicNum:10000];
+}
+
 //MARK:废弃方法
 + (CGFloat)SCALE_6_W:(CGFloat)width{
     return (width)*(BTUtils.SCREEN_W/375.0f);

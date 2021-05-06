@@ -9,6 +9,7 @@
 #import "BTProgressView.h"
 #import "UIView+BTViewTool.h"
 #import <BTHelp/BTHelp.h>
+#import <BTHelp/UIColor+BTColor.h>
 
 @implementation BTProgressView
 

@@ -152,6 +152,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSInteger)getDaysInMonth:(NSInteger)year month:(NSInteger)month;
 
 
+//转换次数到显示内容，大于10000显示1.1w字样
++ (NSString*)convertNumToShortStr:(NSInteger)value isBigSuffix:(BOOL)isBigSuffix basicNum:(NSInteger)basicNum;
+
++ (NSString*)convertNumToShortStr:(NSInteger)value;
+
 //MARK:废弃方法
 
 //以宽度的缩放比例，计算对应的高度，比如在375的宽度高度为100，那么在414宽度的屏幕上即为414/375*100

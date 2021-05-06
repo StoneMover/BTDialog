@@ -140,6 +140,10 @@
     return localeDate;
 }
 
++ (instancetype)bt_dateWithTimeIntervalSince1970:(NSTimeInterval)secs{
+    return [NSDate dateWithTimeIntervalSince1970:secs + [self bt_timeZoneSeconods]];
+}
+
 + (NSDate*)bt_dateYMD:(NSString*)dateStr{
     return [self bt_dateFromStr:dateStr formatter:@"yyyy-MM-dd"];
 }

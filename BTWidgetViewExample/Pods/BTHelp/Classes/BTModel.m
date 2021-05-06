@@ -48,6 +48,9 @@
 }
 
 -(void)analisys:(NSDictionary*)dict{
+    if (![dict isKindOfClass:[NSDictionary class]]) {
+        return;
+    }
     BTModelAnalisys * analysis=[[BTModelAnalisys alloc]init];
     [analysis analysisDict:dict withModel:self];
 }

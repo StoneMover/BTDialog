@@ -90,6 +90,8 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark 根据出传入日期以及格式化样式获取date
 //根据时区获取对应的date，以下获取方法都会自动校正时区，会比调用系统方法生成的对象多出8个小时
 + (instancetype)bt_initLocalDate;
+//会自动增加时区差值
++ (instancetype)bt_dateWithTimeIntervalSince1970:(NSTimeInterval)secs;
 
 //传入2010-01-01 这个字符串获取date
 + (NSDate*)bt_dateYMD:(NSString*)dateStr;
