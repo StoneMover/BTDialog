@@ -35,6 +35,11 @@
 //cell的高度，默认45，如果为-1则为高度自适应，如果是高度自适应的话rootView、tableView的高度会被设置为maxRootHeight
 @property (nonatomic, assign) CGFloat cellHeight;
 
+//cell文字的颜色
+@property (nonatomic, strong) UIColor * cellLabelColor;
+
+//cell文字的字体
+@property (nonatomic, strong) UIFont * cellLabelFont;
 
 //初始化方法
 - (instancetype)initDialogTableView:(BTDialogLocation)location;
