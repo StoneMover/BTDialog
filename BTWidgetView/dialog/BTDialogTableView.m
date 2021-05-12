@@ -159,6 +159,10 @@
     
 }
 
+- (void)setTableViewSeparatorColo:(UIColor*)color insert:(UIEdgeInsets)insert{
+    self.tableView.separatorColor = color;
+    self.tableView.separatorInset = insert;
+}
 
 
 
@@ -217,8 +221,8 @@
 
 
 - (void)initLineView{
-    self.lineView=[[BTLineView alloc] initWithFrame:CGRectMake(0, self.BTHeight-1, self.BTWidth, 1)];
-    self.lineView.backgroundColor = [UIColor bt_RGBASame:77 A:0.25];
+    self.lineView=[[BTLineView alloc] initWithFrame:CGRectMake(0, self.BTHeight-1, self.BTWidth, 0.5)];
+    self.lineView.color = [UIColor bt_RGBASame:77 A:0.25];
     [self addSubview:self.lineView];
 }
 

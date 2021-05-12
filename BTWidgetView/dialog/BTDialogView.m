@@ -247,7 +247,7 @@
 
 -(void)setCornerNum:(CGFloat)cornerNum{
     _cornerNum=cornerNum;
-    self.showView.layer.cornerRadius=cornerNum;
+    self.showView.BTCorner=cornerNum;
 }
 
 - (void)setIsNeedMoveFollowKeyboard:(BOOL)isNeedMoveFollowKeyboard{

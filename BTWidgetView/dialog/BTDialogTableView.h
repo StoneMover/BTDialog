@@ -45,6 +45,8 @@
 - (instancetype)initDialogTableView:(BTDialogLocation)location;
 
 
+- (void)setTableViewSeparatorColo:(UIColor*)color insert:(UIEdgeInsets)insert;
+
 
 //根据传入的字符串生成数据
 -(NSMutableArray*)createDataWithStr:(NSArray*)strArray;

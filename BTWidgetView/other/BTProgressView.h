@@ -73,6 +73,9 @@ typedef NS_ENUM(NSInteger,BTProgressStyle) {
 //是否正在触摸
 @property (nonatomic, assign) BOOL isTouch;
 
+//是否使用UIPanGestureRecognizer模式进行滑动的监听，兼容在列表中滚动时候的冲突
+@property (nonatomic, assign) BOOL isUseGestureStyle;
+
 @end
 
 NS_ASSUME_NONNULL_END

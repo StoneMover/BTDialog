@@ -11,6 +11,12 @@
 #import <BTHelp/BTHelp.h>
 #import <BTHelp/UIColor+BTColor.h>
 
+@interface BTProgressView()
+
+@property (nonatomic, strong) UIPanGestureRecognizer * gesture;
+
+@end
+
 @implementation BTProgressView
 
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -46,6 +52,53 @@
     if (self.progressBgColor == nil) {
         self.progressBgColor = UIColor.whiteColor;
     }
+    
+}
+
+- (void)setIsUseGestureStyle:(BOOL)isUseGestureStyle{
+    _isUseGestureStyle = isUseGestureStyle;
+    if (isUseGestureStyle) {
+        self.gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panView:)];
+        [self addGestureRecognizer:self.gesture];
+    }else{
+        if (!self.gesture) {
+            return;
+        }
+        [self removeGestureRecognizer:self.gesture];
+    }
+}
+
+-(void)panView:(UIPanGestureRecognizer *)sender{
+    CGPoint point = [sender locationInView:self];
+//    NSLog(@"X的值：%f",point.x);
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        if (!self.isCanSlide || !self.isCanClickChangePercent) {
+            return;
+        }
+        self.isTouch = YES;
+        [self change:point];
+        return;
+    }
+
+    if (sender.state == UIGestureRecognizerStateChanged) {
+        if (!self.isCanSlide) {
+            return;
+        }
+        self.isTouch = YES;
+        [self change:point];
+        return;
+    }
+
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        self.isTouch = NO;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(BTProgressSlideEnd:)]) {
+            [self.delegate BTProgressSlideEnd:self.percent];
+        }
+        return;
+    }
+
+    self.isTouch = NO;
+    
 }
 
 - (void)setType:(NSInteger)type{
