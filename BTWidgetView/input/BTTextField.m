@@ -166,7 +166,7 @@
 
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    if (self.isJustInputNumber && ![string bt_isStrAllNumber]) {
+    if (self.isJustInputNumber && ![string isEqualToString:@""] && ![string bt_isStrAllNumber]) {
         return false;
     }
     
