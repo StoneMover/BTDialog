@@ -10,7 +10,7 @@
 
 //IB_DESIGNABLE
 
-@interface BTTextField : UITextField
+@interface BTTextField : UITextField<UITextFieldDelegate>
 
 //光标最大高度设置
 @property (nonatomic, assign) IBInspectable NSInteger maxCursorH;
@@ -38,6 +38,9 @@
 
 //结束编辑
 @property (nonatomic, copy) void(^endEditBlock)(void);
+
+//是否只能输入数字,当为YES的时候会将self.delegate指向当前的自己对象
+@property (nonatomic, assign) BOOL isJustInputNumber;
 
 //为键盘添加完成按钮
 - (void)addDoneView;

@@ -8,6 +8,7 @@
 
 #import "BTTextField.h"
 #import <BTHelp/BTUtils.h>
+#import <BTHelp/NSString+BTString.h>
 
 @implementation BTTextField
 
@@ -111,6 +112,15 @@
     }
 }
 
+- (void)setIsJustInputNumber:(BOOL)isJustInputNumber{
+    _isJustInputNumber = isJustInputNumber;
+    if (isJustInputNumber) {
+        self.delegate = self;
+    }else{
+        self.delegate = nil;
+    }
+}
+
 - (void)addDoneView{
     [self addDoneView:@"完成"];
 }
@@ -152,6 +162,15 @@
         color = self.textColor;
     }
     self.attributedPlaceholder=[[NSAttributedString  alloc]initWithString:self.placeholder attributes:@{NSFontAttributeName:font,NSForegroundColorAttributeName:color}];
+}
+
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    if (self.isJustInputNumber && ![string bt_isStrAllNumber]) {
+        return false;
+    }
+    
+    return YES;
 }
 
 @end
