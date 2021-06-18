@@ -16,8 +16,6 @@
 
 @property (nonatomic, assign) BTGeneralCellStyle generalStyle;
 
-@property (nonatomic, assign) BOOL isHadInit;
-
 @end
 
 
@@ -34,13 +32,16 @@
 }
 
 
-
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    self.lineView.BTBottom = self.BTHeight;
+}
 
 - (void)initWidget:(BTGeneralCellStyle)style{
     if (self.isHadInit) {
         return;
     }
-    self.isHadInit = YES;
+    _isHadInit = YES;
     self.generalStyle = style;
     switch (self.generalStyle) {
         case BTGeneralCellStyleFullText:
@@ -79,6 +80,14 @@
             break;
     }
     
+}
+
+- (void)initLineViewWith:(CGRect)rect{
+    if (self.lineView) {
+        return;
+    }
+    self.lineView = [[UIView alloc] initWithFrame:CGRectMake(rect.origin.x,0,rect.size.width,rect.size.height)];
+    [self addSubview:self.lineView];
 }
 
 - (void)initTitleIconImgView{
