@@ -22,9 +22,45 @@ typedef NS_ENUM(NSInteger,BTGeneralCellStyle) {
 
 @class BTGeneralCellConfig;
 
+@class BTGeneralView;
+
 typedef void (^BTGeneralCellConfigBlock)(BTGeneralCellConfig * config);
 
 @interface BTGeneralCell : UITableViewCell
+
+@property (nonatomic, strong) BTGeneralView * generalView;
+
+@end
+
+@interface BTGeneralCellConfig : NSObject
+
+/*
+控件的大小
+ BTGeneralCellStyleCustome 模式下所有控件都需要设置
+ 其它模式只有imageView需要设置
+ 除了imageView需要设置大小，其它不需要，设置后也会无效，文字会根据内容自动计算，switch大小固定
+*/
+@property (nonatomic, assign) CGRect rect;
+
+//距离上一个控件的左间距，如果为第一个则为距离父view的左间距
+@property (nonatomic, assign) CGFloat leftPadding;
+
+//距离上一个控件的右间距，如果为第一个则为距离父view的右间距
+@property (nonatomic, assign) CGFloat rightPadding;
+
+//文字颜色
+@property (nonatomic, strong) UIColor * textColor;
+
+//文字字体
+@property (nonatomic, strong) UIFont * font;
+
+@end
+
+
+@interface BTGeneralView : UIView
+
+//覆盖cell的按钮，默认隐藏
+@property (nonatomic, strong) UIButton * fullBtn;
 
 //标题图标
 @property (nonatomic, strong) UIImageView * titleIconImgView;
@@ -63,34 +99,10 @@ typedef void (^BTGeneralCellConfigBlock)(BTGeneralCellConfig * config);
 //需要改变设置的时候，先实现对应的block，然后调用该方法，该方法可重复调用，只会执行一次
 - (void)initWidget:(BTGeneralCellStyle)style;
 
-//会设置里面的y值属性不会设置
+//会设置里面的除了y值以外的位置属性
 - (void)initLineViewWith:(CGRect)rect;
 
-@end
-
-@interface BTGeneralCellConfig : NSObject
-
-/*
-控件的大小
- BTGeneralCellStyleCustome 模式下所有控件都需要设置
- 其它模式只有imageView需要设置
- 除了imageView需要设置大小，其它不需要，设置后也会无效，文字会根据内容自动计算，switch大小固定
-*/
-@property (nonatomic, assign) CGRect rect;
-
-//距离上一个控件的左间距，如果为第一个则为距离父view的左间距
-@property (nonatomic, assign) CGFloat leftPadding;
-
-//距离上一个控件的右间距，如果为第一个则为距离父view的右间距
-@property (nonatomic, assign) CGFloat rightPadding;
-
-//文字颜色
-@property (nonatomic, strong) UIColor * textColor;
-
-//文字字体
-@property (nonatomic, strong) UIFont * font;
 
 @end
-
 
 NS_ASSUME_NONNULL_END

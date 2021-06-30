@@ -56,6 +56,15 @@
     [self.scrollView addSubview:self.viewIndicator];
 }
 
+- (void)initViewIndicator:(UIView*)view{
+    if (self.viewIndicator) {
+        [self.viewIndicator removeFromSuperview];
+        self.viewIndicator=nil;
+    }
+    self.viewIndicator = view;
+    [self.scrollView addSubview:self.viewIndicator];
+}
+
 - (void)reloadData{
     if (!self.dataSource) {
         return;

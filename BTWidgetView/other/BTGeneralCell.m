@@ -14,16 +14,33 @@
 
 @interface BTGeneralCell()
 
-@property (nonatomic, assign) BTGeneralCellStyle generalStyle;
+
 
 @end
 
 
 @implementation BTGeneralCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    [self initGeneralView];
+    return self;
 }
+
+- (instancetype)initWithCoder:(NSCoder *)coder{
+    self = [super initWithCoder:coder];
+    [self initGeneralView];
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    [self initGeneralView];
+    return self;
+}
+
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -31,6 +48,31 @@
     // Configure the view for the selected state
 }
 
+- (void)initGeneralView{
+    self.generalView = [BTGeneralView new];
+    self.generalView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.contentView addSubview:self.generalView];
+    [self.generalView bt_addToParentWithPadding:BTPaddingMake(0, 0, 0, 0)];
+}
+
+
+@end
+
+@implementation BTGeneralCellConfig
+
+
+
+@end
+
+
+@interface BTGeneralView()
+
+@property (nonatomic, assign) BTGeneralCellStyle generalStyle;
+
+@end
+
+
+@implementation BTGeneralView
 
 - (void)layoutSubviews{
     [super layoutSubviews];
@@ -80,10 +122,16 @@
             break;
     }
     
+    self.fullBtn = [[UIButton alloc] init];
+    self.fullBtn.hidden = YES;
+    self.fullBtn.translatesAutoresizingMaskIntoConstraints = false;
+    [self addSubview:self.fullBtn];
+    [self.fullBtn bt_addToParentWithPadding:BTPaddingMake(0, 0, 0, 0)];
 }
 
 - (void)initLineViewWith:(CGRect)rect{
     if (self.lineView) {
+        self.lineView.frame = CGRectMake(rect.origin.x,0,rect.size.width,rect.size.height);
         return;
     }
     self.lineView = [[UIView alloc] initWithFrame:CGRectMake(rect.origin.x,0,rect.size.width,rect.size.height)];
@@ -93,7 +141,7 @@
 - (void)initTitleIconImgView{
     self.titleIconImgView = [UIImageView new];
     self.titleIconImgView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.contentView addSubview:self.titleIconImgView];
+    [self addSubview:self.titleIconImgView];
     
     BTGeneralCellConfig * config = [BTGeneralCellConfig new];
     config.leftPadding = 20;
@@ -111,7 +159,7 @@
 - (void)initTitleLabel{
     self.titleLabel = [UILabel new];
     self.titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.contentView addSubview:self.titleLabel];
+    [self addSubview:self.titleLabel];
     
     BTGeneralCellConfig * config = [BTGeneralCellConfig new];
     config.font = [UIFont BTAutoFontWithSize:16 weight:UIFontWeightMedium];
@@ -134,7 +182,7 @@
 - (void)initSubTitleLabel{
     self.subTitleLabel = [UILabel new];
     self.subTitleLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.contentView addSubview:self.subTitleLabel];
+    [self addSubview:self.subTitleLabel];
     
     BTGeneralCellConfig * config = [BTGeneralCellConfig new];
     config.font = [UIFont BTAutoFontWithSize:14 weight:UIFontWeightMedium];
@@ -156,7 +204,7 @@
 - (void)initArrowImgView{
     self.arrowImgView = [UIImageView new];
     self.arrowImgView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.contentView addSubview:self.arrowImgView];
+    [self addSubview:self.arrowImgView];
     
     BTGeneralCellConfig * config = [BTGeneralCellConfig new];
     config.rightPadding = -20;
@@ -177,7 +225,7 @@
     self.contentSwitch = [UISwitch new];
     self.contentSwitch.translatesAutoresizingMaskIntoConstraints = NO;
     self.contentSwitch.userInteractionEnabled = YES;
-    [self.contentView addSubview:self.contentSwitch];
+    [self addSubview:self.contentSwitch];
     
     BTGeneralCellConfig * config = [BTGeneralCellConfig new];
     config.rightPadding = -20;
@@ -190,22 +238,10 @@
     
     self.switchBtn = [UIButton new];
     self.switchBtn.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.contentView addSubview:self.switchBtn];
+    [self addSubview:self.switchBtn];
     [self.switchBtn bt_addEqualWidthToView:self.contentSwitch];
     [self.switchBtn bt_addEqualHeightToView:self.contentSwitch];
     [self.switchBtn bt_addCenterToItemView:self.contentSwitch];
 }
-
-
-
-
-
-
-
-@end
-
-@implementation BTGeneralCellConfig
-
-
 
 @end

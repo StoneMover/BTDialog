@@ -37,79 +37,79 @@
     switch (indexPath.row) {
         case 0:
         {
-            cell.titleIconImgViewBlock = ^(BTGeneralCellConfig * _Nonnull config) {
+            cell.generalView.titleIconImgViewBlock = ^(BTGeneralCellConfig * _Nonnull config) {
                 config.rect = CGRectMake(0, 0, 25, 25);
             };
-            cell.titleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
+            cell.generalView.titleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
                 config.leftPadding = 10;
             };
-            cell.subTitleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
+            cell.generalView.subTitleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
                 config.rightPadding = -10;
             };
-            [cell initWidget:BTGeneralCellStyleFullText];
-            cell.titleIconImgView.image = [UIImage bt_imageWithColor:UIColor.redColor size:CGSizeMake(25, 25)];
-            cell.titleLabel.text = @"FullText";
-            cell.subTitleLabel.text = @"你只用这样配置";
-            cell.arrowImgView.image = [UIImage imageNamed:@"arrow"];
+            [cell.generalView initWidget:BTGeneralCellStyleFullText];
+            cell.generalView.titleIconImgView.image = [UIImage bt_imageWithColor:UIColor.redColor size:CGSizeMake(25, 25)];
+            cell.generalView.titleLabel.text = @"FullText";
+            cell.generalView.subTitleLabel.text = @"你只用这样配置";
+            cell.generalView.arrowImgView.image = [UIImage imageNamed:@"arrow"];
         }
             break;
         case 1:
         {
-            cell.titleIconImgViewBlock = ^(BTGeneralCellConfig * _Nonnull config) {
+            cell.generalView.titleIconImgViewBlock = ^(BTGeneralCellConfig * _Nonnull config) {
                 config.rect = CGRectMake(0, 0, 25, 25);
             };
-            cell.titleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
+            cell.generalView.titleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
                 config.leftPadding = 10;
             };
-            [cell initWidget:BTGeneralCellStyleFullSwitch];
-            cell.titleIconImgView.image = [UIImage bt_imageWithColor:UIColor.redColor size:CGSizeMake(25, 25)];
-            cell.titleLabel.text = @"FullSwitch";
+            [cell.generalView initWidget:BTGeneralCellStyleFullSwitch];
+            cell.generalView.titleIconImgView.image = [UIImage bt_imageWithColor:UIColor.redColor size:CGSizeMake(25, 25)];
+            cell.generalView.titleLabel.text = @"FullSwitch";
         }
             break;
         case 2:
         {
-            cell.titleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
+            cell.generalView.titleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
                 config.leftPadding = 20;
                 config.textColor = UIColor.redColor;
             };
-            [cell initWidget:BTGeneralCellStyleSimpleText];
-            cell.titleLabel.text = @"SimpleText";
-            cell.arrowImgView.image = [UIImage imageNamed:@"arrow"];
+            [cell.generalView initWidget:BTGeneralCellStyleSimpleText];
+            cell.generalView.titleLabel.text = @"SimpleText";
+            cell.generalView.arrowImgView.image = [UIImage imageNamed:@"arrow"];
         }
             break;
         case 3:
         {
-            cell.titleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
+            cell.generalView.titleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
                 config.leftPadding = 20;
             };
             
-            cell.subTitleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
+            cell.generalView.subTitleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
                 config.rightPadding = -10;
                 config.textColor = UIColor.redColor;
             };
             
-            [cell initWidget:BTGeneralCellStyleSimpleText2];
-            cell.titleLabel.text = @"SimpleText2";
-            cell.subTitleLabel.text = @"还不错吧";
-            cell.arrowImgView.image = [UIImage imageNamed:@"arrow"];
+            [cell.generalView initWidget:BTGeneralCellStyleSimpleText2];
+            cell.generalView.titleLabel.text = @"SimpleText2";
+            cell.generalView.subTitleLabel.text = @"还不错吧";
+            cell.generalView.arrowImgView.image = [UIImage imageNamed:@"arrow"];
         }
             break;
         case 4:
         {
-            cell.titleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
+            cell.generalView.titleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
                 config.leftPadding = 20;
             };
-            [cell initWidget:BTGeneralCellStyleSimpleSwitch];
-            cell.titleLabel.text = @"SimpleSwitch";
+            [cell.generalView initWidget:BTGeneralCellStyleSimpleSwitch];
+            cell.generalView.titleLabel.text = @"SimpleSwitch";
         }
             break;
         case 5:
         {
-            cell.titleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
+            cell.generalView.titleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
                 config.leftPadding = 20;
             };
-            [cell initWidget:BTGeneralCellStyleJustTitle];
-            cell.titleLabel.text = @"JustTitle";
+            [cell.generalView initWidget:BTGeneralCellStyleJustTitle];
+            cell.generalView.titleLabel.text = @"JustTitle";
         }
             break;
             

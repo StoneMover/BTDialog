@@ -67,6 +67,8 @@ typedef NS_ENUM(NSInteger,BTPageHeadViewStyle) {
 
 - (void)initViewIndicator:(CGSize)size corner:(CGFloat)corner bgColor:(UIColor*)color;
 
+- (void)initViewIndicator:(UIView*)view;
+
 //滑动下标的百分比,整体所有的百分比,如果没有特殊需要外部不需要调用
 - (void)scrollViewIndicator:(CGFloat)percent;
 

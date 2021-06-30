@@ -182,11 +182,11 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BTGeneralCell * cell=[tableView dequeueReusableCellWithIdentifier:@"HomeTableViewCellId"];
-    cell.titleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
+    cell.generalView.titleLabelBlock = ^(BTGeneralCellConfig * _Nonnull config) {
         config.leftPadding = 20;
     };
-    [cell initWidget:BTGeneralCellStyleJustTitle];
-    cell.titleLabel.text=self.titles[indexPath.row];
+    [cell.generalView initWidget:BTGeneralCellStyleJustTitle];
+    cell.generalView.titleLabel.text=self.titles[indexPath.row];
     return cell;
 }
 
