@@ -12,13 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BTModel : NSObject
 
-+(instancetype)modelWithDict:(NSDictionary*)dict;
++(instancetype)modelWithDict:(NSDictionary * _Nullable)dict;
 
-+(NSMutableArray*)modelWithArray:(NSArray*)array;
++(NSMutableArray*)modelWithArray:(NSArray * _Nullable)array;
 
--(instancetype)initWithDict:(NSDictionary*)dict;
+-(instancetype)initWithDict:(NSDictionary * _Nullable)dict;
 
--(void)analisys:(NSDictionary*)dict;
+-(void)analisys:(NSDictionary * _Nullable)dict;
 
 -(void)initSelf;
 

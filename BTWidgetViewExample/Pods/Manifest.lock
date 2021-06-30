@@ -1,16 +1,16 @@
 PODS:
-  - BTHelp (0.4.0)
+  - BTHelp (0.4.1)
 
 DEPENDENCIES:
   - BTHelp
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - BTHelp
 
 SPEC CHECKSUMS:
-  BTHelp: f874d5079295db5c3def97075e91036b9dcb3402
+  BTHelp: 9837b8587d99ed11142fe252cfc58ee3db4bb7d5
 
-PODFILE CHECKSUM: ded3ce68471f099b9edaab199f764ba130e6663e
+PODFILE CHECKSUM: 80473d8e3d18d5c50acf4af78fd7f7f27744837c
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1

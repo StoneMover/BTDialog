@@ -12,11 +12,11 @@
 
 @implementation BTModel
 
-+(instancetype)modelWithDict:(NSDictionary*)dict{
++(instancetype)modelWithDict:(NSDictionary * _Nullable)dict{
     return [[self alloc]initWithDict:dict];
 }
 
-+(NSMutableArray*)modelWithArray:(NSArray*)array{
++(NSMutableArray*)modelWithArray:(NSArray * _Nullable)array{
     if (![array isKindOfClass:[NSArray class]]) {
         NSLog(@"BaseModelAnalisys modelWithArray parameter is not array : %@-%@",self,array);
         return [NSMutableArray new];
@@ -35,7 +35,7 @@
     return self;
 }
 
--(instancetype)initWithDict:(NSDictionary*)dict{
+-(instancetype)initWithDict:(NSDictionary * _Nullable)dict{
     self=[self init];
     [self analisys:dict];
     return self;
@@ -47,7 +47,7 @@
     
 }
 
--(void)analisys:(NSDictionary*)dict{
+-(void)analisys:(NSDictionary * _Nullable)dict{
     if (![dict isKindOfClass:[NSDictionary class]]) {
         return;
     }

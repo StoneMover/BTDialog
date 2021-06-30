@@ -20,95 +20,108 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark 常用方法
 
-//导航器总体高度NAVCONTENT_HEIGHT+STATUS_BAR_HEIGHT
+
+/// 导航器总体高度NAVCONTENT_HEIGHT+STATUS_BAR_HEIGHT
 + (CGFloat)NAV_HEIGHT;
 
-//导航器内容高度44
+/// 导航器内容高度44
 + (CGFloat)NAVCONTENT_HEIGHT;
 
-//状态栏高度
+/// 状态栏高度
 + (CGFloat)STATUS_BAR_HEIGHT;
 
-//全面屏比普通屏幕多出的状态栏高度
+/// 全面屏比普通屏幕多出的状态栏高度
 + (CGFloat)IPHONEX_MORE_BAR_HEIGHT;
 
-//全面屏底部指示器高度
+/// 全面屏底部指示器高度
 + (CGFloat)HOME_INDICATOR_HEIGHT;
 
+/// 全面屏底部指示器高度，中等高度
 + (CGFloat)HOME_INDICATOR_HEIGHT_MEDIUM;
 
+/// 全面屏底部指示器高度，较小高度
 + (CGFloat)HOME_INDICATOR_HEIGHT_SMALL;
 
-//tabbar高度
+/// tabbar默认高度高度，49
 + (CGFloat)TAB_HEIGHT_DEFAULT;
+
+/// tabbar高度，会根据是否为全面屏改变
 + (CGFloat)TAB_HEIGHT;
 
-//是否为全面屏
+/// 是否为全面屏
 + (BOOL)UI_IS_IPHONEX;
 
-//是否为IPhone6,IPhone7,IPhone8,IPhoneSE第二代 尺寸
+/// 是否为IPhone6,IPhone7,IPhone8,IPhoneSE第二代 尺寸
 + (BOOL)UI_IS_IPHONE_6;
 
-//是否为IPhone6Plus,IPhone7Plus,IPhone8Plus 尺寸
+/// 是否为IPhone6Plus,IPhone7Plus,IPhone8Plus 尺寸
 + (BOOL)UI_IS_IPHONE_6_P;
 
-//是否为IPhone5,IPhoneSE第一代尺寸
+/// 是否为IPhone5,IPhoneSE第一代尺寸
 + (BOOL)UI_IS_IPHONE_SE;
 
+/// 获取UIApplication单例对象
 + (UIApplication*)APP;
 
+/// 获取APP当前的window
 + (UIWindow*)APP_WINDOW;
 
+/// 获取APP当前window的rootViewController
 + (UIViewController*)ROOT_VC;
 
+/// 获取UIApplicationDelegate
 + (NSObject<UIApplicationDelegate>*)APP_DELEGATE;
 
-//通知中心对象
+/// 获取通知中心对象
 + (NSNotificationCenter*)NOTIFI_CENTER;
 
-//系统版本号
+/// 获取系统版本号
 + (CGFloat)SYS_VERSION;
 
-//屏幕宽度
+/// 获取屏幕宽度
 + (CGFloat)SCREEN_W;
 
-//屏幕高度
+/// 获取屏幕高度
 + (CGFloat)SCREEN_H;
 
+/// 获取屏幕的大小值
 + (CGRect)SCREEN_BOUNDS;
 
 
-//处理空字符串，如果为空则返回@"";
+/// 处理空字符串，如果为空则返回@"";
 + (NSString*)SAFE_STR:(nullable NSString*)str;
 
-//处理为空的URL对象，为空的时候返回[NSURL URLWithString:@"http://www.baidu.com"]
+/// 处理为空的URL对象，为空的时候返回[NSURL URLWithString:@"http://www.baidu.com"]
 + (NSURL*)URL:(nullable NSString*)url;
 
-//应用的版本号
+/// 应用的版本号
 + (NSString*)APP_VERSION;
 
-//打开系统设置界面
+/// 打开系统设置界面
 + (void)openSetVc;
 
-//获取当前VC
+/// 获取当前VC
 + (UIViewController*)getCurrentVc;
+
+/// 获取当前VC
+/// @param rootVc 根控制器
 + (UIViewController *)getCurrentVCFrom:(UIViewController *)rootVc;
 
-//字符串是否为空
+/// 字符串是否为空
 + (BOOL)isEmpty:(nullable NSString*)str;
 
-//设置ios 推送bage 数字
+/// 设置ios 推送bage 数字
 + (void)setAppIconNotifiNum:(NSString*)num;
 
-//将阿拉伯数字转换为中文数字
+
 + (NSString *)translationArabicNum:(NSInteger)arabicNum;
 
 
-//传入秒数,转换成00:00:00格式
+/// 传入秒数,转换成00:00:00格式
 + (NSString*)convertSecToTime:(NSInteger)second;
 
 #pragma mark 字典常用方法
-//将字典转为json字符串
+/// 将字典转为json字符串
 + (NSString*)convertDictToJsonStr:(NSDictionary *)dic;
 
 + (NSString*)convertArrayToJsonStr:(NSArray *)array;

@@ -34,6 +34,50 @@
     return YES;
 }
 
+- (NSInteger)bt_countNumInStr{
+    if ([BTUtils isEmpty:self]) {
+        return 0;
+    }
+    
+    NSString * checkedNumString = [self stringByTrimmingCharactersInSet:[NSCharacterSet decimalDigitCharacterSet]];
+    return self.length - checkedNumString.length;
+}
+
+- (NSInteger)bt_countLetterInStr{
+    if ([BTUtils isEmpty:self]) {
+        return 0;
+    }
+    NSString * checkedNumString = [self stringByTrimmingCharactersInSet:[NSCharacterSet letterCharacterSet].invertedSet];
+    return checkedNumString.length;
+}
+
+- (NSInteger)bt_countUppercaseLetterInStr{
+    if ([BTUtils isEmpty:self]) {
+        return 0;
+    }
+    NSString * checkedNumString = [self stringByTrimmingCharactersInSet:[NSCharacterSet uppercaseLetterCharacterSet].invertedSet];
+    return checkedNumString.length;
+}
+
+- (NSInteger)bt_countLowercaseLetterInStr{
+    if ([BTUtils isEmpty:self]) {
+        return 0;
+    }
+    NSString * checkedNumString = [self stringByTrimmingCharactersInSet:[NSCharacterSet lowercaseLetterCharacterSet].invertedSet];
+    return checkedNumString.length;
+}
+
+- (NSInteger)bt_countOtherInStr{
+    if ([BTUtils isEmpty:self]) {
+        return 0;
+    }
+    
+    NSString * checkedNumString = [self stringByTrimmingCharactersInSet:[NSCharacterSet alphanumericCharacterSet]];
+    return checkedNumString.length;
+}
+
+
+
 - (BOOL)bt_isPureFloat{
     if ([BTUtils isEmpty:self]) {
         return NO;

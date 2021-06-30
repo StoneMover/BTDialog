@@ -19,6 +19,21 @@ NS_ASSUME_NONNULL_BEGIN
 //是否全部为数字
 - (BOOL)bt_isStrAllNumber;
 
+//该字符串中有多少数字
+- (NSInteger)bt_countNumInStr;
+
+//该字符串中有多少字母字符，包括大小写
+- (NSInteger)bt_countLetterInStr;
+
+//该字符串中有多少大写字母
+- (NSInteger)bt_countUppercaseLetterInStr;
+
+//该字符串中有多少小写字母
+- (NSInteger)bt_countLowercaseLetterInStr;
+
+//该字符串中有多少非字母、数字字符
+- (NSInteger)bt_countOtherInStr;
+
 //是否为浮点型数据
 - (BOOL)bt_isPureFloat;
 

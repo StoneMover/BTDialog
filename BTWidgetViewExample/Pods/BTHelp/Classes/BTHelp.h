@@ -98,6 +98,9 @@ NS_ASSUME_NONNULL_BEGIN
 //显示头像修改UIActionSheet
 -(void)go;
 
+//直接去选取头像，0相机、1相册
+- (void)actionClick:(NSInteger)index;
+
 @property (nonatomic, copy) void(^block)(UIImage*image);
 
 //标题文字

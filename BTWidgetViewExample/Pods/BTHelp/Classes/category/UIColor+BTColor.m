@@ -65,16 +65,50 @@
 }
 
 
++ (UIColor*)bt_34Color{
+    return [UIColor bt_RGBSame:34];
+}
+
 + (UIColor*)bt_51Color{
     return [UIColor bt_RGBSame:51];
+}
+
++ (UIColor*)bt_83Color{
+    return [UIColor bt_RGBSame:83];
+}
+
++ (UIColor*)bt_96Color{
+    return [UIColor bt_RGBSame:96];
+}
+
++ (UIColor*)bt_136Color{
+    return [UIColor bt_RGBSame:136];
+}
+
++ (UIColor*)bt_153Color{
+    return [UIColor bt_RGBSame:153];
+}
+
++ (UIColor*)bt_204Color{
+    return [UIColor bt_RGBSame:204];
+}
+
++ (UIColor*)bt_229Color{
+    return [UIColor bt_RGBSame:229];
 }
 
 + (UIColor*)bt_235Color{
     return [UIColor bt_RGBSame:235];
 }
 
-+ (UIColor*)bt_83Color{
-    return [UIColor bt_RGBSame:83];
++ (UIColor*)bt_245Color{
+    return [UIColor bt_RGBSame:245];
 }
+
+
++ (UIColor*)bt_248Color{
+    return [UIColor bt_RGBSame:248];
+}
+
 
 @end

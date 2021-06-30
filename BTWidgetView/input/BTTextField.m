@@ -164,6 +164,11 @@
     self.attributedPlaceholder=[[NSAttributedString  alloc]initWithString:self.placeholder attributes:@{NSFontAttributeName:font,NSForegroundColorAttributeName:color}];
 }
 
+- (void)setReturnClickBlock:(void (^)(void))returnClickBlock{
+    _returnClickBlock = returnClickBlock;
+    self.delegate = self;
+}
+
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     if (self.isJustInputNumber && ![string isEqualToString:@""] && ![string bt_isStrAllNumber]) {
@@ -173,4 +178,12 @@
     return YES;
 }
 
+
+#pragma mark UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if (self.returnClickBlock) {
+        self.returnClickBlock();
+    }
+    return false;
+}
 @end

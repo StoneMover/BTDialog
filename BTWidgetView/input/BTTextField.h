@@ -39,6 +39,9 @@
 //结束编辑
 @property (nonatomic, copy) void(^endEditBlock)(void);
 
+//return按键点击的回调,会将self.delegate指向当前的自己对象
+@property (nonatomic, copy) void(^returnClickBlock)(void);
+
 //是否只能输入数字,当为YES的时候会将self.delegate指向当前的自己对象
 @property (nonatomic, assign) BOOL isJustInputNumber;
 

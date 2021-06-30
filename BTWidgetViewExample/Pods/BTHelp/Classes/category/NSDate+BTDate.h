@@ -43,40 +43,56 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDate (BTDate)
 
+/// 获取当前对象的年份，仅支持校正时区差值后的对象调用
 - (NSString*)bt_year;
 
+/// 获取当前对象的月份，仅支持校正时区差值后的对象调用
 - (NSString*)bt_month;
 
+/// 获取当前对象的为几号，仅支持校正时区差值后的对象调用
 - (NSString*)bt_day;
 
+/// 获取当前对象的小时，仅支持校正时区差值后的对象调用
 - (NSString*)bt_hour;
 
+/// 获取当前对象的分钟，仅支持校正时区差值后的对象调用
 - (NSString*)bt_minute;
 
+/// 获取当前对象的秒数，仅支持校正时区差值后的对象调用
 - (NSString*)bt_second;
 
-//英文的周几字符串
+/// 英文的周几字符串
 - (NSString*)bt_weekDay;
 
-//数字周几，0是周日
+/// 数字周几，0是周日
 - (NSInteger)bt_weekDayNum;
 
-//传入头部字符串如周和星期，如果传回周会返回周一、周二..周日等字符串，传星期会返回星期一、星期二..星期天字符串
+
+/// 传入头部字符串如周和星期，如果传回周会返回周一、周二..周日等字符串，传星期会返回星期一、星期二..星期天字符串
+/// @param head 需要拼接的字符串，比如周、星期
 - (NSString*)bt_weekDayNumStrWithHead:(NSString*)head;
 
-//计算年龄,生成当前date类,传入年月日即可
+
+/// 计算年龄,生成当前date类,传入年月日即可
+/// @param year 出生年
+/// @param month 出生月
+/// @param day 出生日
 - (NSInteger)bt_calculateAge:(NSInteger)year month:(NSInteger)month day:(NSInteger)day;
 
-//是否是未来时间
+/// 计算当前对象距离当前时间的年龄，使用bt_initLocalDate初始化当前时间
+- (NSInteger)bt_calculateAgeFromNow;
+
+
+/// 当前对象是否是未来时间
 - (BOOL)bt_isFutureTime;
 
-//得到距离系统当前时间的显示时间,比如一小时前,三分钟前,时间格式:yyyy-MM-dd HH:mm:ss,仅限使用该分类生成对象使用
+/// 得到距离系统当前时间的显示时间,比如一小时前,三分钟前,时间格式:yyyy-MM-dd HH:mm:ss,仅支持校正时区差值后的对象调用
 - (NSString*)bt_dateFromNowStr;
 
-//获取日期字符串,仅支持校正时区差值后的对象调用
+/// 获取日期字符串,仅支持校正时区差值后的对象调用
 - (NSString*)bt_dateStr:(NSString*)formater;
 
-//是否是同年、同月、同日、同时、同分
+/// 是否是同年、同月、同日、同时、同分
 - (BOOL)bt_isSameYearToDate:(NSDate*)date;
 
 - (BOOL)bt_isSameMonthToDate:(NSDate*)date;
@@ -88,30 +104,51 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)bt_isSameMinuteToDate:(NSDate*)date;
 
 #pragma mark 根据出传入日期以及格式化样式获取date
-//根据时区获取对应的date，以下获取方法都会自动校正时区，会比调用系统方法生成的对象多出8个小时
+
+
+/// 根据时区获取对应的date，以下获取方法都会自动校正时区，中国时区会比调用系统方法生成的对象多出8个小时
 + (instancetype)bt_initLocalDate;
-//会自动增加时区差值
+
+/// 会自动增加时区差值秒数
 + (instancetype)bt_dateWithTimeIntervalSince1970:(NSTimeInterval)secs;
 
-//传入2010-01-01 这个字符串获取date
+/// 传入2010-01-01 这个字符串获取date，会自动增加时区差值
 + (NSDate*)bt_dateYMD:(NSString*)dateStr;
 
-//传入2010-01-01 13:04:34 这个字符串获取date
+/// 传入2010-01-01 13:04:34 这个字符串获取date，会自动增加时区差值
 + (NSDate*)bt_dateYMDHMS:(NSString*)dateStr;
 
-//传入2010-01-01 13:04 这个字符串获取date
+/// 传入2010-01-01 13:04 这个字符串获取date，会自动增加时区差值
 + (NSDate*)bt_dateYMDHM:(NSString*)dateStr;
 
-//传入日期,以及格式化样式获取date
+/// 传入日期,以及格式化样式获取date，会自动增加时区差值
 + (NSDate*)bt_dateFromStr:(NSString*)dateStr formatter:(NSString*)formatterStr;
 
-//获取时区时差秒数,如果给的时间戳是基于格林尼治的时间戳，那么加上这个值获取当前时区的时间戳
+/// 传入日期,以及格式化样式获取date，不会自动增加时区差值
++ (NSDate*)bt_dateFromStrWithOutTimeZone:(NSString*)dateStr formatter:(NSString*)formatterStr;
+
+/// 获取时区时差秒数
 + (NSInteger)bt_timeZoneSeconods;
 
-/*
-  仅限校正时区后的对象使用，会减去时区相差的秒数，得到格林尼治时间的时间戳
- */
+
+/// 仅限校正时区后的对象使用，会减去时区相差的秒数，得到格林尼治时间的时间戳
 - (NSTimeInterval)bt_timeIntervalSince1970;
+
+
+/// 获取当前对象月份天数
+- (NSInteger)bt_monthDay;
+
+/// 获取季度天数
+- (NSInteger)bt_seasonDay;
+
+/// 获取当前对象年份天数
+- (NSInteger)bt_yearDay;
+
+/// 获取当前为第几季
+- (NSInteger)bt_nowSeason;
+
+/// 获取当前为第几周
+- (NSInteger)bt_nowWeekNum;
 
 @end
 
