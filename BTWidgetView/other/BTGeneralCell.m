@@ -176,7 +176,13 @@
     }
     
     [self.titleLabel bt_addCenterYToParent];
+    if (config.rect.size.width != 0) {
+        [self.titleLabel bt_addWidth:config.rect.size.width];
+    }
     
+    if (config.rect.size.height != 0) {
+        [self.titleLabel bt_addHeight:config.rect.size.height];
+    }
 }
 
 - (void)initSubTitleLabel{
@@ -197,8 +203,15 @@
     }else{
         [self.subTitleLabel bt_addRightToItemView:self.arrowImgView constant:config.rightPadding];
     }
-    
     [self.subTitleLabel bt_addCenterYToParent];
+    if (config.rect.size.width != 0) {
+        [self.subTitleLabel bt_addWidth:config.rect.size.width];
+    }
+    
+    if (config.rect.size.height != 0) {
+        [self.subTitleLabel bt_addHeight:config.rect.size.height];
+    }
+    self.subTitleLabel.textAlignment = NSTextAlignmentRight;
 }
 
 - (void)initArrowImgView{
@@ -214,8 +227,12 @@
     
     [self.arrowImgView bt_addRightToParentWithPadding:config.rightPadding];
     [self.arrowImgView bt_addCenterYToParent];
-    if (config.rect.size.width != 0 && config.rect.size.height != 0) {
+    
+    if (config.rect.size.width != 0) {
         [self.arrowImgView bt_addWidth:config.rect.size.width];
+    }
+    
+    if (config.rect.size.height != 0) {
         [self.arrowImgView bt_addHeight:config.rect.size.height];
     }
     

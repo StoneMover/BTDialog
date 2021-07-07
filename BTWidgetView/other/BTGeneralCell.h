@@ -37,8 +37,7 @@ typedef void (^BTGeneralCellConfigBlock)(BTGeneralCellConfig * config);
 /*
 控件的大小
  BTGeneralCellStyleCustome 模式下所有控件都需要设置
- 其它模式只有imageView需要设置
- 除了imageView需要设置大小，其它不需要，设置后也会无效，文字会根据内容自动计算，switch大小固定
+ imageView、label 可以设置大小，设置位置无效
 */
 @property (nonatomic, assign) CGRect rect;
 
